@@ -1,0 +1,27 @@
+.accordion {
+  &Title {
+    border: 1px solid white;
+    padding: 0.5rem;
+
+    :after {
+      background: url(/icons/down-arrow.ico);
+    }
+  }
+  &Content {
+    padding: 0.5rem;
+    display: none;
+    transition: all 1s;
+    height: 0;
+  }
+  &.expanded {
+    .accordionTitle {
+      :after {
+        background: url(/icons/up-arrow.ico);
+      }
+    }
+    .accordionContent {
+      display: block;
+      height: 100%;
+    }
+  }
+}
