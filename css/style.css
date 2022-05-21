@@ -11,7 +11,7 @@
 }
 body {
 	background: url(../images/bg-body.jpg) repeat;
-	color: #727272;
+	color: #ffffff;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	line-height: 1;
@@ -187,11 +187,14 @@ body {
 	margin: 10px 0;
 	padding: 10px 19px;
 }
-#body .intro-section .col-content {
+#body .intro-section .col-content, #body .intro {
 	background: #181818;
 	border: 1px solid #22272a;
 	margin: 0;
 	padding: 20px 19px;
+}
+#body .intro {
+	margin: 10px;
 }
 #body .intro-section .col-content {
 	padding: 14px 19px 30px;
