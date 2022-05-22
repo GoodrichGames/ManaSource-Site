@@ -1,0 +1,33 @@
+@import '../../../styles/scss/colors.scss';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 6rem 40px;
+  width: 100%;
+  background-color: $light-color;
+}
+
+.imageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  padding: 6rem 40px;
+  width: 100%;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    filter: brightness(50%) grayscale(70%) blur(6px);
+  }
+  
+  .title {
+    color: $light-color;
+    z-index: 1;
+  }
+}
