@@ -60,7 +60,11 @@ export default function About() {
           </p>
         </ContentItem>
       </ContentSection>
-
+      <ContentSection>
+        <ContentItem title='Artist Credits'>
+          <p><em>Mana Well in Cavern</em> - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></p>
+        </ContentItem>
+      </ContentSection>
       <ContentSection>
         <ContentItem title='Be Part of Our Community!'>
           <p>

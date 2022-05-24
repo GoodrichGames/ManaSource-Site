@@ -4,6 +4,7 @@ import ContentItem from './../components/content/ContentSection/ContentItem';
 import BaseTemplate from './../components/Templates/BaseTemplate';
 import ExportedImage from "next-image-export-optimizer";
 import prefix from '../utils/prefix';
+import ArticleList from './../components/content/ArticleList/ArticleList';
 
 export default function Resources() {
   return (
@@ -14,6 +15,9 @@ export default function Resources() {
         </ContentItem> */}
       </ContentSection>
       <ContentSection>
+        <ContentItem title='Latest Balance Changes'>
+          <ArticleList category='balance' max='3'/>
+        </ContentItem>
         <ContentItem title='How to Play'>
           <ol>
             <li>1. Each player selects 1 card and plays it facedown in the center area.</li>
@@ -29,7 +33,7 @@ export default function Resources() {
         </ContentItem>
         <ContentItem title='Rules'>
           <Link href='/resources/rules'>
-            Download the full rules.
+            Rules &amp; FAQ
           </Link>
         </ContentItem>
       </ContentSection>

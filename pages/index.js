@@ -1,5 +1,5 @@
 import BaseLayout from '../components/Templates/BaseTemplate'
-import PostList from '../components/content/ArticleList/ArticleList'
+import ArticleList from '../components/content/ArticleList/ArticleList'
 import meta from '../metadata/pagemeta'
 import ExportedImage from "next-image-export-optimizer";
 import prefix from '../utils/prefix';
@@ -40,7 +40,7 @@ export default function Home() {
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Articles'>
-          <PostList category="all" />
+          <ArticleList category="all" />
         </ContentItem>
       </ContentSection>
     </BaseLayout>
