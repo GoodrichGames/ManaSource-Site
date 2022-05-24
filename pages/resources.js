@@ -3,6 +3,7 @@ import ContentSection from '../components/content/ContentSection/ContentSection'
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import BaseTemplate from './../components/Templates/BaseTemplate';
 import ExportedImage from "next-image-export-optimizer";
+import prefix from '../utils/prefix';
 
 export default function Resources() {
   return (
@@ -23,7 +24,7 @@ export default function Resources() {
           </ol>
           <br />
           <div style={{ position: 'relative', height: '22rem' }}>
-            <ExportedImage src='/images/Recharge Zone explanation.png' alt='Image of how cards move down the recharge zone when played' layout='fill' objectFit='contain' priority={true} />
+            <ExportedImage src={prefix + '/images/Recharge Zone explanation.png'} alt='Image of how cards move down the recharge zone when played' layout='fill' objectFit='contain' priority={true} />
           </div>
         </ContentItem>
         <ContentItem title='Rules'>

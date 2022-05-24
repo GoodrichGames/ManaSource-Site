@@ -2,6 +2,7 @@ import BaseLayout from '../components/Templates/BaseTemplate'
 import PostList from '../components/content/ArticleList/ArticleList'
 import meta from '../metadata/pagemeta'
 import ExportedImage from "next-image-export-optimizer";
+import prefix from '../utils/prefix';
 import styles from '../components/Templates/BaseTemplate.module.scss'
 import ContentItem from '../components/content/ContentSection/ContentItem'
 import ContentSection from './../components/content/ContentSection/ContentSection';
@@ -11,7 +12,7 @@ export default function Home() {
   return (
     <BaseLayout title={meta.name} description={meta.description} >
       <div className={styles.heroImage}>
-        <ExportedImage src='/images/featured-game.png' alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
+        <ExportedImage src={prefix + '/images/featured-game.png'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
       </div>
       <ContentSection>
         <ContentItem>

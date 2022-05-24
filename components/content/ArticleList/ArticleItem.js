@@ -1,12 +1,13 @@
 import styles from './ArticleList.module.scss'
 import Link from 'next/link'
 import ExportedImage from "next-image-export-optimizer";
+import prefix from '../../../utils/prefix';
 
 const ArticleItem = ({ article }) => {
   return <Link href={article.link}>
     <a className={styles.articleLink}>
       <div className={styles.imageContainer}>
-        <ExportedImage src={article.image} alt={article.title} layout="fill" />
+        <ExportedImage src={prefix + article.image} alt={article.title} layout="fill" />
       </div>
       <div className={styles.articleContent}>
         {article.date && <date>{article.date}</date>}
