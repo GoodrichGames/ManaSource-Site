@@ -10,7 +10,8 @@ export default function Rules() {
     <BaseTemplate title="Rules" description="Game Rules">
       <ContentSection>
         <ContentItem title='Download Rules'>
-          <a href='/documents/ms-rules-1-0.docx'>Version 1.0</a>
+          Once the game is released, the rules will be available here.
+          {/* <a href='/documents/ms-rules-1-0.docx'>Version 1.0</a> */}
         </ContentItem>
         <ContentItem title='FAQ'>
         <Accordion title='When will Mana Source be released?' defaultExpanded={true}>
