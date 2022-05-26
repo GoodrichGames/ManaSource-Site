@@ -3,7 +3,7 @@ import ContentItem from '../../components/content/ContentSection/ContentItem';
 import ContentSection from '../../components/content/ContentSection/ContentSection';
 import ArticleTemplate from '../../components/Templates/ArticleTemplate';
 import ExportedImage from 'next-image-export-optimizer';
-
+import prefix from '../../utils/prefix';
 
 const Notes05242022 = () => {
   return <ArticleTemplate useImage={true}>
