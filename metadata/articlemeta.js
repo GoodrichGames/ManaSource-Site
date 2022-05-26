@@ -4,7 +4,7 @@ const posts = [
     description: 'What is Mana Source?',
     image: '/images/cave.png',
     link: '/articles/introduction',
-    categories: ['all','devnotes','announcements', 'patchnotes'],
+    categories: ['all','devnotes','announcements'],
     date: 'May 22, 2022'
   },
   {

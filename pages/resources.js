@@ -16,7 +16,7 @@ export default function Resources() {
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Balance Changes'>
-          <ArticleList category='balance' max='3'/>
+          <ArticleList category='patchnotes' max='3'/>
         </ContentItem>
         <ContentItem title='How to Play'>
           <ol>

@@ -12,7 +12,7 @@ const Notes05242022 = () => {
         <p>This is an example set of Release notes.</p><br />
         <ul>
           <li className='cardShortDetails' style={{position: 'relative'}}>
-            <ExportedImage src="/images/cards/trick%20of%20the%20light.jpg" alt="Trick of the Light card" layout='intrinsic' objectFit='contain' width='150px' height='100px' />
+            <ExportedImage src={prefix + "/images/cards/trick%20of%20the%20light.jpg"} alt="Trick of the Light card" layout='intrinsic' objectFit='contain' width='150px' height='100px' />
             <p>
               <b>Trick of the Light</b>
             </p>
