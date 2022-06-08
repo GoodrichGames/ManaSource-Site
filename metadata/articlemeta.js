@@ -9,7 +9,7 @@ const posts = [
   },
   {
     title: 'Release Notes 5-24-22',
-    description: 'Example release notes',
+    description: 'Patches the Llama delivers release notes',
     image: '/images/articles/llama-time.jpg',
     link: '/articles/releasenotes-5-24-22',
     categories: ['all','patchnotes'],

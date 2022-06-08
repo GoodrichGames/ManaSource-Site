@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 14px;
+}
+
 html,
 body {
   padding: 0;
@@ -11,9 +15,12 @@ body {
   font-family: Roboto, Helvetica Neue, sans-serif;
   background: url(../../public/images/bg-body.jpg) repeat;
   color: #ffffff;
-  font-size: 14px;
   line-height: 1;
   min-width: 960px;
+}
+
+body {
+  font-size: 1.8rem;
 }
 
 a {
@@ -27,4 +34,16 @@ a {
 
 a:hover {
   color: var($primary-color);
+}
+
+@media (min-width: 767px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1rem;
+  }
 }

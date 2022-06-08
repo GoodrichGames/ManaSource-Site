@@ -33,6 +33,7 @@ export default function Home() {
             turns for low downtime, is easy for new players to learn compared to most other strategy card games, but still
             has depth and longevity for strategists.
           </p>
+          <br />
           <p>
             To learn more, visit the <Link href='/about'>About</Link> or <Link href='/resources'>Resources</Link> pages.
           </p>

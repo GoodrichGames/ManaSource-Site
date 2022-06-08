@@ -8,7 +8,7 @@ export default function ExploreClasses() {
       <ContentItem title='Explore the classes'>
         <p>
           <b>Reagent</b><br />
-          <em>Eleformer</em><br />
+          <em>Eleshaper</em><br />
           Class primary bonus: Mana Reserves. player starts the game with 10 Mana.<br />
           Talent: Convert Mana to Fire, Water, Stone, Electricity, Air<br />
           Playstyle: Aggressive, Spell damage or Control based<br />
@@ -23,7 +23,7 @@ export default function ExploreClasses() {
         <br />
         <p>
           <b>Warden</b><br />
-          <em>Ecoformer</em><br />
+          <em>Ecoshaper</em><br />
           Class primary bonus: Mana Growth.  You may gather up an additional Mana during the end of the round.<br />
           Talent: Convert Mana to Living Aid (Nature or Animal).  Increased control over their own mana flow.<br />
           Playstyle: Aggressive, Attack and Condition based damage, Traps<br />
@@ -40,7 +40,7 @@ export default function ExploreClasses() {
         <br />
         <p>
           <b>Illusionist</b><br />
-          <em>Illusioformer</em><br />
+          <em>Illusoshaper</em><br />
           Class primary bonus: Sleight of Hand.  Your may have their effects applied in an action phase before your opponent’s action.<br />
           Talent: Convert Mana to Illusions.  Control over perception.<br />
           Playstyle: Control, Condition and Threat-based damage<br />
@@ -56,7 +56,7 @@ export default function ExploreClasses() {
         <br />
         <p>
           <b>Knight</b><br />
-          <em>Vigorformer</em><br />
+          <em>Vigorshaper</em><br />
           Class Primary Bonus: Physical Training. Deal 1 extra damage to primary target when using an attack skill.<br />
           Talent: Convert Mana to Adrenaline.  Convert Adrenaline to strength, speed, endurance.<br />
           Playstyle: Straightforward, Attack damage based<br />
@@ -67,18 +67,18 @@ export default function ExploreClasses() {
           mana in the same way that the other nations do, preferring the strength found in
           adrenaline coursing through their veins.  It is not well known that Knights still draw
           and convert mana in this process.  Due to physical training and method, they use it at
-          a more efficient rate than other Formers.
+          a more efficient rate than other Shapers.
         </p>
         <br />
         <p>
           <b>Doctor</b><br />
-          <em>Bioformer</em><br />
+          <em>Bioshaper</em><br />
           Class primary bonus: Life Capture.  Gain a mana when a health target is depleted,
           a pet dies, a minion, or enemy group (PvE) dies.<br />
           Talent: Convert Mana to Healing &amp; Malaise, Convert Health to Mana.  Control over unbound Life force.<br />
           Playstyle: Sustain, Control, Ramp<br />
           <br />
-          An all but lost art.  Once the doctors and medics of the vigorformer empires, many were
+          An all but lost art.  Once the doctors and medics of the vigorshaper empires, many were
           forced into creating human mana sources, plagues, and combat automatons that directly
           opposed their underlying belief in the sanctity of life.  Many chose to take on the
           appearance of death itself instead of serving those who would subvert that.  Their
@@ -90,15 +90,15 @@ export default function ExploreClasses() {
         <br />
         <p>
           <b>Unknown</b><br />
-          <em>Solarformer</em><br />
+          <em>Solarshaper</em><br />
           Talent: Convert Mana to Light, Heat, Purification, Mystery<br />
           Playstyle: Healing, Advantages, Anti-Control<br />
           <br />
-          Primary Solarformers are considered extinct and are unavailable for selection as a
+          Primary Solarshapers are considered extinct and are unavailable for selection as a
           primary class, though their skills may be used as a secondary class.  Much about them
           exists as myth, but they were known to be mediators, teachers, scholars, and leaders.
           Their nation was wiped out roughly 40 years ago, though many of their gems are tightly
-          controlled and used by vigorformer leadership.
+          controlled and used by vigorshaper leadership.
         </p>
       </ContentItem>
     </ContentSection>
