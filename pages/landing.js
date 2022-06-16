@@ -42,7 +42,7 @@ export default function Landing() {
         </ContentItem>
         <EmailSignup ctaText="Start your adventure!"/>
         <br />
-        <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = '/' }}/>
+        <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = prefix + '/' }}/>
       </ContentSection>
     </NoNavTemplate>
   )
