@@ -1,0 +1,19 @@
+@import '../../../styles/scss/colors.scss';
+
+.button {
+  color: $white;
+  background-color: $color_9;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 3px solid $color_9;
+  transition: 0.3s ease;
+  &:hover {
+    color: $primary-dark-color;
+    background-color: $white;
+  }
+}

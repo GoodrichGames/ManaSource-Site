@@ -26,14 +26,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  color: $color_4;
+  color: $primary-color;
   &:hover {
-    color: $color_5;
+    color: $primary-color-highlight;
   }
-}
-
-a:hover {
-  color: var($primary-color);
 }
 
 @media (min-width: 767px) {

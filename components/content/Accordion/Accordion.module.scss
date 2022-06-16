@@ -2,9 +2,18 @@
   &Title {
     border: 1px solid white;
     padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
 
-    :after {
-      background: url(/icons/down-arrow.ico);
+    &:after {
+      background: url(/icons/ExpandMore.svg);
+      background-size: cover;
+      display: inline-flex;
+      content: " ";
+      width: 25px;
+      height: 25px;
     }
   }
   &Content {
@@ -15,8 +24,10 @@
   }
   &.expanded {
     .accordionTitle {
-      :after {
-        background: url(/icons/up-arrow.ico);
+      &:after {
+        content: " ";
+        background: url(/icons/ExpandLess.svg);
+        background-size: cover;
       }
     }
     .accordionContent {

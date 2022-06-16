@@ -11,7 +11,7 @@ const newsUrl = '/news';
 const resourcesUrl = '/resources';
 const contactUsUrl = '/contactus';
 
-const Navigation = () => {
+const Navigation = (props) => {
   const router = useRouter()
   const activeRoute = `/${router.pathname.split('/')[1]}`
 
@@ -25,7 +25,7 @@ const Navigation = () => {
             </a>
           </Link>
           <div className={styles.navigationOverlay}>
-            <ul>
+            {!props.disableLinks && <ul>
               <li key='home' className={activeRoute === homeUrl ? styles.selected : ''}>
                 <Link href={homeUrl}>
                   <a className={styles.menu1}>
@@ -61,7 +61,7 @@ const Navigation = () => {
                   </a>
                 </Link>
               </li>
-            </ul>
+            </ul> }
           </div>
         </div>
       </div>

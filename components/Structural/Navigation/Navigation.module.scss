@@ -58,7 +58,7 @@
         text-transform: uppercase;
         width: 163px;
         &:hover {
-          color: $color_1;
+          color: $white;
         }
       }
       .menu1 {
@@ -94,7 +94,7 @@
     }
     li.selected {
       a {
-        color: $color_1;
+        color: $white;
       }
       .menu1 {
         background-position: 0 -113px;

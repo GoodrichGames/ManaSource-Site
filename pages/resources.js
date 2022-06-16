@@ -5,6 +5,7 @@ import BaseTemplate from './../components/Templates/BaseTemplate';
 import ExportedImage from "next-image-export-optimizer";
 import prefix from '../utils/prefix';
 import ArticleList from './../components/content/ArticleList/ArticleList';
+import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 
 export default function Resources() {
   return (
@@ -16,7 +17,7 @@ export default function Resources() {
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Balance Changes'>
-          <ArticleList category='patchnotes' max='3'/>
+          <ArticleList category='patchnotes' max='3' />
         </ContentItem>
         <ContentItem title='How to Play'>
           <ol>
@@ -35,6 +36,9 @@ export default function Resources() {
           <Link href='/resources/rules'>
             Rules &amp; FAQ
           </Link>
+        </ContentItem>
+        <ContentItem title='Newsletter'>
+          <EmailSignup ctaText="Start your adventure!" />
         </ContentItem>
       </ContentSection>
     </BaseTemplate>

@@ -1,5 +1,6 @@
 
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
+import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 
 const Article = () => {
   return <ArticleTemplate useImage={true}>
@@ -11,7 +12,7 @@ const Article = () => {
             <p>
               Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.
               It
-              focuses around player vs player arena-style combat to battle for control of Mana
+              focuses around arena-style combat to battle for control of Mana
               Wells scattered
               throughout the mysterious world of Kainan. It features five playable primary
               classes,
@@ -25,8 +26,9 @@ const Article = () => {
             <p>Ages: 8+</p>
             <br />
             <p>
-              <b>Actively seeking a publisher! Contact me at <a href="mailto:softwarealchemist@protonmail.com">softwarealchemist@protonmail.com</a>.</b>
+              <b>Actively seeking a publisher! Contact me at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.</b>
             </p>
+            <EmailSignup ctaText="Start your adventure!"/>
           </div>
         </li>
       </ul>

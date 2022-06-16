@@ -7,6 +7,7 @@ import styles from '../components/Templates/BaseTemplate.module.scss'
 import ContentItem from '../components/content/ContentSection/ContentItem'
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import Link from 'next/link'
+import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
           <p>
             To learn more, visit the <Link href='/about'>About</Link> or <Link href='/resources'>Resources</Link> pages.
           </p>
+          <EmailSignup ctaText="Start your adventure!"/>
         </ContentItem>
       </ContentSection>
       <ContentSection>

@@ -7,7 +7,7 @@ export default function ContactUs() {
     <BaseTemplate title="Contact Us" description="About Mana Source and Goodrich Games">
       <ContentSection>
         <ContentItem title='email'>
-          For business inquires contact us at <a href="mailto:softwarealchemist@protonmail.com">softwarealchemist@protonmail.com</a>.
+          For business inquires contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.
         </ContentItem>
       </ContentSection>
     </BaseTemplate>
