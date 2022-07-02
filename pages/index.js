@@ -34,12 +34,12 @@ export default function Home() {
             turns for low downtime, is easy for new players to learn compared to most other strategy card games, but still
             has depth and longevity for strategists.
           </p>
-          <br />
+          <EmailSignup ctaText="Start your adventure!"/>
           <p>
             To learn more, visit the <Link href='/about'>About</Link> or <Link href='/resources'>Resources</Link> pages.
           </p>
-          <EmailSignup ctaText="Start your adventure!"/>
         </ContentItem>
+        <ExportedImage src={prefix + '/images/GG Logo dark bg.png'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Articles'>

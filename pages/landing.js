@@ -15,7 +15,7 @@ export default function Landing() {
         <ExportedImage src={prefix + '/images/featured-game.png'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
       </div>
       <ContentSection>
-      <EmailSignup ctaText="Start your adventure!"/>
+        <EmailSignup ctaText="Start your adventure!" />
         <ContentItem title='About Mana Source'>
           <p>
             Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.
@@ -31,8 +31,12 @@ export default function Landing() {
           <p>Playtime: 20-60 minutes</p>
           <p>Players: 1-4</p>
           <p>Ages: 8+</p>
-          <br />
-          <Container classes={styles.emphasisCtn}>
+        </ContentItem>
+        <Container classes={styles.darkThinBorder}>
+          <ExportedImage src={prefix + '/images/Exploring cavern ruins.png'} alt='Exploring cavern ruins' width="100%" height="59%" layout="responsive" priority={true} />
+        </Container>
+        <ContentItem>
+          <Container classes={styles.emphasisCtn + " " + styles.seventyW + " " + styles.center}>
             - Simultaneous turns for low downtime<br />
             - First of its kind update system using push notifications and sticker modifiers<br />
             - Easy for newcomers, depth for strategists<br />
@@ -40,9 +44,11 @@ export default function Landing() {
             - Story driven<br />
           </Container>
         </ContentItem>
-        <EmailSignup ctaText="Start your adventure!"/>
+        <EmailSignup ctaText="Start your adventure!" />
         <br />
-        <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = prefix + '/' }}/>
+        <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = prefix + '/' }} />
+        <ExportedImage src={prefix + '/images/GG Logo dark bg.png'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
+        <br />
       </ContentSection>
     </NoNavTemplate>
   )

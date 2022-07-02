@@ -145,6 +145,10 @@
   width: 50%;
 }
 
+.seventyW {
+  width: 70%;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -152,9 +156,18 @@
 }
 
 .emphasisCtn {
-  margin: 0 20px;
   padding: 20px;
   border: 3px solid $color_5;
   border-radius: 5px;
   font-size: 16px;
+}
+
+.darkThinBorder {
+  border: 2px solid $color_9;
+  border-radius: 2px;
+}
+
+.lightThinBorder {
+  border: 2px solid $color_7;
+  border-radius: 2px;
 }
