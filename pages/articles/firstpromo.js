@@ -8,23 +8,11 @@ const Article = () => {
     <div>
       <ul>
         <li>
-          <h3>About Mana Source</h3>
+          <h3>New Teaser Trailer!</h3>
           <div>
             <p>
-              Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.
-              It
-              focuses around arena-style combat to battle for control of Mana
-              Wells scattered
-              throughout the mysterious world of Kainan. It features five playable primary
-              classes,
-              one exclusively secondary class, and over 300 unique cards in the release set.
+              Today we released a new teaser trailer and I&apos;m pretty excited with how it turned out.  You can check it out below!
             </p>
-            <p>Experiment, strategize, and mindgame to reduce your opponent&apos;s health to zero and
-              win!</p>
-            <br />
-            <p>Playtime: 20-60 minutes</p>
-            <p>Players: 1-4</p>
-            <p>Ages: 8+</p>
             <br />
             <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
             <br />

@@ -1,5 +1,13 @@
 const posts = [
   {
+    title: 'New Teaser Trailer!',
+    description: 'Mana Source - Teaser Trailer',
+    image: '/images/cave.png',
+    link: '/articles/firstpromo',
+    categories: ['all','devnotes','announcements'],
+    date: 'Nov 29, 2022'
+  },
+  {
     title: 'Introduction',
     description: 'What is Mana Source?',
     image: '/images/cave.png',

@@ -21,7 +21,8 @@
     width: 540px;
     font-size: 5rem;
     font-family: 'Arkhip';
-    color: $color_7;
+    color: $white;
+    text-shadow: 3px 3px $logo_shadow;
     padding-top: 4rem;
   }
   ul {

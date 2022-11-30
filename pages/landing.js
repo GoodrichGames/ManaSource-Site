@@ -7,6 +7,7 @@ import prefix from '../utils/prefix';
 import NoNavTemplate from './../components/Templates/NoNavTemplate';
 import Button from "../components/content/Button/Button";
 import Container from './../components/content/Container/Container';
+import YoutubeEmbed from "../components/content/YoutubeEmbed/YoutubeEmbed";
 
 export default function Landing() {
   return (
@@ -16,6 +17,8 @@ export default function Landing() {
       </div>
       <ContentSection>
         <EmailSignup ctaText="Start your adventure!" />
+        <YoutubeEmbed videoId="h9tHSCE1T84" width="960" height="540" isAutoplay={false} />
+        <br />
         <ContentItem title='About Mana Source'>
           <p>
             Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.

@@ -8,6 +8,7 @@ import ContentItem from '../components/content/ContentSection/ContentItem'
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import Link from 'next/link'
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
+import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
             </em>
           </p>
           <br />
+          <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
           <p>
             Mana Source is a combat card game of wits and resource management that can be played cooperatively or competitively.
           </p>
