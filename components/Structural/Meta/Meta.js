@@ -4,7 +4,7 @@ import Head from 'next/head'
 import meta from '../../../metadata/pagemeta'
 
 const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
-  const { baseUri = '' } = meta
+  const baseUri = 'https://www.manasourcegame.com'
   const router = useRouter()
   const link = baseUri + router.pathname
 

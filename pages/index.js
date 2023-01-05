@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <BaseLayout title={meta.name} description={meta.description} >
       <div className={styles.heroImage}>
-        <ExportedImage src={prefix + '/images/featured-game.png'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
+        <ExportedImage src={prefix + '/images/featured-game.webp'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
       </div>
       <ContentSection>
         <ContentItem>
@@ -41,7 +41,7 @@ export default function Home() {
             To learn more, visit the <Link href='/about'>About</Link> or <Link href='/resources'>Resources</Link> pages.
           </p>
         </ContentItem>
-        <ExportedImage src={prefix + '/images/GG Logo dark bg.png'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
+        <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Articles'>

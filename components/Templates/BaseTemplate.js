@@ -20,7 +20,7 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle }) 
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <p>
-          Mana Source © Goodrich Games 2022. All rights reserved.
+          Mana Source © Goodrich Games 2023. All rights reserved.
         </p>
       </div>
     </footer>

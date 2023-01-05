@@ -11,7 +11,7 @@ export default function ContactUs() {
         <ContentItem title='email'>
           For business inquires contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.
         </ContentItem>
-        <ExportedImage src={prefix + '/images/GG Logo dark bg.png'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
+        <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
       </ContentSection>
     </BaseTemplate>
   )

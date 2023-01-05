@@ -37,7 +37,7 @@ export default function About() {
           <br />
         </ContentItem>
         <Container classes={styles.darkThinBorder}>
-          <ExportedImage src={prefix + '/images/Exploring cavern ruins.png'} alt='Exploring cavern ruins' width="100%" height="59%" layout="responsive" priority={true} />
+          <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
         </Container>
         <EmailSignup ctaText="Start your adventure!" />
         <ContentItem>
@@ -68,13 +68,13 @@ export default function About() {
             Former professional support and jungler for Team C in the MOBA Infinite Crisis, Masters
             in Overwatch pre-OWL, and Diamond 1 in League of Legends in S3.
           </p>
-          <ExportedImage src={prefix + '/images/GG Logo dark bg.png'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
+          <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
         </ContentItem>
       </ContentSection>
       <ContentSection>
         <ContentItem title='Artist Credits'>
           <p><em>Mana Well in Cavern - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
-          <p><em>Exploring Cavern Ruins - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
+          <p><em>Exploring-cavern-ruins - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
         </ContentItem>
       </ContentSection>
       <ContentSection>

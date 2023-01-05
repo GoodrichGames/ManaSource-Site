@@ -29,7 +29,7 @@ export default function Resources() {
           </ol>
           <br />
           <div style={{ position: 'relative', height: '22rem' }}>
-            <ExportedImage src={prefix + '/images/Recharge Zone explanation.png'} alt='Image of how cards move down the recharge zone when played' layout='fill' objectFit='contain' priority={true} />
+            <ExportedImage src={prefix + '/images/Recharge Zone explanation.webp'} alt='Image of how cards move down the recharge zone when played' layout='fill' objectFit='contain' priority={true} />
           </div>
         </ContentItem>
         <ContentItem title='Rules'>

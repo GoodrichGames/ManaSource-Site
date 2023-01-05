@@ -13,7 +13,7 @@ export default function Landing() {
   return (
     <NoNavTemplate>
       <div className={styles.heroImage}>
-        <ExportedImage src={prefix + '/images/featured-game.png'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
+        <ExportedImage src={prefix + '/images/featured-game.webp'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
       </div>
       <ContentSection>
         <EmailSignup ctaText="Start your adventure!" />
@@ -36,7 +36,7 @@ export default function Landing() {
           <p>Ages: 8+</p>
         </ContentItem>
         <Container classes={styles.darkThinBorder}>
-          <ExportedImage src={prefix + '/images/Exploring cavern ruins.png'} alt='Exploring cavern ruins' width="100%" height="59%" layout="responsive" priority={true} />
+          <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
         </Container>
         <ContentItem>
           <Container classes={styles.emphasisCtn + " " + styles.seventyW + " " + styles.center}>
@@ -50,7 +50,7 @@ export default function Landing() {
         <EmailSignup ctaText="Start your adventure!" />
         <br />
         <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = prefix + '/' }} />
-        <ExportedImage src={prefix + '/images/GG Logo dark bg.png'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
+        <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
         <br />
       </ContentSection>
     </NoNavTemplate>
