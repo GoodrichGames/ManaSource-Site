@@ -47,6 +47,9 @@ export default function Landing() {
             - Story driven<br />
           </Container>
         </ContentItem>
+        <ContentItem>
+          Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.  Other Social Media is coming soon.
+        </ContentItem>
         <EmailSignup ctaText="Start your adventure!" />
         <br />
         <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = prefix + '/' }} />

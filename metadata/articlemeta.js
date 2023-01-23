@@ -1,5 +1,13 @@
 const posts = [
   {
+    title: 'January 2023 Update',
+    description: 'Start of 2023 Newsletter',
+    image: '/images/timbatia-small.webp',
+    link: '/articles/jan2023update',
+    categories: ['all','devnotes','announcements'],
+    date: 'Jan 22, 2023'
+  },
+  {
     title: 'New Teaser Trailer!',
     description: 'Mana Source - Teaser Trailer',
     image: '/images/cave.webp',

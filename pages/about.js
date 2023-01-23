@@ -74,12 +74,16 @@ export default function About() {
       <ContentSection>
         <ContentItem title='Artist Credits'>
           <p><em>Mana Well in Cavern - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
-          <p><em>Exploring-cavern-ruins - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
+          <p><em>Exploring Cavern Ruins - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
+          <p><em>Timbatia in Moonlight - <a href='https://nelediel.com/' target='_blank' rel='noreferrer'>Nele Diel</a></em></p>
         </ContentItem>
       </ContentSection>
       <ContentSection>
         <ContentItem title='Be Part of Our Community!'>
           <EmailSignup ctaText="Start your adventure!" />
+          <p>
+            Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.  Other Social Media is coming soon.
+          </p><br />
           <p>
             If you have suggestions on balance changes or other improvements, please
             visit the <a href="https://github.com/GoodrichGames/ManaSource-Site/issues">Mana Source
