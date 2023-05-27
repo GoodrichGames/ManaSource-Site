@@ -1,5 +1,21 @@
 const posts = [
   {
+    title: 'March / April 2023 Update',
+    description: '',
+    image: '/images/timbatia-small.webp',
+    link: '/articles/mar2023update',
+    categories: ['all','devnotes','announcements'],
+    date: 'Jan 22, 2023'
+  },
+  {
+    title: 'February 2023 Update',
+    description: '',
+    image: '/images/timbatia-small.webp',
+    link: '/articles/feb2023update',
+    categories: ['all','devnotes','announcements'],
+    date: 'Jan 22, 2023'
+  },
+  {
     title: 'January 2023 Update',
     description: 'Start of 2023 Newsletter',
     image: '/images/timbatia-small.webp',
