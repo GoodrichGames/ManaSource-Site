@@ -13,7 +13,7 @@ export default function About() {
       <ContentSection>
         <ContentItem title='About Mana Source'>
           <p>
-            Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.
+            Mana Source is an upcoming adventure card game for 1-4 players.
             It focuses around arena-style combat to battle for control of Mana
             Wells scattered
             throughout the mysterious world of Kainan. It features five playable primary
@@ -33,7 +33,7 @@ export default function About() {
           <br />
           <p>Playtime: 20-60 minutes</p>
           <p>Players: 1-4</p>
-          <p>Ages: 8+</p>
+          <p>Ages: 13+</p>
           <br />
         </ContentItem>
         <Container classes={styles.darkThinBorder}>

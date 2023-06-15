@@ -21,7 +21,7 @@ export default function Landing() {
         <br />
         <ContentItem title='About Mana Source'>
           <p>
-            Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.
+            Mana Source is an upcoming adventure card game for 1-4 players.
             It focuses around arena-style combat to battle for control of Mana
             Wells scattered
             throughout the mysterious world of Kainan. It features five playable primary
@@ -33,11 +33,8 @@ export default function Landing() {
           <br />
           <p>Playtime: 20-60 minutes</p>
           <p>Players: 1-4</p>
-          <p>Ages: 8+</p>
+          <p>Ages: 13+</p>
         </ContentItem>
-        <Container classes={styles.darkThinBorder}>
-          <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
-        </Container>
         <ContentItem>
           <Container classes={styles.emphasisCtn + " " + styles.seventyW + " " + styles.center}>
             - Simultaneous turns for low downtime<br />
@@ -47,8 +44,12 @@ export default function Landing() {
             - Story driven<br />
           </Container>
         </ContentItem>
+        <EmailSignup ctaText="Start your adventure!" />
+        <Container classes={styles.darkThinBorder}>
+          <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
+        </Container>
         <ContentItem>
-          Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.  Other Social Media is coming soon.
+          Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions. <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a>. <br />
         </ContentItem>
         <EmailSignup ctaText="Start your adventure!" />
         <br />

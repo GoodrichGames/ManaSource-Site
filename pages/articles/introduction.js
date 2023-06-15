@@ -24,7 +24,7 @@ const Article = () => {
             <br />
             <p>Playtime: 20-60 minutes</p>
             <p>Players: 1-4</p>
-            <p>Ages: 8+</p>
+            <p>Ages: 13+</p>
             <br />
             <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
             <br />

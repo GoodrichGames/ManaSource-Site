@@ -32,6 +32,18 @@ a {
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.vAlignTop {
+  object-position: 0 10%;
+}
+
 @media (min-width: 767px) {
   body {
     font-size: 1.2rem;

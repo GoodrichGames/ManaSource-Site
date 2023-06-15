@@ -28,7 +28,7 @@ export default function Home() {
           <br />
           <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
           <p>
-            Mana Source is a combat card game of wits and resource management that can be played cooperatively or competitively.
+            Mana Source is an adventure card game of wits and resource management that can be played cooperatively or competitively.
           </p>
           <p>
             Players choose a primary and secondary class, construct a hand of 9 cards, and then utilize attack, talent,

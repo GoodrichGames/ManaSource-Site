@@ -8,9 +8,10 @@
   width: 100%;
   position: relative;
   height: 300px;
+  margin-bottom: 10px;
 
   img {
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 

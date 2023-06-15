@@ -7,7 +7,7 @@ const ArticleItem = ({ article }) => {
   return <Link href={article.link}>
     <a className={styles.articleLink}>
       <div className={styles.imageContainer}>
-        <ExportedImage src={prefix + article.image} alt={article.title} layout="fill" />
+        <ExportedImage src={prefix + article.image} alt={article.title} layout="fill" className={article.imageVAlign} />
       </div>
       <div className={styles.articleContent}>
         {article.date && <date>{article.date}</date>}
