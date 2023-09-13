@@ -13,45 +13,42 @@ export default function About() {
       <ContentSection>
         <ContentItem title='About Mana Source'>
           <p>
-            Mana Source is an upcoming adventure card game for 1-4 players.
+            Mana Source is an upcoming adventure card game.
             It focuses around arena-style combat to battle for control of Mana
             Wells scattered
             throughout the mysterious world of Kainan. It features five playable primary
             classes,
             one exclusively secondary class, and over 300 unique cards in the release set.
-          </p>
+          </p><br />
           <p>Experiment, strategize, and mindgame to reduce your opponent&apos;s health to zero and
             win!</p>
           <br />
-          <Container classes={styles.emphasisCtn + " " + styles.seventyW + " " + styles.center}>
+          <Container classes={styles.flex}>
+          <Container classes={styles.emphasisCtn + " " + styles.fourtyW + " " + styles.inline + " " + styles.mR10 + " " + styles.minHeight250 + " " + styles.vAlignTop}>
+            <u>Game Modes</u>
+            <p>Cooperative Campaign - 1-4 players</p>
+            <p>Constructed - 1v1, 1v2, 2v2</p>
+            <p>Draft - 1v1</p>
+            <p>Limited - 1v1</p>
+          </Container>
+          <Container classes={styles.emphasisCtn + " " + styles.fourtyW + " " + styles.inline + " " + styles.minHeight250 + " " + styles.vAlignTop}>
             - Simultaneous turns for low downtime<br />
             - First of its kind update system using push notifications and sticker modifiers<br />
             - Easy for newcomers, depth for strategists<br />
             - Minimal Randomness, Maximum Options<br />
             - Story driven<br />
-          </Container>
-          <br />
-          <p>Playtime: 20-60 minutes</p>
-          <p>Players: 1-4</p>
-          <p>Ages: 13+</p>
-          <br />
+          </Container></Container><br />
+          <Container classes={styles.darkThinBorder + " " + styles.seventyW + " " + styles.center}>
+              <ExportedImage src={prefix + '/images/Game-attributes.webp'} alt='1 - 4 players.  60 - 180 minutes Cooperative.  20 - 30 minutes Competitve.  Ages 13 and up.' width="100%" height="48%" layout="responsive" priority={true} />
+            </Container>
         </ContentItem>
+        <EmailSignup ctaText="Start your adventure!" />
         <Container classes={styles.darkThinBorder}>
           <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
         </Container>
-        <EmailSignup ctaText="Start your adventure!" />
-        <ContentItem>
-          <u>Game Modes</u>
-          <p>Cooperative Campaign - 1-4 players</p>
-          <p>Constructed - 1v1, 1v2, 2v2</p>
-          <p>Draft - 1v1</p>
-          <p>Limited - 1v1</p>
-          <br />
-          <p>
-            <b>Actively seeking a publisher! Contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.</b>
-          </p>
-        </ContentItem>
+        <br />
         <ContentItem title='About Goodrich Games'>
+          <ExportedImage src={prefix + '/images/PaulProfile.webp'} alt='Paul Profile picture' width="200%" height="200%" priority={true} />
           <p>Paul Goodrich</p>
           <p className={styles.mb1}><i>Principal Owner / Lead Designer</i></p>
           <p className={styles.mb1}>
@@ -68,7 +65,6 @@ export default function About() {
             Former professional support and jungler for Team C in the MOBA Infinite Crisis, Masters
             in Overwatch pre-OWL, and Diamond 1 in League of Legends in S3.
           </p>
-          <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
         </ContentItem>
       </ContentSection>
       <ContentSection>

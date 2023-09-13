@@ -23,14 +23,14 @@ export default function Resources() {
           <ol>
             <li>1. Each player selects 1 card and plays it facedown in the center area.</li>
             <li>2. Players simultaneously reveal the cards, pay the card cost, resolve the action, and resolve other active effects.</li>
-            <li>3. Cards and effects in the Recharge zone move one space down.</li>
-            <li>4. Played cards enter the Recharge zone to indicate that it cannot be used again until sufficient rounds have passed.</li>
+            <li>3. Played cards enter the Recharge zone to indicate that it cannot be used again until sufficient rounds have passed.</li>
+            <li>4. Cards and effects in the Recharge zone move one space down.</li>
             <li>5. Play continues until one player/team is out of health, the other player/team wins!</li>
           </ol>
           <br />
-          {/* <div style={{ position: 'relative', height: '22rem' }}>
-            <ExportedImage src={prefix + '/images/Recharge Zone explanation.webp'} alt='Image of how cards move down the recharge zone when played' layout='fill' objectFit='contain' priority={true} />
-          </div> */}
+          <div style={{ position: 'relative', height: '22rem' }}>
+            <ExportedImage src={prefix + '/images/HowToPlay.webp'} alt='Image of how cards move down the recharge zone when played' layout='fill' objectFit='contain' priority={true} />
+          </div>
         </ContentItem>
         <ContentItem title='Rules'>
           <Link href='/resources/rules'>

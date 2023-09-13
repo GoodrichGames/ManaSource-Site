@@ -35,7 +35,7 @@
   }
   section {
     background: url(../../public/images/border.gif) repeat-x top left;
-    margin: 0 10px;
+    // margin: 0 10px;
     padding: 3px 0 0;
     position: relative;
     display: block;
@@ -141,6 +141,23 @@
   }
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.mR10 {
+  margin-right: 10px;
+}
+
+.vAlignTop {
+  vertical-align: top;
+}
+
+.fourtyW {
+  width: 40%;
+}
+
 .fiftyW {
   width: 50%;
 }
@@ -149,10 +166,22 @@
   width: 70%;
 }
 
+.minHeight250 {
+  min-height: 250px;
+}
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.tCenter {
+  text-align: center;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .emphasisCtn {

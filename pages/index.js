@@ -27,6 +27,7 @@ export default function Home() {
           </p>
           <br />
           <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
+          <br/>
           <p>
             Mana Source is an adventure card game of wits and resource management that can be played cooperatively or competitively.
           </p>
@@ -35,13 +36,12 @@ export default function Home() {
             and unique nation card types to reduce their opponent&apos;s health to zero and win!  Mana Source utilizes simultaneous
             turns for low downtime, is easy for new players to learn compared to most other strategy card games, but still
             has depth and longevity for strategists.
-          </p>
-          <EmailSignup ctaText="Start your adventure!"/>
+          </p><br />
           <p>
             To learn more, visit the <Link href='/about'>About</Link> or <Link href='/resources'>Resources</Link> pages.
           </p>
+          <EmailSignup ctaText="Start your adventure!"/>
         </ContentItem>
-        <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Articles'>

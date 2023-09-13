@@ -1,5 +1,21 @@
 const posts = [
   {
+    title: 'July / August 2023 Update',
+    description: '',
+    image: '/images/articles/road-1072823_1920.webp',
+    link: '/articles/aug2023update',
+    categories: ['all','devnotes','announcements'],
+    date: 'Sept 12, 2023'
+  },
+  {
+    title: 'May / June 2023 Update',
+    description: '',
+    image: '/images/articles/sunset-3325080_1920.webp',
+    link: '/articles/june2023update',
+    categories: ['all','devnotes','announcements'],
+    date: 'June 27, 2023'
+  },
+  {
     title: 'March / April 2023 Update',
     description: '',
     image: '/images/articles/planet-1702788_1280.webp',
@@ -46,7 +62,7 @@ const posts = [
     image: '/images/articles/llama-time.webp',
     imageVAlign: 'vAlignTop',
     link: '/articles/releasenotes-5-24-22',
-    categories: ['all','patchnotes'],
+    categories: [],
     date: 'May 24, 2022'
   }
 ]
