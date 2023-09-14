@@ -41,7 +41,7 @@ const Article = () => {
             <ContentSection>
               <ContentItem>
                 <ExportedImage src={prefix + '/images/hummingbear-small.webp'} alt='Hummingbear creature' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
-                <Container classes={styles.seventyW + " " + styles.tCenter}><em>The Hummingbear - Nele Diel</em>
+                <Container classes={styles.fullW + " " + styles.tCenter}><em>The Hummingbear - Nele Diel</em>
                   
                 </Container>
                 <br />
@@ -55,7 +55,7 @@ const Article = () => {
                 <br /><br />
                 Hummingbear sightings in the modern era are rare.  Their affinity for locations with natural camouflage such as moss and hanging ivy typically places them far away from human-occupied areas.  The availability of these areas shrink by the day.  Even more concerning is the rise of lawlessness since the Kydarian occupation of Baile Tigherna.  The hummingbear&apos;s beautiful plumage and impressive wings are increasingly sought after by poachers for use in fashion and suspected military applications.  Thus, we humbly ask for your valuable support in preserving this elegant and magnificent creature.  With your help, we can keep them humming for a long time to come.
                 <br /><br />
-                Tax-deductible* donations can be made to the <strong><span style={{color:'green'}}>Save</span> the <span style={{color:'burntorange'}}>Hummingbears</span></strong> foundation.
+                Tax-deductible* donations can be made to the <strong><span style={{color:'green'}}>Save</span> the <span style={{color:'darkorange'}}>Hummingbears</span></strong> foundation.
                 <br /><br />
                 article by Saava Merryfield<br />
                 <em>Baile Tigherna Zoological Institute<br /></em>
