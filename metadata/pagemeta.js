@@ -1,7 +1,6 @@
 const metaDetails = {
   name: 'Mana Source Game',
-  description: 'Mana source is an arena-style card game where players battle for control of Mana Wells ' +
-    'scattered throughout the mysterious fantasy world of Kainan.',
+  description: 'Mana source is an adventure board game focuses around arena-style combat you&apos;ll need to survive in the mysterious fantasy world of Kainan.',
   shareImage: '/share.webp',
   
   pages: [{

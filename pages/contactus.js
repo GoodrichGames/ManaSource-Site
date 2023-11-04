@@ -11,6 +11,11 @@ export default function ContactUs() {
         <ContentItem title='email'>
           For business inquires contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.
         </ContentItem>
+        <ContentItem title='discord'>
+          <p>
+            Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with us directly!
+          </p>
+        </ContentItem>
       </ContentSection>
     </BaseTemplate>
   )

@@ -2,6 +2,7 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import YoutubeEmbed from './../../components/content/YoutubeEmbed/YoutubeEmbed';
+import Link from 'next/link';
 
 const Article = () => {
   return <ArticleTemplate useImage={true}>
@@ -11,26 +12,17 @@ const Article = () => {
           <h3>About Mana Source</h3>
           <div>
             <p>
-              Mana Source is an upcoming competitive living card game (LCG) for 1-4 players.
-              It
-              focuses around arena-style combat to battle for control of Mana
-              Wells scattered
-              throughout the mysterious world of Kainan. It features five playable primary
-              classes,
-              one exclusively secondary class, and over 300 unique cards in the release set.
-            </p>
+              Mana Source is an upcoming adventure board game for 1-4 players.
+              It focuses around arena-style combat you&apos;ll need to survive in the mysterious fantasy world of Kainan. It features five playable primary
+              classes, one exclusively secondary class, and over 300 unique cards in the release set.
+            </p><br />
             <p>Experiment, strategize, and mindgame to reduce your opponent&apos;s health to zero and
               win!</p>
             <br />
-            <p>Playtime: 20-60 minutes</p>
-            <p>Players: 1-4</p>
-            <p>Ages: 13+</p>
-            <br />
+            Visit our <Link href='/about'>about</Link> page to learn more.
+            <br /><br />
             <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
             <br />
-            <p>
-              <b>Actively seeking a publisher! Contact me at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.</b>
-            </p>
             <EmailSignup ctaText="Start your adventure!"/>
           </div>
         </li>

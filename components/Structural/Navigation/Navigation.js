@@ -20,9 +20,11 @@ const Navigation = (props) => {
       <div className={styles.navigation}>
         <div className={styles.navigationTop}>
           <Link href="/">
-            <a className={styles.logo}>
-              Mana Source
-            </a>
+            <h1>
+              <a className={styles.logo}>
+                Mana Source
+              </a>
+            </h1>
           </Link>
           <div className={styles.navigationOverlay}>
             {!props.disableLinks && <ul>
@@ -61,7 +63,7 @@ const Navigation = (props) => {
                   </a>
                 </Link>
               </li>
-            </ul> }
+            </ul>}
           </div>
         </div>
       </div>

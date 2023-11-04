@@ -13,6 +13,13 @@
 }
 
 @font-face {
+  font-family: 'Philosopher';
+  src: local(''),
+      url(../fonts/Philosopher-Regular.woff) format('woff'),
+      url(../fonts/Philosopher-Regular.ttf) format('truetype'),
+}
+
+@font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;

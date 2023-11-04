@@ -11,13 +11,8 @@ export default function Resources() {
   return (
     <BaseTemplate title="Resources" description="Game Resources">
       <ContentSection>
-        {/* <ContentItem title='Watch it Played'>
-          Coming soon!
-        </ContentItem> */}
-      </ContentSection>
-      <ContentSection>
-        <ContentItem title='Latest Balance Changes'>
-          <ArticleList category='patchnotes' max='3' />
+        <ContentItem title='Watch it Played'>
+          Coming Q4 2023!
         </ContentItem>
         <ContentItem title='How to Play'>
           <ol>
@@ -39,6 +34,10 @@ export default function Resources() {
         </ContentItem>
         <ContentItem title='Newsletter'>
           <EmailSignup ctaText="Start your adventure!" />
+        </ContentItem>
+        <ContentItem title='Latest Balance Changes'>
+          Come back here when the game launches!
+          <ArticleList category='patchnotes' max='3' />
         </ContentItem>
       </ContentSection>
     </BaseTemplate>

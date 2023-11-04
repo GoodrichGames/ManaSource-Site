@@ -31,7 +31,7 @@ const Article = () => {
               - Scenarios 1, 2, 3, 4, 7, 18 out of 21~ are playtest complete and fairly stable.  5 will require some minor changes to make it stable.<br />
 
               - Facebook page setup. Follow it and share with friends at will!  <a href="https://www.facebook.com/Mana-Source-102398542746103">Official Facebook page</a>.  The newsletter is still the fastest way to receive updates.
-            </p>
+            </p><br />
             <h4>February</h4>
             <p>
               Goals for this month<br />

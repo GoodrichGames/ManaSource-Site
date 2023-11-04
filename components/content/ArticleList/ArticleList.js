@@ -5,13 +5,13 @@ import ArticleListItem from './ArticleItem'
 const ArticleList = ({ category, max }) => {
   const articleList = articles.filter(p => p.categories.includes(category)).slice(0, max);
 
-  return <section>
+  return <div>
     {articleList.map(article =>
       <div key={article.title} className={styles.article}>
           <ArticleListItem article={article} />
       </div>
     )}
-  </section>
+  </div>
 }
 
 export default ArticleList

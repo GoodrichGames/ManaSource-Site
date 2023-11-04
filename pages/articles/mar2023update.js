@@ -28,7 +28,7 @@ const Article = () => {
               - Playtesting for Scenario 3, 6, new components, and NPC characters.  Early feedback on scenario 6 was very good and possibly the best writing I&apos;ve done so far.
               <br />
               - Scenarios 1, 2, 3, 4, 5, 6, 7, 18 out of 21~ are playtest complete and fairly stable.
-            </p>
+            </p><br />
             <h4>April</h4>
             <b>Goals for this month</b><br />
             - Schedule additional publisher meeting(s).  This is my top priority for this month.  If I wait too long, I may potentially write too much that may have to later majorly change.
@@ -72,10 +72,9 @@ const Article = () => {
 
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
-              Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a> <br />
+              Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a>. <br />
             </p>
-            Join the official Discord to chat with the community or ask questions.
-<br />
+            <br />
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>

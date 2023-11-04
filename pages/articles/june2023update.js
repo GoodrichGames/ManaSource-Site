@@ -11,7 +11,7 @@ const Article = () => {
           <h3>May / June Update</h3>
           <div>
             Lot of good work came from this two month period but I also made a major mistake when it came to the time estimate of Scenario 8.  It&apos;s a good scenario now that it&apos;s complete, but it took much longer to put together than I originally planned for.  I&apos;ll talk about further it in the design corner below if you&apos;re interested.
-            <br />
+            <br /><br />
             <h4>On Publishing</h4>
             I am leaning heavily toward a Kickstarter at this point in time rather than finding a publisher.  The primary reason is to retain creative control over the campaign.  I&apos;ve been working on this now for over 6 years and it would be difficult to turn that over to someone else.
             <br /><br />
@@ -37,6 +37,7 @@ const Article = () => {
             <br />
             New round reference card design.  Featuring art by the talented Nele Diel of course.<br /><br/>
             <ExportedImage src={prefix + '/images/cards/Round-Reference-Card.webp'} alt='Round reference steps' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
+            <br />
             <h4>July / August Goals</h4>
             - Complete development for Scenario 9, 10, 11.
             <br />
@@ -49,7 +50,7 @@ const Article = () => {
             Thank you for your support! <br />
             <br />
             Until next time, <br />
-            Paul Goodrich <br />
+            Paul Goodrich <br /><br />
             <h4>Design Corner</h4>
             This section is a behind the scenes look at some aspect of the design or release process that is on my mind.  Hopefully this helps a future designer someday.  Today&apos;s topic is Estimations.
             <br /><br />
@@ -72,7 +73,7 @@ const Article = () => {
             4. What you don&apos;t know you don&apos;t know.  The most dangerous category as it is not captured in an estimate at all.  The way you plan for this category is reasonable additional buffer time beyond the tasked estimate.  This may range from 20-100% buffer time depending on your familiarity with the task and its complexity.  This category should become smaller over time as you gain more experience in the tasks and estimations.
             <br /><br />
             Example: Necessary narrative clues and exposition, puzzles, and a growing party size contribute to longer narratives per location than expected.  You write twice as much as normal for scenario 8.
-            <br />
+            <br /><br />
             <h4>Community</h4>
             Feel free to email us directly at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me.</a>
 

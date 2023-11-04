@@ -79,7 +79,7 @@ const Article = () => {
             Thank you for your support!<br />
             <br />
             Until next time,<br />
-            Paul Goodrich<br />
+            Paul Goodrich<br /><br />
             <h4>Design Corner</h4>
             This section is a behind the scenes look at some aspect of the design or release process that is on my mind.  Hopefully this helps a future designer someday.  Today&apos;s topic is designing for an audience.
             <br /><br />
