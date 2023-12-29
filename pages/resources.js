@@ -12,7 +12,7 @@ export default function Resources() {
     <BaseTemplate title="Resources" description="Game Resources">
       <ContentSection>
         <ContentItem title='Watch it Played'>
-          Coming Q4 2023!
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/jnfqC_cbxvg?si=A45uegKEV9bfFeHT" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </ContentItem>
         <ContentItem title='How to Play'>
           <ol>
