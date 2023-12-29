@@ -59,7 +59,8 @@ export default function Home() {
       </ContentSection>
       <ContentSection>
         <ContentItem title='Latest Articles'>
-          <ArticleList category="all" />
+          <ArticleList category="all" max="5" />
+          <Link href="/news">View All</Link>
         </ContentItem>
       </ContentSection>
     </BaseLayout>

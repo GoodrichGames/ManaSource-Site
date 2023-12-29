@@ -1,5 +1,13 @@
 const posts = [
   {
+    title: 'EOY 2023 Update',
+    description: '',
+    image: '/images/articles/nextImageExportOptimizer/purpleflowers-opt-1920.WEBP',
+    link: '/articles/eoy2023update',
+    categories: ['all','devnotes','announcements'],
+    date: 'Dec 29, 2023'
+  },
+  {
     title: 'July / August 2023 Update',
     description: '',
     image: '/images/articles/road-1072823_1920.webp',
