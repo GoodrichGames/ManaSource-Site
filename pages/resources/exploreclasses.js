@@ -11,7 +11,7 @@ export default function ExploreClasses() {
           <em>Eleshaper</em><br />
           Class primary bonus: Mana Reserves. player starts the game with 10 Mana.<br />
           Talent: Convert Mana to Fire, Water, Stone, Electricity, Air<br />
-          Playstyle: Aggressive, Spell damage or Control based<br />
+          Playstyle: Aggressive, Talent damage or Control based<br />
           <br />
           Historically, Reagents have lived as traveling merchants to other nations.  They are long
           sought after for their terraforming, forging, water duct, and farming abilities.  More recently,
@@ -78,14 +78,13 @@ export default function ExploreClasses() {
           Talent: Convert Mana to Healing &amp; Malaise, Convert Health to Mana.  Control over unbound Life force.<br />
           Playstyle: Sustain, Control, Ramp<br />
           <br />
-          An all but lost art.  Once the doctors and medics of the vigorshaper empires, many were
+          An all but lost art.  Once the doctors and medics of the Knight empires, many were
           forced into creating human mana sources, plagues, and combat automatons that directly
           opposed their underlying belief in the sanctity of life.  Many chose to take on the
           appearance of death itself instead of serving those who would subvert that.  Their
           automatons still roam the land searching for ways to fulfill their defined purpose,
           unbeholden to any master but the one who created them.  They have dwindled much in number,
-          and until recently, only the automatons evidence that they ever existed at all.  This
-          all changed when a young Warden found their underground vault...
+          and until recently, only the automatons evidence that they ever existed at all.
         </p>
         <br />
         <p>
@@ -98,7 +97,7 @@ export default function ExploreClasses() {
           primary class, though their skills may be used as a secondary class.  Much about them
           exists as myth, but they were known to be mediators, teachers, scholars, and leaders.
           Their nation was wiped out roughly 40 years ago, though many of their gems are tightly
-          controlled and used by vigorshaper leadership.
+          controlled and used by Knight leadership.
         </p>
       </ContentItem>
     </ContentSection>

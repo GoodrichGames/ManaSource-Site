@@ -4,8 +4,13 @@ import ContentSection from '../components/content/ContentSection/ContentSection'
 import ContentItem from '../components/content/ContentSection/ContentItem';
 import Container from './../components/content/Container/Container';
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
 import prefix from '../utils/prefix';
+import cavernRuins from '../public/images/Exploring-cavern-ruins.png'
+import agesPic from '../public/icons/ages.png'
+import hourglassPic from '../public/icons/hourglass.png'
+import playersPic from '../public/icons/players.png'
+import paulPic from '../public/images/PaulProfile.JPG'
 
 export default function About() {
   return (
@@ -13,7 +18,19 @@ export default function About() {
       <ContentSection>
         <ContentItem title='About Mana Source'>
           <Container classes={styles.darkThinBorder}>
-            <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
+            <Image
+              src={cavernRuins}
+              alt='Exploring-cavern-ruins'
+              width={0}
+              height={0}
+              priority={true}
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "100%",
+                height: "auto"
+              }} />
           </Container>
           <br />
           <h4>A discovery at an ancient vault has the potential to upend the nations...</h4>
@@ -27,7 +44,18 @@ export default function About() {
             win!</p>
           <br />
           <Container classes={styles.darkThinBorder + " " + styles.seventyW + " " + styles.center}>
-            <ExportedImage src={prefix + '/images/Game-attributes.webp'} alt='1 - 4 players.  60 - 180 minutes Cooperative.  20 - 30 minutes Competitve.  Ages 13 and up.' width="100%" height="43%" layout="responsive" priority={true} />
+            <Image
+              src={agesPic}
+              width={0}
+              height={0}
+              alt="Ages"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                maxWidth: "100%",
+                height: "auto"
+              }} /><p>Ages: 13+</p>
+            {/* <Image src={prefix + '/images/Game-attributes.webp'} alt='1 - 4 players.  60 - 180 minutes Cooperative.  20 - 30 minutes Competitve.  Ages 13 and up.' width={0} height="43%" layout="responsive" priority={true} /> */}
           </Container><br />
           <Container classes={styles.flex}>
             <Container classes={styles.emphasisCtn + " " + styles.fourtyW + " " + styles.inline + " " + styles.mR10 + " " + styles.minHeight250 + " " + styles.vAlignTop}>
@@ -53,7 +81,19 @@ export default function About() {
         <br />
         <ContentItem title='About Goodrich Games'>
           <div>
-          <ExportedImage src={prefix + '/images/PaulProfile.webp'} alt='Paul Profile picture' width="200%" height="200%" priority={true} className={styles.inline} />
+          <Image
+            src={paulPic}
+            alt='Paul Profile picture'
+            width={200}
+            height={0}
+            priority
+            className={styles.inline}
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+              maxWidth: "100%",
+              height: "auto"
+            }} />
           <div className={styles.inline + " " + styles.mL20}>
           <p><strong>Paul Goodrich</strong></p>
           <p className={styles.mb1}><i>Principal Owner / Lead Designer</i></p>
@@ -96,5 +136,5 @@ export default function About() {
         </ContentItem>
       </ContentSection>
     </BaseTemplate >
-  )
+  );
 }

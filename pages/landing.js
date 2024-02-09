@@ -1,68 +1,160 @@
-import ExportedImage from "next-image-export-optimizer";
+import Image from "next/image";
+import ggLogo from '../public/images/GG-Logo-dark-bg.png';
+import styles from '../components/Templates/BaseTemplate.module.scss';
+import Button from "../components/content/Button/Button";
 import EmailSignup from '../components/content/EmailSignup/EmailSignup';
-import ContentSection from './../components/content/ContentSection/ContentSection';
-import ContentItem from './../components/content/ContentSection/ContentItem';
-import styles from '../components/Templates/BaseTemplate.module.scss'
+import infoboxStyles from '../components/content/InfoBox/InfoBox.module.scss';
+import YoutubeEmbed from "../components/content/YoutubeEmbed/YoutubeEmbed";
+import arrowPic from '../public/icons/Arrow.png';
+import agesPic from '../public/icons/ages.png';
+import timePic from '../public/icons/hourglass.png';
+import playersPic from '../public/icons/players.png';
+import cavePic from '../public/images/cave.png';
 import prefix from '../utils/prefix';
 import NoNavTemplate from './../components/Templates/NoNavTemplate';
-import Button from "../components/content/Button/Button";
-import Container from './../components/content/Container/Container';
-import YoutubeEmbed from "../components/content/YoutubeEmbed/YoutubeEmbed";
+import ContentItem from './../components/content/ContentSection/ContentItem';
+import ContentSection from './../components/content/ContentSection/ContentSection';
+import InfoBox from './../components/content/InfoBox/InfoBox';
 
 export default function Landing() {
   return (
     <NoNavTemplate>
+      <h1 className={styles.logo + " " + styles.overlayText + " " + styles.tCenter}>
+        Mana Source
+      </h1>
       <div className={styles.heroImage}>
-        <ExportedImage src={prefix + '/images/featured-game.webp'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
+        <Image
+          src={cavePic}
+          alt='mana well in cave'
+          height="950"
+          priority
+          style={{
+            width: "100%",
+            objectFit: "cover"
+          }} />
+        <a className={styles.scrollArrow + " " + styles.offset} href="#main">
+          <Image
+            src={arrowPic}
+            alt='down arrow'
+            height="1"
+            width="1"
+            priority
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain"
+            }} />
+        </a>
+        <div className={styles.dH0}>
+          <InfoBox classes={infoboxStyles.offset}>
+            <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
+              <Image
+                src={agesPic}
+                alt='ages'
+                styles={{ objectFit: "contain" }}
+                height="50"
+                priority
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} /><br />
+              <p><strong>Ages</strong></p>
+              <p>13+</p>
+            </div>
+            <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
+              <Image
+                src={playersPic}
+                alt='players'
+                height="50"
+                priority
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} /><br />
+              <p><strong>Players</strong></p>
+              <p>1-4</p>
+            </div>
+            <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
+              <Image
+                src={timePic}
+                alt='time to play'
+                height="50"
+                priority
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} /><br />
+              <div className={styles.fourtyFiveW + " " + styles.inline}>
+                <strong>PvE</strong>
+                <p>60-180<br />
+                  min</p>
+              </div>
+              <div className={styles.fourtyFiveW + " " + styles.inline}>
+                <strong>PvP</strong>
+                <p>20-30<br />
+                  min</p>
+              </div>
+            </div>
+            <br />
+            <br />
+            <p className={styles.fontPhilosopher}>
+              <em>
+                For thousands of years nations have fought for <strong>mana wells</strong>, which are now essential to modern life. <br />
+                Each nation has unique weapons, talents, and battlefield-warping effects to emerge victorious.<br />
+                But be careful, each opponent may have a few tricks they&apos;ve picked up from another nation...
+              </em>
+            </p>
+            <div className={styles.maxW500}>
+              <EmailSignup ctaText="Start your adventure!" />
+            </div>
+          </InfoBox>
+        </div>
       </div>
+      <div id="main"></div>
       <ContentSection>
-        <EmailSignup ctaText="Start your adventure!" />
-        <YoutubeEmbed videoId="h9tHSCE1T84" width="960" height="540" isAutoplay={false} />
-        <ContentItem>
-        <h4>A discovery at an ancient vault has the potential to upend the nations...</h4>
-          <p>
-            <span className={styles.fontArkhip}>Mana Source</span> is an upcoming adventure board game.
-            It focuses around arena-style combat you&apos;ll need to survive in the mysterious fantasy world of Kainan. It features five playable primary
-            classes, one exclusively secondary class, and over 300 unique cards in the release set.
-          </p><br />
-          <p>Experiment, strategize, and mindgame to reduce your opponent&apos;s health to zero and
-            win!</p>
-          <br />
-          <Container classes={styles.darkThinBorder + " " + styles.seventyW + " " + styles.center}>
-            <ExportedImage src={prefix + '/images/Game-attributes.webp'} alt='1 - 4 players.  60 - 180 minutes Cooperative.  20 - 30 minutes Competitve.  Ages 13 and up.' width="100%" height="43%" layout="responsive" priority={true} />
-          </Container><br />
-          <Container classes={styles.flex}>
-            <Container classes={styles.emphasisCtn + " " + styles.fourtyW + " " + styles.inline + " " + styles.mR10 + " " + styles.minHeight250 + " " + styles.vAlignTop}>
-              <h4>Game Modes</h4>
-              <p>Cooperative Campaign - 1-4 players</p>
-              <p>Constructed - 1v1, 1v2, 2v2</p>
-              <p>Draft - 1v1</p>
-              <p>Limited - 1v1</p>
-              <p>More to come!</p>
-            </Container>
-            <Container classes={styles.emphasisCtn + " " + styles.fourtyW + " " + styles.inline + " " + styles.minHeight250 + " " + styles.vAlignTop}>
-              <h4>Features</h4>
-              • Simultaneous turns for low downtime<br />
-              • First of its kind update system using push notifications and sticker modifiers<br />
-              • Easy for newcomers, depth for strategists<br />
-              • Minimal Randomness, every action counts<br />
-              • Story-driven content<br />
-            </Container>
-          </Container>
-        </ContentItem>
-        <EmailSignup ctaText="Start your adventure!" />
-        <Container classes={styles.darkThinBorder}>
-          <ExportedImage src={prefix + '/images/Exploring-cavern-ruins.webp'} alt='Exploring-cavern-ruins' width="100%" height="59%" layout="responsive" priority={true} />
-        </Container>
-        <ContentItem>
-          Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions. Follow us on <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a>. <br />
-        </ContentItem>
-        <EmailSignup ctaText="Start your adventure!" />
+        <ContentSection>
+          <ContentItem classes={styles.tCenter + " " + styles.ruinsBg}>
+            <InfoBox classes={styles.tCenter}>
+              <br />
+              <br />
+              <br />
+              <br />
+              <h2>A discovery at an ancient vault has the potential to upend the nations...</h2>
+              <br />
+            </InfoBox>
+            <br />
+            <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} controls={true} />
+            {/* <YoutubeEmbed videoId="h9tHSCE1T84" width="1920" height="1080" isAutoplay={true} frameborder={false} controls={false} mute={true} showinfo={false} /> */}
+            <br />
+            <InfoBox classes={styles.tCenter} delay={2}>
+              <h2 className={styles.tCenter + " " + styles.medWPadding}>
+                <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game kickstarting in late 2024.</div>
+              </h2>
+              <div className={styles.maxW500 + " " + styles.center}>
+                <EmailSignup ctaText="Start your adventure!" />
+                or<br /><br />
+                <p>Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a> to chat with the community. <br /></p>
+              </div>
+              <Button text='Discover More' classes={styles.center + ' ' + styles.twentyW} onClick={() => { window.location = prefix + '/' }} />
+            </InfoBox>
+          </ContentItem>
+        </ContentSection>
         <br />
-        <Button text='Learn More' classes={styles.center + ' ' + styles.fiftyW} onClick={() => { window.location = prefix + '/' }} />
-        <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="10%" layout="responsive" objectFit="contain" priority={true} />
+        <div className={styles.fullW + " " + styles.tCenter}>
+          <Image
+            src={ggLogo}
+            alt='Goodrich Games Logo'
+            width={0}
+            height={100}
+            style={{
+              objectFit: "contain",
+            }} />
+        </div>
         <br />
       </ContentSection>
     </NoNavTemplate>
-  )
+  );
 }

@@ -1,11 +1,11 @@
-const ContentItem = ({ children, title }) => {
+const ContentItem = ({ children, title, classes }) => {
   return (
-    <li>
+    <>
       {title && <h3>{title}</h3>}
-      <div>
+      <div className={classes}>
         {children}
       </div>
-    </li>
+    </>
   )
 }
 

@@ -1,68 +1,317 @@
-import BaseLayout from '../components/Templates/BaseTemplate'
-import ArticleList from '../components/content/ArticleList/ArticleList'
-import meta from '../metadata/pagemeta'
-import ExportedImage from "next-image-export-optimizer";
-import prefix from '../utils/prefix';
-import styles from '../components/Templates/BaseTemplate.module.scss'
-import ContentItem from '../components/content/ContentSection/ContentItem'
+import Image from "next/image";
+import Link from 'next/link';
+import BaseLayout from '../components/Templates/BaseTemplate';
+import styles from '../components/Templates/BaseTemplate.module.scss';
+import ArticleList from '../components/content/ArticleList/ArticleList';
+import ContentItem from '../components/content/ContentSection/ContentItem';
+import infoboxStyles from '../components/content/InfoBox/InfoBox.module.scss';
+import meta from '../metadata/pagemeta';
+import arrowPic from '../public/icons/Arrow.png';
+import agesPic from '../public/icons/ages.png';
+import timePic from '../public/icons/hourglass.png';
+import playersPic from '../public/icons/players.png';
+import paulPic from '../public/images/PaulProfile.JPG';
+import nelePic from '../public/images/NeleProfile.JPG';
+import sandiPic from '../public/images/SandiProfile.JPG';
+import cavePic from '../public/images/cave.png';
 import ContentSection from './../components/content/ContentSection/ContentSection';
-import Link from 'next/link'
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
+import InfoBox from './../components/content/InfoBox/InfoBox';
 import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
 
 export default function Home() {
   return (
     <BaseLayout title={meta.name} description={meta.description} >
+      <h1 className={styles.logo + " " + styles.overlayText + " " + styles.tCenter}>
+        Mana Source
+      </h1>
       <div className={styles.heroImage}>
-        <ExportedImage src={prefix + '/images/featured-game.webp'} alt='mana well in cave' width="100%" height="100%" layout="responsive" objectFit="contain" priority={true} />
+        <Image
+          src={cavePic}
+          alt='mana well in cave'
+          height="950"
+          priority
+          style={{
+            width: "100%",
+            objectFit: "cover"
+          }} />
+        <a className={styles.scrollArrow + " " + styles.offset} href="#main">
+          <Image
+            src={arrowPic}
+            alt='down arrow'
+            height="1"
+            width="1"
+            priority
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain"
+            }} />
+        </a>
+        <div className={styles.dH0}>
+          <InfoBox classes={infoboxStyles.offset}>
+            <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
+              <Image
+                src={agesPic}
+                alt='ages'
+                styles={{ objectFit: "contain" }}
+                height="50"
+                priority
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} /><br />
+              <p><strong>Ages</strong></p>
+              <p>13+</p>
+            </div>
+            <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
+              <Image
+                src={playersPic}
+                alt='players'
+                height="50"
+                priority
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} /><br />
+              <p><strong>Players</strong></p>
+              <p>1-4</p>
+            </div>
+            <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
+              <Image
+                src={timePic}
+                alt='time to play'
+                height="50"
+                priority
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} /><br />
+              <div className={styles.fourtyFiveW + " " + styles.inline}>
+                <strong>PvE</strong>
+                <p>60-180<br />
+                  min</p>
+              </div>
+              <div className={styles.fourtyFiveW + " " + styles.inline}>
+                <strong>PvP</strong>
+                <p>20-30<br />
+                  min</p>
+              </div>
+            </div>
+            <br />
+            <br />
+            <p className={styles.fontPhilosopher}>
+              <em>
+                For thousands of years nations have fought for <strong>mana wells</strong>, which are now essential to modern life. <br />
+                Each nation has unique weapons, talents, and battlefield-warping effects to emerge victorious.<br />
+                But be careful, each opponent may have a few tricks they&apos;ve picked up from another nation...
+              </em>
+            </p>
+          </InfoBox>
+        </div>
       </div>
+      <div id="main"></div>
       <ContentSection>
-        <ContentItem>
-          <p className={styles.fontPhilosopher}>
-            <em>
-              For thousands of years the nations have fought to control Mana wells, which are now essential to modern life. <br />
-              Each nation has unique weapons, talents, and battlefield-warping effects to emerge victorious.<br />
-              But be careful, each opponent may have a few tricks they&apos;ve picked up from another nation...
-            </em>
-          </p>
+        <ContentItem classes={styles.tCenter + " " + styles.ruinsBg}>
+          <InfoBox classes={styles.tCenter}>
+            <br />
+            <br />
+            <br />
+            <br />
+            <h2>A discovery at an ancient vault has the potential to upend the nations...</h2>
+            <br />
+          </InfoBox>
           <br />
-          <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
+          <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} controls={true} />
+          {/* <YoutubeEmbed videoId="h9tHSCE1T84" width="1920" height="1080" isAutoplay={true} frameborder={false} controls={false} mute={true} showinfo={false} /> */}
           <br />
-          <h4 className={styles.tCenter + " " + styles.medWPadding}>
-            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with deadly adversaries.</div>
-            <div>You&apos;ll need to rely on your wits to survive.</div>
-          </h4>
-          <p className={styles.tCenter + " " + styles.medWPadding + " " + styles.vAlignTop}>
-            Choose a primary and secondary class – Construct a hand of 10 cards – Gain an edge over the competition!<br /><br />
-          </p><br />
-          <div className={styles.medWPadding}>
-            <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
-              <h4>Don&apos;t wait for your turn to play!</h4>
-              Simultaneous turns keep everyone focused on the action.
-            </div>
-            <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
-              <h4>Spend less time learning, more time playing!</h4>
-              You can <Link href='/resources'>learn the basics</Link> in &lt; 10 minutes.
-            </div>
-            <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
-              <h4>How much game are we talking here?</h4>
-              Campaign: 20+ story-rich scenarios<br />
-              Clash competitively with 300+ skills<br />
-            </div>
-          </div>
+          <InfoBox classes={styles.tCenter} delay={2}>
+            <h2 className={styles.tCenter + " " + styles.medWPadding}>
+              <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with deadly adversaries.</div>
+              <div>You&apos;ll need to rely on your wits to survive.</div>
+            </h2>
+            <a className={styles.scrollArrow} href="#signup">
+              <Image
+                src={arrowPic}
+                alt='down arrow'
+                height="1"
+                width="1"
+                priority
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
+            </a>
+          </InfoBox>
+          <div id="signup"></div>
           <br />
-          <p className={styles.tCenter}>
-            Visit the <Link href='/about'>About</Link> or <Link href='/resources'>Resources</Link> pages to learn more.
-          </p>
-          <EmailSignup ctaText="Start your adventure!" />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <InfoBox classes={styles.tCenter}>
+            <div className={styles.medWPadding}>
+              <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
+                <h4>Don&apos;t wait for your turn to play!</h4>
+                Simultaneous turns keep everyone focused on the action.
+              </div>
+              <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
+                <h4>Spend less time learning, more time playing!</h4>
+                <p><strong>Choose</strong> 2 of 6 classes.</p><br />
+                <p><strong>Construct</strong> a hand of 10 cards</p><br />
+                <p><strong>Gain an edge</strong> over the competition!</p><br />
+              </div>
+              <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
+                <h4>3 Gamemodes</h4>
+                <p><strong>Adventure</strong> through 20 story-rich scenarios,</p><br />
+                <p><strong>Skirmish</strong> in a series of roguelike encounters, and</p><br />
+                <p><strong>Clash</strong> competitively with 300+ skills.</p><br />
+              </div>
+            </div>
+            <br /><br />
+            <h4>You can <Link href='/resources'>learn the basics</Link> in 15 minutes.</h4>
+            <br /><br />
+            <div className={styles.center + " " + styles.maxW500}>
+              <EmailSignup ctaText="Start your adventure!" />
+            </div>
+            <a className={styles.scrollArrow} href="#about">
+              <Image
+                src={arrowPic}
+                alt='down arrow'
+                height="1"
+                width="1"
+                priority
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
+            </a>
+          </InfoBox>
         </ContentItem>
       </ContentSection>
+      <div id="about"></div>
       <ContentSection>
-        <ContentItem title='Latest Articles'>
-          <ArticleList category="all" max="5" />
-          <Link href="/news">View All</Link>
+        <h3 className={styles.tCenter}>Meet the Team</h3>
+        <ContentItem classes={styles.timbatiaBg + " " + styles.fullW}>
+          <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
+            <Image
+              src={paulPic}
+              alt='Paul profile picture'
+              width={200}
+              height={0}
+              priority
+              className={styles.inline}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }} />
+            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
+              <p><strong>Paul Goodrich</strong></p>
+              <p className={styles.mb1}><i>Lead Designer</i></p>
+              <p className={styles.mb1}>
+                Paul graduated from North Carolina State University with a Bachelor&apos;s degree in Computer Science and concentration in game design.  He has a long history of competitive gaming, including as the former professional support and jungler for Team C in the MOBA Infinite Crisis, Masters in Overwatch pre-OWL, and Diamond 1 in League of Legends in S3.
+              </p>
+            </div>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tCenter + " " + styles.center}>
+            <div className={styles.vAlignTop  + " " + styles.md50 + " " + styles.mR20  + " " + styles.tLeft}>
+              <p><strong>Nele Diel</strong></p>
+              <p className={styles.mb1}><i>Lead Artist</i></p>
+              <p className={styles.mb1}>
+                Nele is a full-time freelance illustrator living in Wiesbaden, Germany.  She graduated with a degree in Communication Design in 2016.  Since then she has produced art for several board games, including for the The Lord of the Rings,
+                Arkham Horror, and Legend of the Five Rings trading card games. </p><p>
+                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  We&apos;re honored to have her produce art for Mana Source.  You can find more of her art or request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
+              </p>
+            </div>
+            <Image
+              src={nelePic}
+              alt='Nele profile picture'
+              width={200}
+              height={0}
+              priority
+              className={styles.inline  + " " + styles.tRight}
+              style={{
+                maxWidth: "100%",  
+              }} />
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
+          <Image
+              src={sandiPic}
+              alt='Sandi profile picture'
+              width={200}
+              height={0}
+              priority
+              className={styles.inline}
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+              }} />
+            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
+              <p><strong>Sandi Goodrich</strong></p>
+              <p className={styles.mb1}><i>Creature Concepts</i></p>
+              <p className={styles.mb1}>
+                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and Mana Source.
+              </p>
+            </div>
+          </InfoBox>
+          {/* <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tRight}>
+            <div className={styles.vAlignTop}>
+              <p><strong>Matt Green</strong></p>
+              <p className={styles.mb1}><i>Systems Consulting and Playtesting</i></p>
+              <p className={styles.mb1}>
+                
+              </p>
+            </div>
+          </InfoBox>
+          <InfoBox classes={styles.maxW960}>
+            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
+              <p><strong>John Compton</strong></p>
+              <p className={styles.mb1}><i>Playtesting</i></p>
+              <p className={styles.mb1}>
+                
+              </p>
+            </div>
+          </InfoBox> */}
+        </ContentItem>
+      </ContentSection >
+      <div id="news"></div>
+      <ContentSection>
+      <h3 className={styles.tCenter}>Latest Articles</h3>
+        <ContentItem classes={styles.tCenter + " " + styles.golemBg + " " + styles.fullW}>
+          <InfoBox classes={styles.mLauto + " " + styles.maxW960}>
+            <ArticleList category="all" max="5" />
+            <Link href="/news"><h4>View All</h4></Link>
+          </InfoBox>
         </ContentItem>
       </ContentSection>
-    </BaseLayout>
-  )
+    </BaseLayout >
+  );
 }

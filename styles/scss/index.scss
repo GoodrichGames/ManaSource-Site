@@ -18,6 +18,7 @@ body {
   line-height: 1;
   min-width: 960px;
   font-weight: 300;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -45,7 +46,13 @@ a {
   object-position: 0 10%;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 600px) and (max-width: 1100px) {
+  body {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1101px) {
   body {
     font-size: 1.2rem;
   }

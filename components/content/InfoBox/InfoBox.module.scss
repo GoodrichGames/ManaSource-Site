@@ -1,0 +1,123 @@
+@import "../../../styles/scss/colors.scss";
+
+.infoBox {
+  background: rgba(0, 0, 0, 0.75);
+  position: relative;
+  padding: 2rem;
+  visibility: visible;
+
+  animation-duration: 1000ms;
+  animation-delay: 500ms;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  &.offset {
+    animation-name: fadeInUpOffset;
+    width: 40%;
+    margin-left: auto;
+    right: 0;
+  }
+
+  p {
+    line-height: 1.2;
+  }
+  
+  h3 {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    &:first-of-type {
+      margin-top: -2rem;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &.offset {
+      width: 100%;
+      animation-name: fadeInUp;
+    }
+  }
+  @media (max-width: 1300px) {
+    &.offset {
+      width: 100%;
+    }
+  }
+  @media (min-width:1101px) and (max-width: 1300px) {
+    &.offset {
+      width: 45%;
+    }
+  }
+}
+
+.notVisible {
+  visibility: hidden;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp
+}
+
+@-webkit-keyframes fadeInUpOffset {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(20px);
+      transform: translateY(20px);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpOffset {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(0px);
+      transform: translateY(0px);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(calc(-100% - 20px));
+      transform: translateY(calc(-100% - 20px));
+  }
+}
+
+.fadeInUpOffset {
+  -webkit-animation-name: fadeInUpOffset;
+  animation-name: fadeInUpOffset;
+}
