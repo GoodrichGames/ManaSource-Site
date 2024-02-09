@@ -1,35 +1,47 @@
-import PageHeader from '../content/PageHeader/PageHeader'
-import Head from '../Structural/Meta/Meta'
-import Navigation from '../Structural/Navigation/Navigation'
-import styles from './BaseTemplate.module.scss'
-import ExportedImage from "next-image-export-optimizer";
-import prefix from '../../utils/prefix';
+import Image from "next/image";
+import ggLogo from '../../public/images/GG-Logo-dark-bg.png';
+import Head from '../Structural/Meta/Meta';
+import Navigation from '../Structural/Navigation/Navigation';
+import PageHeader from '../content/PageHeader/PageHeader';
+import styles from './BaseTemplate.module.scss';
 
+const BaseTemplate = ({ children, title, date, description, image, isArticle, classes }) => {
+  return (
+    <div className={styles.backgroundWrap + " " + classes}>
+      <Head name={title} description={description} image={image} isArticle={isArticle} />
+      <Navigation />
 
-const BaseTemplate = ({ children, title, date, description, image, isArticle }) => {
-  return <div className={styles.backgroundWrap}>
-    <Head name={title} description={description} image={image} isArticle={isArticle} />
-    <Navigation />
-
-    <main className={styles.main}>
-      <div className={styles.bodyWrapper}>
-        <div className={styles.bodyContent}>
-          {isArticle && <PageHeader title={title} date={date} description={description} image={image} />}
-            {children}
+      <main className={styles.main}>
+        <div className={styles.bodyWrapper}>
+          <div className={styles.bodyContent}>
+            {isArticle && <PageHeader title={title} date={date} description={description} image={image} />}
+              {children}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        <p>
-          Mana Source © Goodrich Games 2023. All rights reserved.
-        </p>
-        <br />
-        <ExportedImage src={prefix + '/images/GG-Logo-dark-bg.webp'} alt='Goodrich Games Logo' width="100%" height="5%" layout="responsive" objectFit="contain" priority={true} />
-      </div>
-    </footer>
-  </div>
+      <footer className={styles.footer}>
+        <div className={styles.footerContent}>
+          <p>
+            Mana Source © Goodrich Games 2024. All rights reserved.
+          </p>
+          <br />
+          <div className={styles.maxH100}>
+          <Image
+            src={ggLogo}
+            alt='Goodrich Games Logo'
+            width={0}
+            height={100}
+            style={{
+              objectFit: "contain",
+              maxWidth: "100%",
+              height: "auto"
+            }} />
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
 
 export default BaseTemplate;

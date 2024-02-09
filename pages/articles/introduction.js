@@ -19,7 +19,7 @@ const Article = () => {
             <p>Experiment, strategize, and mindgame to reduce your opponent&apos;s health to zero and
               win!</p>
             <br />
-            Visit our <Link href='/about'>about</Link> page to learn more.
+            Visit our <Link href='/'>homepage</Link> page to learn more.
             <br /><br />
             <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
             <br />

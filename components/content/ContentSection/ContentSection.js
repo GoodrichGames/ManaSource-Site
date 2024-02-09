@@ -2,9 +2,7 @@ const ContentSection = ({ children }) => {
   return (
     <section>
       <div>
-        <ul>
-          {children}
-        </ul>
+        {children}
       </div>
     </section>
   )

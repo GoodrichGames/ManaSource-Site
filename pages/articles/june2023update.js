@@ -1,7 +1,9 @@
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
-import ExportedImage from 'next-image-export-optimizer';
 import prefix from '../../utils/prefix';
+import Image from 'next/image';
+import focusedShotPic from '../../public/images/cards/W-Focused-Shot.png'
+import roundRefPic from '../../public/images/cards/Round-reference-card.png'
 
 const Article = () => {
   return <ArticleTemplate useImage={true}>
@@ -30,13 +32,13 @@ const Article = () => {
             <br />
             <br />
             Preview of the new Action Card design (not final).<br /><br/>
-            <ExportedImage src={prefix + '/images/cards/W-Focused-Shot.webp'} alt='Focused Shot - a Warden skill card' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
+            <Image src={focusedShotPic} alt='Focused Shot - a Warden skill card' width={0} height={500} objectFit="contain" priority={true} />
             <br/>
             These are the cards that will make up your hand.  Focused Shot is a 2 Mana attack card with a recharge of 3.<br />
             While it deals above average damage, there&apos;s a high risk if the opponent is not Stunned or otherwise occupied.<br />
             <br />
             New round reference card design.  Featuring art by the talented Nele Diel of course.<br /><br/>
-            <ExportedImage src={prefix + '/images/cards/Round-Reference-Card.webp'} alt='Round reference steps' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
+            <Image src={roundRefPic} alt='Round reference steps' width={0} height={500} objectFit="contain" priority={true} />
             <br />
             <h4>July / August Goals</h4>
             - Complete development for Scenario 9, 10, 11.

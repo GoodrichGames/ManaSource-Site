@@ -1,49 +1,47 @@
 @import "../../../styles/scss/colors.scss";
 
 .navigation {
-  background: url(../../../public/images/bg-header2.png) repeat-x top center;
   margin: 0;
   padding: 0;
+  z-index: 5;
+  position: relative;
+  margin-bottom: -2rem;
+
   .navigationTop {
+    margin: 0;
+    padding: 0;
+
     .navigationOverlay {
-      height: 6.7rem;
       margin: 0 auto;
-      padding: 49px 0 0;
-      position: relative;
+      position: fixed;
       width: 960px;
-      z-index: 5;
+      z-index: 1;
+      top: 0;
+      width: 100%;
     }
   }
-  a.logo {
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-    width: 540px;
-    font-size: 5rem;
-    font-family: 'Arkhip';
-    color: $white;
-    text-shadow: 3px 3px $logo_shadow;
-    padding-top: 4rem;
-  }
+
   ul {
-    background: url(../../../public/images/bg-navigation.png) no-repeat center center;
-    bottom: -107px;
-    height: 105px;
+    height: 77px;
     left: 30px;
     margin: 0 auto;
     overflow: hidden;
-    padding: 0 1.2rem;
+    padding: 0;
     position: absolute;
-    width: 900px;
-    z-index: 1;
+    z-index: 2;
+    top: -1.5rem;
+    box-shadow: 2px 2px 5px black;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 810px;
+
     li {
       display: block;
       float: left;
       list-style: none;
-      margin: 3px 5px;
       padding: 0;
       a {
-        background: url(../../../public/images/menu.png) no-repeat;
+        background: url(../../../public/images/Menu2.png) no-repeat;
         color: $color_2;
         display: block;
         font-family: $font-family_2;
@@ -57,21 +55,21 @@
         text-align: center;
         text-decoration: none;
         text-transform: uppercase;
-        width: 163px;
+        width: 162px;
         &:hover {
           color: $white;
         }
       }
       .menu1 {
-        background-position: 0 0;
+        background-position: -11px 0;
         &:hover {
-          background-position: 0 -113px;
+          background-position: -11px -113px;
         }
       }
       .menu2 {
-        background-position: -168px 0;
+        background-position: -173px 0;
         &:hover {
-          background-position: -168px -113px;
+          background-position: -173px -113px;
         }
       }
       .menu3 {
@@ -80,16 +78,16 @@
           background-position: -335px -113px;
         }
       }
-    .menu4 {
-        background-position: -502px 0;
+      .menu4 {
+        background-position: -497px 0;
         &:hover {
-          background-position: -502px -113px;
+          background-position: -497px -113px;
         }
       }
       .menu5 {
-        background-position: -669px 0;
+        background-position: -659px 0;
         &:hover {
-          background-position: -669px -113px;
+          background-position: -659px -113px;
         }
       }
     }
@@ -98,25 +96,26 @@
         color: $white;
       }
       .menu1 {
-        background-position: 0 -113px;
+        background-position: -11px -113px;
       }
       .menu2 {
-        background-position: -168px -113px;
+        background-position: -173px -113px;
       }
       .menu3 {
         background-position: -335px -113px;
       }
       .menu4 {
-        background-position: -502px -113px;
+        background-position: -497px -113px;
       }
       .menu5 {
-        background-position: -669px -113px;
+        background-position: -659px -113px;
       }
     }
   }
 }
-.navigationTop {
-  background: url(../../../public/images/bg-header.png) no-repeat top center;
-  margin: 0;
-  padding: 0;
+
+.article {
+  .navigation {
+    margin-bottom: 0;
+  }
 }

@@ -1,11 +1,5 @@
-import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
-import ExportedImage from 'next-image-export-optimizer';
-import prefix from '../../utils/prefix';
-import ContentSection from '../../components/content/ContentSection/ContentSection';
-import ContentItem from './../../components/content/ContentSection/ContentItem';
-import Container from './../../components/content/Container/Container';
-import styles from '../../components/Templates/BaseTemplate.module.scss'
+import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 
 const Article = () => {
   return <ArticleTemplate useImage={true}>

@@ -1,11 +1,14 @@
-import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import Image from 'next/image';
+import styles from '../../components/Templates/BaseTemplate.module.scss';
+import brassPic from '../../public/images/articles/Brass-Bir.PNG';
+import monopolyPic from '../../public/images/articles/Monopoly.PNG';
+import hummingbearPic from '../../public/images/hummingbear-small.PNG';
+import playtest1 from '../../public/images/playtest1.JPG';
+import playtest2 from '../../public/images/playtest2.JPG';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
-import ExportedImage from 'next-image-export-optimizer';
-import prefix from '../../utils/prefix';
-import ContentSection from '../../components/content/ContentSection/ContentSection';
-import ContentItem from './../../components/content/ContentSection/ContentItem';
 import Container from './../../components/content/Container/Container';
-import styles from '../../components/Templates/BaseTemplate.module.scss'
+import ContentItem from './../../components/content/ContentSection/ContentItem';
+import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 
 const Article = () => {
   return <ArticleTemplate useImage={true}>
@@ -18,8 +21,8 @@ const Article = () => {
             <br />
             I had the pleasure of meeting several of you last weekend at the first public playtest and demo of Mana Source at Dragoncon 2023 in Atlanta!  First off, THANK YOU so much for your time and valuable feedback!
             <br /><br />
-            <ExportedImage src={prefix + '/images/playtest1.webp'} alt='Playtester playing Mana Source in person' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
-            <ExportedImage src={prefix + '/images/playtest2.webp'} alt='Group of playtesters playing Mana Source in person' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
+            <Image src={playtest1} alt='Playtester playing Mana Source in person' width={0} height={500} objectFit="contain" priority={true} />
+            <Image src={playtest2} alt='Group of playtesters playing Mana Source in person' width={0} height={500} objectFit="contain" priority={true} />
             <br />
             Overall I received very positive feedback, especially from people who have not been able to get into this type of game before.  That&apos;s exciting for me as a designer as I want this game to be accessible and hit the table more often than many of the other campaign-oriented board games out there.  We consistently taught players how to play in 10 minutes or less.  One of the things I love about this system is that your playstyle can be simple or you can try pull off complex combos as you seek to complete a scenario bonus or get an edge in PvP.
             <br /><br />
@@ -38,11 +41,12 @@ const Article = () => {
             - Scenarios 1 - 10, 18 are designed which officially puts us at the halfway point!  A few require some minor redesigns (enemy difficulty, length tweaks, editing).<br />
             - In universe writing such as below.<br />
             <br />
-            <ContentSection>
+            <hr />
+            <br />
               <ContentItem>
-                <ExportedImage src={prefix + '/images/hummingbear-small.webp'} alt='Hummingbear creature' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
+                <Image src={hummingbearPic} alt='Hummingbear creature' width={0} height={500} objectFit="contain" priority={true} className={styles.center} />
                 <Container classes={styles.fullW + " " + styles.tCenter}><em>The Hummingbear - Nele Diel</em>
-                  
+
                 </Container>
                 <br />
                 The hummingbear (Vomvos Arktose) is an omnivorous featherin endemic to the northern rockpool region.  While primarily found among the Enovet mountain range in cliffside dens, they have been reported as far south as the Twisted Highlands and as east as Imeranea in winter months.
@@ -55,19 +59,20 @@ const Article = () => {
                 <br /><br />
                 Hummingbear sightings in the modern era are rare.  Their affinity for locations with natural camouflage such as moss and hanging ivy typically places them far away from human-occupied areas.  The availability of these areas shrink by the day.  Even more concerning is the rise of lawlessness since the Kydarian occupation of Baile Tigherna.  The hummingbear&apos;s beautiful plumage and impressive wings are increasingly sought after by poachers for use in fashion and suspected military applications.  Thus, we humbly ask for your valuable support in preserving this elegant and magnificent creature.  With your help, we can keep them humming for a long time to come.
                 <br /><br />
-                Tax-deductible* donations can be made to the <strong><span style={{color:'green'}}>Save</span> the <span style={{color:'darkorange'}}>Hummingbears</span></strong> foundation.
+                Tax-deductible* donations can be made to the <strong><span style={{ color: 'green' }}>Save</span> the <span style={{ color: 'darkorange' }}>Hummingbears</span></strong> foundation.
                 <br /><br />
                 article by Saava Merryfield<br />
                 <em>Baile Tigherna Zoological Institute<br /></em>
                 <br />
-                <span style={{fontSize:'14px'}}><em>* While tax-deductible by law, the Baile Tigherna Zoological Institute cannot guarantee that any such deductions will be honored by the occupying Kydarian government.  The Zoological Institute recommends compensat...consulting a Kydarian tax professional before deducting a donation.</em></span>
+                <span style={{ fontSize: '14px' }}><em>* While tax-deductible by law, the Baile Tigherna Zoological Institute cannot guarantee that any such deductions will be honored by the occupying Kydarian government.  The Zoological Institute recommends compensat...consulting a Kydarian tax professional before deducting a donation.</em></span>
                 <br />
               </ContentItem>
-            </ContentSection>
+              <br />
+              <hr />
+              <br />
             <h4>September & October Goals</h4>
             - Complete development for Scenario 11, 12.  Small redesigns for scenarios 1, 4, 6.  Scenario 13 is a stretch goal but that will be a very important and in-depth scenario that I expect to take longer to design.
             <br />
-
 
             - Additional equipment development.<br />
             - Balance changes and blind playtesting contacts.<br />
@@ -85,8 +90,8 @@ const Article = () => {
             <br /><br />
             First, let me state the obvious - we all have different preferences and past experiences when it comes to board games.  That&apos;s readily apparent by examining the most popular board game of the past 100 years, one I can almost guarantee if you&apos;re reading this that you have played at some point. Monopoly has sold over 275 million copies in multiple versions worldwide.  It must be pretty well loved right?
             <br /><br />
-            <ExportedImage src={prefix + '/images/articles/Monopoly.webp'} alt='Board Game Geek profile of Monopoly' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
-            <em style={{fontSize:'12px'}}>Image credit: <a href="https://boardgamegeek.com/boardgame/1406/monopoly">https://boardgamegeek.com/boardgame/1406/monopoly</a></em><br />
+            <Image src={monopolyPic} alt='Board Game Geek profile of Monopoly' width={0} height={400} objectFit="contain" priority={true} /><br />   
+            <em style={{ fontSize: '12px' }}>Image credit: <a href="https://boardgamegeek.com/boardgame/1406/monopoly">https://boardgamegeek.com/boardgame/1406/monopoly</a></em><br />
             <br />
             Whoops.  Well, I guess not.  At least, you wouldn&apos;t know it by only looking at Board Game Geek, where it rates at a measly 4.4/10.  Why is there such a disconnect?  I can think of a few possible reasons:
             <br />
@@ -109,9 +114,10 @@ const Article = () => {
             - Themed.<br />
             - Fairly easy to learn.<br />
             <br />
-            Let&apos;s see if there are any overlaps in positives with the current number 1 game on Board Game Geek - Brass: Birmingham.
-            <ExportedImage src={prefix + '/images/articles/Brass-Bir.webp'} alt='Board Game Geek profile of Brass Birmingham' width="100%" height="50%" layout="responsive" objectFit="contain" priority={true} />
-            <em style={{fontSize:'12px'}}>Image credit: <a href="https://boardgamegeek.com/boardgame/224517/brass-birmingham">https://boardgamegeek.com/boardgame/224517/brass-birmingham</a></em><br />
+            Let&apos;s see if there are any overlaps in positives with the current number 1 game on Board Game Geek - Brass: Birmingham.<br /><br />
+            <Image src={brassPic} alt='Board Game Geek profile of Brass Birmingham' width={0} height={400} objectFit="contain" priority={true} className={styles.block} />
+            <br />        
+            <em style={{ fontSize: '12px' }}>Image credit: <a href="https://boardgamegeek.com/boardgame/224517/brass-birmingham">https://boardgamegeek.com/boardgame/224517/brass-birmingham</a></em><br />
             <br />
             - People like getting resources based on their actions and spending resources.<br />
             - Replayability (different cards, strategies, etc).<br />
