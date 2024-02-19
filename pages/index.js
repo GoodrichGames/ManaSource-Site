@@ -247,7 +247,7 @@ export default function Home() {
               <p className={styles.mb1}>
                 Nele is a full-time freelance illustrator living in Wiesbaden, Germany.  She graduated with a degree in Communication Design in 2016.  Since then she has produced art for several board games, including for the The Lord of the Rings,
                 Arkham Horror, and Legend of the Five Rings trading card games. </p><p>
-                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  We&apos;re honored to have her produce art for Mana Source.  You can find more of her art or request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
+                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  We&apos;re honored to have her produce art for <span className={styles.fontArkhip}>Mana Source</span>.  You can find more of her art or request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
               </p>
             </div>
             <Image
@@ -278,9 +278,23 @@ export default function Home() {
               <p><strong>Sandi Goodrich</strong></p>
               <p className={styles.mb1}><i>Creature Concepts</i></p>
               <p className={styles.mb1}>
-                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and Mana Source.
+                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and <span className={styles.fontArkhip}>Mana Source</span>.
               </p>
             </div>
+            <a className={styles.scrollArrow} href="#news">
+              <Image
+                src={arrowPic}
+                alt='down arrow'
+                height="1"
+                width="1"
+                priority
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
+            </a>
           </InfoBox>
           {/* <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tRight}>
             <div className={styles.vAlignTop}>
