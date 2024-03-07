@@ -14,6 +14,7 @@ import paulPic from '../public/images/PaulProfile.jpg';
 import nelePic from '../public/images/NeleProfile.jpg';
 import sandiPic from '../public/images/SandiProfile.jpg';
 import cavePic from '../public/images/cave.png';
+import noAIPic from '../public/icons/NoAI.png';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 import InfoBox from './../components/content/InfoBox/InfoBox';
@@ -188,15 +189,32 @@ export default function Home() {
               <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
                 <h4>3 Gamemodes</h4>
                 <p><strong>Adventure</strong> through 20 story-rich scenarios,</p><br />
-                <p><strong>Skirmish</strong> in a series of roguelike encounters, and</p><br />
+                <p><strong>Skirmish</strong> in a series of encounters, and</p><br />
                 <p><strong>Clash</strong> competitively with 300+ skills.</p><br />
               </div>
             </div>
             <br /><br />
             <h4>You can <Link href='/resources'>learn the basics</Link> in 15 minutes.</h4>
             <br /><br />
-            <div className={styles.center + " " + styles.maxW500}>
+            <div className={styles.thirdW + " " + styles.inline + " " + styles.maxW500}>
               <EmailSignup ctaText="Start your adventure!" />
+            </div>
+            <div className={styles.thirdW + " " + styles.inline + " " + styles.maxW500}>
+              <Image
+                src={noAIPic}
+                alt='No AI'
+                height="1"
+                width="1"
+                priority
+                sizes="100vw"
+                style={{
+                  width: "20%",
+                  height: "auto",
+                  objectFit: "contain"
+                }} />
+                <div>
+                  <div><em>We&apos;re committed to art for humans by humans.</em></div>
+                </div>
             </div>
             <a className={styles.scrollArrow} href="#about">
               <Image
@@ -241,7 +259,7 @@ export default function Home() {
           </InfoBox>
           <br />
           <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tCenter + " " + styles.center}>
-            <div className={styles.vAlignTop  + " " + styles.md50 + " " + styles.mR20  + " " + styles.tLeft}>
+            <div className={styles.vAlignTop + " " + styles.md50 + " " + styles.mR20 + " " + styles.tLeft}>
               <p><strong>Nele Diel</strong></p>
               <p className={styles.mb1}><i>Lead Artist</i></p>
               <p className={styles.mb1}>
@@ -256,14 +274,14 @@ export default function Home() {
               width={200}
               height={0}
               priority
-              className={styles.inline  + " " + styles.tRight}
+              className={styles.inline + " " + styles.tRight}
               style={{
-                maxWidth: "100%",  
+                maxWidth: "100%",
               }} />
           </InfoBox>
           <br />
           <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
-          <Image
+            <Image
               src={sandiPic}
               alt='Sandi profile picture'
               width={200}
@@ -318,7 +336,7 @@ export default function Home() {
       </ContentSection >
       <div id="news"></div>
       <ContentSection>
-      <h3 className={styles.tCenter}>Latest Articles</h3>
+        <h3 className={styles.tCenter}>Latest Articles</h3>
         <ContentItem classes={styles.tCenter + " " + styles.golemBg + " " + styles.fullW}>
           <InfoBox classes={styles.mLauto + " " + styles.maxW960}>
             <ArticleList category="all" max="5" />
