@@ -190,7 +190,7 @@ export default function Home() {
                 <h4>3 Gamemodes</h4>
                 <p><strong>Adventure</strong> through 20 story-rich scenarios,</p><br />
                 <p><strong>Skirmish</strong> in a series of encounters, and</p><br />
-                <p><strong>Clash</strong> competitively with 300+ skills.</p><br />
+                <p><strong>Clash</strong> competitively with 280 skills.</p><br />
               </div>
             </div>
             <br /><br />

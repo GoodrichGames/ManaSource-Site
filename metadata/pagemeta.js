@@ -1,6 +1,6 @@
 const metaDetails = {
   name: 'Mana Source Game',
-  description: 'Mana source is an adventure board game focuses around arena-style combat you&apos;ll need to survive in the mysterious fantasy world of Kainan.',
+  description: 'Mana source is an adventure board game with deadly adversaries.  You&apos;ll need to rely on your wits to survive.',
   shareImage: '/share.webp',
   
   pages: [{
