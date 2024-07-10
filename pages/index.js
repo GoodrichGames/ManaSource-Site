@@ -13,6 +13,7 @@ import playersPic from '../public/icons/players.png';
 import paulPic from '../public/images/PaulProfile.jpg';
 import nelePic from '../public/images/NeleProfile.jpg';
 import sandiPic from '../public/images/SandiProfile.jpg';
+import logo from '../public/images/ManaSourceHLogo.png'
 import cavePic from '../public/images/cave.png';
 import noAIPic from '../public/icons/NoAI.png';
 import ContentSection from './../components/content/ContentSection/ContentSection';
@@ -23,9 +24,20 @@ import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
 export default function Home() {
   return (
     <BaseLayout title={meta.name} description={meta.description} >
-      <h1 className={styles.logo + " " + styles.overlayText + " " + styles.tCenter}>
-        Mana Source
-      </h1>
+      <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
+        <Image src={logo}
+          alt='Mana Source logo'
+          height="89"
+          priority
+          style={{
+            width: "auto",
+            maxWidth: "100%",
+            objectFit: "contain"
+          }} />
+        <h1 className="hidden">
+          Mana Source
+        </h1>
+      </div>
       <div className={styles.heroImage}>
         <Image
           src={cavePic}
@@ -208,13 +220,13 @@ export default function Home() {
                 priority
                 sizes="100vw"
                 style={{
-                  width: "20%",
+                  width: "7rem",
                   height: "auto",
                   objectFit: "contain"
                 }} />
-                <div>
-                  <div><em>We&apos;re committed to art for humans by humans.</em></div>
-                </div>
+              <div>
+                <div><em>We&apos;re committed to art for humans by humans.</em></div>
+              </div>
             </div>
             <a className={styles.scrollArrow} href="#about">
               <Image

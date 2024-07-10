@@ -4,11 +4,13 @@ import Head from '../Structural/Meta/Meta';
 import Navigation from '../Structural/Navigation/Navigation';
 import PageHeader from '../content/PageHeader/PageHeader';
 import styles from './BaseTemplate.module.scss';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const BaseTemplate = ({ children, title, date, description, image, isArticle, classes }) => {
   return (
     <div className={styles.backgroundWrap + " " + classes}>
       <Head name={title} description={description} image={image} isArticle={isArticle} />
+      <GoogleAnalytics gaId="G-Q13V1EJW9Q" />
       <Navigation />
 
       <main className={styles.main}>
