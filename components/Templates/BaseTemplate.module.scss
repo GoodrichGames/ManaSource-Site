@@ -21,6 +21,7 @@
     4px 4px 5px $dark-bg-color;
   padding-top: 1rem;
   z-index: 1;
+  filter: drop-shadow(1px 1px 3px #000) drop-shadow(2px 2px 5px #000);
 }
 
 .overlayText {
