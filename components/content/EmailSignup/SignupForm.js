@@ -32,13 +32,15 @@ const SignupForm = ({ ctaText, status, message, onValidated }) => {
     });
   }
 
+  const id = crypto.randomUUID();
+
   return (
     <div className={styles.emailSignup}>
       <h2>Sign up for updates</h2>
       <div className={styles.emailFieldGroup}>
-        <label htmlFor="mce-EMAIL">Email Address  <span className={styles.asterisk}>*</span>
+        <label htmlFor={"mce-EMAIL-" + id}>Email Address  <span className={styles.asterisk}>*</span>
         </label>
-        <input type="email" name="EMAIL" className={styles.required + " " + styles.email} value={email} onChange={onChangeEmail} onBlur={onBlurEmail} />
+        <input id={"mce-EMAIL-" + id} type="email" name="EMAIL" className={styles.email} value={email} onChange={onChangeEmail} onBlur={onBlurEmail} />
       </div>
       <div ref={invalidEmailErrorBlock} className={styles.errorBlock + ' ' + styles.hidden}>
         You have entered an invalid email address.  Please check your entry and try again.

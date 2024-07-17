@@ -18,7 +18,7 @@ const EmailSignup = (props) => {
             onValidated={formData => subscribe(formData)}
           />}
           {status === 'success' && <div className={styles.subscribedMsg}>
-            Thank you!  We&apos;ll be in touch soon!
+            Thank you!  We&apos;ll be in touch soon!  Keep an eye out for our Kickstarter page!
           </div>}
         </div>
       )}>

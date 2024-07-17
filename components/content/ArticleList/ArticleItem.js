@@ -1,13 +1,13 @@
 import styles from './ArticleList.module.scss'
 import Link from 'next/link'
 import prefix from '../../../utils/prefix';
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 
 const ArticleItem = ({ article }) => {
   return (
     <a href={article.link} className={styles.articleLink}>
         <div className={styles.imageContainer}>
-          <Image
+          <ExportedImage
             src={prefix + article.image}
             alt={article.title}
             className={article.imageVAlign}

@@ -1,4 +1,5 @@
-import Image from "next/image";
+// import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import Link from 'next/link';
 import BaseLayout from '../components/Templates/BaseTemplate';
 import styles from '../components/Templates/BaseTemplate.module.scss';
@@ -23,9 +24,9 @@ import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
 
 export default function Home() {
   return (
-    <BaseLayout title={meta.name} description={meta.description} >
+    <BaseLayout title={meta.name} description={meta.description} classes={[]} >
       <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
-        <Image src={logo}
+        <ExportedImage src={logo}
           alt='Mana Source logo'
           height="89"
           priority
@@ -39,17 +40,19 @@ export default function Home() {
         </h1>
       </div>
       <div className={styles.heroImage}>
-        <Image
+        <ExportedImage
           src={cavePic}
           alt='mana well in cave'
-          height="950"
+          height="990"
           priority
+          placeholder="blur"
           style={{
             width: "100%",
-            objectFit: "cover"
+            objectFit: "cover",
+            display: "block",
           }} />
         <a className={styles.scrollArrow + " " + styles.offset} href="#main">
-          <Image
+          <ExportedImage
             src={arrowPic}
             alt='down arrow'
             height="1"
@@ -65,7 +68,7 @@ export default function Home() {
         <div className={styles.dH0}>
           <InfoBox classes={infoboxStyles.offset}>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
-              <Image
+              <ExportedImage
                 src={agesPic}
                 alt='ages'
                 styles={{ objectFit: "contain" }}
@@ -79,7 +82,7 @@ export default function Home() {
               <p>13+</p>
             </div>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
-              <Image
+              <ExportedImage
                 src={playersPic}
                 alt='players'
                 height="50"
@@ -93,7 +96,7 @@ export default function Home() {
               <p>1-4</p>
             </div>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
-              <Image
+              <ExportedImage
                 src={timePic}
                 alt='time to play'
                 height="50"
@@ -147,7 +150,7 @@ export default function Home() {
               <div>You&apos;ll need to rely on your wits to survive.</div>
             </h2>
             <a className={styles.scrollArrow} href="#signup">
-              <Image
+              <ExportedImage
                 src={arrowPic}
                 alt='down arrow'
                 height="1"
@@ -160,6 +163,9 @@ export default function Home() {
                   objectFit: "contain"
                 }} />
             </a>
+            <br />
+            <br />
+            <br />
           </InfoBox>
           <div id="signup"></div>
           <br />
@@ -212,7 +218,7 @@ export default function Home() {
               <EmailSignup ctaText="Start your adventure!" />
             </div>
             <div className={styles.thirdW + " " + styles.inline + " " + styles.maxW500}>
-              <Image
+              <ExportedImage
                 src={noAIPic}
                 alt='No AI'
                 height="1"
@@ -229,7 +235,7 @@ export default function Home() {
               </div>
             </div>
             <a className={styles.scrollArrow} href="#about">
-              <Image
+              <ExportedImage
                 src={arrowPic}
                 alt='down arrow'
                 height="1"
@@ -250,7 +256,7 @@ export default function Home() {
         <h3 className={styles.tCenter}>Meet the Team</h3>
         <ContentItem classes={styles.timbatiaBg + " " + styles.fullW}>
           <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
-            <Image
+            <ExportedImage
               src={paulPic}
               alt='Paul profile picture'
               width={200}
@@ -280,7 +286,7 @@ export default function Home() {
                 She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  We&apos;re honored to have her produce art for <span className={styles.fontArkhip}>Mana Source</span>.  You can find more of her art or request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
               </p>
             </div>
-            <Image
+            <ExportedImage
               src={nelePic}
               alt='Nele profile picture'
               width={200}
@@ -293,7 +299,7 @@ export default function Home() {
           </InfoBox>
           <br />
           <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
-            <Image
+            <ExportedImage
               src={sandiPic}
               alt='Sandi profile picture'
               width={200}
@@ -312,7 +318,7 @@ export default function Home() {
               </p>
             </div>
             <a className={styles.scrollArrow} href="#news">
-              <Image
+              <ExportedImage
                 src={arrowPic}
                 alt='down arrow'
                 height="1"
@@ -326,24 +332,6 @@ export default function Home() {
                 }} />
             </a>
           </InfoBox>
-          {/* <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tRight}>
-            <div className={styles.vAlignTop}>
-              <p><strong>Matt Green</strong></p>
-              <p className={styles.mb1}><i>Systems Consulting and Playtesting</i></p>
-              <p className={styles.mb1}>
-                
-              </p>
-            </div>
-          </InfoBox>
-          <InfoBox classes={styles.maxW960}>
-            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
-              <p><strong>John Compton</strong></p>
-              <p className={styles.mb1}><i>Playtesting</i></p>
-              <p className={styles.mb1}>
-                
-              </p>
-            </div>
-          </InfoBox> */}
         </ContentItem>
       </ContentSection >
       <div id="news"></div>
@@ -353,6 +341,7 @@ export default function Home() {
           <InfoBox classes={styles.mLauto + " " + styles.maxW960}>
             <ArticleList category="all" max="5" />
             <Link href="/news"><h4>View All</h4></Link>
+            <br />
           </InfoBox>
         </ContentItem>
       </ContentSection>

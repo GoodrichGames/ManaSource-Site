@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import ggLogo from '../../public/images/GG-Logo-dark-bg.png';
 import Head from '../Structural/Meta/Meta';
 import Navigation from '../Structural/Navigation/Navigation';
@@ -29,7 +29,7 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle, cl
           </p>
           <br />
           <div className={styles.maxH100}>
-          <Image
+          <ExportedImage
             src={ggLogo}
             alt='Goodrich Games Logo'
             width={0}

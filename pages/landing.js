@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import ggLogo from '../public/images/GG-Logo-dark-bg.png';
 import styles from '../components/Templates/BaseTemplate.module.scss';
 import Button from "../components/content/Button/Button";
@@ -23,17 +23,18 @@ export default function Landing() {
         Mana Source
       </h1>
       <div className={styles.heroImage}>
-        <Image
+        <ExportedImage
           src={cavePic}
           alt='mana well in cave'
-          height="950"
+          height="990"
           priority
+          placeholder="blur"
           style={{
             width: "100%",
             objectFit: "cover"
           }} />
         <a className={styles.scrollArrow + " " + styles.offset} href="#main">
-          <Image
+          <ExportedImage
             src={arrowPic}
             alt='down arrow'
             height="1"
@@ -49,7 +50,7 @@ export default function Landing() {
         <div className={styles.dH0}>
           <InfoBox classes={infoboxStyles.offset}>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
-              <Image
+              <ExportedImage
                 src={agesPic}
                 alt='ages'
                 styles={{ objectFit: "contain" }}
@@ -63,7 +64,7 @@ export default function Landing() {
               <p>13+</p>
             </div>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
-              <Image
+              <ExportedImage
                 src={playersPic}
                 alt='players'
                 height="50"
@@ -77,7 +78,7 @@ export default function Landing() {
               <p>1-4</p>
             </div>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
-              <Image
+              <ExportedImage
                 src={timePic}
                 alt='time to play'
                 height="50"
@@ -144,7 +145,7 @@ export default function Landing() {
         </ContentSection>
         <br />
         <div className={styles.fullW + " " + styles.tCenter}>
-          <Image
+          <ExportedImage
             src={ggLogo}
             alt='Goodrich Games Logo'
             width={0}

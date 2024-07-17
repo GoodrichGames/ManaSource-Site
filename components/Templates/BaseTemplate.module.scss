@@ -2,7 +2,7 @@
 @import "../../styles/scss/animations.scss";
 
 .backgroundWrap {
-  background: url(../../public/images/bg-page.png) no-repeat top center;
+  background: url(../../public/images/nextImageExportOptimizer/bg-page-opt-3840.WEBP) no-repeat top center;
   margin: 0;
   padding: 0;
 }
@@ -38,7 +38,8 @@
   display: block;
   margin: 0 auto;
   width: 20px;
-  height: 20px;
+  // height: 20px;
+  height: 0;
 
   img {
     animation-duration: 1000ms;
@@ -56,23 +57,23 @@
 }
 
 .ruinsBg {
-  background: url(../../public/images/Exploring-cavern-ruins.png) no-repeat center;
+  background: url(../../public/images/nextImageExportOptimizer/Exploring-cavern-ruins-opt-3840.WEBP) no-repeat center;
   object-fit: cover;
 }
 
 .golemBg {
-  background: url(../../public/images/Golem.jpg) no-repeat bottom center;
+  background: url(../../public/images/nextImageExportOptimizer/Golem-opt-3840.WEBP) no-repeat bottom center;
   object-fit: cover;
 }
 
 .assassinBg {
-  background: url(../../public/images/Assassin.jpg) no-repeat top center;
+  background: url(../../public/images/nextImageExportOptimizer/Assassin-opt-3840.WEBP) no-repeat top center;
   background-position-x: 30%;
   object-fit: cover;
 }
 
 .timbatiaBg {
-  background: url(../../public/images/Moonlight.jpg) no-repeat center center;
+  background: url(../../public/images/nextImageExportOptimizer/Moonlight-opt-3840.WEBP) no-repeat center center;
   object-fit: cover;
 }
 
@@ -101,12 +102,13 @@
     width: 100%;
   }
   section {
-    background: url(../../public/images/border.gif) repeat-x top left;
+    // background: url(../../public/images/border.gif) repeat-x top left;
     // margin: 0 10px;
-    padding: 3px 0 0;
+    // padding: 3px 0 0;
     position: relative;
     display: block;
-    margin-top: 10px;
+    border-bottom: 1px solid black;
+    // margin-top: 10px;
 
     ul {
       background: $dark-bg-color;
@@ -133,8 +135,9 @@
   }
 
   h3 {
-    background: #070707 url(../../public/images/gradient3.png) repeat-x top center;
-    border: 1px solid #22272a;
+    background: #070707 url(../../public/images/nextImageExportOptimizer/gradient3-opt-3840.WEBP) repeat-x top center;
+    // border-top: 2px solid #22272a;
+    // border-bottom: 2px solid #22272a;
     color: $white;
     font-family: $font-family_2;
     font-size: 1.6rem;
@@ -155,15 +158,18 @@
 }
 
 .footer {
-  background: url(../../public/images/bg-footer2.png) repeat-x bottom left;
-  margin: 0;
+  background: url(../../public/images/nextImageExportOptimizer/bg-footer2-opt-3840.WEBP) repeat-x bottom left;
   padding: 0;
+  margin: -3rem 0 0 0;
+  position: relative;
+  z-index: 1;
+
   .footerContent {
-    background: url(../../public/images/bg-footer.png) no-repeat bottom center;
+    background: url(../../public/images/nextImageExportOptimizer/bg-footer-opt-3840.WEBP) no-repeat bottom center;
     margin: 0;
     text-align: center;
     padding-top: 6rem;
-    min-height: 21rem;
+    // min-height: 21rem;
   }
   ul {
     display: block;
@@ -178,7 +184,7 @@
       margin: 0 22px;
       padding: 0;
       a {
-        background: url(../../public/images/icons.png) no-repeat;
+        // background: url(../../public/images/icons.png) no-repeat;
         color: $white;
         display: block;
         line-height: 73px;
@@ -240,6 +246,10 @@
 
 .mB10 {
   margin-bottom: 10px;
+}
+
+.mB20 {
+  margin-bottom: 20px;
 }
 
 .vAlignTop {

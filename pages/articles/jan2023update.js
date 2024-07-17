@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import prefix from '../../utils/prefix';
@@ -25,7 +25,7 @@ const Article = () => {
                 - New Art including the piece below.
               </p>
               <br />
-              <Image
+              <ExportedImage
                 src={timbatiaPic}
                 alt='Large tree growing out of rock under the moonlight'
                 width={0} height={500}

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ExportedImage from "next-image-export-optimizer";
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 import brassPic from '../../public/images/articles/Brass-Bir.PNG';
 import monopolyPic from '../../public/images/articles/Monopoly.PNG';
@@ -21,8 +21,8 @@ const Article = () => {
             <br />
             I had the pleasure of meeting several of you last weekend at the first public playtest and demo of Mana Source at Dragoncon 2023 in Atlanta!  First off, THANK YOU so much for your time and valuable feedback!
             <br /><br />
-            <Image src={playtest1} alt='Playtester playing Mana Source in person' width={0} height={500} objectFit="contain" priority={true} />
-            <Image src={playtest2} alt='Group of playtesters playing Mana Source in person' width={0} height={500} objectFit="contain" priority={true} />
+            <ExportedImage src={playtest1} alt='Playtester playing Mana Source in person' width={0} height={500} objectFit="contain" priority={true} />
+            <ExportedImage src={playtest2} alt='Group of playtesters playing Mana Source in person' width={0} height={500} objectFit="contain" priority={true} />
             <br />
             Overall I received very positive feedback, especially from people who have not been able to get into this type of game before.  That&apos;s exciting for me as a designer as I want this game to be accessible and hit the table more often than many of the other campaign-oriented board games out there.  We consistently taught players how to play in 10 minutes or less.  One of the things I love about this system is that your playstyle can be simple or you can try pull off complex combos as you seek to complete a scenario bonus or get an edge in PvP.
             <br /><br />
@@ -44,7 +44,7 @@ const Article = () => {
             <hr />
             <br />
               <ContentItem>
-                <Image src={hummingbearPic} alt='Hummingbear creature' width={0} height={500} objectFit="contain" priority={true} className={styles.center} />
+                <ExportedImage src={hummingbearPic} alt='Hummingbear creature' width={0} height={500} objectFit="contain" priority={true} className={styles.center} />
                 <Container classes={styles.fullW + " " + styles.tCenter}><em>The Hummingbear - Nele Diel</em>
 
                 </Container>
@@ -90,7 +90,7 @@ const Article = () => {
             <br /><br />
             First, let me state the obvious - we all have different preferences and past experiences when it comes to board games.  That&apos;s readily apparent by examining the most popular board game of the past 100 years, one I can almost guarantee if you&apos;re reading this that you have played at some point. Monopoly has sold over 275 million copies in multiple versions worldwide.  It must be pretty well loved right?
             <br /><br />
-            <Image src={monopolyPic} alt='Board Game Geek profile of Monopoly' width={0} height={400} objectFit="contain" priority={true} /><br />   
+            <ExportedImage src={monopolyPic} alt='Board Game Geek profile of Monopoly' width={0} height={400} objectFit="contain" priority={true} /><br />   
             <em style={{ fontSize: '12px' }}>Image credit: <a href="https://boardgamegeek.com/boardgame/1406/monopoly">https://boardgamegeek.com/boardgame/1406/monopoly</a></em><br />
             <br />
             Whoops.  Well, I guess not.  At least, you wouldn&apos;t know it by only looking at Board Game Geek, where it rates at a measly 4.4/10.  Why is there such a disconnect?  I can think of a few possible reasons:
@@ -115,7 +115,7 @@ const Article = () => {
             - Fairly easy to learn.<br />
             <br />
             Let&apos;s see if there are any overlaps in positives with the current number 1 game on Board Game Geek - Brass: Birmingham.<br /><br />
-            <Image src={brassPic} alt='Board Game Geek profile of Brass Birmingham' width={0} height={400} objectFit="contain" priority={true} className={styles.block} />
+            <ExportedImage src={brassPic} alt='Board Game Geek profile of Brass Birmingham' width={0} height={400} objectFit="contain" priority={true} className={styles.block} />
             <br />        
             <em style={{ fontSize: '12px' }}>Image credit: <a href="https://boardgamegeek.com/boardgame/224517/brass-birmingham">https://boardgamegeek.com/boardgame/224517/brass-birmingham</a></em><br />
             <br />

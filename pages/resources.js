@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import Link from 'next/link';
 import styles from '../components/Templates/BaseTemplate.module.scss';
 import ContentSection from '../components/content/ContentSection/ContentSection';
@@ -19,7 +19,7 @@ export default function Resources() {
         <br />
         <br />
         <ContentItem>
-          <h1 className={styles.logo + " " + styles.tCenter}>Mana Source Resources</h1>
+          <h1 className={styles.logo + " " + styles.tCenter}>Resources</h1>
         </ContentItem>
         <br />
         <br />
@@ -35,7 +35,7 @@ export default function Resources() {
                 </div>
               </div>
               <div className={styles.ld50} style={{ height: '315px' }}>
-                <Image
+                <ExportedImage
                   src={prefix + '/images/HowToPlay.PNG'}
                   alt='Image of how cards move down the recharge zone when played'
                   priority={true}

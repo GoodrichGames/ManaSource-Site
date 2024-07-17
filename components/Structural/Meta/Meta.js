@@ -16,6 +16,7 @@ const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
     <link rel="canonical" href={link} />
     <meta charSet="utf-8"></meta>
     <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="description" content={description} />
     <meta name='application-name' content={title} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={link} />

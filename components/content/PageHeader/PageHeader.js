@@ -1,11 +1,11 @@
 import styles from './PageHeader.module.scss';
-import Image from "next/image";
+import ExportedImage from "next-image-export-optimizer";
 import prefix from '../../../utils/prefix';
 
 const PageHeader = ({ title, description, image }) => {
   return (
     <header className={image ? styles.imageHeader : styles.header}>
-      {image && <Image
+      {image && <ExportedImage
         src={prefix + image}
         alt={title}
         width={0}
