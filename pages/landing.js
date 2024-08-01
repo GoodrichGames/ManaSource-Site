@@ -15,13 +15,25 @@ import NoNavTemplate from './../components/Templates/NoNavTemplate';
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import InfoBox from './../components/content/InfoBox/InfoBox';
+import logo from '../public/images/ManaSourceHLogo.png'
 
 export default function Landing() {
   return (
     <NoNavTemplate>
-      <h1 className={styles.logo + " " + styles.overlayText + " " + styles.tCenter}>
-        Mana Source
-      </h1>
+      <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
+        <ExportedImage src={logo}
+          alt='Mana Source logo'
+          height="89"
+          priority
+          style={{
+            width: "auto",
+            maxWidth: "100%",
+            objectFit: "contain"
+          }} />
+        <h1 className="hidden">
+          Mana Source
+        </h1>
+      </div>
       <div className={styles.heroImage}>
         <ExportedImage
           src={cavePic}
@@ -108,7 +120,9 @@ export default function Landing() {
                 But be careful, each opponent may have a few tricks they&apos;ve picked up from another nation...
               </em>
             </p>
-            <div className={styles.maxW500}>
+            <br />
+            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2025.</div>
+            <div className={styles.maxW500 + " " + styles.center + " " + styles.tCenter}>
               <EmailSignup ctaText="Start your adventure!" />
             </div>
           </InfoBox>
@@ -132,7 +146,7 @@ export default function Landing() {
             <br />
             <InfoBox classes={styles.tCenter} delay={2}>
               <h2 className={styles.tCenter + " " + styles.medWPadding}>
-                <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in late 2024.</div>
+                <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2025.</div>
               </h2>
               <div className={styles.maxW500 + " " + styles.center}>
                 <EmailSignup ctaText="Start your adventure!" />
@@ -154,6 +168,8 @@ export default function Landing() {
               objectFit: "contain",
             }} />
         </div>
+        <br />
+        <br />
         <br />
       </ContentSection>
     </NoNavTemplate>
