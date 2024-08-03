@@ -1,6 +1,4 @@
 import styles from './ArticleList.module.scss'
-import Link from 'next/link'
-import prefix from '../../../utils/prefix';
 import ExportedImage from "next-image-export-optimizer";
 
 const ArticleItem = ({ article }) => {
@@ -8,7 +6,7 @@ const ArticleItem = ({ article }) => {
     <a href={article.link} className={styles.articleLink}>
         <div className={styles.imageContainer}>
           <ExportedImage
-            src={prefix + article.image}
+            src={article.image}
             alt={article.title}
             className={article.imageVAlign}
             fill
