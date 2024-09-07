@@ -137,7 +137,7 @@ export default function Landing() {
               <br />
               <br />
               <br />
-              <h2>A discovery at an ancient vault has the potential to upend the nations...</h2>
+              <h2>A discovery at an ancient vault may be the last hope of a people driven underground...</h2>
               <br />
             </InfoBox>
             <br />

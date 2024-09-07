@@ -137,7 +137,7 @@ export default function Home() {
             <br />
             <br />
             <br />
-            <h2>A discovery at an ancient vault has the potential to upend the nations...</h2>
+            <h2>A discovery at an ancient vault may be the last hope of a people driven underground...</h2>
             <br />
           </InfoBox>
           <br />
@@ -208,7 +208,7 @@ export default function Home() {
                 <h4>3 Gamemodes</h4>
                 <p><strong>Adventure</strong> through 20 story-rich scenarios,</p><br />
                 <p><strong>Skirmish</strong> in a series of encounters, and</p><br />
-                <p><strong>Clash</strong> competitively with 280 skills.</p><br />
+                <p><strong>Clash</strong> competitively with 240 skills.</p><br />
               </div>
             </div>
             <br /><br />
@@ -271,7 +271,7 @@ export default function Home() {
               <p><strong>Paul Goodrich</strong></p>
               <p className={styles.mb1}><i>Lead Designer</i></p>
               <p className={styles.mb1}>
-                Paul graduated from North Carolina State University with a Bachelor&apos;s degree in Computer Science and concentration in game design.  He has a long history of competitive gaming, including as the former professional support and jungler for Team C in the MOBA Infinite Crisis, Masters in Overwatch pre-OWL, and Diamond 1 in League of Legends in S3.
+                Paul graduated from North Carolina State University with a Bachelor&apos;s degree in Computer Science and concentration in game design.  He has a long history of competitive gaming, including professionally as the support and jungler for Team C in the MOBA Infinite Crisis, Masters in Overwatch pre-OWL, and Diamond 1 in League of Legends in S3.
               </p>
             </div>
           </InfoBox>
