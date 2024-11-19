@@ -14,6 +14,7 @@ import playersPic from '../public/icons/players.png';
 import paulPic from '../public/images/PaulProfile.jpg';
 import nelePic from '../public/images/NeleProfile.jpg';
 import sandiPic from '../public/images/SandiProfile.jpg';
+import amandaPic from '../public/images/AmandaProfile.jpg';
 import logo from '../public/images/ManaSourceHLogo.png'
 import cavePic from '../public/images/cave.png';
 import noAIPic from '../public/icons/NoAI.png';
@@ -283,7 +284,7 @@ export default function Home() {
               <p className={styles.mb1}>
                 Nele is a full-time freelance illustrator living in Wiesbaden, Germany.  She graduated with a degree in Communication Design in 2016.  Since then she has produced art for several board games, including for the The Lord of the Rings,
                 Arkham Horror, and Legend of the Five Rings trading card games. </p><p>
-                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  We&apos;re honored to have her produce art for <span className={styles.fontArkhip}>Mana Source</span>.  You can find more of her art or request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
+                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  You can find more of her art and request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
               </p>
             </div>
             <ExportedImage
@@ -298,7 +299,36 @@ export default function Home() {
               }} />
           </InfoBox>
           <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tCenter + " " + styles.center}>
+            <ExportedImage
+              src={amandaPic}
+              alt='Amanda profile picture'
+              width={200}
+              height={0}
+              priority
+              className={styles.inline + " " + styles.tRight}
+              style={{
+                maxWidth: "100%",
+              }} />
+            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
+              <p><strong>Amanda Brack</strong></p>
+              <p className={styles.mb1}><i>Lead Artist</i></p>
+              <p className={styles.mb1}>
+                Amanda Brack is NYC based digital freelance illustrator. Growing up hearing folktales by the fire and discovering the magic in hidden corners of the New England coast, she has a deep passion for fantasy and storytelling.
+                </p><p>She has worked on a wide range of projects including character designs, private commissions, book covers, children&apos;s books, coloring books, and more.  You can find more of her art and request commissions on on <a href="https://www.amandabrack.art/">https://www.amandabrack.art/</a>.
+              </p>
+            </div>
+          </InfoBox>
+          <br />
           <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
+
+            <div className={styles.vAlignTop + " " + styles.md50 + " " + styles.mR20 + " " + styles.tLeft}>
+              <p><strong>Sandi Goodrich</strong></p>
+              <p className={styles.mb1}><i>Creature Concepts</i></p>
+              <p className={styles.mb1}>
+                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and <span className={styles.fontArkhip}>Mana Source</span>.
+              </p>
+            </div>
             <ExportedImage
               src={sandiPic}
               alt='Sandi profile picture'
@@ -310,13 +340,6 @@ export default function Home() {
                 maxWidth: "100%",
                 height: "auto",
               }} />
-            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
-              <p><strong>Sandi Goodrich</strong></p>
-              <p className={styles.mb1}><i>Creature Concepts</i></p>
-              <p className={styles.mb1}>
-                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and <span className={styles.fontArkhip}>Mana Source</span>.
-              </p>
-            </div>
             <a className={styles.scrollArrow} href="#news">
               <ExportedImage
                 src={arrowPic}

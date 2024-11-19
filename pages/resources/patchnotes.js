@@ -25,7 +25,16 @@ export default function PatchNotes() {
         <InfoBox classes={styles.fullW}>
           <br />
           <br />
+          <br />
+          <br />
+          <p>
           Come back here when the game launches!
+          </p>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
         </InfoBox>

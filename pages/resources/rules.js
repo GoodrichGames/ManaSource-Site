@@ -34,16 +34,16 @@ export default function Rules() {
             <br />
             <Accordion title='When will Mana Source be released?' defaultExpanded={false}>
               <em>
-                TBA once a publisher or crowdfunding is secured.  If you are interested in working with us, please
-                <Link href='/contactus'> contact us!</Link><br />
-                At the current rate of progress, Mana Source will Kickstart in Fall 2024.  The email signup below is the best way I can keep you updated.
+                TBD once crowdfunding is secured.  If you are interested in working with us, please
+                <Link href='/contactus'> contact us!</Link><br /><br />
+                At the current rate of progress, Mana Source will Kickstart in Summer 2025.  The email signup below is the best way I can keep you updated.
                 <EmailSignup ctaText="Start your adventure!" />
               </em>
             </Accordion>
             <br />
             <Accordion title='How much will Mana Source cost?' defaultExpanded={false}>
               <em>
-                This will largely depend on the final components.  We are hoping to provide tiered pricing of $15 and $70.
+                This will largely depend on the final components.  We are aiming for tiered pricing of $15 and $70.
               </em>
             </Accordion>
             <br />
@@ -51,25 +51,25 @@ export default function Rules() {
               <strong>
                 Knight
               </strong>
-              <p><em>Talents: Convert mana to Adrenaline.  Convert Adrenaline to strength, speed, endurance.</em></p><br />
+              <p><em>Talents: Strength, speed, and endurance.</em></p><br />
               <p>
-                Knights live under honor or the law, and almost unilaterally come from a brutal history.  Various wars were fought over land control, power, and a fear of more outward talent users.  At this time, the majority of the humans in the world are Knights.  They rarely directly outwardly convert mana in the same way that the other nations do, preferring the strength found in adrenaline coursing through their veins.  It is not well known that Knights still draw and convert mana in this process.  Due to physical training and method, they use it at a more efficient rate than other Shapers.
+              Knights live in honor-based societies, almost all of which have brutal histories.  Due to their physical prowess, war is often the first choice for many of these kingdoms rather than a last resort.  Their legendary disdain for outward talent usage fueled many of these wars, driving the other nations into hiding.  In the present day, the majority of the humans in the world are Knights.   Due to physical training, Knights use mana at a more efficient rate than other shapers.
               </p><br />
               <strong>Reagent</strong>
-              <p><em>Talents: Convert mana to and Influence Hydrogen, Nitrogen, Oxygen, Sodium, Silicon, Heat, and Electromagnetism.</em></p><br />
+              <p><em>Talents: Influence hydrogen, nitrogen, oxygen, sodium, silicon, heat, and electromagnetism.</em></p><br />
               <p>
-                Historically, Reagents have lived as traveling merchants to other nations.  They are long sought after for their terraforming, forging, water duct, and farming abilities.  More recently, they have organized into Corporations and taken up Artifacting, a means of generating elements from mana in a mechanically repeatable fashion via the use of handstones.  Overall, they live the most freely due to a high degree of self-sufficiency.  Outsiders are typically not allowed into their community, out of fear of what has happened to the other nations.
+              Historically, Reagents lived as traveling merchants, leveraging their skills in forging, construction, and water management.  Reagents live the most freely due to a high degree of self-sufficiency and ability to shape the land itself.  Outsiders are typically not allowed into their communities, out of fear of what has happened to the other nations.
               </p><br />
               <strong>Doctor</strong>
-              <p><em>Talents: Convert Health to mana.  Convert mana to Instruction, Healing, and Malaise.</em></p><br />
-              <p>An all but lost art.  Once the doctors and medics of the Knight empires, many were forced into creating human mana sources, plagues, and combat automatons that directly opposed their underlying belief in the sanctity of life.  Many chose to take on the appearance of death itself instead of serving those who would subvert that.  Their automatons still roam the land searching for ways to fulfill their defined purpose, unbeholden to any master but the one who created them.  They have dwindled much in number, and until recently, only the automatons evidence that they ever existed at all.</p>
+              <p><em>Talents: Healing and malaise, health as a resource, creating living directives.</em></p><br />
+              <p>An all but lost art.  Once the medics of Knight empires, many were forced into creating plagues and combat automatons that opposed their underlying belief in the sanctity of life.  Their automatons still roam the land searching for ways to fulfill their defined purpose, unbeholden to any master but the one who created them.  Doctors have dwindled much in number, to the point where some question if they still exist at all...</p>
               <br />
               <strong>Illusionist</strong>
-              <p><em>Talents: Convert mana to Illusions.  Influence over perception and displacement.</em></p><br />
-              <p>Illusionists are widely thought of as vagrants, criminals, and untrustworthy by nature.  To some extent this is true, as many have engaged in a variety of criminal activity such as forgery, suggestion, and “gambling”.  As such, their numbers have dwindled over the years due to prosecution and persecution.  Illusionists that prefer honest work often live as performers, soothers, councilors, and criminologists.  Many others are builders - they value reality.  There is one last known Illusionist city, though somehow outsiders never manage to visit.</p>
+              <p><em>Talents: Illusions.  Influence over perception and displacement.</em></p><br />
+              <p>Illusionists are widely thought of as vagrants, criminals, and untrustworthy by nature.  To some extent this critique is well-warranted, as many engage in a variety of criminal activity such as forgery, suggestion, and “gambling”.  Illusionists that prefer honest work often live as performers, soothers, councilors, criminologists, and builders.  There are only a few last known Illusionist cities, though somehow outsiders never manage to visit.</p>
               <br />
               <strong>Warden</strong>
-              <p><em>Talents: Convert mana to Pheromones.  Influence over Flora and Pheromones.</em></p><br />
+              <p><em>Talents: Influence flora, pheromones, and by extension animal behavior.</em></p><br />
               <p>Wardens prefer wooded communities.  Traditionally many of the cities were constructed from natural materials on the ground floor of the forest, then raised up to just below canopy level via growth into the tree and controlled vines.  As Knights grew aggressive and learned that Warden lodging relied on flammable timber, this became indefensible.  Some claim at least one of these villages still exists, though its manner of concealment is not disclosed.  Others were driven underground to vast networks of caves in mountains and steep ridges, villages extending far up into the rock.  They provide a great deal of natural medicine, toxins, and food for non-Knight nations.</p>
               <br />
             </Accordion><br />
@@ -81,6 +81,10 @@ export default function Rules() {
             </Accordion>
           </ContentItem>
         </ContentSection>
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     </BaseTemplate>
   )
