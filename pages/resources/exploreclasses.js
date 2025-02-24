@@ -1,105 +1,105 @@
 import ContentSection from '../../components/content/ContentSection/ContentSection';
 import BaseTemplate from './../../components/Templates/BaseTemplate';
 import ContentItem from './../../components/content/ContentSection/ContentItem';
+import styles from './../../components/Templates/BaseTemplate.module.scss'
+import InfoBox from './../../components/content/InfoBox/InfoBox';
 
 export default function ExploreClasses() {
   return <BaseTemplate title="Resources" description="Game Resources">
     <ContentSection>
-      <ContentItem title='Explore the classes'>
-        <p>
-          <b>Reagent</b><br />
-          <em>Eleshaper</em><br />
-          Class primary bonus: Mana Reserves. player starts the game with 10 Mana.<br />
-          Talent: Convert Mana to Fire, Water, Stone, Electricity, Air<br />
-          Playstyle: Aggressive, Talent damage or Control based<br />
-          <br />
-          Historically, Reagents have lived as traveling merchants to other nations.  They are long
-          sought after for their terraforming, forging, water duct, and farming abilities.  More recently,
-          they have organized into Corporations and taken up Artifacting, a means of generating elements
-          from mana in a mechanically repeatable fashion.  Overall, they live the most freely due to a
-          high degree of self-sufficiency.  Outsiders are not allowed into their community, out of
-          fear of what has happened to the other nations.
-        </p>
-        <br />
-        <p>
-          <b>Warden</b><br />
-          <em>Ecoshaper</em><br />
-          Class primary bonus: Mana Growth.  You may gather up an additional Mana during the end of the round.<br />
-          Talent: Convert Mana to Living Aid (Nature or Animal).  Increased control over their own mana flow.<br />
-          Playstyle: Aggressive, Attack and Condition based damage, Traps<br />
-          <br />
-          Wardens prefer wooded communities for obvious reasons.  Traditionally many of the cities
-          were constructed from natural materials on the ground floor of the forest, then raised up
-          to just below canopy level via growth into the tree and controlled vines.  As Knights grew
-          aggressive and learned that Warden lodging relied on flammable timber, this became
-          indefensible.  Some claim at least one of these villages still exists, though its manner
-          of concealment is not disclosed.  Others were driven underground to vast networks of caves
-          in mountains and steep ridges, villages extending far up into the rock.  They provide a
-          great deal of natural medicine, toxins, and food for non-Knight nations.
-        </p>
-        <br />
-        <p>
-          <b>Illusionist</b><br />
-          <em>Illusoshaper</em><br />
-          Class primary bonus: Sleight of Hand.  Your may have their effects applied in an action phase before your opponent’s action.<br />
-          Talent: Convert Mana to Illusions.  Control over perception.<br />
-          Playstyle: Control, Condition and Threat-based damage<br />
-          <br />
-          Illusionists are widely thought of as vagrants, criminals, and untrustworthy by nature.
-          To some extent this is true, as many have engaged in a variety of criminal activity such
-          as forgery, suggestion, and “gambling”.  As such, their numbers have dwindled over the
-          years due to prosecution and persecution.  Illusionists that prefer honest work often
-          live as performers, soothers, councilors, and criminologists.  Many others are builders -
-          they value reality.  There is one last known Illusionist city, though somehow outsiders
-          never manage to visit.
-        </p>
-        <br />
-        <p>
-          <b>Knight</b><br />
-          <em>Vigorshaper</em><br />
-          Class Primary Bonus: Physical Training. Deal 1 extra damage to primary target when using an attack skill.<br />
-          Talent: Convert Mana to Adrenaline.  Convert Adrenaline to strength, speed, endurance.<br />
-          Playstyle: Straightforward, Attack damage based<br />
-          <br />
-          Knights live under honor or the law, and almost unilaterally come from a brutal history.
-          Various wars were fought over land control, power, and a fear of more outward talent users.
-          At this time, the majority of the humans in the world are Knights.  They rarely directly channel
-          mana in the same way that the other nations do, preferring the strength found in
-          adrenaline coursing through their veins.  It is not well known that Knights still draw
-          and convert mana in this process.  Due to physical training and method, they use it at
-          a more efficient rate than other Shapers.
-        </p>
-        <br />
-        <p>
-          <b>Doctor</b><br />
-          <em>Bioshaper</em><br />
-          Class primary bonus: Life Capture.  Gain a mana when a health target is depleted,
-          a pet dies, a minion, or enemy group (PvE) dies.<br />
-          Talent: Convert Mana to Healing &amp; Malaise, Convert Health to Mana.  Control over unbound Life force.<br />
-          Playstyle: Sustain, Control, Ramp<br />
-          <br />
-          An all but lost art.  Once the doctors and medics of the Knight empires, many were
-          forced into creating human mana sources, plagues, and combat automatons that directly
-          opposed their underlying belief in the sanctity of life.  Many chose to take on the
-          appearance of death itself instead of serving those who would subvert that.  Their
-          automatons still roam the land searching for ways to fulfill their defined purpose,
-          unbeholden to any master but the one who created them.  They have dwindled much in number,
-          and until recently, only the automatons evidence that they ever existed at all.
-        </p>
-        <br />
-        <p>
-          <b>Unknown</b><br />
-          <em>Solarshaper</em><br />
-          Talent: Convert Mana to Light, Heat, Purification, Mystery<br />
-          Playstyle: Healing, Advantages, Anti-Control<br />
-          <br />
-          Primary Solarshapers are considered extinct and are unavailable for selection as a
-          primary class, though their skills may be used as a secondary class.  Much about them
-          exists as myth, but they were known to be mediators, teachers, scholars, and leaders.
-          Their nation was wiped out roughly 40 years ago, though many of their gems are tightly
-          controlled and used by Knight leadership.
-        </p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <ContentItem>
+        <h1 className={styles.logo + " " + styles.tCenter}>Explore the Classes</h1>
       </ContentItem>
+      <br />
+      <br />
     </ContentSection>
+    <div className={styles.maxW960 + " " + styles.center}>
+      <ContentSection>
+        <ContentItem title=''>
+          <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
+            <p>
+              <b>Reagent</b><br />
+              <em>Eleshaper</em><br />
+              Class primary bonus: Mana Reserves.  Starts with 5 additional Mana.<br />
+              Talent:  Influence hydrogen, nitrogen, oxygen, sodium, silicon, heat, and electromagnetism.<br />
+              Playstyle: Flexible talent damage.<br />
+              <br />
+              Historically, Reagents lived as traveling merchants, leveraging their talents in forging, construction, and water management.  Reagents live the most freely due to a high degree of self-sufficiency and ability to shape the land itself.  Outsiders are typically not allowed into their communities, out of fear of what has happened to the other nations.
+            </p>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
+            <p>
+              <b>Warden</b><br />
+              <em>Ecoshaper</em><br />
+              Class primary bonus: Harmony.  Gain an attack token when you play an attack.  Gain a talent token when you play a talent.  Each time you have 1 of each, lose both in order to gain 1 mana.<br />
+              Talent: Influence flora, pheromones, and by extension animal behavior.<br />
+              Playstyle: Long-term value, hidden actions, mixed damage.<br />
+              <br />
+              Wardens prefer living in harmony with nature in wooded communities.  However, the ongoing aggression from Knights has made them largely indefensible.  The few who remain are on constant watch for forest fires and new ways to hide their homes.  Many others chose to flee underground, surviving using low sunlight farms.  Wardens provide a great deal of natural medicine, toxins, and food for non-Knight nations.
+            </p>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
+            <p>
+              <b>Illusionist</b><br />
+              <em>Illusoshaper</em><br />
+              Class primary bonus: Mirage.  Start with 3 illusion cards in hand that can be played for free at the end of a round.<br />
+              Talent: Illusions.  Influence over perception and displacement.<br />
+              Playstyle: Control, Condition and Threat-based damage<br />
+              <br />
+              Illusionists are widely thought of as vagrants, criminals, and untrustworthy by nature.  To some extent this critique is well-warranted, as many engage in a variety of criminal activity such as forgery, suggestion, and “gambling”.  Illusionists that prefer honest work often live as performers, soothers, councilors, criminologists, and builders.  There are only a few last known Illusionist cities, though somehow outsiders never manage to visit.
+            </p>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
+            <p>
+              <b>Knight</b><br />
+              <em>Vigorshaper</em><br />
+              Class Primary Bonus: Physical Training. Deal +1 damage on your attacks.<br />
+              Talent: Strength, speed, and endurance.<br />
+              Playstyle: Synergistic, control, attack damage.<br />
+              <br />
+              Knights live in honor-based societies, almost all of which have brutal histories.  Due to their physical prowess, war is often the first choice for many of these kingdoms rather than a last resort.  Their legendary disdain for outward talent usage fueled many of these wars, driving the other nations into hiding.  In the present day, the majority of the humans in the world are Knights.
+              <br /><br />
+              Due to physical training, Knights use mana at a more efficient rate than other shapers.
+            </p>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
+            <p>
+              <b>Doctor</b><br />
+              <em>Bioshaper</em><br />
+              Class primary bonus: Life Capture.  Keep track of lost health.
+              Gain 1 mana whenever you lose 8 health.<br />
+              Talent: Healing and malaise, health as a resource, creating living directives.<br />
+              Playstyle: Sustain, control, talent damage<br />
+              <br />
+              An all but lost art.  Once the medics of Knight empires, many were forced into creating plagues and combat automatons that opposed their underlying belief in the sanctity of life.  Their automatons still roam the land searching for ways to fulfill their defined purpose, unbeholden to any master but the one who created them.  Doctors have dwindled much in number, to the point where some question if they still exist at all...
+            </p>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
+            <p>
+              <b>Unknown</b><br />
+              <em>Solarshaper</em><br />
+              Talent: Light, Purification<br />
+              Playstyle: Healing, Advantages,  Defensive<br />
+              <br />
+              Primary Solarshapers are considered extinct and are only available as a secondary class.  Their last known nation was wiped out by the Kydarian knights nearly 40 years ago.  When they lived, it was often near the Eastern pole, a secluded region of constant sunlight.
+            </p>
+          </InfoBox>
+        </ContentItem>
+      </ContentSection>
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
   </BaseTemplate>
 }
