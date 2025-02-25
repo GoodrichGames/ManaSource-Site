@@ -21,6 +21,15 @@ const nextConfig = {
     nextImageExportOptimizer_generateAndUseBlurImages: "true",
     nextImageExportOptimizer_remoteImageCacheTTL: "0",
   },
+  async redirects() {
+    return [
+      {
+        source: '/resources/learntoplay',
+        destination: 'https://www.youtube.com/watch?v=jnfqC_cbxvg',
+        permanent: false,
+      }
+    ]
+  }
 }
 
 module.exports = nextConfig
