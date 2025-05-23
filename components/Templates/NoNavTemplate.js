@@ -20,7 +20,7 @@ const NoNavTemplate = ({ children, title, date, description, image, isArticle })
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <p>
-          Mana Source © Goodrich Games 2024. All rights reserved.
+          Mana Source © Goodrich Games 2025. All rights reserved.
         </p>
       </div>
     </footer>
