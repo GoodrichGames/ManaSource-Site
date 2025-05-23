@@ -3,7 +3,7 @@ import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ExportedImage from "next-image-export-optimizer";
 import andresPic from '../../public/images/articles/20SmallRes.jpg';
 import rulebookToC from '../../public/images/articles/RulebookTOC.PNG';
-import rulebookOnePic from '../../public/images/articles/Rulebookpreview.PNG';
+import rulebookOnePic from '../../public/images/articles/Rulebookpreview.jpg';
 import rulebookTwoPic from '../../public/images/articles/Rulebookpreview2.PNG';
 import campaignPreviewOnePic from '../../public/images/articles/CampaignBookPreview.PNG';
 import playerBoxPic from '../../public/images/articles/PlayerBoxPic.jpg';
