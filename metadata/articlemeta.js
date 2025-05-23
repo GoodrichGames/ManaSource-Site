@@ -1,5 +1,23 @@
 const posts = [
   {
+    title: 'Mid-Year 2025 Update',
+    description: '',
+    image: '/images/articles/20SmallRes.jpg',
+    link: '/articles/q22025update',
+    categories: ['all','devnotes','announcements'],
+    date: 'May 22nd, 2025',
+    imageVAlign: 'vAlignTop',
+  },
+  {
+    title: 'EOY 2024 Update',
+    description: '',
+    image: '/images/articles/TidestrikerCaptain.jpg',
+    link: '/articles/eoy2024update',
+    categories: ['all','devnotes','announcements'],
+    date: 'January 1st, 2025',
+    imageVAlign: 'vAlignTop',
+  },
+  {
     title: 'Q2 2024 Update',
     description: '',
     image: '/images/articles/SaveTheHummingbears.png',
