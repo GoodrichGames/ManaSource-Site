@@ -15,6 +15,8 @@ import paulPic from '../public/images/PaulProfile.jpg';
 import nelePic from '../public/images/NeleProfile.jpg';
 import sandiPic from '../public/images/SandiProfile.jpg';
 import amandaPic from '../public/images/AmandaProfile.jpg';
+import angeloPic from '../public/images/AngeloProfile.jpg';
+import oliviaPic from '../public/images/OliviaProfile.jpg';
 import logo from '../public/images/ManaSourceHLogo.png'
 import cavePic from '../public/images/cave.png';
 import noAIPic from '../public/icons/NoAI.png';
@@ -315,7 +317,7 @@ export default function Home() {
               <p className={styles.mb1}><i>Lead Artist</i></p>
               <p className={styles.mb1}>
                 Amanda Brack is NYC based digital freelance illustrator. Growing up hearing folktales by the fire and discovering the magic in hidden corners of the New England coast, she has a deep passion for fantasy and storytelling.
-                </p><p>She has worked on a wide range of projects including character designs, private commissions, book covers, children&apos;s books, coloring books, and more.  You can find more of her art and request commissions on on <a href="https://www.amandabrack.art/">https://www.amandabrack.art/</a>.
+              </p><p>She has worked on a wide range of projects including character designs, private commissions, book covers, children&apos;s books, coloring books, and more.  You can find more of her art and request commissions on on <a href="https://www.amandabrack.art/">https://www.amandabrack.art/</a>.
               </p>
             </div>
           </InfoBox>
@@ -340,6 +342,48 @@ export default function Home() {
                 maxWidth: "100%",
                 height: "auto",
               }} />
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.mLauto + " " + styles.tCenter + " " + styles.center}>
+            <ExportedImage
+              src={angeloPic}
+              alt='Angelo profile picture'
+              width={200}
+              height={0}
+              priority
+              className={styles.inline + " " + styles.tRight}
+              style={{
+                maxWidth: "100%",
+              }} />
+            <div className={styles.inline + " " + styles.mL20 + " " + styles.vAlignTop + " " + styles.tLeft + " " + styles.md50}>
+              <p><strong>Angelo Adonis Chavez</strong></p>
+              <p className={styles.mb1}><i>Character and Environment Artist</i></p>
+              <p className={styles.mb1}>
+                Angelo Chavez is a freelance illustrator and concept artist based in the Philippines. He enjoys working on fantasy illustrations and has done work for card and board games.
+              </p><p>You can find more of his art and request commissions on on <a href="https://www.artstation.com/bradixr">https://www.artstation.com/bradixr</a>.
+              </p>
+            </div>
+          </InfoBox>
+          <br />
+          <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
+            <div className={styles.vAlignTop + " " + styles.md50 + " " + styles.mR20 + " " + styles.tLeft}>
+              <p><strong>Olivia Hintz</strong></p>
+              <p className={styles.mb1}><i>Character and Environment Artist</i></p>
+              <p className={styles.mb1}>
+                Olivia Hintz is a fantasy illustrator and freelance artist known for her story-driven artwork. A classically trained painter, she earned her BFA from Purchase College&apos;s Conservatory of Fine Art. After graduation, she transitioned into digital illustration driven by her passion for storytelling, worldbuilding and immersive fantasy scenes.
+              </p><p>You can find more of her art and request commissions on on <a href="https://www.oliviahintz.com/">https://www.oliviahintz.com/</a>.
+              </p>
+            </div>
+            <ExportedImage
+              src={oliviaPic}
+              alt='Olivia profile picture'
+              width={200}
+              height={0}
+              priority
+              className={styles.inline + " " + styles.tRight}
+              style={{
+                maxWidth: "100%",
+              }} />
             <a className={styles.scrollArrow} href="#news">
               <ExportedImage
                 src={arrowPic}
@@ -355,6 +399,7 @@ export default function Home() {
                 }} />
             </a>
           </InfoBox>
+          <br />
         </ContentItem>
       </ContentSection >
       <div id="news"></div>
