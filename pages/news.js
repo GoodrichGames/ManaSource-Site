@@ -1,6 +1,6 @@
 import BaseLayout from '../components/Templates/BaseTemplate';
 import styles from '../components/Templates/BaseTemplate.module.scss';
-import PostList from '../components/content/ArticleList/ArticleList';
+import ArticleList from '../components/content/ArticleList/ArticleList';
 import InfoBox from '../components/content/InfoBox/InfoBox';
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import ContentSection from './../components/content/ContentSection/ContentSection';
@@ -21,11 +21,10 @@ export default function News() {
         <br />
         </ContentSection>
         <ContentSection>
-        <ContentItem classes={styles.tCenter + " " + styles.golemBg + " " + styles.fullW}>
-          <InfoBox classes={styles.mLauto + " " + styles.maxW960}>
-            
-            <PostList category="all" />
-          </InfoBox>
+        <ContentItem classes={styles.tCenter + " " + styles.golemNewsBg + " " + styles.fullW}>
+              <InfoBox classes={styles.mLauto + " " + styles.maxW960}>
+                <ArticleList category="all" expandByYear={true} />
+              </InfoBox>
         </ContentItem>
       </ContentSection>
     </BaseLayout>

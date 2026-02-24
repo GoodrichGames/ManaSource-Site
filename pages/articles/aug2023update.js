@@ -9,14 +9,12 @@ import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import Container from './../../components/content/Container/Container';
 import ContentItem from './../../components/content/ContentSection/ContentItem';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>July / August Update</h3>
-          <div>
+  return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
             Happy summer everyone!<br />
             <br />
             I had the pleasure of meeting several of you last weekend at the first public playtest and demo of Mana Source at Dragoncon 2023 in Atlanta!  First off, THANK YOU so much for your time and valuable feedback!
@@ -67,10 +65,10 @@ const Article = () => {
                 <span style={{ fontSize: '14px' }}><em>* While tax-deductible by law, the Baile Tigherna Zoological Institute cannot guarantee that any such deductions will be honored by the occupying Kydarian government.  The Zoological Institute recommends compensat...consulting a Kydarian tax professional before deducting a donation.</em></span>
                 <br />
               </ContentItem>
-              <br />
-              <hr />
-              <br />
-            <h4>September & October Goals</h4>
+                  <br />
+                  <hr />
+                  <br />
+                <h4>September & October Goals</h4>
             - Complete development for Scenario 11, 12.  Small redesigns for scenarios 1, 4, 6.  Scenario 13 is a stretch goal but that will be a very important and in-depth scenario that I expect to take longer to design.
             <br />
 
@@ -162,11 +160,9 @@ const Article = () => {
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+  )
 }
 
 export default Article

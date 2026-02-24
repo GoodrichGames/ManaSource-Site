@@ -1,12 +1,11 @@
 import EmailSignup from '../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from '../../components/Templates/ArticleTemplate';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>February Update</h3>
+    return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
           <div>
             <p>
               Short but important update this time.
@@ -57,10 +56,9 @@ const Article = () => {
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
           </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+    )
 }
 
 export default Article

@@ -66,6 +66,11 @@
   object-fit: cover;
 }
 
+.golemNewsBg {
+  background: url(../../public/images/nextImageExportOptimizer/Golem-opt-3840.WEBP) no-repeat top center;
+  object-fit: cover;
+}
+
 .assassinBg {
   background: url(../../public/images/nextImageExportOptimizer/Assassin-opt-3840.WEBP) no-repeat top center;
   background-position-x: 30%;
@@ -74,6 +79,21 @@
 
 .timbatiaBg {
   background: url(../../public/images/nextImageExportOptimizer/Moonlight-opt-3840.WEBP) no-repeat center center;
+  object-fit: cover;
+}
+
+.highlandsBg {
+  background: url(../../public/images/nextImageExportOptimizer/TwistedHighlands-opt-3840.WEBP) no-repeat center center;
+  object-fit: cover;
+}
+
+.redSkyBg {
+  background: url(../../public/images/nextImageExportOptimizer/RedSky-opt-3840.WEBP) no-repeat center center;
+  object-fit: cover;
+}
+
+.cultistsBg {
+  background: url(../../public/images/nextImageExportOptimizer/Cultists-opt-3840.WEBP) no-repeat center center;
   object-fit: cover;
 }
 
@@ -96,6 +116,7 @@
     background: transparent;
     margin: 0;
     position: relative;
+    line-height: normal;
   }
   .heroImage {
     position: relative;
@@ -148,6 +169,21 @@
     margin: 0px;
     padding: 0 19px;
     text-transform: uppercase;
+  }
+
+  .SectionHeader {
+    background: #070707 url(../../public/images/nextImageExportOptimizer/gradient3-opt-3840.WEBP) repeat-x top center;
+    color: $white;
+    font-family: $font-family_2;
+    font-size: 1.6rem;
+    font-weight: normal;
+    height: 50px;
+    letter-spacing: 0.07em;
+    line-height: 50px;
+    margin: 0px;
+    padding: 0 19px;
+    text-transform: uppercase;
+    display: block;
   }
 
   h4 {
@@ -222,6 +258,13 @@
 .flex {
   display: flex;
   justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .flex {
+    flex-wrap: wrap;
+  }
 }
 
 .mR10 {
@@ -360,6 +403,10 @@
   transform: rotate(270deg);
 }
 
+.bgCover {
+  background-size: cover;
+}
+
 .uppercase {
   text-transform: uppercase;
   font-weight: 500;
@@ -367,6 +414,10 @@
 
 .minHeight250 {
   min-height: 250px;
+}
+
+.minHeight700 {
+  min-height: 700px;
 }
 
 .miniGrid {

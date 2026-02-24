@@ -1,17 +1,15 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
 import captainPic from '../../public/images/articles/TidestrikerCaptain.jpg';
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3></h3>
-          <div className={styles.maxW960 + " " + styles.center}>
+  return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
             Happy new year everyone!  Let&apos;s jump into the updates.
             <br />
             <br />
@@ -78,11 +76,9 @@ const Article = () => {
             <br />
             <EmailSignup ctaText="Start your adventure!" />
             <br />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+  )
 }
 
 export default Article

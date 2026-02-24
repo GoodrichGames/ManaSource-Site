@@ -1,0 +1,73 @@
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 33%;
+  min-height: 300px;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  color: white;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  transition: opacity 280ms ease, transform 280ms ease;
+  opacity: 1;
+}
+
+.description {
+  font-size: 1.4rem;
+  transition: opacity 280ms ease, transform 280ms ease;
+  opacity: 0;
+  max-width: 40rem;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 2;
+  padding: 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 1;
+  transition: background 280ms ease;
+}
+
+.container:hover .title,
+.container.active .title {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.container:hover .description,
+.container.active .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container:hover .overlay,
+.container.active .overlay {
+  background: rgba(0,0,0,0.55);
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-height: 500px;
+  }
+  .description {
+    font-size: 2rem;
+    max-width: 100%;
+  }
+}

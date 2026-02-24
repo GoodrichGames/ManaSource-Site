@@ -1,13 +1,11 @@
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>March / April Update</h3>
-          <div>
+    return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
             <p>
               It&apos;s been a busy March, hope everyone is well!  Importantly, I ask that you share the teaser trailer with your friends who might like the game and ask them to sign up for the newsletter.  That is the best thing you can do to help this game come to market.  Appreciate it!  Onto the update!
             </p><br />
@@ -79,11 +77,9 @@ const Article = () => {
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+    )
 }
 
 export default Article

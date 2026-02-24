@@ -1,5 +1,6 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
 import andresPic from '../../public/images/articles/20SmallRes.jpg';
 import rulebookToC from '../../public/images/articles/RulebookTOC.PNG';
@@ -11,12 +12,9 @@ import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3></h3>
-          <div className={styles.maxW960 + " " + styles.center}>
+  return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
             As many of you have heard by now, the U.S. administration has implemented tariffs on China as well as a number of other countries.  Everyone can breathe a sigh of relief as I finally have some information and it&apos;s not as bad as you might think!
             <br /><br />
             <h4>Tariffs</h4>
@@ -36,10 +34,10 @@ const Article = () => {
             The rulebook is around 80% complete.  The main items delaying public release are the creation of UI assets for secondary components and additional Skirmish playtesting.  Once we release it publicly, it inevitably becomes a reflection of the final project in some people&apos;s minds, even if there are a lot of changes still to be made.
             <br /><br />
             <div className={styles.center + " " + styles.tCenter}>
-<ExportedImage
+              <ExportedImage
                 src={rulebookToC}
                 alt='Rulebook table of contents page'
-                width={0} height={500}
+                width={0} height={470}
                 sizes="100vw"
                 style={{
                   height: "auto",
@@ -52,41 +50,41 @@ const Article = () => {
             <br />
             <br />
             <ExportedImage
-                src={rulebookOnePic}
-                alt='Rulebook title page'
-                width={0} height={500}
-                sizes="100vw"
-                style={{
-                  height: "auto",
-                  objectFit: "contain"
-                }} />
+              src={rulebookOnePic}
+              alt='Rulebook title page'
+              width={0} height={470}
+              sizes="100vw"
+              style={{
+                height: "auto",
+                objectFit: "contain"
+              }} />
 
-              <ExportedImage
-                src={rulebookTwoPic}
-                alt='Rulebook page 2'
-                width={0} height={500}
-                sizes="100vw"
-                style={{
-                  height: "auto",
-                  objectFit: "contain"
-                }} />
+            <ExportedImage
+              src={rulebookTwoPic}
+              alt='Rulebook page 2'
+              width={0} height={470}
+              sizes="100vw"
+              style={{
+                height: "auto",
+                objectFit: "contain"
+              }} />
             <br />
             <br />
             I&apos;m also including a bonus preview of the inside of the Adventure Book which is over 125,000 words and 200 pages so far!  That&apos;s about as long as a modern fantasy novel.  I love our art alongside the scenario text!
-             <br />
-             <br />
-             <div className={styles.center + " " + styles.tCenter}>
-             <ExportedImage
+            <br />
+            <br />
+            <div className={styles.center + " " + styles.tCenter}>
+              <ExportedImage
                 src={campaignPreviewOnePic}
                 alt='Campaign book preview page'
-                width={0} height={500}
+                width={0} height={470}
                 sizes="100vw"
                 style={{
                   height: "auto",
                   objectFit: "contain"
                 }} />
-                </div>
-                <br />
+            </div>
+            <br />
             If you are interested in playing the alpha version of the campaign or PvP, we would be glad to set something up with you sooner.  Send us an email or message on the Discord server.
             <br />
             <br />
@@ -110,13 +108,13 @@ const Article = () => {
             <br />
             <br />
             <h4>Development Progress</h4>
-            20+ scenarios written and playtested.  The end is in sight!<br/>
-            240 Action Cards, 40 per class. 99% complete.<br/>
-            129 Equipment pieces.<br/>
-            Finalized art schedule.<br/>
-            UI asset creation for the rulebook and adventure book.  The colors and typography will become more consistent as these elements are finalized.<br/>
-            Minimizing the number of components to minimize your final cost.<br/>
-            Skirmish playtesting is under way.<br/>
+            20+ scenarios written and playtested.  The end is in sight!<br />
+            240 Action Cards, 40 per class. 99% complete.<br />
+            129 Equipment pieces.<br />
+            Finalized art schedule.<br />
+            UI asset creation for the rulebook and adventure book.  The colors and typography will become more consistent as these elements are finalized.<br />
+            Minimizing the number of components to minimize your final cost.<br />
+            Skirmish playtesting is under way.<br />
 
             <div className={styles.center + " " + styles.tCenter}>
               <ExportedImage
@@ -154,11 +152,9 @@ const Article = () => {
             <br />
             <EmailSignup ctaText="Start your adventure!" />
             <br />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+  )
 }
 
 export default Article

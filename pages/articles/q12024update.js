@@ -1,5 +1,6 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
 import noAIPic from '../../public/icons/NoAI.png';
 import wildwoodPic from '../../public/images/articles/Wildwood-Behemoth.jpg';
@@ -7,12 +8,9 @@ import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3></h3>
-          <div className={styles.maxW960 + " " + styles.center}>
+  return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
             Happy spring everyone!  I&apos;ve decided to keep the updates fairly short until we get closer to kickstarter launch.  Development is on track so we&apos;ll see how the rest of 2024 progresses.
             <br /><br />
             I&apos;ve completely redesigned the game&apos;s website, check it out and bookmark it as this will be used for a lot to come!
@@ -20,7 +18,7 @@ const Article = () => {
             <h2>Goodrich Games Statement on the Industry Use of AI</h2>
             With the advent of generative machine learning models (popularly called AI) - there&apos;s a lot of concern in the board game community about publishers not disclosing its use or where the training data is coming from.
 
-I&apos;m proud to commit to no AI usage in .  All art and writing will be human-created.
+I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art and writing will be human-created.
             <br /><br />
             <div className={styles.thirdW + " " + styles.maxW500 + " " + styles.tCenter + " " + styles.center}>
               <ExportedImage
@@ -81,11 +79,9 @@ I&apos;m proud to commit to no AI usage in .  All art and writing will be human-
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
             <br />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+  )
 }
 
 export default Article

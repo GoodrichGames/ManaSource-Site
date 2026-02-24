@@ -1,12 +1,11 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>End of 2023 Update</h3>
+    return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
           <div>
             What a year!  12 story-focused scenarios completed.  That&apos;s about 75,000 words in addition to the scenario, skill, equipment, and enemy design.  I feel very positive about where development is at.  Doubling the amount of detail in each scenario and pivoting to crowdfunding to ensure a memorable experience was worth it.
             <br /><br />
@@ -48,10 +47,9 @@ const Article = () => {
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
           </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+    )
 }
 
 export default Article

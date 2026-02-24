@@ -2,16 +2,17 @@ import styles from './PageHeader.module.scss';
 import ExportedImage from "next-image-export-optimizer";
 
 const PageHeader = ({ title, description, image }) => {
+  const usedImage = image || "/images/Moonlight.jpg";
   return (
-    <header className={image ? styles.imageHeader : styles.header}>
-      {image && <ExportedImage
-        src={image}
+    <header className={styles.imageHeader}>
+      <ExportedImage
+        src={usedImage}
         alt={title}
         fill
         sizes="100vw"
         style={{
           maxWidth: "100%",
-        }} />}
+        }} />
 
       <h1 className={styles.title}>
         {title}

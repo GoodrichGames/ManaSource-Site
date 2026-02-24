@@ -2,13 +2,12 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import YoutubeEmbed from './../../components/content/YoutubeEmbed/YoutubeEmbed';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>New Teaser Trailer!</h3>
+    return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
           <div>
             <p>
               Today we released a new teaser trailer and I&apos;m pretty excited with how it turned out.  You can check it out below!
@@ -21,10 +20,9 @@ const Article = () => {
             </p>
             <EmailSignup ctaText="Start your adventure!"/>
           </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+    )
 }
 
 export default Article

@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
-import React from 'react'
 import posts from '../../metadata/articlemeta'
-import BaseLayout from './BaseTemplate'
 import navStyles from '../Structural/Navigation/Navigation.module.scss'
+import BaseLayout from './BaseTemplate'
+import styles from './BaseTemplate.module.scss'
 
 const ArticleTemplate = ({ children, useImage }) => {
   const router = useRouter()

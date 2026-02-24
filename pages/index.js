@@ -23,6 +23,7 @@ import noAIPic from '../public/icons/NoAI.png';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 import InfoBox from './../components/content/InfoBox/InfoBox';
+import HoverReveal from '../components/content/HoverReveal/HoverReveal';
 import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
 
 export default function Home() {
@@ -193,8 +194,6 @@ export default function Home() {
           <br />
           <br />
           <br />
-          <br />
-          <br />
           <InfoBox classes={styles.tCenter}>
             <div className={styles.medWPadding}>
               <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
@@ -203,6 +202,7 @@ export default function Home() {
               </div>
               <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
                 <h4>Spend less time learning, more time playing!</h4>
+                <h4>You can <Link href='/resources'>learn the basics</Link> in 15 minutes.</h4>
                 <p><strong>Choose</strong> 2 of 6 classes.</p><br />
                 <p><strong>Construct</strong> a hand of 10 cards</p><br />
                 <p><strong>Gain an edge</strong> over the competition!</p><br />
@@ -214,9 +214,6 @@ export default function Home() {
                 <p><strong>Clash</strong> competitively with 240 skills.</p><br />
               </div>
             </div>
-            <br /><br />
-            <h4>You can <Link href='/resources'>learn the basics</Link> in 15 minutes.</h4>
-            <br /><br />
             <div className={styles.thirdW + " " + styles.inline + " " + styles.maxW500}>
               <EmailSignup ctaText="Start your adventure!" />
             </div>
@@ -237,23 +234,78 @@ export default function Home() {
                 <div><em>We&apos;re committed to art for humans by humans.</em></div>
               </div>
             </div>
-            <a className={styles.scrollArrow} href="#about">
-              <ExportedImage
-                src={arrowPic}
-                alt='down arrow'
-                height="1"
-                width="1"
-                priority
-                sizes="100vw"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "contain"
-                }} />
-            </a>
+            <div className={styles.tCenter + " " + styles.maxW960 + " " + styles.center}>
+              <a className={styles.scrollArrow} href="#learnmore">
+                <ExportedImage
+                  src={arrowPic}
+                  alt='down arrow'
+                  height="1"
+                  width="1"
+                  priority
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
+              </a>
+            </div>
           </InfoBox>
         </ContentItem>
       </ContentSection>
+      <div id="learnmore"></div>
+      <ContentSection>
+        <h3 className={styles.tCenter}>About Mana Source</h3>
+        <ContentItem classes={styles.fullW + " " + styles.flex + " " + styles.minHeight700}>
+          <ContentItem classes={styles.redSkyBg + " " + styles.bgCover + " " + styles.fullW}>
+            <HoverReveal title="Gameplay">
+              <div>
+                Combat in <span className={styles.fontArkhip}>Mana Source</span> is highly interactive and euro-inspired.  Players must rely on planning and dynamic execution to win.
+                <br />
+                <br />
+                In the Campaign, a streamlined <strong>solo mode</strong> ensures that you can focus on playing your character. Every action is balanced for head-to-head competitive play.
+              </div>
+            </HoverReveal>
+          </ContentItem>
+          <ContentItem classes={styles.highlandsBg + " " + styles.bgCover + " " + styles.fullW}>
+            <HoverReveal title="Setting">
+              <div>
+                <strong><span className={styles.fontArkhip}>Mana Source</span></strong> is a thrilling high-fantasy adventure.  It&apos;s set in a world where nation has ravaged nation following the onset of a mechanical revolution. Join a scrappy group on the outskirts of civilization. As you venture out, you&apos;ll have to explore, solve puzzles, and defeat deadly adversaries if you&apos;re going to survive.
+              </div>
+            </HoverReveal>
+          </ContentItem>
+          <ContentItem classes={styles.cultistsBg + " " + styles.bgCover + " " + styles.fullW}>
+            <HoverReveal title="Design Philosophy">
+              <div className={styles.tLeft}>
+                <strong>Light on Core Rules:</strong>  You shouldn&apos;t have to spend hours teaching a game before you can play.
+                <br />
+                <br />
+                <strong>Gradually build complexity:</strong>  Each class begins with low complexity actions in order to make getting started easy. Over the course of the campaign, players unlock new actions, gather resources, and complete challenges that add layers of strategy. Discover new combos while adapting to every unique encounter thrown your way!
+                <br />
+                <br />
+                <strong>Story is a Feature not a Flavor:</strong> Many dungeon crawlers contain only a light, loosely connected narrative. In <span className={styles.fontArkhip}>Mana Source</span> the story, characters, and various twists are a focal point. The story favors a tight, high-quality narrative of over 140,000 words across 20+ scenarios that you&apos;ll remember for years to come.
+              </div>
+            </HoverReveal>
+          </ContentItem>
+        </ContentItem>
+        <br />
+        <a className={styles.scrollArrow} href="#about">
+          <ExportedImage
+            src={arrowPic}
+            alt='down arrow'
+            height="1"
+            width="1"
+            priority
+            sizes="100vw"
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain"
+            }} />
+        </a>
+        <br />
+        <br />
+      </ContentSection >
       <div id="about"></div>
       <ContentSection>
         <h3 className={styles.tCenter}>Meet the Team</h3>
@@ -404,6 +456,19 @@ export default function Home() {
       </ContentSection >
       <div id="news"></div>
       <ContentSection>
+        <ContentItem>
+          <br />
+        <InfoBox classes={styles.tCenter} delay={2}>
+              <h2 className={styles.tCenter + " " + styles.medWPadding}>
+                <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is coming to Kickstarter in 2026.</div>
+              </h2>
+              <div className={styles.maxW500 + " " + styles.center}>
+                <EmailSignup ctaText="Start your adventure!" />
+                or<br /><br />
+                <p>Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a> to chat with the community. <br /></p>
+              </div>
+            </InfoBox>
+            </ContentItem>
         <h3 className={styles.tCenter}>Latest Articles</h3>
         <ContentItem classes={styles.tCenter + " " + styles.golemBg + " " + styles.fullW}>
           <InfoBox classes={styles.mLauto + " " + styles.maxW960}>

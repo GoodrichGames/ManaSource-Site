@@ -107,6 +107,15 @@ const posts = [
     categories: [],
     date: 'May 24, 2022'
   }
+ ,
+  // {
+  //   title: 'Patchnotes — Feb 23, 2026',
+  //   description: 'Balance and action updates for the physical card game',
+  //   image: '/images/articles/patchnotes-sample.jpg',
+  //   link: '/articles/patchnotes-2026-02-23',
+  //   categories: ['all','patchnotes'],
+  //   date: 'Feb 23, 2026'
+  // }
 ]
 
 module.exports = posts

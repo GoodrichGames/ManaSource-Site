@@ -1,18 +1,16 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
 import hummingbearsPic from '../../public/images/articles/SaveTheHummingbears.png';
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3></h3>
-          <div className={styles.maxW960 + " " + styles.center}>
-          Good afternoon!  Hope you&apos;re beating the summer heat with some excellent board gaming.
+  return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
+        Good afternoon!  Hope you&apos;re beating the summer heat with some excellent board gaming.
             <br /><br />
             Key Updates:
             <br /><br />
@@ -70,11 +68,9 @@ const Article = () => {
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
             <br />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+  )
 }
 
 export default Article

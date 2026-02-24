@@ -1,15 +1,14 @@
 
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import YoutubeEmbed from './../../components/content/YoutubeEmbed/YoutubeEmbed';
 import Link from 'next/link';
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>About Mana Source</h3>
+    return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
           <div>
             <p>
               Mana Source is an upcoming adventure board game for 1-4 players.
@@ -25,10 +24,9 @@ const Article = () => {
             <br />
             <EmailSignup ctaText="Start your adventure!"/>
           </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+    )
 }
 
 export default Article

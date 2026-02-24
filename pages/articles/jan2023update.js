@@ -3,14 +3,12 @@ import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import prefix from '../../utils/prefix';
 import timbatiaPic from '../../public/images/timbatia-small.png'
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {
-  return (
+    return (
     <ArticleTemplate useImage={true}>
-      <div>
-        <ul>
-          <li>
-            <h3>January 2023 Update</h3>
+      <ArticleBlock>
             <div>
               <p>
                 Happy new year everyone!
@@ -66,9 +64,7 @@ const Article = () => {
               </em></p>
               <EmailSignup ctaText="Start your adventure!" />
             </div>
-          </li>
-        </ul>
-      </div>
+      </ArticleBlock>
     </ArticleTemplate >
   );
 }

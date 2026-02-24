@@ -1,17 +1,15 @@
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
+import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import prefix from '../../utils/prefix';
 import ExportedImage from "next-image-export-optimizer";
 import focusedShotPic from '../../public/images/cards/W-Focused-Shot.png'
 import roundRefPic from '../../public/images/cards/Round-reference-card.png'
 
 const Article = () => {
-  return <ArticleTemplate useImage={true}>
-    <div>
-      <ul>
-        <li>
-          <h3>May / June Update</h3>
-          <div>
+    return (
+    <ArticleTemplate useImage={true}>
+      <ArticleBlock>
             Lot of good work came from this two month period but I also made a major mistake when it came to the time estimate of Scenario 8.  It&apos;s a good scenario now that it&apos;s complete, but it took much longer to put together than I originally planned for.  I&apos;ll talk about further it in the design corner below if you&apos;re interested.
             <br /><br />
             <h4>On Publishing</h4>
@@ -88,11 +86,9 @@ const Article = () => {
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
-          </div>
-        </li>
-      </ul>
-    </div>
-  </ArticleTemplate >
+      </ArticleBlock>
+    </ArticleTemplate >
+    )
 }
 
 export default Article

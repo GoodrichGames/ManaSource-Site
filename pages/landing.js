@@ -16,6 +16,7 @@ import ContentItem from './../components/content/ContentSection/ContentItem';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import InfoBox from './../components/content/InfoBox/InfoBox';
 import logo from '../public/images/ManaSourceHLogo.png'
+import HoverReveal from './../components/content/HoverReveal/HoverReveal';
 
 export default function Landing() {
   return (
@@ -121,7 +122,7 @@ export default function Landing() {
               </em>
             </p>
             <br />
-            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2025.</div>
+            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2026.</div>
             <div className={styles.maxW500 + " " + styles.center + " " + styles.tCenter}>
               <EmailSignup ctaText="Start your adventure!" />
             </div>
@@ -146,7 +147,7 @@ export default function Landing() {
             <br />
             <InfoBox classes={styles.tCenter} delay={2}>
               <h2 className={styles.tCenter + " " + styles.medWPadding}>
-                <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2025.</div>
+                <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2026.</div>
               </h2>
               <div className={styles.maxW500 + " " + styles.center}>
                 <EmailSignup ctaText="Start your adventure!" />
@@ -157,6 +158,41 @@ export default function Landing() {
             </InfoBox>
           </ContentItem>
         </ContentSection>
+        <ContentSection>
+        <h3 className={styles.tCenter}>About Mana Source</h3>
+        <ContentItem classes={styles.fullW + " " + styles.flex + " " + styles.minHeight700}>
+          <ContentItem classes={styles.redSkyBg + " " + styles.bgCover + " " + styles.fullW}>
+            <HoverReveal title="Gameplay">
+              <div>
+                Combat in <span className={styles.fontArkhip}>Mana Source</span> is highly interactive and euro-inspired.  Players must rely on planning and dynamic execution to win.
+                <br />
+                <br />
+                In the Campaign, a streamlined <strong>solo mode</strong> ensures that you can focus on playing your character. Every action is balanced for head-to-head competitive play.
+              </div>
+            </HoverReveal>
+          </ContentItem>
+          <ContentItem classes={styles.highlandsBg + " " + styles.bgCover + " " + styles.fullW}>
+            <HoverReveal title="Setting">
+              <div>
+                <strong><span className={styles.fontArkhip}>Mana Source</span></strong> is a thrilling high-fantasy adventure.  It&apos;s set in a world where nation has ravaged nation following the onset of a mechanical revolution. Join a scrappy group on the outskirts of civilization. As you venture out, you&apos;ll have to explore, solve puzzles, and defeat deadly adversaries if you&apos;re going to survive.
+              </div>
+            </HoverReveal>
+          </ContentItem>
+          <ContentItem classes={styles.cultistsBg + " " + styles.bgCover + " " + styles.fullW}>
+            <HoverReveal title="Design Philosophy">
+              <div className={styles.tLeft}>
+                <strong>Light on Core Rules:</strong>  You shouldn&apos;t have to spend hours teaching a game before you can play.
+                <br />
+                <br />
+                <strong>Gradually build complexity:</strong>  Each class begins with low complexity actions in order to make getting started easy. Over the course of the campaign, players unlock new actions, gather resources, and complete challenges that add layers of strategy. Discover new combos while adapting to every unique encounter thrown your way!
+                <br />
+                <br />
+                <strong>Story is a Feature not a Flavor:</strong> Many dungeon crawlers contain only a light, loosely connected narrative. In <span className={styles.fontArkhip}>Mana Source</span> the story, characters, and various twists are a focal point. The story favors a tight, high-quality narrative of over 140,000 words across 20+ scenarios that you&apos;ll remember for years to come.
+              </div>
+            </HoverReveal>
+          </ContentItem>
+        </ContentItem>
+      </ContentSection >
         <br />
         <div className={styles.fullW + " " + styles.tCenter}>
           <ExportedImage
