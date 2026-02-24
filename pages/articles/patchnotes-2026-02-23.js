@@ -8,7 +8,9 @@ const Article = () => {
   const id = 'patchnotes-2026-02-23';
   const record = patchData.find(p => p.id === id) || { entries: [], previous: [] };
 
-  return <ArticleTemplate useImage={false} title={record.title} date={record.date} isArticle={true}>
+  if (!record.title) return <></>;
+
+  return <ArticleTemplate useImage={false} title={record?.title} date={record?.date} isArticle={true}>
     <ArticleBlock>
       <h1>{record.title}</h1>
       <div>
