@@ -270,7 +270,7 @@ export default function Home() {
           <ContentItem classes={styles.highlandsBg + " " + styles.bgCover + " " + styles.fullW}>
             <HoverReveal title="Setting">
               <div>
-                <strong><span className={styles.fontArkhip}>Mana Source</span></strong> is a thrilling high-fantasy adventure.  It&apos;s set in a world where nation has ravaged nation following the onset of a mechanical revolution. Join a scrappy group on the outskirts of civilization. As you venture out, you&apos;ll have to explore, solve puzzles, and defeat deadly adversaries if you&apos;re going to survive.
+                <strong><span className={styles.fontArkhip}>Mana Source</span></strong> is a thrilling high-fantasy adventure set in a world where nation has ravaged nation following the onset of a mechanical revolution. Join a scrappy group on the outskirts of civilization. As you venture out, you&apos;ll have to explore, solve puzzles, and defeat deadly adversaries if you&apos;re going to survive.
               </div>
             </HoverReveal>
           </ContentItem>

@@ -13,6 +13,10 @@ const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
   return <Head>
     <title>{title}</title>
     <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-title" content={title} />
+    <link rel="apple-touch-icon" href="/images/cave.png" />
+    <meta name="theme-color" content="#000000" />
     <link rel="canonical" href={link} />
     <meta charSet="utf-8"></meta>
     <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
