@@ -29,21 +29,10 @@ export default function Resources() {
           <InfoBox classes={styles.fullW}>
             <ContentItem>
               <br />
-              <div className={styles.ld50}>
                 <div className={styles.center}>
                   <YoutubeEmbed videoId='jnfqC_cbxvg' width='560' height='315' isAutoPlay={false} />
                 </div>
-              </div>
-              <div className={styles.ld50} style={{ height: '315px' }}>
-                <ExportedImage
-                  src={prefix + '/images/HowToPlay.png'}
-                  alt='Image of how cards move down the recharge zone when played'
-                  preload={true}
-                  fill
-                  style={{
-                    objectFit: "contain",
-                  }} />
-              </div>
+              
               {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/jnfqC_cbxvg?si=A45uegKEV9bfFeHT" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             </ContentItem>
             <br />

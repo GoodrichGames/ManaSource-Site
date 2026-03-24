@@ -79,7 +79,7 @@ export default class MainMenu extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image({ key: "menuBackground", url: "/images/cave.png", normalMap: "/images/cavebg normal map.png" });
+    this.load.image({ key: "menuBackground", url: "/images/nextImageExportOptimizer/cave-opt-3840.WEBP", normalMap: "/images/nextImageExportOptimizer/cavebg normal map-opt-3840.WEBP" });
     // this.load.audio("menuTheme", "assets/music/battle-of-the-dragons-8037.mp3");
   }
 

@@ -24,9 +24,9 @@ export default function LandingAnimation() {
           preventDefaultWheel: false
         }
       },
-      backgroundColor: "#000000",
       scene: [MainMenu],
       parent: containerRef.current,
+      transparent: true,
       plugins: {
         global: []
       }
@@ -36,9 +36,7 @@ export default function LandingAnimation() {
     gameRef.current = game;
 
     const handleReady = () => {
-      setTimeout(() => {
-        setIsReady(true);
-      }, 1000)
+      setIsReady(true);
     };
 
     game.events.once(Phaser.Core.Events.READY, handleReady);
