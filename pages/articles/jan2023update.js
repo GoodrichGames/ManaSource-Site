@@ -27,7 +27,7 @@ const Article = () => {
                 src={timbatiaPic}
                 alt='Large tree growing out of rock under the moonlight'
                 width={0} height={500}
-                priority={true}
+                preload={true}
                 sizes="100vw"
                 style={{
                   objectFit: "contain",

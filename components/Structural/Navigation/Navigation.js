@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
 import styles from './Navigation.module.scss'
+import { useEffect, useState } from 'react';
 
 const homeUrl = '/';
 const aboutUrl = '/#main';
@@ -13,8 +13,28 @@ const Navigation = (props) => {
   const router = useRouter()
   const activeRoute = `/${router.pathname.split('/')[1]}`
 
+  // let oldScrollY = 0;
+  // const [direction, setDirection] = useState('down');
+  // const controlDirection = () => {
+  //     if(window.scrollY > oldScrollY) {
+  //         setDirection('down');
+  //     } else {
+  //         setDirection('up');
+  //     }
+  //     oldScrollY = window.scrollY;
+  // }
+
+  // useEffect(() => {
+  //     window.addEventListener('scroll', controlDirection);
+  //     return () => {
+  //         window.removeEventListener('scroll', controlDirection);
+  //     };
+  // },[]);
+
+  //+ " " + (direction === 'down' ? styles.hidden : '')}>
+
   return (
-    <nav className={styles.navigation}>
+    <nav className={styles.navigation}> 
       <div className={styles.navigation}>
         <div className={styles.navigationTop}>
           <div className={styles.navigationOverlay}>

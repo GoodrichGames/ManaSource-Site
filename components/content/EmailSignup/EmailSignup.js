@@ -1,4 +1,3 @@
-
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 import styles from './EmailSignup.module.scss';
 import SignupForm from './SignupForm';

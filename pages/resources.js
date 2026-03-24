@@ -36,9 +36,9 @@ export default function Resources() {
               </div>
               <div className={styles.ld50} style={{ height: '315px' }}>
                 <ExportedImage
-                  src={prefix + '/images/HowToPlay.PNG'}
+                  src={prefix + '/images/HowToPlay.png'}
                   alt='Image of how cards move down the recharge zone when played'
-                  priority={true}
+                  preload={true}
                   fill
                   style={{
                     objectFit: "contain",

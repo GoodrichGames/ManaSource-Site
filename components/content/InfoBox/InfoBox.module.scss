@@ -121,3 +121,7 @@
   -webkit-animation-name: fadeInUpOffset;
   animation-name: fadeInUpOffset;
 }
+
+.overlay {
+  z-index: 1;
+}

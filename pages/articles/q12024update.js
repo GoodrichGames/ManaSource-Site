@@ -45,7 +45,7 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
                 src={wildwoodPic}
                 alt='Giant bark filled creature stomping through the woods surrounded by fireflies.'
                 width={0} height={500}
-                priority={true}
+                preload={true}
                 sizes="100vw"
                 style={{
                   objectFit: "contain",

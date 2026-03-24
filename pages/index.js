@@ -17,7 +17,7 @@ import sandiPic from '../public/images/SandiProfile.jpg';
 import amandaPic from '../public/images/AmandaProfile.jpg';
 import angeloPic from '../public/images/AngeloProfile.jpg';
 import oliviaPic from '../public/images/OliviaProfile.jpg';
-import logo from '../public/images/ManaSourceHLogo.png'
+import logo from '../public/images/ManaSourceLogoV2.png'
 import cavePic from '../public/images/cave.png';
 import noAIPic from '../public/icons/NoAI.png';
 import ContentSection from './../components/content/ContentSection/ContentSection';
@@ -25,15 +25,19 @@ import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 import InfoBox from './../components/content/InfoBox/InfoBox';
 import HoverReveal from '../components/content/HoverReveal/HoverReveal';
 import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
+import dynamic from 'next/dynamic'
+
+const LandingAnimation = dynamic(() => import('../components/content/LandingAnimation/LandingAnimation'), { ssr: false })
 
 export default function Home() {
   return (
     <BaseLayout title={meta.name} description={meta.description} classes={[]} >
+      <LandingAnimation />
       <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
         <ExportedImage src={logo}
           alt='Mana Source logo'
-          height="89"
-          priority
+          height="250"
+          preload={true}
           style={{
             width: "auto",
             maxWidth: "100%",
@@ -48,20 +52,21 @@ export default function Home() {
           src={cavePic}
           alt='mana well in cave'
           height="990"
-          priority
+          preload={true}
           placeholder="blur"
           style={{
+            height:"100vh",
             width: "100%",
             objectFit: "cover",
             display: "block",
           }} />
-        <a className={styles.scrollArrow + " " + styles.offset} href="#main">
+        <a className={styles.scrollArrow + " " + styles.offset + " " + styles.glow} href="#main">
           <ExportedImage
             src={arrowPic}
             alt='down arrow'
             height="1"
             width="1"
-            priority
+            preload={true}
             sizes="100vw"
             style={{
               width: "100%",
@@ -70,14 +75,14 @@ export default function Home() {
             }} />
         </a>
         <div className={styles.dH0}>
-          <InfoBox classes={infoboxStyles.offset}>
+          <InfoBox classes={infoboxStyles.offset + " " + infoboxStyles.overlay}>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
               <ExportedImage
                 src={agesPic}
                 alt='ages'
                 styles={{ objectFit: "contain" }}
                 height="50"
-                priority
+                preload={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto"
@@ -90,7 +95,7 @@ export default function Home() {
                 src={playersPic}
                 alt='players'
                 height="50"
-                priority
+                preload={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto",
@@ -104,7 +109,7 @@ export default function Home() {
                 src={timePic}
                 alt='time to play'
                 height="50"
-                priority
+                preload={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto",
@@ -153,13 +158,12 @@ export default function Home() {
               <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with deadly adversaries.</div>
               <div>You&apos;ll need to rely on your wits to survive.</div>
             </h2>
-            <a className={styles.scrollArrow} href="#signup">
+            <a className={styles.scrollArrow + " " + styles.glow} href="#signup">
               <ExportedImage
                 src={arrowPic}
                 alt='down arrow'
                 height="1"
                 width="1"
-                priority
                 sizes="100vw"
                 style={{
                   width: "100%",
@@ -223,7 +227,6 @@ export default function Home() {
                 alt='No AI'
                 height="1"
                 width="1"
-                priority
                 sizes="100vw"
                 style={{
                   width: "7rem",
@@ -235,13 +238,13 @@ export default function Home() {
               </div>
             </div>
             <div className={styles.tCenter + " " + styles.maxW960 + " " + styles.center}>
-              <a className={styles.scrollArrow} href="#learnmore">
+              <a className={styles.scrollArrow + " " + styles.glow} href="#learnmore">
                 <ExportedImage
                   src={arrowPic}
                   alt='down arrow'
                   height="1"
                   width="1"
-                  priority
+                  preload={true}
                   sizes="100vw"
                   style={{
                     width: "100%",
@@ -289,13 +292,12 @@ export default function Home() {
           </ContentItem>
         </ContentItem>
         <br />
-        <a className={styles.scrollArrow} href="#about">
+        <a className={styles.scrollArrow + " " + styles.glow} href="#about">
           <ExportedImage
             src={arrowPic}
             alt='down arrow'
             height="1"
             width="1"
-            priority
             sizes="100vw"
             style={{
               width: "100%",
@@ -316,7 +318,6 @@ export default function Home() {
               alt='Paul profile picture'
               width={200}
               height={0}
-              priority
               className={styles.inline}
               style={{
                 maxWidth: "100%",
@@ -346,7 +347,6 @@ export default function Home() {
               alt='Nele profile picture'
               width={200}
               height={0}
-              priority
               className={styles.inline + " " + styles.tRight}
               style={{
                 maxWidth: "100%",
@@ -359,7 +359,6 @@ export default function Home() {
               alt='Amanda profile picture'
               width={200}
               height={0}
-              priority
               className={styles.inline + " " + styles.tRight}
               style={{
                 maxWidth: "100%",
@@ -388,7 +387,6 @@ export default function Home() {
               alt='Sandi profile picture'
               width={200}
               height={0}
-              priority
               className={styles.inline}
               style={{
                 maxWidth: "100%",
@@ -402,7 +400,6 @@ export default function Home() {
               alt='Angelo profile picture'
               width={200}
               height={0}
-              priority
               className={styles.inline + " " + styles.tRight}
               style={{
                 maxWidth: "100%",
@@ -431,18 +428,18 @@ export default function Home() {
               alt='Olivia profile picture'
               width={200}
               height={0}
-              priority
               className={styles.inline + " " + styles.tRight}
               style={{
                 maxWidth: "100%",
-              }} />
-            <a className={styles.scrollArrow} href="#news">
+              }} />  
+          </InfoBox>
+          <br />
+           <a className={styles.scrollArrow + " " + styles.glow} href="#news">
               <ExportedImage
                 src={arrowPic}
                 alt='down arrow'
                 height="1"
                 width="1"
-                priority
                 sizes="100vw"
                 style={{
                   width: "100%",
@@ -450,24 +447,24 @@ export default function Home() {
                   objectFit: "contain"
                 }} />
             </a>
-          </InfoBox>
-          <br />
+          <br /><br />
         </ContentItem>
       </ContentSection >
       <div id="news"></div>
       <ContentSection>
-        <ContentItem>
+        <ContentItem classes={styles.tCenter}>
           <br />
-        <InfoBox classes={styles.tCenter} delay={2}>
-              <h2 className={styles.tCenter + " " + styles.medWPadding}>
+          <br />
+          <h2 className={styles.tCenter + " " + styles.medWPadding}>
                 <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is coming to Kickstarter in 2026.</div>
               </h2>
               <div className={styles.maxW500 + " " + styles.center}>
                 <EmailSignup ctaText="Start your adventure!" />
                 or<br /><br />
                 <p>Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a> to chat with the community. <br /></p>
+              <br />
+              <br />
               </div>
-            </InfoBox>
             </ContentItem>
         <h3 className={styles.tCenter}>Latest Articles</h3>
         <ContentItem classes={styles.tCenter + " " + styles.golemBg + " " + styles.fullW}>

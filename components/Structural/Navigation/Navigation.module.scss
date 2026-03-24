@@ -4,8 +4,8 @@
   margin: 0;
   padding: 0;
   z-index: 5;
-  position: relative;
-  margin-bottom: -2rem;
+  position: absolute;
+  transition: opacity 280ms ease, transform 280ms ease;
 
   .navigationTop {
     margin: 0;
@@ -22,7 +22,7 @@
   }
 
   ul {
-    height: 77px;
+    height: 68px;
     left: 30px;
     margin: 0 auto;
     overflow: hidden;
@@ -34,6 +34,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 810px;
+    border-bottom: 1px solid black;
 
     li {
       display: block;
@@ -118,4 +119,8 @@
   .navigation {
     margin-bottom: 0;
   }
+}
+
+.hidden {
+  opacity: 0;
 }

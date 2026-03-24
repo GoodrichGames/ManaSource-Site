@@ -33,7 +33,7 @@ const SignupForm = ({ ctaText, status, message, onValidated }) => {
   }
 
   const id = crypto.randomUUID();
-
+  
   return (
     <div className={styles.emailSignup}>
       <h2>Sign up for updates</h2>

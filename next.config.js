@@ -19,7 +19,7 @@ const nextConfig = {
     nextImageExportOptimizer_storePicturesInWEBP: "true",
     nextImageExportOptimizer_exportFolderName: "nextImageExportOptimizer",
     nextImageExportOptimizer_generateAndUseBlurImages: "true",
-    nextImageExportOptimizer_remoteImageCacheTTL: "0",
+    nextImageExportOptimizer_remoteImageCacheTTL: "86400",
   },
   async redirects() {
     return [

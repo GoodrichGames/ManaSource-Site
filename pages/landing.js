@@ -15,17 +15,21 @@ import NoNavTemplate from './../components/Templates/NoNavTemplate';
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import InfoBox from './../components/content/InfoBox/InfoBox';
-import logo from '../public/images/ManaSourceHLogo.png'
+import logo from '../public/images/ManaSourceLogoV2.png'
 import HoverReveal from './../components/content/HoverReveal/HoverReveal';
+import dynamic from 'next/dynamic'
+
+const LandingAnimation = dynamic(() => import('../components/content/LandingAnimation/LandingAnimation'), { ssr: false })
 
 export default function Landing() {
   return (
     <NoNavTemplate>
+      <LandingAnimation />
       <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
         <ExportedImage src={logo}
           alt='Mana Source logo'
-          height="89"
-          priority
+          height="250"
+          preload={true}
           style={{
             width: "auto",
             maxWidth: "100%",
@@ -40,19 +44,21 @@ export default function Landing() {
           src={cavePic}
           alt='mana well in cave'
           height="990"
-          priority
+          preload={true}
           placeholder="blur"
           style={{
+            height:"100vh",
             width: "100%",
-            objectFit: "cover"
+            objectFit: "cover",
+            display: "block",
           }} />
-        <a className={styles.scrollArrow + " " + styles.offset} href="#main">
+        <a className={styles.scrollArrow + " " + styles.offset + " " + styles.glow} href="#main">
           <ExportedImage
             src={arrowPic}
             alt='down arrow'
             height="1"
             width="1"
-            priority
+            preload={true}
             sizes="100vw"
             style={{
               width: "100%",
@@ -61,14 +67,14 @@ export default function Landing() {
             }} />
         </a>
         <div className={styles.dH0}>
-          <InfoBox classes={infoboxStyles.offset}>
+          <InfoBox classes={infoboxStyles.offset + " " + infoboxStyles.overlay}>
             <div className={styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50}>
               <ExportedImage
                 src={agesPic}
                 alt='ages'
                 styles={{ objectFit: "contain" }}
                 height="50"
-                priority
+                preload={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto"
@@ -81,7 +87,7 @@ export default function Landing() {
                 src={playersPic}
                 alt='players'
                 height="50"
-                priority
+                preload={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto",
@@ -95,7 +101,7 @@ export default function Landing() {
                 src={timePic}
                 alt='time to play'
                 height="50"
-                priority
+                preload={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto",

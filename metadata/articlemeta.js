@@ -1,5 +1,14 @@
 const posts = [
   {
+    title: 'Plans for 2026',
+    description: '',
+    image: '/images/articles/snake.jpg',
+    link: '/articles/plansfor2026',
+    categories: ['all','devnotes','announcements'],
+    date: 'February 24th, 2026',
+    imageVAlign: 'vAlignTop',
+  },
+  {
     title: 'Mid-Year 2025 Update',
     description: '',
     image: '/images/articles/20SmallRes.jpg',
