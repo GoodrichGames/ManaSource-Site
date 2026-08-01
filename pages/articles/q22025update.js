@@ -38,7 +38,7 @@ const Article = () => {
                 src={rulebookToC}
                 alt='Rulebook table of contents page'
                 width={0} height={470}
-                sizes="100vw"
+                sizes="960px"
                 style={{
                   height: "auto",
                   objectFit: "contain"
@@ -78,7 +78,7 @@ const Article = () => {
                 src={campaignPreviewOnePic}
                 alt='Campaign book preview page'
                 width={0} height={470}
-                sizes="100vw"
+                sizes="960px"
                 style={{
                   height: "auto",
                   objectFit: "contain"
@@ -95,7 +95,7 @@ const Article = () => {
                 src={andresPic}
                 alt='Andres Elya'
                 width={0} height={500}
-                sizes="100vw"
+                sizes="960px"
                 style={{
                   height: "auto",
                   objectFit: "contain"
@@ -121,7 +121,7 @@ const Article = () => {
                 src={playerBoxPic}
                 alt='Example of a player box containing a large golem.'
                 width={0} height={500}
-                sizes="100vw"
+                sizes="960px"
                 style={{
                   height: "auto",
                   objectFit: "contain"
@@ -144,7 +144,7 @@ const Article = () => {
             <h4>Community</h4>
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
-              Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a>. <br />
+              Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a>. <br />
             </p>
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!

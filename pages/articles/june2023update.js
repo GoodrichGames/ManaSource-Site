@@ -79,7 +79,7 @@ const Article = () => {
 
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
-              Follow the game on <a href="https://boardgamegeek.com/boardgame/391828/mana-source">Board Game Geek</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a>. <br />
+              Follow the game on <a href="https://boardgamegeek.com/boardgame/391828/mana-source">Board Game Geek</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a>. <br />
             </p>
             <br />
             <p><em>

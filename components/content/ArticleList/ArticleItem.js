@@ -10,7 +10,7 @@ const ArticleItem = ({ article }) => {
             alt={article.title}
             className={article.imageVAlign}
             fill
-            sizes="100vw"
+            sizes="(min-width: 767px) 200px, 100vw"
             style={{
               maxWidth: "100%",
             }} />

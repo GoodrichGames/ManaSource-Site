@@ -23,7 +23,7 @@ const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
     <meta name="description" content={description} />
     <meta name='application-name' content={title} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content={link} />
+    <meta name="twitter:site" content="@manasourcegame" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />

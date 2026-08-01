@@ -1,6 +1,6 @@
 const metaDetails = {
   name: 'Mana Source Game',
-  description: "A discovery at an ancient vault may be the last hope of a people driven underground... Mana source is an adventure board game for 1-4 players.  You'll need to work together to solve unique challenges, overcome deadly adversaries, and coordinate your abilities if you're going to surivve.",
+  description: "A discovery at an ancient vault may be the last hope of a people driven underground... Mana source is an adventure board game for 1-4 players.  You'll need to work together to solve unique challenges, overcome deadly adversaries, and coordinate your abilities if you're going to survive.",
   shareImage: '/share.webp',
   
   pages: [{

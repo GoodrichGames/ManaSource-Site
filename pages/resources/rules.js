@@ -10,7 +10,7 @@ import styles from './../../components/Templates/BaseTemplate.module.scss'
 const faqs = [
   {
     question: "When will Mana Source be released?",
-    answer: "TBD once crowdfunding is secured. If you are interested in working with us, please <a href='/contactus'>contact us</a>!<br><br>At the current rate of progress, Mana Source will Kickstart in Summer 2026. The email signup below is the best way I can keep you updated.",
+    answer: "TBD once crowdfunding is secured. If you are interested in working with us, please <a href='/contactus'>contact us</a>!<br><br>At the current rate of progress, Mana Source will Kickstart in late 2026. The email signup below is the best way I can keep you updated.",
   },
   {
     question: "How much will Mana Source cost?",

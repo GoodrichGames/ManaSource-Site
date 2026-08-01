@@ -7,8 +7,19 @@ import styles from './BaseTemplate.module.scss';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 const BaseTemplate = ({ children, title, date, description, image, isArticle, classes }) => {
+  const wrapperClassName = `${styles.backgroundWrap}${classes ? ` ${classes}` : ''}`;
+
   return (
-    <div className={styles.backgroundWrap + " " + classes}>
+    <div className={wrapperClassName}>
+      <img
+        className={styles.backgroundImage}
+        src="/images/nextImageExportOptimizer/bg-page-opt-3840.WEBP"
+        alt=""
+        aria-hidden="true"
+        role="presentation"
+        loading="eager"
+        fetchPriority="high"
+      />
       <Head name={title} description={description} image={image} isArticle={isArticle} />
       <GoogleAnalytics gaId="G-Q13V1EJW9Q" />
       <Navigation />

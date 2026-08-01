@@ -13,7 +13,7 @@ const Article = () => {
             <p>
               Mana Source is an upcoming adventure board game for 1-4 players.
               You&apos;ll need to rely on your wits to survive.  It features five playable primary
-              classes, one exclusively secondary class, and over 280 unique action cards in the release set.
+              classes, one exclusively secondary class, and over 240 unique action cards in the release set.
             </p><br />
             <p>Experiment, strategize, and mindgame to reduce your opponent&apos;s health to zero and
               win!</p>

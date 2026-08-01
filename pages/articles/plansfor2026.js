@@ -11,25 +11,11 @@ const Article = () => {
   return (
     <ArticleTemplate useImage={true}>
       <ArticleBlock>
-        Happy new year everyone!  Since our last update, we&apos;ve had a new addition to the Goodrich Games crew.  Our creature expert has produced her best work yet!<br /><br />
-        <div className={styles.center + " " + styles.tCenter}>
-          <ExportedImage
-            src={babyPic}
-            alt='Baby'
-            width={0} height={500}
-            sizes="100vw"
-            style={{
-              height: "auto",
-              objectFit: "contain"
-            }} />
+        Happy new year everyone! 
 
-        </div>
-        <br />
-        She&apos;s 6 months old now and has a lot to say.  It&apos;s been extremely rewarding becoming a parent.  My wife and I agree, 10/10 would have a child again.
-
-        In gaming news, I&apos;m happy to announce that all scenarios are officially written and all originally planned art is complete or in progress.  Which means we are getting much closer to a launch date!            <br />
+        I&apos;m happy to announce that all scenarios are officially written and all originally planned art is complete or in progress.  Which means we are getting much closer to a launch date!            <br />
         <h2>When&apos;s the Kickstarter?</h2>
-        If all goes well, Summer 2026.  However, since I have made the unusual promise that the game will be in a finished state when the Kickstarter begins, there&apos;s always a possibility an opportunity for improvement will come up during the editing or review phase.  The bright side is, the only potential delays post-Kickstarter will be production related.
+        If all goes well, late 2026.  However, since I have made the unusual promise that the game will be in a finished state when the Kickstarter begins, there&apos;s always a possibility an opportunity for improvement will come up during the editing or review phase.  The bright side is, the only potential delays post-Kickstarter will be production related.
         <br />
         <h2>Development Progress</h2>
         All scenarios are written. 2 are undergoing playtesting.<br />
@@ -108,13 +94,29 @@ const Article = () => {
 </div><br />
         If you are interested in playing the alpha version of the Campaign, Skirmish, or PvP, we would be glad to set something up with you sooner.  Feel free to send us an email or message on the Discord server!<br />
         <br />
+         In other news...since our last update, we&apos;ve had a new addition to the Goodrich Games crew.  Our creature expert has produced her best work yet!<br /><br />
+        <div className={styles.center + " " + styles.tCenter}>
+          <ExportedImage
+            src={babyPic}
+            alt='Baby'
+            width={0} height={500}
+            sizes="100vw"
+            style={{
+              height: "auto",
+              objectFit: "contain"
+            }} />
+
+        </div>
+        <br />
+        She&apos;s 6 months old now and has a lot to say.  It&apos;s been extremely rewarding becoming a parent.  My wife and I agree, 10/10 would have a child again.
+        <br />
         Until next time,<br />
         Paul Goodrich<br /><br />
 <div className={styles.center + " " + styles.tCenter}>
         <h2>Community</h2>
         <p>
           Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
-          Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a>. <br />
+          Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a>. <br />
         </p>
         </div>
         <br />

@@ -10,7 +10,12 @@ import agesPic from '../public/icons/ages.png';
 import timePic from '../public/icons/hourglass.png';
 import playersPic from '../public/icons/players.png';
 import cavePic from '../public/images/cave.png';
+import bggIcon from '../public/icons/BGG.svg';
+import fbIcon from '../public/icons/Facebook.svg';
+import xIcon from '../public/icons/X.svg';
+import discordIcon from '../public/icons/Discord.svg';
 import prefix from '../utils/prefix';
+import gameSchema from '../metadata/gameschema';
 import NoNavTemplate from './../components/Templates/NoNavTemplate';
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import ContentSection from './../components/content/ContentSection/ContentSection';
@@ -24,6 +29,13 @@ const LandingAnimation = dynamic(() => import('../components/content/LandingAnim
 export default function Landing() {
   return (
     <NoNavTemplate>
+      <script
+        id="game-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(gameSchema),
+        }}
+      />
       <LandingAnimation />
       <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
         <ExportedImage src={logo}
@@ -47,7 +59,7 @@ export default function Landing() {
           preload={true}
           placeholder="blur"
           style={{
-            height:"100vh",
+            height: "100vh",
             width: "100%",
             objectFit: "cover",
             display: "block",
@@ -59,7 +71,8 @@ export default function Landing() {
             height="1"
             width="1"
             preload={true}
-            sizes="100vw"
+            unoptimized={true}
+            sizes="20px"
             style={{
               width: "100%",
               height: "auto",
@@ -75,6 +88,7 @@ export default function Landing() {
                 styles={{ objectFit: "contain" }}
                 height="50"
                 preload={true}
+                unoptimized={true}
                 style={{
                   maxWidth: "100%",
                   height: "auto"
@@ -128,7 +142,7 @@ export default function Landing() {
               </em>
             </p>
             <br />
-            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game coming to Kickstarter in 2026.</div>
+            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with a story-driven campaign, dual-class character building, and simultaenous turns coming to Kickstarter in 2026.</div>
             <div className={styles.maxW500 + " " + styles.center + " " + styles.tCenter}>
               <EmailSignup ctaText="Start your adventure!" />
             </div>
@@ -157,48 +171,106 @@ export default function Landing() {
               </h2>
               <div className={styles.maxW500 + " " + styles.center}>
                 <EmailSignup ctaText="Start your adventure!" />
-                or<br /><br />
-                <p>Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103%C2%A0">Facebook</a> to chat with the community. <br /></p>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                  <a href="https://boardgamegeek.com/boardgame/391828/mana-source" target="_blank" rel="noopener noreferrer" title="BoardGameGeek" style={{ display: 'inline-block', color: '#1ac7fc', transition: 'opacity 0.3s' }}>
+                    <ExportedImage
+                      src={bggIcon}
+                      alt='Follow on BoardGameGeek'
+                      width={80}
+                      height={40}
+                      unoptimized={true}
+                      style={{
+                        width: '80px',
+                        height: '40px',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </a>
+                  <a href="https://discord.com/invite/drQDa7MQ3e" target="_blank" rel="noopener noreferrer" title="Discord" style={{ display: 'inline-block', color: '#1ac7fc', transition: 'opacity 0.3s' }}>
+                    <ExportedImage
+                      src={discordIcon}
+                      alt='Chat on Discord'
+                      width={40}
+                      height={40}
+                      unoptimized={true}
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </a>
+                  <a href="https://www.facebook.com/Mana-Source-102398542746103" target="_blank" rel="noopener noreferrer" title="Facebook" style={{ display: 'inline-block', color: '#1ac7fc', transition: 'opacity 0.3s' }}>
+                    <ExportedImage
+                      src={fbIcon}
+                      alt='Follow on Facebook'
+                      width={40}
+                      height={40}
+                      unoptimized={true}
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </a>
+                  <a href="https://x.com/ManaSourceGame" target="_blank" rel="noopener noreferrer" title="X" style={{ display: 'inline-block', color: '#1ac7fc', transition: 'opacity 0.3s' }}>
+                    <ExportedImage
+                      src={xIcon}
+                      alt='Follow on X'
+                      width={40}
+                      height={40}
+                      unoptimized={true}
+                      style={{
+                        width: '40px',
+                        height: '40px',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </a>
+                </div>
+                <br />
+                <br />
               </div>
               <Button text='Discover More' classes={styles.center + ' ' + styles.twentyW} onClick={() => { window.location = prefix + '/' }} />
             </InfoBox>
           </ContentItem>
         </ContentSection>
         <ContentSection>
-        <h3 className={styles.tCenter}>About Mana Source</h3>
-        <ContentItem classes={styles.fullW + " " + styles.flex + " " + styles.minHeight700}>
-          <ContentItem classes={styles.redSkyBg + " " + styles.bgCover + " " + styles.fullW}>
-            <HoverReveal title="Gameplay">
-              <div>
-                Combat in <span className={styles.fontArkhip}>Mana Source</span> is highly interactive and euro-inspired.  Players must rely on planning and dynamic execution to win.
-                <br />
-                <br />
-                In the Campaign, a streamlined <strong>solo mode</strong> ensures that you can focus on playing your character. Every action is balanced for head-to-head competitive play.
-              </div>
-            </HoverReveal>
+          <h3 className={styles.tCenter}>About Mana Source</h3>
+          <ContentItem classes={styles.fullW + " " + styles.flex + " " + styles.minHeight700}>
+            <ContentItem classes={styles.redSkyBg + " " + styles.bgCover + " " + styles.fullW}>
+              <HoverReveal title="Gameplay">
+                <div>
+                  Combat in <span className={styles.fontArkhip}>Mana Source</span> is highly interactive and euro-inspired.  Players must rely on planning and dynamic execution to win.
+                  <br />
+                  <br />
+                  In the Campaign, a streamlined <strong>solo mode</strong> ensures that you can focus on playing your character. Every action is balanced for head-to-head competitive play.
+                </div>
+              </HoverReveal>
+            </ContentItem>
+            <ContentItem classes={styles.highlandsBg + " " + styles.bgCover + " " + styles.fullW}>
+              <HoverReveal title="Setting">
+                <div>
+                  <strong><span className={styles.fontArkhip}>Mana Source</span></strong> is a thrilling high-fantasy adventure.  It&apos;s set in a world where nation has ravaged nation following the onset of a mechanical revolution. Join a scrappy group on the outskirts of civilization. As you venture out, you&apos;ll have to explore, solve puzzles, and defeat deadly adversaries if you&apos;re going to survive.
+                </div>
+              </HoverReveal>
+            </ContentItem>
+            <ContentItem classes={styles.cultistsBg + " " + styles.bgCover + " " + styles.fullW}>
+              <HoverReveal title="Design Philosophy">
+                <div className={styles.tLeft}>
+                  <strong>Light on Core Rules:</strong>  You shouldn&apos;t have to spend hours teaching a game before you can play.
+                  <br />
+                  <br />
+                  <strong>Gradually build complexity:</strong>  Each class begins with low complexity actions in order to make getting started easy. Over the course of the campaign, players unlock new actions, gather resources, and complete challenges that add layers of strategy. Discover new combos while adapting to every unique encounter thrown your way!
+                  <br />
+                  <br />
+                  <strong>Story is a Feature not a Flavor:</strong> Many board games contain only a light, loosely connected narrative. In <span className={styles.fontArkhip}>Mana Source</span> the story, characters, and various twists are a focal point. The story favors a tight, high-quality narrative of over 140,000 words across 20+ scenarios that you&apos;ll remember for years to come.
+                </div>
+              </HoverReveal>
+            </ContentItem>
           </ContentItem>
-          <ContentItem classes={styles.highlandsBg + " " + styles.bgCover + " " + styles.fullW}>
-            <HoverReveal title="Setting">
-              <div>
-                <strong><span className={styles.fontArkhip}>Mana Source</span></strong> is a thrilling high-fantasy adventure.  It&apos;s set in a world where nation has ravaged nation following the onset of a mechanical revolution. Join a scrappy group on the outskirts of civilization. As you venture out, you&apos;ll have to explore, solve puzzles, and defeat deadly adversaries if you&apos;re going to survive.
-              </div>
-            </HoverReveal>
-          </ContentItem>
-          <ContentItem classes={styles.cultistsBg + " " + styles.bgCover + " " + styles.fullW}>
-            <HoverReveal title="Design Philosophy">
-              <div className={styles.tLeft}>
-                <strong>Light on Core Rules:</strong>  You shouldn&apos;t have to spend hours teaching a game before you can play.
-                <br />
-                <br />
-                <strong>Gradually build complexity:</strong>  Each class begins with low complexity actions in order to make getting started easy. Over the course of the campaign, players unlock new actions, gather resources, and complete challenges that add layers of strategy. Discover new combos while adapting to every unique encounter thrown your way!
-                <br />
-                <br />
-                <strong>Story is a Feature not a Flavor:</strong> Many dungeon crawlers contain only a light, loosely connected narrative. In <span className={styles.fontArkhip}>Mana Source</span> the story, characters, and various twists are a focal point. The story favors a tight, high-quality narrative of over 140,000 words across 20+ scenarios that you&apos;ll remember for years to come.
-              </div>
-            </HoverReveal>
-          </ContentItem>
-        </ContentItem>
-      </ContentSection >
+        </ContentSection >
         <br />
         <div className={styles.fullW + " " + styles.tCenter}>
           <ExportedImage
@@ -210,7 +282,6 @@ export default function Landing() {
               objectFit: "contain",
             }} />
         </div>
-        <br />
         <br />
         <br />
       </ContentSection>

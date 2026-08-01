@@ -16,8 +16,6 @@ export default function Resources() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
         <ContentItem>
           <h1 className={styles.logo + " " + styles.tCenter}>Resources</h1>
         </ContentItem>
@@ -43,6 +41,9 @@ export default function Resources() {
               </Link>
               <Link href='/resources/patchnotes'>
                 <h2>Balance Changes</h2>
+              </Link>
+              <Link href='/resources/presskit'>
+                <h2>Press Kit</h2>
               </Link>
             </ContentItem>
             <br />

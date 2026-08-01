@@ -1,7 +1,7 @@
 {
   "name": "Mana Source Patchnotes",
   "short_name": "Mana Source",
-  "description": "Mana Source website — a cooperative adventure board game",
+  "description": "Mana Source website — a tactical adventure board game",
   "start_url": "/resources/patchnotes",
   "display": "standalone",
   "background_color": "#000000",

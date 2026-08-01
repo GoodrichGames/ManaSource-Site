@@ -26,7 +26,8 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
                 alt='No AI'
                 height="1"
                 width="1"
-                sizes="100vw"
+                sizes="7rem"
+                unoptimized={true}
                 style={{
                   width: "7rem",
                   height: "auto",
