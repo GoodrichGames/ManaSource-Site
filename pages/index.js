@@ -51,6 +51,8 @@ export default function Home() {
           height={250}
           width={0}
           preload={true}
+          loading="eager"
+          fetchPriority="high"
           style={{
             width: "auto",
             maxWidth: "100%",
@@ -99,6 +101,7 @@ export default function Home() {
                 height="50"
                 preload={true}
                 unoptimized={true}
+                sizes="128px"
                 style={{
                   maxWidth: "100%",
                   height: "auto"
@@ -113,6 +116,7 @@ export default function Home() {
                 height="50"
                 preload={true}
                 unoptimized={true}
+                sizes="128px"
                 style={{
                   maxWidth: "100%",
                   height: "auto",
@@ -128,6 +132,7 @@ export default function Home() {
                 height="50"
                 preload={true}
                 unoptimized={true}
+                sizes="128px"
                 style={{
                   maxWidth: "100%",
                   height: "auto",
@@ -220,7 +225,7 @@ export default function Home() {
             <div className={styles.medWPadding}>
               <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
                 <h4>Don&apos;t wait for your turn to play!</h4>
-                <strong>Simultaneous turns</strong> keep everyone focused on the action.<br/>
+                <strong>Simultaneous turns</strong> keep everyone focused on the action.<br />
                 <br />
                 Players must <strong>coordinate</strong> their abilities to overcome challenges and defeat deadly adversaries.
               </div>
@@ -247,7 +252,7 @@ export default function Home() {
                 alt='No AI art'
                 height={0}
                 width={0}
-                sizes="7rem"
+                sizes="128px"
                 unoptimized={true}
                 style={{
                   width: "7rem",
