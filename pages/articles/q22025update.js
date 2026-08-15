@@ -18,10 +18,10 @@ const Article = () => {
             As many of you have heard by now, the U.S. administration has implemented tariffs on China as well as a number of other countries.  Everyone can breathe a sigh of relief as I finally have some information and it&apos;s not as bad as you might think!
             <br /><br />
             <h4>Tariffs</h4>
-            1. Our manufacturing partner has the ability to manufacture the game from either China or Vietnam.  If tariffs on board games get as high as they did again on China, we will look to manufacture in Vietnam in order to minimize the cost passed on to you.  At this time there is manufacturer in the U.S. with a reasonable cost for high quality mass production.
+            1. Our manufacturing partner has the ability to manufacture the game from either China or Vietnam.  If tariffs on board games get as high as they did again on China, we will look to manufacture in Vietnam in order to minimize the cost passed on to you.  At this time there is no manufacturer in the U.S. with a reasonable cost for high quality mass production.
             <br />
             <br />
-            2. We have a few benefits as an indie company versus the big brand companies.  We primarily relies on Kickstarter and direct sales.  There is no retail middle-man that we have to share revenue with.  Further, since this initial run is a passion product, we&apos;re not looking for a % return on investment, but to put the product in your hands.
+            2. We have a few benefits as an indie company versus the big brand companies.  We primarily rely on Kickstarter and direct sales.  There is no retail middle-man that we have to share revenue with.  Further, since this initial run is a passion product, we&apos;re not looking for a % return on investment, but to put the product in your hands.
             <br />
             <br />
             3. Due to the ongoing volatility of the situation, the campaign manager will separately require a tariff cost at the time of import, in the same way that our EU friends often require a VAT payment at the time of their import.  To give you an idea of how swingy it has been, this could range between $2 - $25 (Vietnam & highest China tariff that was in effect).  This will be charged at cost only and I will keep you updated on how we&apos;re looking.
@@ -101,7 +101,7 @@ const Article = () => {
                   objectFit: "contain"
                 }} />
               <br />
-              <em>Andres Elya - Warden of Timbatia by <a href="amandabrack.art">Amanda Brack</a></em>
+              <em>Andres Elya - Warden of Timbatia by <a href="https://www.amandabrack.art/">Amanda Brack</a></em>
             </div>
             <br />
             One of your several companions on the sprawling journey above ground.  Andres has the ability to influence flora, pheromones, and by extension, animal behavior.  Wardens specialize in a mixture of action types, keeping their opponents guessing as to what comes next.

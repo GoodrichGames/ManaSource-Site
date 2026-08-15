@@ -1,4 +1,4 @@
-@import '../../../styles/scss/colors.scss';
+@use '../../../styles/scss/colors.scss' as *;
 
 .emailSignup {
   padding: 0 20px 20px 20px;

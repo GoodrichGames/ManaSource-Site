@@ -24,7 +24,7 @@ const videoSchema = {
   name: 'Mana Source Teaser Trailer',
   description: 'A teaser trailer for Mana Source, a tactical adventure board game from Goodrich Games.',
   thumbnailUrl: 'https://img.youtube.com/vi/h9tHSCE1T84/maxresdefault.jpg',
-  uploadDate: '2022-11-29',
+  uploadDate: '2022-11-29T00:00:00Z',
   embedUrl: 'https://www.youtube.com/embed/h9tHSCE1T84',
   publisher: {
     '@id': organizationSchema['@id'],
@@ -35,7 +35,7 @@ const gameSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': ['Game', 'Product'],
+      '@type': 'Game',
       '@id': `${baseUrl}/#game`,
       name: 'Mana Source',
       url: `${baseUrl}/`,

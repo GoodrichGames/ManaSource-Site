@@ -1,25 +1,29 @@
 import styles from './Accordion.module.scss'
-import { useState } from 'react';
-
-const doAccordionAnimation = (accordion, expanded) => {
-  // TODO: Implement
-}
+import { useId, useState } from 'react';
 
 const Accordion = ({ children, title, defaultExpanded }) => {
-  const [isExpanded, setUseExpanded] = useState(defaultExpanded);
-
-  const onClickHandler = (e) => {
-    doAccordionAnimation(e.target, isExpanded);
-    setUseExpanded(!isExpanded);
-  };
+  const [isExpanded, setIsExpanded] = useState(Boolean(defaultExpanded));
+  const contentId = useId();
 
   return (
     <div className={styles.accordion + ' ' + (isExpanded ? styles.expanded : '')}>
-      <div className={styles.accordionTitle} onClick={onClickHandler}>
+      <button
+        type="button"
+        className={styles.accordionTitle}
+        aria-expanded={isExpanded}
+        aria-controls={contentId}
+        onClick={() => setIsExpanded((expanded) => !expanded)}
+      >
         {title}
-      </div>
-      <div className={styles.accordionContent}>
-        {children}
+      </button>
+      <div
+        id={contentId}
+        className={styles.accordionContent}
+        aria-hidden={!isExpanded}
+      >
+        <div className={styles.accordionContentInner}>
+          {children}
+        </div>
       </div>
     </div>
   )

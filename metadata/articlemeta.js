@@ -1,7 +1,7 @@
 const posts = [
   {
     title: 'Plans for 2026',
-    description: '',
+    description: 'A development update covering Mana Source progress, remaining production work, and plans for a late-2026 Kickstarter.',
     image: '/images/articles/snake.jpg',
     link: '/articles/plansfor2026',
     categories: ['all','devnotes','announcements'],
@@ -10,7 +10,7 @@ const posts = [
   },
   {
     title: 'Mid-Year 2025 Update',
-    description: '',
+    description: 'A mid-year update covering manufacturing tariffs, rulebook progress, campaign previews, new art, and development goals.',
     image: '/images/articles/20SmallRes.jpg',
     link: '/articles/q22025update',
     categories: ['all','devnotes','announcements'],
@@ -19,7 +19,7 @@ const posts = [
   },
   {
     title: 'EOY 2024 Update',
-    description: '',
+    description: 'A year-end update explaining the revised Kickstarter timeline, expanded development scope, and new artwork.',
     image: '/images/articles/TidestrikerCaptain.jpg',
     link: '/articles/eoy2024update',
     categories: ['all','devnotes','announcements'],
@@ -28,7 +28,7 @@ const posts = [
   },
   {
     title: 'Q2 2024 Update',
-    description: '',
+    description: 'A summer development update covering the public beta plan, campaign progress, playtesting, and the Kickstarter schedule.',
     image: '/images/articles/SaveTheHummingbears.png',
     link: '/articles/q22024update',
     categories: ['all','devnotes','announcements'],
@@ -36,7 +36,7 @@ const posts = [
   },
   {
     title: 'Q1 2024 Update',
-    description: '',
+    description: 'A spring update announcing the redesigned Mana Source website and the project commitment to human-created art and writing.',
     image: '/images/articles/Wildwood-Behemoth.jpg',
     link: '/articles/q12024update',
     categories: ['all','devnotes','announcements'],
@@ -44,7 +44,7 @@ const posts = [
   },
   {
     title: 'EOY 2023 Update',
-    description: '',
+    description: 'A year-end review of Mana Source development progress and plans following the 2023 playtesting and design work.',
     image: '/images/articles/purpleflowers.jpg',
     link: '/articles/eoy2023update',
     categories: ['all','devnotes','announcements'],
@@ -52,7 +52,7 @@ const posts = [
   },
   {
     title: 'July / August 2023 Update',
-    description: '',
+    description: 'A summer update covering in-person playtesting, campaign development, and lessons from tabletop game design.',
     image: '/images/articles/road-1072823_1920.jpg',
     link: '/articles/aug2023update',
     categories: ['all','devnotes','announcements'],
@@ -60,7 +60,7 @@ const posts = [
   },
   {
     title: 'May / June 2023 Update',
-    description: '',
+    description: 'A development update featuring new card and round-reference previews alongside campaign and community news.',
     image: '/images/articles/sunset-3325080_1920.jpg',
     link: '/articles/june2023update',
     categories: ['all','devnotes','announcements'],
@@ -68,7 +68,7 @@ const posts = [
   },
   {
     title: 'March / April 2023 Update',
-    description: '',
+    description: 'A spring development update covering campaign writing, playtesting, artwork, and the Mana Source community.',
     image: '/images/articles/planet-1702788_1280.webp',
     link: '/articles/mar2023update',
     categories: ['all','devnotes','announcements'],
@@ -76,7 +76,7 @@ const posts = [
   },
   {
     title: 'February 2023 Update',
-    description: '',
+    description: 'A February update covering early Mana Source development, community channels, and the project newsletter.',
     image: '/images/articles/painting-3995999_1280.webp',
     link: '/articles/feb2023update',
     categories: ['all','devnotes','announcements'],

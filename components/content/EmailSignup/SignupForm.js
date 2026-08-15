@@ -1,50 +1,56 @@
 import styles from './EmailSignup.module.scss';
-import { useState, useRef } from 'react';
+import { useId, useState } from 'react';
 
-const isValidEmail = (email) => {
-  const emailRegex = /[a-z0-9!#$%&'*+/=?^_‘{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_‘{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-  return emailRegex.test(email);
-}
+const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-const SignupForm = ({ ctaText, status, message, onValidated }) => {
-  const [email, setEmail] = useState("");
-  const submissionErrorBlock = useRef();
-  const invalidEmailErrorBlock = useRef();
+const SignupForm = ({ ctaText, status, onValidated }) => {
+  const [email, setEmail] = useState('');
+  const [showEmailError, setShowEmailError] = useState(false);
+  const emailErrorId = useId();
 
   const onChangeEmail = (event) => {
     setEmail(event.target.value);
-    if (!event.target.value || isValidEmail(event.target.value)) {
-      invalidEmailErrorBlock.current.classList.add(styles.hidden);
-    }
-  }
+    setShowEmailError(false);
+  };
 
   const onBlurEmail = (event) => {
-    if (event.target.value && !isValidEmail(event.target.value)) {
-      invalidEmailErrorBlock.current.classList.remove(styles.hidden);
+    setShowEmailError(!isValidEmail(event.target.value));
+  };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    if (!isValidEmail(email)) {
+      setShowEmailError(true);
+      return;
     }
-  }
 
-  const onSubmitHandler = () => {
-    if (!isValidEmail(email)) return;
-
-    onValidated({
-      EMAIL: email,
-    });
-  }
+    onValidated({ EMAIL: email });
+  };
 
   return (
-    <div className={styles.emailSignup}>
+    <form className={styles.emailSignup} onSubmit={onSubmitHandler} noValidate aria-busy={status === 'sending'}>
       <h2>Sign up for updates</h2>
       <div className={styles.emailFieldGroup}>
         <label>
-          Email Address  <span className={styles.asterisk}>*</span>
-          <input type="email" name="EMAIL" className={styles.email} value={email} onChange={onChangeEmail} onBlur={onBlurEmail} />
+          Email Address <span className={styles.asterisk}>*</span>
+          <input
+            type="email"
+            name="EMAIL"
+            className={styles.email}
+            value={email}
+            onChange={onChangeEmail}
+            onBlur={onBlurEmail}
+            aria-describedby={showEmailError ? emailErrorId : undefined}
+            aria-invalid={showEmailError}
+            required
+          />
         </label>
       </div>
-      <div ref={invalidEmailErrorBlock} className={styles.errorBlock + ' ' + styles.hidden}>
-        You have entered an invalid email address.  Please check your entry and try again.
-      </div>
-      {status === 'error' && <div ref={submissionErrorBlock} className={styles.errorBlock + ' ' + styles.hidden}>
+      {showEmailError && <div id={emailErrorId} className={styles.errorBlock} role="alert">
+        Enter a valid email address and try again.
+      </div>}
+      {status === 'error' && <div className={styles.errorBlock} role="alert" aria-live="assertive">
         An error occurred in submission, please try again later.
       </div>}
       <div className={styles.notName} aria-hidden="true">
@@ -52,11 +58,17 @@ const SignupForm = ({ ctaText, status, message, onValidated }) => {
       </div>
       <div className={styles.optionalParent}>
         <div className={styles.foot}>
-          <input type="submit" value={ctaText} name="subscribe" className={styles.button} onClick={onSubmitHandler} />
+          <input
+            type="submit"
+            value={status === 'sending' ? 'Submitting…' : ctaText}
+            name="subscribe"
+            className={styles.button}
+            disabled={status === 'sending'}
+          />
         </div>
       </div>
-    </div>
-  )
-}
+    </form>
+  );
+};
 
 export default SignupForm;

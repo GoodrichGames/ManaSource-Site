@@ -1,5 +1,10 @@
 .accordion {
   &Title {
+    width: 100%;
+    color: inherit;
+    background: transparent;
+    font-size: inherit;
+    text-align: left;
     border: 1px solid white;
     padding: 0.5rem;
     cursor: pointer;
@@ -19,10 +24,18 @@
     }
   }
   &Content {
-    padding: 0.5rem;
-    display: none;
-    transition: all 1s;
-    height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows 300ms ease, visibility 0s linear 300ms;
+
+    &Inner {
+      min-height: 0;
+      overflow: hidden;
+      padding: 0 0.5rem;
+      background: rgba(0, 0, 0, 0.3);
+      transition: padding 300ms ease;
+    }
   }
   &.expanded {
     .accordionTitle {
@@ -33,9 +46,20 @@
       }
     }
     .accordionContent {
-      display: block;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
+      grid-template-rows: 1fr;
+      visibility: visible;
+      transition-delay: 0s;
+
+      &Inner {
+        padding: 0.5rem;
+      }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordionContent,
+  .accordionContentInner {
+    transition: none;
   }
 }

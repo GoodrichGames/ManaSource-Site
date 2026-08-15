@@ -1,7 +1,24 @@
-@import "../../../styles/scss/colors.scss";
+@use "../../../styles/scss/colors.scss" as *;
 
 .articleLink {
   color: $color_7;
+}
+
+.yearToggle {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  margin: 0 0 8px;
+  padding: 0.35rem 0.5rem;
+
+  &:focus-visible {
+    outline: 3px solid $color_2;
+    outline-offset: 3px;
+  }
 }
 
 .imageContainer {

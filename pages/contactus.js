@@ -24,7 +24,7 @@ export default function ContactUs() {
           <InfoBox classes={styles.fullW}>
             <br />
             <br />
-            For business inquires contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.<br /><br />
+            For business inquiries contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.<br /><br />
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with us directly!
             </p>

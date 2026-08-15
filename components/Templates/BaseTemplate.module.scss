@@ -1,5 +1,5 @@
-@import "../../styles/scss/colors.scss";
-@import "../../styles/scss/animations.scss";
+@use "../../styles/scss/colors.scss" as *;
+@use "../../styles/scss/animations.scss" as *;
 
 .backgroundWrap {
   position: relative;

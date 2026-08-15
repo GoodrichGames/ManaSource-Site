@@ -17,7 +17,7 @@ const YoutubeEmbed = ({videoId, height, width, isAutoplay, frameborder, controls
       wmode: 'transparent',
       widgetid: 1,
       iv_load_policy: 3,
-      disablekb: 1,
+      disablekb: 0,
     },
   };
 

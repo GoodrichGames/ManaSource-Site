@@ -97,14 +97,14 @@ export default function Home() {
               <ExportedImage
                 src={agesPic}
                 alt='ages'
-                styles={{ objectFit: "contain" }}
                 height="50"
                 preload={true}
                 unoptimized={true}
                 sizes="128px"
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
+                  height: "auto",
+                  objectFit: "contain"
                 }} /><br />
               <p><strong>Ages</strong></p>
               <p>13+</p>
@@ -177,8 +177,8 @@ export default function Home() {
           <br />
           <InfoBox classes={styles.tCenter} delay={2}>
             <h2 className={styles.tCenter + " " + styles.medWPadding}>
-              <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with a story-driven campaign and dual-class characters.</div>
-              <div>You&apos;ll need to coordinate your abilities and rely on your wits to survive.</div>
+              <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with a story-driven campaign, dual-class character building, and simultaneous turns coming to Kickstarter in 2026.</div>
+              <div>You&apos;ll need to work together if you&apos;re going to survive.</div>
             </h2>
             <a className={styles.scrollArrow + " " + styles.glow} href="#signup">
               <ExportedImage
@@ -367,7 +367,7 @@ export default function Home() {
               <p className={styles.mb1}>
                 Nele is a full-time freelance illustrator living in Wiesbaden, Germany.  She graduated with a degree in Communication Design in 2016.  Since then she has produced art for several board games, including for the The Lord of the Rings,
                 Arkham Horror, and Legend of the Five Rings trading card games. </p><p>
-                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  You can find more of her art and request commissions on on <a href="https://nelediel.com/">https://nelediel.com/</a>.
+                She also enjoys working on interior art for books as well as cover illustrations for books and music albums.  You can find more of her art and request commissions on <a href="https://nelediel.com/">https://nelediel.com/</a>.
               </p>
             </div>
             <ExportedImage
@@ -396,7 +396,7 @@ export default function Home() {
               <p className={styles.mb1}><i>Lead Artist</i></p>
               <p className={styles.mb1}>
                 Amanda Brack is NYC based digital freelance illustrator. Growing up hearing folktales by the fire and discovering the magic in hidden corners of the New England coast, she has a deep passion for fantasy and storytelling.
-              </p><p>She has worked on a wide range of projects including character designs, private commissions, book covers, children&apos;s books, coloring books, and more.  You can find more of her art and request commissions on on <a href="https://www.amandabrack.art/">https://www.amandabrack.art/</a>.
+              </p><p>She has worked on a wide range of projects including character designs, private commissions, book covers, children&apos;s books, coloring books, and more.  You can find more of her art and request commissions on <a href="https://www.amandabrack.art/">https://www.amandabrack.art/</a>.
               </p>
             </div>
           </InfoBox>
@@ -437,7 +437,7 @@ export default function Home() {
               <p className={styles.mb1}><i>Character and Environment Artist</i></p>
               <p className={styles.mb1}>
                 Angelo Chavez is a freelance illustrator and concept artist based in the Philippines. He enjoys working on fantasy illustrations and has done work for card and board games.
-              </p><p>You can find more of his art and request commissions on on <a href="https://www.artstation.com/bradixr">https://www.artstation.com/bradixr</a>.
+              </p><p>You can find more of his art and request commissions on <a href="https://www.artstation.com/bradixr">https://www.artstation.com/bradixr</a>.
               </p>
             </div>
           </InfoBox>
@@ -448,7 +448,7 @@ export default function Home() {
               <p className={styles.mb1}><i>Character and Environment Artist</i></p>
               <p className={styles.mb1}>
                 Olivia Hintz is a fantasy illustrator and freelance artist known for her story-driven artwork. A classically trained painter, she earned her BFA from Purchase College&apos;s Conservatory of Fine Art. After graduation, she transitioned into digital illustration driven by her passion for storytelling, worldbuilding and immersive fantasy scenes.
-              </p><p>You can find more of her art and request commissions on on <a href="https://www.oliviahintz.com/">https://www.oliviahintz.com/</a>.
+              </p><p>You can find more of her art and request commissions on <a href="https://www.oliviahintz.com/">https://www.oliviahintz.com/</a>.
               </p>
             </div>
             <ExportedImage

@@ -7,6 +7,7 @@ const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
   const baseUri = 'https://www.manasourcegame.com'
   const router = useRouter()
   const link = baseUri + router.pathname
+  const socialImage = image?.startsWith('http') ? image : baseUri + image
 
   const title = name;
 
@@ -26,9 +27,9 @@ const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
     <meta name="twitter:site" content="@manasourcegame" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={socialImage} />
     <meta property="og:title" content={title} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={socialImage} />
     <meta property="og:site_name" content={meta.name} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={link} />

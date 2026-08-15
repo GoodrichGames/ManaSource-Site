@@ -28,7 +28,10 @@ const LandingAnimation = dynamic(() => import('../components/content/LandingAnim
 
 export default function Landing() {
   return (
-    <NoNavTemplate>
+    <NoNavTemplate
+      title="Mana Source — Kickstarter Preview"
+      description="Discover Mana Source, a story-driven fantasy adventure board game for 1–4 players coming to Kickstarter in 2026."
+    >
       <script
         id="game-schema"
         type="application/ld+json"
@@ -85,13 +88,13 @@ export default function Landing() {
               <ExportedImage
                 src={agesPic}
                 alt='ages'
-                styles={{ objectFit: "contain" }}
                 height="50"
                 preload={true}
                 unoptimized={true}
                 style={{
                   maxWidth: "100%",
-                  height: "auto"
+                  height: "auto",
+                  objectFit: "contain"
                 }} /><br />
               <p><strong>Ages</strong></p>
               <p>13+</p>
@@ -142,7 +145,7 @@ export default function Landing() {
               </em>
             </p>
             <br />
-            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with a story-driven campaign, dual-class character building, and simultaenous turns coming to Kickstarter in 2026.</div>
+            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with a story-driven campaign, dual-class character building, and simultaneous turns coming to Kickstarter in 2026.</div>
             <div className={styles.maxW500 + " " + styles.center + " " + styles.tCenter}>
               <EmailSignup ctaText="Start your adventure!" />
             </div>

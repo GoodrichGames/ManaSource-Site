@@ -16,3 +16,5 @@
 .next/
 node_modules/
 out/
+/local-docs
+/scripts

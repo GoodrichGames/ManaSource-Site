@@ -12,26 +12,48 @@ const contactUsUrl = '/contactus';
 const Navigation = (props) => {
   const router = useRouter()
   const activeRoute = `/${router.pathname.split('/')[1]}`
+  const [activeHomeSection, setActiveHomeSection] = useState('home');
 
-  // let oldScrollY = 0;
-  // const [direction, setDirection] = useState('down');
-  // const controlDirection = () => {
-  //     if(window.scrollY > oldScrollY) {
-  //         setDirection('down');
-  //     } else {
-  //         setDirection('up');
-  //     }
-  //     oldScrollY = window.scrollY;
-  // }
+  useEffect(() => {
+    if (router.pathname !== '/') return;
 
-  // useEffect(() => {
-  //     window.addEventListener('scroll', controlDirection);
-  //     return () => {
-  //         window.removeEventListener('scroll', controlDirection);
-  //     };
-  // },[]);
+    let animationFrame;
 
-  //+ " " + (direction === 'down' ? styles.hidden : '')}>
+    const updateActiveSection = () => {
+      const mainSection = document.getElementById('main');
+      const newsSection = document.getElementById('news');
+      const sectionOffset = 100;
+
+      if (newsSection && window.scrollY >= newsSection.offsetTop - sectionOffset) {
+        setActiveHomeSection('news');
+      } else if (mainSection && window.scrollY >= mainSection.offsetTop - sectionOffset) {
+        setActiveHomeSection('about');
+      } else {
+        setActiveHomeSection('home');
+      }
+    };
+
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('hashchange', scheduleUpdate);
+    window.addEventListener('load', scheduleUpdate);
+    window.addEventListener('resize', scheduleUpdate);
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('hashchange', scheduleUpdate);
+      window.removeEventListener('load', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
+    };
+  }, [router.pathname]);
+
+  const isHomeSectionActive = (section) => activeRoute === homeUrl && activeHomeSection === section;
 
   return (
     <nav className={styles.navigation}> 
@@ -39,21 +61,21 @@ const Navigation = (props) => {
         <div className={styles.navigationTop}>
           <div className={styles.navigationOverlay}>
             {!props.disableLinks && <ul>
-              <li key='home' className={activeRoute === homeUrl ? styles.selected : ''}>
+              <li key='home' className={isHomeSectionActive('home') ? styles.selected : ''}>
                 <Link href={homeUrl} className={styles.menu1}>
                   
                     Home
                   
                 </Link>
               </li>
-              <li key='about' className={activeRoute === aboutUrl ? styles.selected : ''}>
+              <li key='about' className={isHomeSectionActive('about') ? styles.selected : ''}>
                 <Link href={aboutUrl} className={styles.menu2}>
                   
                     About
                   
                 </Link>
               </li>
-              <li key='news' className={activeRoute === newsUrl ? styles.selected : ''}>
+              <li key='news' className={isHomeSectionActive('news') ? styles.selected : ''}>
                 <Link href={newsUrl} className={styles.menu3}>
                   
                     News

@@ -1,5 +1,6 @@
 import ExportedImage from "next-image-export-optimizer";
 import ggLogo from '../../public/images/GG-Logo-dark-bg.png';
+import pageBackground from '../../public/images/bg-page.png';
 import Head from '../Structural/Meta/Meta';
 import Navigation from '../Structural/Navigation/Navigation';
 import PageHeader from '../content/PageHeader/PageHeader';
@@ -11,14 +12,15 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle, cl
 
   return (
     <div className={wrapperClassName}>
-      <img
+      <ExportedImage
         className={styles.backgroundImage}
-        src="/images/nextImageExportOptimizer/bg-page-opt-3840.WEBP"
+        src={pageBackground}
         alt=""
         aria-hidden="true"
         role="presentation"
-        loading="eager"
-        fetchPriority="high"
+        fill
+        priority
+        sizes="100vw"
       />
       <Head name={title} description={description} image={image} isArticle={isArticle} />
       <GoogleAnalytics gaId="G-Q13V1EJW9Q" />

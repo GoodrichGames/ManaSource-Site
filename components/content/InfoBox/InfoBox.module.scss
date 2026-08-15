@@ -1,4 +1,4 @@
-@import "../../../styles/scss/colors.scss";
+@use "../../../styles/scss/colors.scss" as *;
 
 .infoBox {
   background: rgba(0, 0, 0, 0.75);

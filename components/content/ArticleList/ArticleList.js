@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useId, useState } from 'react'
 import articles from '../../../metadata/articlemeta'
 import styles from './ArticleList.module.scss'
 import ArticleListItem from './ArticleItem'
@@ -13,6 +13,7 @@ const extractYear = (dateString) => {
 }
 
 const ArticleList = ({ category, max, expandByYear = false }) => {
+  const listId = useId();
   const filteredArticles = articles.filter(post => post.categories.includes(category)).slice(0, max);
 
   const groupsByYear = filteredArticles.reduce((groupsMap, articleItem) => {
@@ -48,11 +49,17 @@ const ArticleList = ({ category, max, expandByYear = false }) => {
     <div>
       {yearsList.map(yearKey => (
         <div key={yearKey} style={{ marginBottom: 16 }}>
-          <div style={{ cursor: 'pointer', fontWeight: '600', marginBottom: 8 }} onClick={() => toggleYear(yearKey)}>
+          <button
+            type="button"
+            className={styles.yearToggle}
+            aria-expanded={Boolean(expandedYears[yearKey])}
+            aria-controls={`${listId}-${yearKey}`}
+            onClick={() => toggleYear(yearKey)}
+          >
             {yearKey} ({groupsByYear[yearKey].length}) {expandedYears[yearKey] ? '▾' : '▸'}
-          </div>
+          </button>
           {expandedYears[yearKey] && (
-            <div>
+            <div id={`${listId}-${yearKey}`}>
               {groupsByYear[yearKey].map(articleEntry => (
                 <div key={articleEntry.title} className={styles.article}>
                   <ArticleListItem article={articleEntry} />

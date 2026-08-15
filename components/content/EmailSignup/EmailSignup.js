@@ -8,12 +8,11 @@ const EmailSignup = (props) => {
   return (
     <MailchimpSubscribe
       url={signupUrl}
-      render={({ subscribe, status, message }) => (
+      render={({ subscribe, status }) => (
         <div>
           {status !== 'success' && <SignupForm
             ctaText={props.ctaText}
             status={status}
-            message={message}
             onValidated={formData => subscribe(formData)}
           />}
           {status === 'success' && <div className={styles.subscribedMsg}>
