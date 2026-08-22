@@ -8,6 +8,7 @@
     "build": "next build && next-image-export-optimizer",
     "start": "next start",
     "lint": "eslint .",
+    "test:consent-region": "node --test cloudflare/consent-region-worker.test.mjs",
     "rotate-resize-pngs": "node scripts/rotate-resize-pngs.js",
     "postbuild": "next-sitemap"
   },
