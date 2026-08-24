@@ -18,7 +18,10 @@
   "env": {
     "preview": {
       "workers_dev": true,
-      "preview_urls": true
+      "preview_urls": true,
+      // Routes are inheritable, so without this the preview Worker would try to
+      // claim the production hostnames on the manasourcegame.com zone.
+      "routes": []
     }
   }
 }

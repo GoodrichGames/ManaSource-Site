@@ -1,6 +1,12 @@
 name: Deploy Cloudflare consent region Worker
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - cloudflare/**
+      - wrangler.jsonc
+      - .github/workflows/cloudflare-consent-worker.deploy.yml
   workflow_dispatch:
     inputs:
       target:
@@ -28,7 +34,7 @@ jobs:
         run: npm run test:consent-region
 
       - name: Deploy preview Worker
-        if: ${{ inputs.target == 'preview' }}
+        if: ${{ github.event_name == 'push' || inputs.target == 'preview' }}
         uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -37,7 +43,7 @@ jobs:
           command: deploy --env preview
 
       - name: Deploy production Worker
-        if: ${{ inputs.target == 'production' }}
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.target == 'production' }}
         uses: cloudflare/wrangler-action@v3
         with:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
