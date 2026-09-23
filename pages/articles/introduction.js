@@ -21,7 +21,7 @@ const Article = () => {
             Visit our <Link href='/'>homepage</Link> page to learn more.
             <br /><br />
             <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <EmailSignup ctaText="Start your adventure!"/>
           </div>
       </ArticleBlock>

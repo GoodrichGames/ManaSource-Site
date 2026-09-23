@@ -27,8 +27,7 @@ const Article = () => {
             - Scenario 8, 9 design.  Outlining the rest of the story.<br />
             - Playtesting for Scenario 4, 5, 8, new components.<br />
             - Scenarios 1, 2, 3, 4, 5, 6, 7, 8, 18 out of 21~ are playtest complete and fairly stable.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Preview of the new Action Card design (not final).<br /><br/>
             <ExportedImage src={focusedShotPic} alt='Focused Shot - a Warden skill card' width={0} height={500} objectFit="contain" preload={true} />
             <br/>
@@ -37,7 +36,7 @@ const Article = () => {
             <br />
             New round reference card design.  Featuring art by the talented Nele Diel of course.<br /><br/>
             <ExportedImage src={roundRefPic} alt='Round reference steps' width={0} height={500} objectFit="contain" preload={true} />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h4>July / August Goals</h4>
             - Complete development for Scenario 9, 10, 11.
             <br />
@@ -81,7 +80,7 @@ const Article = () => {
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
               Follow the game on <a href="https://boardgamegeek.com/boardgame/391828/mana-source">Board Game Geek</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a>. <br />
             </p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>

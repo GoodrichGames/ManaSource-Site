@@ -13,16 +13,11 @@ export default function Patchnotes() {
   return (
     <BaseTemplate title="Patchnotes" description="Balance changes and patchnotes">
       <ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
           <h1 className={styles.logo + " " + styles.tCenter}>Patch Notes</h1>
         </ContentItem>
-        <br />
-        <br />
+        <span className="spacer2" aria-hidden="true"></span>
       </ContentSection>
       <ContentSection>
         <ContentItem classes={styles.tCenter + " " + styles.assassinBg + " " + styles.fullW}>
@@ -39,9 +34,7 @@ export default function Patchnotes() {
           </InfoBox>
         </ContentItem>
 
-        <br />
-        <br />
-        <br />
+        <span className="spacer3" aria-hidden="true"></span>
 
         <PushSignup />
       </ContentSection>

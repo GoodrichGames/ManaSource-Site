@@ -8,28 +8,21 @@ export default function ContactUs() {
   return (
     <BaseTemplate title="Contact Us" description="Contact Goodrich Games">
       <ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
           <h1 className={styles.logo + " " + styles.tCenter}>Contact Us</h1>
         </ContentItem>
-        <br />
-        <br />
+        <span className="spacer2" aria-hidden="true"></span>
       </ContentSection>
       <ContentSection>
         <ContentItem classes={styles.tCenter + " " + styles.timbatiaBg + " " + styles.fullW}>
           <InfoBox classes={styles.fullW}>
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             For business inquiries contact us at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.<br /><br />
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with us directly!
             </p>
-            <br />
-            <br />
+            <span className="spacer2" aria-hidden="true"></span>
           </InfoBox>
         </ContentItem>
       </ContentSection>

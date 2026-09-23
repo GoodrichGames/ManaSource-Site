@@ -7,16 +7,11 @@ import InfoBox from './../../components/content/InfoBox/InfoBox';
 export default function ExploreClasses() {
   return <BaseTemplate title="Resources" description="Game Resources">
     <ContentSection>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <span className="spacer5" aria-hidden="true"></span>
       <ContentItem>
         <h1 className={styles.logo + " " + styles.tCenter}>Explore the Classes</h1>
       </ContentItem>
-      <br />
-      <br />
+      <span className="spacer2" aria-hidden="true"></span>
     </ContentSection>
     <div className={styles.maxW960 + " " + styles.center}>
       <ContentSection>
@@ -32,7 +27,7 @@ export default function ExploreClasses() {
               Historically, Reagents lived as traveling merchants, leveraging their talents in forging, construction, and water management.  Reagents live the most freely due to a high degree of self-sufficiency and ability to shape the land itself.  Outsiders are typically not allowed into their communities, out of fear of what has happened to the other nations.
             </p>
           </InfoBox>
-          <br />
+          <span className="spacer1" aria-hidden="true"></span>
           <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
             <p>
               <b>Warden</b><br />
@@ -44,7 +39,7 @@ export default function ExploreClasses() {
               Wardens prefer living in harmony with nature in wooded communities.  However, the ongoing aggression from Knights has made them largely indefensible.  The few who remain are on constant watch for forest fires and new ways to hide their homes.  Many others chose to flee underground, surviving using low sunlight farms.  Wardens provide a great deal of natural medicine, toxins, and food for non-Knight nations.
             </p>
           </InfoBox>
-          <br />
+          <span className="spacer1" aria-hidden="true"></span>
           <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
             <p>
               <b>Illusionist</b><br />
@@ -56,7 +51,7 @@ export default function ExploreClasses() {
               Illusionists are widely thought of as vagrants, criminals, and untrustworthy by nature.  To some extent this critique is well-warranted, as many engage in a variety of criminal activity such as forgery, suggestion, and “gambling”.  Illusionists that prefer honest work often live as performers, soothers, councilors, criminologists, and builders.  There are only a few last known Illusionist cities, though somehow outsiders never manage to visit.
             </p>
           </InfoBox>
-          <br />
+          <span className="spacer1" aria-hidden="true"></span>
           <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
             <p>
               <b>Knight</b><br />
@@ -70,7 +65,7 @@ export default function ExploreClasses() {
               Due to physical training, Knights use mana at a more efficient rate than other shapers.
             </p>
           </InfoBox>
-          <br />
+          <span className="spacer1" aria-hidden="true"></span>
           <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
             <p>
               <b>Doctor</b><br />
@@ -83,7 +78,7 @@ export default function ExploreClasses() {
               An all but lost art.  Once the medics of Knight empires, many were forced into creating plagues and combat automatons that opposed their underlying belief in the sanctity of life.  Their automatons still roam the land searching for ways to fulfill their defined purpose, unbeholden to any master but the one who created them.  Doctors have dwindled much in number, to the point where some question if they still exist at all...
             </p>
           </InfoBox>
-          <br />
+          <span className="spacer1" aria-hidden="true"></span>
           <InfoBox classes={styles.maxW960 + " " + styles.center + " " + styles.flex}>
             <p>
               <b>Unknown</b><br />
@@ -96,10 +91,7 @@ export default function ExploreClasses() {
           </InfoBox>
         </ContentItem>
       </ContentSection>
-      <br />
-      <br />
-      <br />
-      <br />
+      <span className="spacer4" aria-hidden="true"></span>
     </div>
   </BaseTemplate>
 }

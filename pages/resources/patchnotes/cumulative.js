@@ -37,18 +37,14 @@ export default function Cumulative() {
   return (
     <BaseTemplate title="Cumulative Balance Changes" description="Latest cumulative balance values for patched actions.">
       <ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
           <h1 className={styles.logo + ' ' + styles.tCenter}>Cumulative Balance Changes</h1>
-          <br />
+          <span className="spacer1" aria-hidden="true"></span>
           <p className={styles.tCenter}>This page shows the most recent version for actions that have received patchnotes.</p>
         </ContentItem>
       </ContentSection>
-      <br />
+      <span className="spacer1" aria-hidden="true"></span>
       <ContentSection>
         <ContentItem>
           <div className={styles.maxW960 + ' ' + styles.center}>
@@ -81,11 +77,7 @@ export default function Cumulative() {
             </table>
           </div>
         </ContentItem>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
       </ContentSection>
     </BaseTemplate>
   )

@@ -9,16 +9,11 @@ export default function News() {
   return (
     <BaseLayout title="News" description="Latest Mana Source updates, news, and balance changes.">
       <ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
         <h1 className={styles.logo + " " + styles.tCenter}>Mana Source News</h1>
         </ContentItem>
-        <br />
-        <br />
+        <span className="spacer2" aria-hidden="true"></span>
         </ContentSection>
         <ContentSection>
         <ContentItem classes={styles.tCenter + " " + styles.golemNewsBg + " " + styles.fullW}>

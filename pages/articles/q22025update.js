@@ -19,17 +19,13 @@ const Article = () => {
             <br /><br />
             <h4>Tariffs</h4>
             1. Our manufacturing partner has the ability to manufacture the game from either China or Vietnam.  If tariffs on board games get as high as they did again on China, we will look to manufacture in Vietnam in order to minimize the cost passed on to you.  At this time there is no manufacturer in the U.S. with a reasonable cost for high quality mass production.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             2. We have a few benefits as an indie company versus the big brand companies.  We primarily rely on Kickstarter and direct sales.  There is no retail middle-man that we have to share revenue with.  Further, since this initial run is a passion product, we&apos;re not looking for a % return on investment, but to put the product in your hands.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             3. Due to the ongoing volatility of the situation, the campaign manager will separately require a tariff cost at the time of import, in the same way that our EU friends often require a VAT payment at the time of their import.  To give you an idea of how swingy it has been, this could range between $2 - $25 (Vietnam & highest China tariff that was in effect).  This will be charged at cost only and I will keep you updated on how we&apos;re looking.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             4. Thank you for your patience as I waited for more information before sending this update!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h4>Rulebook Preview</h4>
             The rulebook is around 80% complete.  The main items delaying public release are the creation of UI assets for secondary components and additional Skirmish playtesting.  Once we release it publicly, it inevitably becomes a reflection of the final project in some people&apos;s minds, even if there are a lot of changes still to be made.
             <br /><br />
@@ -47,8 +43,7 @@ const Article = () => {
             </div>
             <br />
             It is currently 42 pages, covering the 3 game modes, with very large text.  We would like to shrink down the text and asset size to save you money on printing.  For example, we will likely condense these 4 pages to 3 pages.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <ExportedImage
               src={rulebookOnePic}
               alt='Rulebook title page'
@@ -68,11 +63,9 @@ const Article = () => {
                 height: "auto",
                 objectFit: "contain"
               }} />
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             I&apos;m also including a bonus preview of the inside of the Adventure Book which is over 125,000 words and 200 pages so far!  That&apos;s about as long as a modern fantasy novel.  I love our art alongside the scenario text!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <div className={styles.center + " " + styles.tCenter}>
               <ExportedImage
                 src={campaignPreviewOnePic}
@@ -86,8 +79,7 @@ const Article = () => {
             </div>
             <br />
             If you are interested in playing the alpha version of the campaign or PvP, we would be glad to set something up with you sooner.  Send us an email or message on the Discord server.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <div className={styles.center + " " + styles.tCenter}>
               <h4>New Art</h4>
 
@@ -100,13 +92,12 @@ const Article = () => {
                   height: "auto",
                   objectFit: "contain"
                 }} />
-              <br />
+              <span className="spacer1" aria-hidden="true"></span>
               <em>Andres Elya - Warden of Timbatia by <a href="https://www.amandabrack.art/">Amanda Brack</a></em>
             </div>
             <br />
             One of your several companions on the sprawling journey above ground.  Andres has the ability to influence flora, pheromones, and by extension, animal behavior.  Wardens specialize in a mixture of action types, keeping their opponents guessing as to what comes next.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h4>Development Progress</h4>
             20+ scenarios written and playtested.  The end is in sight!<br />
             240 Action Cards, 40 per class. 99% complete.<br />
@@ -128,7 +119,7 @@ const Article = () => {
                 }} />
               <em>Personally I&apos;m looking forward to these sweet player boxes in person.</em>
             </div>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h2>Q3 2025 Goals</h2>
             -   Continue editing process.
             <br />
@@ -149,9 +140,9 @@ const Article = () => {
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <EmailSignup ctaText="Start your adventure!" />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
       </ArticleBlock>
     </ArticleTemplate >
   )

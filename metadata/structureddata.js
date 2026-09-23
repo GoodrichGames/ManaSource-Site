@@ -40,7 +40,7 @@ const gameSchema = {
       name: 'Mana Source',
       url: `${baseUrl}/`,
       description: 'A discovery at an ancient vault may be the last hope of a people driven underground... Mana Source is a tactical adventure board game for 1-4 players. You\'ll need to work together to solve unique challenges, overcome deadly adversaries, and coordinate your abilities if you\'re going to survive.',
-      image: `${baseUrl}/images/cave.png`,
+      image: `${baseUrl}/share-1200x630.jpg`,
       genre: ['Adventure', 'Fantasy', 'Strategy'],
       category: 'Board game',
       brand: {

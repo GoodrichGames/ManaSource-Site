@@ -10,11 +10,7 @@ export default function PressKit() {
   return (
     <BaseTemplate title="Press Kit" description="Mana Source Press Kit and Media Resources">
       <ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
           <h1 className={styles.tCenter}>Press Kit</h1>
         </ContentItem>
@@ -45,7 +41,7 @@ export default function PressKit() {
             <p><strong>Players:</strong> 1-4</p>
             <p><strong>Age:</strong> 13+</p>
             <p><strong>Play Time:</strong> 60-180 minutes (Adventure/Skirmish), 20-30 minutes (Clash)</p>
-            <p><strong>Status:</strong> Coming to Kickstarter in 2026</p>
+            <p><strong>Status:</strong> Coming to Kickstarter in early 2027</p>
           </InfoBox>
         </ContentItem>
       </ContentSection>
@@ -83,7 +79,7 @@ export default function PressKit() {
             <p>
               <strong>Email:</strong> <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>
             </p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
           </InfoBox>
         </ContentItem>
       </ContentSection>

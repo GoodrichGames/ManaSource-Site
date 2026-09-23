@@ -11,14 +11,11 @@ const Article = () => {
     <ArticleTemplate useImage={true}>
       <ArticleBlock>
             Happy new year everyone!  Let&apos;s jump into the updates.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             While it was my original intention to launch the Kickstarter at the end of the year, some development has taken longer than expected as the scope of the core product has increased.  Thus we had two choices, either to complete development after the campaign as many Kickstarter projects do, or to delay the campaign launch.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Thankfully, since this is a indie project, we have the capability to delay.  We&apos;ll continue to send regular updates but the campaign launch date will not be announced until development (gameplay, art, playtesting) is fully complete.  We really appreciate your understanding here!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             What are some of the delays on our end?<br />
             - Due to scheduling conflicts, campaign playtesting is progressing slower than I would like.
             <br />
@@ -42,17 +39,13 @@ const Article = () => {
             </div>
             <br />
             The other good news is that we&apos;ve expanded the amount of content included in the game with no additional cost!  We hope you enjoy the additional scenarios and the introduction of a new mechanic: <b>Attributes.</b>
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Attributes are behavior modifiers applied to enemies that may change your strategy in combat.  For example, an enemy with the Assassin attribute always targets the party member with the lowest health instead of following the regular aggro rules.  Shut down this enemy before it&apos;s too late!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Or perhaps the enemy gains the <em>Focused attribute - When this entity is not targeted in a round, its action(s) deal +damage.</em>  Don&apos;t make the mistake of leaving this enemy alone or relying on overly defensive actions!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             If you are interested in playing the alpha version of the campaign or PvP, we would be glad to set something up with you sooner.  Send us an email or message on the Discord server.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h2>Q1 2025 Goals</h2>
             -  Complete campaign development and continue editing process.
             <br />
@@ -73,9 +66,9 @@ const Article = () => {
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <EmailSignup ctaText="Start your adventure!" />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
       </ArticleBlock>
     </ArticleTemplate >
   )

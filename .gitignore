@@ -17,4 +17,4 @@
 node_modules/
 out/
 /local-docs
-/scripts
+/offline-scripts

@@ -22,7 +22,7 @@ const Article = () => {
                 <br />
                 - New Art including the piece below.
               </p>
-              <br />
+              <span className="spacer1" aria-hidden="true"></span>
               <ExportedImage
                 src={timbatiaPic}
                 alt='Large tree growing out of rock under the moonlight'
@@ -32,11 +32,11 @@ const Article = () => {
                 style={{
                   objectFit: "contain",
                 }} />
-              <br />
+              <span className="spacer1" aria-hidden="true"></span>
               <p><em>
                 The very top of the Warden city of Timbatia.  Most of the tree extends underground into a vast cavern where it is interwoven with homes, businesses, and a mana well at the base.  The Timbati and growing influx of refugees settle for crowding, few food options, and dim lighting over being hunted down by Knight factions in their endless wars.
               </em></p>
-              <br />
+              <span className="spacer1" aria-hidden="true"></span>
               <p>
                 January is publisher contact month.  It&apos;s really starting to feel like the culmination of about 6 years of effort.  So far, I have 1 meeting scheduled the week of the 23rd so a large part of this month is sending emails and making sure I have all my Wrelkras in a row.  Hoping for more meetings scheduled soon.
                 <br /><br />
@@ -58,7 +58,7 @@ const Article = () => {
                 Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.  Other Social Media is coming soon. <br />
                 <b>Actively seeking a publisher! Contact me at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me</a>.</b>
               </p>
-              <br />
+              <span className="spacer1" aria-hidden="true"></span>
               <p><em>
                 To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
               </em></p>

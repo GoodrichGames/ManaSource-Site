@@ -2,13 +2,13 @@
   float: left;
   margin: 0 0 0 20px;
   padding: 0;
-  width: 560px;
+  width: min(560px, calc(100% - 20px));
 }
 .aside {
   float: left;
   margin: 0 0 0 20px;
   padding: 0;
-  width: 340px;
+  width: min(340px, calc(100% - 20px));
 }
 
 section {
@@ -17,14 +17,13 @@ section {
     float: left;
     // margin: 0 10px;
     padding: 3px 0 0;
-    width: 300px;
-    width: 600px;
+    width: min(600px, 100%);
   }
   .col2 {
     background: url(../../public/images/border.gif) repeat-x top left;
     float: left;
     // margin: 0 10px;
     padding: 3px 0 0;
-    width: 300px;
+    width: min(300px, 100%);
   }
 }

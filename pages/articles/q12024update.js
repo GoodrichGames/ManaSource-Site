@@ -39,8 +39,7 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
             </div>
             <h2>Art Update</h2>
             My favorite part of this year so far has been the art.  Nele is working very diligently and I&apos;m happy to share one of the enemies you may fight early on in the campaign.  Let us know what you think!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <div className={styles.thirdW + " " + styles.center + " " + styles.tCenter}>
             <ExportedImage
                 src={wildwoodPic}
@@ -51,10 +50,10 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
                 style={{
                   objectFit: "contain",
                 }} />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <i>The Wildwood Behemoth by Nele Diel</i>
             </div>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h4>Last few months of work included:</h4>
             - Scenario 12, 13, 14, 15 design.  Though these are taking a while to write, it&apos;ll be worth it!<br />
             - Weekly new art.<br />
@@ -62,7 +61,7 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
             - Balance pass on Knight skills and new skill design.<br />
             - New equipment card designs (up to almost 100 now) and balancing.<br />
             - Playtesting for Scenario 10, 11, 12, 13.<br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
 
             <h2>Q2 2024 Goals</h2>
             - Complete development for Scenario 14, 15, 16.
@@ -70,8 +69,7 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
             - Start laying out the rulebook and scenario book.  Progress on releasing the scenarios online for free has stalled due to difficulties with the software we were using.  I plan to revisit this in Q2 as I want first impressions to be strong, even in alpha.
             <br /><br />
             - Additional equipment development.  These enable different playstyles in the PvE campaign and will likely act as power-ups in the replayable mode.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Until next time,<br />
             Paul Goodrich<br /><br />
 
@@ -79,7 +77,7 @@ I&apos;m proud to commit to no AI usage in the Mana Source board game.  All art 
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
       </ArticleBlock>
     </ArticleTemplate >
   )

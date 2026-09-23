@@ -10,11 +10,11 @@ import styles from './../../components/Templates/BaseTemplate.module.scss'
 const faqs = [
   {
     question: "When will Mana Source be released?",
-    answer: "TBD once crowdfunding is secured. If you are interested in working with us, please <a href='/contactus'>contact us</a>!<br><br>At the current rate of progress, Mana Source will Kickstart in late 2026. The email signup below is the best way I can keep you updated.",
+    answer: "TBD once crowdfunding is secured. If you are interested in working with us, please <a href='/contactus'>contact us</a>!<br><br>At the current rate of progress, Mana Source will Kickstart in early 2027. The email signup below is the best way I can keep you updated.",
   },
   {
     question: "How much will Mana Source cost?",
-    answer: "This will largely depend on the final components and interest. We are aiming for pricing around $70.",
+    answer: "This will largely depend on the final components and interest. We'll announce pricing ahead of the Kickstarter launch — sign up below and we'll let you know as soon as it's set.",
   },
   {
     question: "What are the release classes?",
@@ -74,16 +74,11 @@ export default function Rules() {
         }}
       />
       <ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
           <h1 className={styles.logo + " " + styles.tCenter}>Rules</h1>
         </ContentItem>
-        <br />
-        <br />
+        <span className="spacer2" aria-hidden="true"></span>
       </ContentSection>
       <div className={styles.maxW960 + " " + styles.center}>
         <ContentSection>
@@ -94,7 +89,7 @@ export default function Rules() {
             {/* <a href='/documents/ms-rules-1-0.docx'>Version 1.0</a> */}
           </ContentItem>
           <ContentItem title='FAQ'>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             {faqs.map((faq, index) => (
               <div key={index}>
                 <Accordion 
@@ -104,15 +99,12 @@ export default function Rules() {
                   <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                   {index === 0 && <EmailSignup ctaText="Start your adventure!" />}
                 </Accordion>
-                <br />
+                <span className="spacer1" aria-hidden="true"></span>
               </div>
             ))}
           </ContentItem>
         </ContentSection>
-        <br />
-        <br />
-        <br />
-        <br />
+        <span className="spacer4" aria-hidden="true"></span>
       </div>
     </BaseTemplate>
   )

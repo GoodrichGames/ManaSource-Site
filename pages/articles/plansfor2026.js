@@ -74,7 +74,7 @@ const Article = () => {
         <br />
         NPC skill refresh<br />
         20% complete.<br />
-        <br />
+        <span className="spacer1" aria-hidden="true"></span>
                     <div className={styles.center + " " + styles.tCenter}>
 
         <h2>New Art</h2>
@@ -119,12 +119,12 @@ const Article = () => {
           Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a>. <br />
         </p>
         </div>
-        <br />
+        <span className="spacer1" aria-hidden="true"></span>
         <p><em>
           To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
         </em></p>
         <EmailSignup ctaText="Start your adventure!" />
-        <br />
+        <span className="spacer1" aria-hidden="true"></span>
       </ArticleBlock>
     </ArticleTemplate >
   )

@@ -1,6 +1,7 @@
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
+import YoutubeEmbed from './../../components/content/YoutubeEmbed/YoutubeEmbed';
 
 const Article = () => {
     return (
@@ -15,7 +16,7 @@ const Article = () => {
             <br /><br />
             Finally, I&apos;ve released a gameplay basics overview.  This video covers everything you need to know to start playing Mana Source and does not contain any story or challenge spoilers.  My hope is that you find the system easy to learn.  It&apos;s important to note that these are just the basics, much of the meat of the game is in skill execution, building out your character, managing aggro, solving puzzles, and so on.  Let us know what you&apos;re looking forward to or want to know more about on our Discord.
             <br/><br/>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/jnfqC_cbxvg?si=A45uegKEV9bfFeHT" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <YoutubeEmbed videoId="jnfqC_cbxvg" width="560" height="315" isAutoplay={false} controls={true} />
             <br /><br />
             If you have not yet, it would help us out quite a bit if you can follow and wishlist us on <a href="https://boardgamegeek.com/boardgame/391828/mana-source">Board Game Geek.</a>
             <br />
@@ -27,7 +28,7 @@ const Article = () => {
             - Kickstarter planning. <br />
             - Gameplay video. <br />
             - Playtesting for Scenario 1, 6, 8, 9, 10, 11. 10 and 11 required some minor revisions I am testing now. <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
 
             <h4>Early 2024</h4>
             - Complete development for Scenario 13, 14.
@@ -37,8 +38,7 @@ const Article = () => {
             - Additional equipment development.  Over 80 items are designed so far and currently undergoing playtesting.
             <br /><br />
             I hope you&apos;re able to enjoy some quality time with your family and friends during this season.  Sharing love is one of the most important things we can do.  Thank you for your support and see you in the next year!
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Until next time,<br />
             Paul Goodrich<br /><br />
 
@@ -53,5 +53,4 @@ const Article = () => {
 }
 
 export default Article
-
 

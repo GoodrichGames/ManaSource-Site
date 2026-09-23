@@ -13,28 +13,24 @@ export default function Resources() {
   return (
     <BaseTemplate title="Resources" description="Game Resources">
       <ContentSection>
-        <br />
-        <br />
-        <br />
+        <span className="spacer3" aria-hidden="true"></span>
         <ContentItem>
           <h1 className={styles.logo + " " + styles.tCenter}>Resources</h1>
         </ContentItem>
-        <br />
-        <br />
+        <span className="spacer2" aria-hidden="true"></span>
       </ContentSection>
       <ContentSection>
         <ContentItem classes={styles.tCenter + " " + styles.assassinBg + " " + styles.fullW}>
           <InfoBox classes={styles.fullW}>
             <ContentItem>
-              <br />
+              <span className="spacer1" aria-hidden="true"></span>
                 <div className={styles.center}>
                   <YoutubeEmbed videoId='jnfqC_cbxvg' width='560' height='315' isAutoPlay={false} />
                 </div>
               
               {/* <iframe width="560" height="315" src="https://www.youtube.com/embed/jnfqC_cbxvg?si=A45uegKEV9bfFeHT" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             </ContentItem>
-            <br />
-            <br />
+            <span className="spacer2" aria-hidden="true"></span>
             <ContentItem>
               <Link href='/resources/rules'>
                 <h2>Rules &amp; FAQ</h2>
@@ -46,8 +42,7 @@ export default function Resources() {
                 <h2>Press Kit</h2>
               </Link>
             </ContentItem>
-            <br />
-            <br />
+            <span className="spacer2" aria-hidden="true"></span>
             <div className={styles.center + " " + styles.maxW500}>
               <EmailSignup ctaText="Start your adventure!" />
             </div>

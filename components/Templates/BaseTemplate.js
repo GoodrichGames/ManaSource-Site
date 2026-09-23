@@ -1,11 +1,12 @@
 import ExportedImage from "next-image-export-optimizer";
+import Link from 'next/link';
 import ggLogo from '../../public/images/GG-Logo-dark-bg.png';
 import pageBackground from '../../public/images/bg-page.png';
 import Head from '../Structural/Meta/Meta';
 import Navigation from '../Structural/Navigation/Navigation';
 import PageHeader from '../content/PageHeader/PageHeader';
+import ConsentSettingsButton from '../Structural/Consent/ConsentSettingsButton';
 import styles from './BaseTemplate.module.scss';
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 const BaseTemplate = ({ children, title, date, description, image, isArticle, classes }) => {
   const wrapperClassName = `${styles.backgroundWrap}${classes ? ` ${classes}` : ''}`;
@@ -23,7 +24,6 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle, cl
         sizes="100vw"
       />
       <Head name={title} description={description} image={image} isArticle={isArticle} />
-      <GoogleAnalytics gaId="G-Q13V1EJW9Q" />
       <Navigation />
 
       <main className={styles.main}>
@@ -40,7 +40,12 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle, cl
           <p>
             Mana Source © Goodrich Games 2026. All rights reserved.
           </p>
-          <br />
+          <p className={styles.footerLinks}>
+            <Link href="/privacy">Privacy Policy</Link>
+            <span aria-hidden="true"> · </span>
+            <ConsentSettingsButton />
+          </p>
+          <span className="spacer1" aria-hidden="true"></span>
           <div className={styles.maxH100}>
           <ExportedImage
             src={ggLogo}

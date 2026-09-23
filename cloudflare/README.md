@@ -9,9 +9,12 @@ application.
 1. Create a Cloudflare API token with **Workers Scripts: Edit** and **Workers Routes: Edit** for the
    `manasourcegame.com` zone.
 2. Add `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` as GitHub Actions repository secrets.
-3. Run the **Deploy Cloudflare consent region Worker** workflow and choose `preview`.
+3. Push to `main`. Any change under `cloudflare/`, to `wrangler.jsonc`, or to the workflow file
+   deploys the preview Worker automatically. To deploy it without such a change, run the
+   **Deploy Cloudflare consent region Worker** workflow and choose `preview`.
 4. Open the `workers.dev` URL printed by the deployment step. Test it from locations inside and
    outside the configured region and confirm the response contains only `requiresPriorConsent`.
+   No route is attached in this environment, so the Worker answers on every path.
 
 The preview environment does not attach a route to `manasourcegame.com` and does not require a DNS
 cutover. Cloudflare appends `-preview` to the Worker name for this environment.
@@ -19,7 +22,8 @@ cutover. Cloudflare appends `-preview` to the Worker name for this environment.
 ## Deploy to the site
 
 1. Proxy `manasourcegame.com` and `www.manasourcegame.com` through the Cloudflare zone.
-2. Run the same workflow and choose `production`.
+2. Run the same workflow and choose `production`. Production is manual dispatch only; pushes never
+   deploy it.
 3. Request `https://www.manasourcegame.com/api/privacy-region` and confirm the response contains only
    `requiresPriorConsent` and is not cached.
 

@@ -40,7 +40,7 @@ const Article = () => {
             </p><br />
             Until next time, <br />
             Paul Goodrich <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <h4>Design Corner</h4>
             This section is a behind the scenes look at some aspect of the design or release process that is on my mind.  Hopefully this helps a future designer someday.  Today&apos;s topic is Scenario design.
             <br /><br />
@@ -64,15 +64,14 @@ const Article = () => {
             - Feature a reason to replay the scenario and present some kind of optional additional challenge.<br />
             <br />
             Scenario 6 ended up at around 7000 words of total text.  So the text alone ends up about 20-24 hours for me to write spread across 2-4 hour blocks.  The remaining mechanic design, balancing, playtesting, etc takes roughly 15 hours additional for a first draft.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Feel free to email us directly at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me.</a>
 
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
               Follow the game on <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a>. <br />
             </p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>

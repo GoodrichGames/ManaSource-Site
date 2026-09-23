@@ -90,10 +90,9 @@ const Navigation = (props) => {
                 </Link>
               </li>
               <li key='contactus' className={activeRoute === contactUsUrl ? styles.selected : ''}>
-                <Link href={contactUsUrl} className={styles.menu5}>
-                  
-                    Contact Us
-                  
+                <Link href={contactUsUrl} className={styles.menu5} aria-label="Contact Us">
+                    <span className={styles.contactLabel}>Contact Us</span>
+                    <span className={styles.contactLabelMobile} aria-hidden="true">Contact</span>
                 </Link>
               </li>
             </ul>}

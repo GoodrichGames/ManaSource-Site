@@ -1,4 +1,5 @@
 @use "./colors.scss" as *;
+@use "./breakpoints.scss" as *;
 
 * {
   box-sizing: border-box;
@@ -16,13 +17,38 @@ body {
   background: url(../../public/images/nextImageExportOptimizer/bg-body-opt-1920.WEBP) repeat;
   color: #ffffff;
   line-height: 1;
-  min-width: 960px;
+  min-width: 320px;
   font-weight: 300;
   scroll-behavior: smooth;
 }
 
 body {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
+  overflow-x: hidden;
+}
+
+@media (max-width: $breakpoint-navigation) {
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  body h2 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-block: 0.5rem;
+  }
+
+  h3,
+  h4 {
+    line-height: 1.25;
+    margin-block: 0.6rem;
+  }
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
 }
 
 a {
@@ -46,13 +72,34 @@ a {
   object-position: 0 10%;
 }
 
-@media (min-width: 600px) and (max-width: 1100px) {
-  body {
-    font-size: 1.4rem;
+// Vertical spacers, replacing runs of empty <br> tags. One unit equals one
+// empty line box, so $spacer-unit tracks the body font-size and line-height
+// below. Change these values to retune spacing across the whole site.
+$spacer-unit: 1.1rem;
+$spacer-unit-wide: 1.2rem;
+
+@for $i from 1 through 5 {
+  .spacer#{$i} {
+    display: block;
+    height: $spacer-unit * $i;
   }
 }
 
-@media (min-width: 1101px) {
+@media (min-width: $breakpoint-tablet-min) {
+  @for $i from 1 through 5 {
+    .spacer#{$i} {
+      height: $spacer-unit-wide * $i;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-desktop) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: ($breakpoint-desktop)) {
   body {
     font-size: 1.2rem;
   }

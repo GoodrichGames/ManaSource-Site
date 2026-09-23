@@ -38,9 +38,9 @@ const Article = () => {
             - Playtesting for Scenario 1, 5, 7, 8, 9.<br />
             - Scenarios 1 - 10, 18 are designed which officially puts us at the halfway point!  A few require some minor redesigns (enemy difficulty, length tweaks, editing).<br />
             - In universe writing such as below.<br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <hr />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
               <ContentItem>
                 <ExportedImage src={hummingbearPic} alt='Hummingbear creature' width={0} height={500} objectFit="contain" preload={true} className={styles.center} />
                 <Container classes={styles.fullW + " " + styles.tCenter}><em>The Hummingbear - Nele Diel</em>
@@ -65,9 +65,9 @@ const Article = () => {
                 <span style={{ fontSize: '14px' }}><em>* While tax-deductible by law, the Baile Tigherna Zoological Institute cannot guarantee that any such deductions will be honored by the occupying Kydarian government.  The Zoological Institute recommends compensat...consulting a Kydarian tax professional before deducting a donation.</em></span>
                 <br />
               </ContentItem>
-                  <br />
+                  <span className="spacer1" aria-hidden="true"></span>
                   <hr />
-                  <br />
+                  <span className="spacer1" aria-hidden="true"></span>
                 <h4>September & October Goals</h4>
             - Complete development for Scenario 11, 12.  Small redesigns for scenarios 1, 4, 6.  Scenario 13 is a stretch goal but that will be a very important and in-depth scenario that I expect to take longer to design.
             <br />
@@ -114,7 +114,7 @@ const Article = () => {
             <br />
             Let&apos;s see if there are any overlaps in positives with the current number 1 game on Board Game Geek - Brass: Birmingham.<br /><br />
             <ExportedImage src={brassPic} alt='Board Game Geek profile of Brass Birmingham' width={0} height={400} objectFit="contain" preload={true} className={styles.block} />
-            <br />        
+            <span className="spacer1" aria-hidden="true"></span>
             <em style={{ fontSize: '12px' }}>Image credit: <a href="https://boardgamegeek.com/boardgame/224517/brass-birmingham">https://boardgamegeek.com/boardgame/224517/brass-birmingham</a></em><br />
             <br />
             - People like getting resources based on their actions and spending resources.<br />
@@ -147,15 +147,14 @@ const Article = () => {
             <br />
             2. Regardless of your goal, make a game you love to play.  You&apos;re going to be doing that a lot, over and over and over again.
 
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Feel free to email us directly at <a href="mailto:goodrichgames@pm.me">goodrichgames@pm.me.</a>
 
             <p>
               Join the <a href="https://discord.com/invite/drQDa7MQ3e">official Discord</a> to chat with the community or ask questions.<br />
               Follow the game on <a href="https://boardgamegeek.com/boardgame/391828/mana-source">Board Game Geek</a> and <a href="https://www.facebook.com/Mana-Source-102398542746103">Facebook</a> <br />
             </p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <p><em>
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>

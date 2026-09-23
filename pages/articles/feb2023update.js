@@ -10,7 +10,7 @@ const Article = () => {
             <p>
               Short but important update this time.
             </p>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             <p>
               I did get a chance to meet with a publisher and received some excellent feedback.  The biggest takeaway I had was on high projected cost of the project, particularly upfront costs on art.  So I do need to spend some significant time this month on core changes.
             </p><br />

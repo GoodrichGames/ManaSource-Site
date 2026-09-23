@@ -9,8 +9,10 @@
     "start": "next start",
     "lint": "eslint .",
     "test:consent-region": "node --test cloudflare/consent-region-worker.test.mjs",
-    "rotate-resize-pngs": "node scripts/rotate-resize-pngs.js",
-    "postbuild": "next-sitemap"
+    "rotate-resize-pngs": "bash offline-scripts/rotate-resize-pngs.sh",
+    "generate-brand-assets": "node offline-scripts/generate-brand-assets.mjs",
+    "postbuild": "next-sitemap && node scripts/prune-unreferenced-originals.mjs --write",
+    "prune-originals": "node scripts/prune-unreferenced-originals.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",

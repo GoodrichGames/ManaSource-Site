@@ -38,7 +38,7 @@ const Article = () => {
         <h2>Community & Feedback</h2>
         <p>Join the Discord to discuss changes and submit playtest feedback. We will monitor balance analytics and may issue follow-up patchnotes indicating further changes.</p>
 
-        <br />
+        <span className="spacer1" aria-hidden="true"></span>
         <EmailSignup ctaText="Stay informed" />
       </div>
     </ArticleBlock>

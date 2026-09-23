@@ -1,3 +1,5 @@
+@use "../../../styles/scss/breakpoints.scss" as *;
+
 .container {
   position: relative;
   height: 100%;
@@ -62,12 +64,12 @@
   background: rgba(0,0,0,0.55);
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .container {
     min-height: 500px;
   }
   .description {
-    font-size: 2rem;
+    font-size: 1.4rem;
     max-width: 100%;
   }
 }

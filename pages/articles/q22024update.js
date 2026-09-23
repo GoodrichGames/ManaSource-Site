@@ -40,7 +40,7 @@ const Article = () => {
                 }} />
               
             </div>
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             
             <h4>Last few months of work included:</h4>
             - Scenario 9, 14, 15, 16 design.  This included bringing an exciting end to the second act and finalizing the direction of third and final act.<br />
@@ -50,7 +50,7 @@ const Article = () => {
             - Skirmish (the replayable mode) ruleset.  I&apos;m leaning toward a progression-based system with increasingly challenging bosses.  One of my major focuses is making it easy to bring new players to the table who haven&apos;t played Mana Source before.<br />
             - New skill and equipment card designs.<br />
             - Playtesting for Scenario 1, 2, 14, 15, 16.  All are playtesting very well.<br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
 
             <h2>Q3 2024 Goals</h2>
             - Complete development for Scenario 17, 18, 19.  Slightly rework scenario 20 which is already in early alpha.  This is probably the last scenario development update.  The campaign isn&apos;t &apos;complete&apos; at 20 but I want to leave the total number of scenarios beyond 20 a secret for release.
@@ -58,8 +58,7 @@ const Article = () => {
             - Finish the alpha version of the rulebook.  Glad to report our previous software issues have been corrected.
             <br /><br />
             - UI updates.  I&apos;m not fully satisfied with the enemy card iconography and layouts you may have seen in the How to Play video from late last year.  More to share on that soon.
-            <br />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
             Until next time,<br />
             Paul Goodrich<br /><br />
 
@@ -67,7 +66,7 @@ const Article = () => {
               To receive this update sooner along with some additional insider details, sign up for the email newsletter below!
             </em></p>
             <EmailSignup ctaText="Start your adventure!" />
-            <br />
+            <span className="spacer1" aria-hidden="true"></span>
       </ArticleBlock>
     </ArticleTemplate >
   )

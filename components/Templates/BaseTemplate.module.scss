@@ -1,5 +1,6 @@
 @use "../../styles/scss/colors.scss" as *;
 @use "../../styles/scss/animations.scss" as *;
+@use "../../styles/scss/breakpoints.scss" as *;
 
 .backgroundWrap {
   position: relative;
@@ -23,10 +24,13 @@
 .logo {
   display: block;
   margin: 0 auto;
-  padding: 0;
+  padding: 1rem 20px 0;
   width: 100%;
-  padding-top: 1rem;
   z-index: 1;
+}
+
+.signupSpacing {
+  height: 34px;
 }
 
 .overlayText {
@@ -210,6 +214,13 @@
     padding-top: 6rem;
     // min-height: 21rem;
   }
+  .footerLinks {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    a {
+      text-decoration: underline;
+    }
+  }
   ul {
     display: block;
     margin: 0 auto;
@@ -264,7 +275,7 @@
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   .flex {
     flex-wrap: wrap;
   }
@@ -328,6 +339,24 @@
 
 .fiftyW {
   width: 50%;
+
+  @media (max-width: ($breakpoint-tablet-min)) {
+    width: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .sectionArrow {
+    height: 20px;
+    margin: 16px auto;
+  }
+
+  br:has(+ .sectionArrow),
+  .sectionArrow + br,
+  .sectionArrow + br + br,
+  .sectionArrow + br + br + br {
+    display: none;
+  }
 }
 
 .seventyW {
@@ -342,7 +371,7 @@
   width: 100%;
   position: relative;
 
-  @media (min-width: 768px) {
+  @media (min-width: $breakpoint-tablet) {
     width: 50%;
     display: inline-block;
   }
@@ -352,15 +381,74 @@
   width: 100%;
   position: relative;
 
-  @media (min-width: 1300px) {
+  @media (min-width: $breakpoint-wide) {
     width: 50%;
     display: inline-block;
   }
 }
 
 .dH0 {
-  @media (min-width: 1100px) {
-    height: 0;
+  height: 0;
+}
+
+.heroStatText {
+  display: contents;
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .heroOverlay {
+    min-height: 180px;
+    padding: 10px 12px;
+
+    > br {
+      display: none;
+    }
+
+    > p {
+      line-height: 1.15;
+      margin: 8px 0 0;
+    }
+  }
+
+  .heroOverlay .heroStat {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    min-height: 70px;
+    padding: 4px;
+    text-align: left;
+
+    > br {
+      display: none;
+    }
+
+    > span {
+      flex: 0 0 auto;
+      margin-right: 8px;
+      width: 32px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .heroStatText {
+    display: block;
+
+    p {
+      line-height: 1.1;
+    }
+  }
+
+  .heroPlayTimes {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 6px;
+
+    > div {
+      width: auto;
+    }
   }
 }
 
@@ -369,7 +457,7 @@
     max-height: 50px;
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: $breakpoint-wide) {
     max-height: inherit;
   }
 }
@@ -437,13 +525,88 @@
 
   iframe {
     display: block;
+    aspect-ratio: 16 / 9;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
   }
 
   input {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.signupFeatures {
+  @media (max-width: $breakpoint-desktop) {
+    display: flex;
+    width: 100%;
+
+    .signupFeature {
+      flex: 0 0 50%;
+      max-width: none;
+      width: 50%;
+    }
+  }
+
+  @media (max-width: ($breakpoint-tablet-min)) {
+    flex-direction: column;
+
+    .signupFeature {
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .signupSpacing {
+    height: 12px;
+  }
+
+  .main {
+    section {
+      ul {
+        li > div {
+          padding: 12px;
+        }
+      }
+
+      h3,
+      .SectionHeader {
+        font-size: 1.25rem;
+        height: 42px;
+        line-height: 42px;
+      }
+    }
+  }
+
+  .minHeight700 {
+    min-height: 0;
+  }
+
+  .footer {
+    ul {
+      max-width: 100%;
+      width: auto;
+    }
+
+    p {
+      padding: 0 1rem;
+    }
+  }
+
+  .emphasisCtn,
+  p.medWPadding,
+  .medWPadding {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .mB10,
+  .mB20 {
+    margin-bottom: 6px;
   }
 }
 
@@ -460,7 +623,7 @@
 }
 
 .mReverse {
-  @media (max-width: 768px) {
+  @media (max-width: $breakpoint-tablet) {
     display: flex;
     flex-direction: row-reverse;
   }
