@@ -87,6 +87,33 @@
     }
   }
 
+  @media (max-width: $breakpoint-tablet) {
+    &::before,
+    &::after,
+    > * {
+      transition: none;
+    }
+
+    &.folded {
+      &::before {
+        opacity: 1;
+      }
+
+      &.banner::after {
+        transform: none;
+      }
+
+      > :not(.trace) {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .trace {
+      display: none;
+    }
+  }
+
   &.offset {
     animation-name: fadeInUpOffset;
     width: 40%;
