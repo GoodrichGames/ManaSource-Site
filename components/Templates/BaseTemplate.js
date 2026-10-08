@@ -37,6 +37,16 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle, cl
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
+          <div className={styles.footerPool} aria-hidden="true">
+            <div className={styles.poolSpill}></div>
+            <div className={styles.poolWater}></div>
+            <div className={styles.poolShimmer}></div>
+            <div className={styles.poolLip}></div>
+            <div className={styles.poolMist}></div>
+            <div className={styles.poolMotes}>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
           <p>
             Mana Source © Goodrich Games 2026. All rights reserved.
           </p>

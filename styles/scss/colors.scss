@@ -1,19 +1,17 @@
-$dark-blue-bg-color: #04252f;
-$dark-bg-color: rgb(32,39,40);
 $light-color: #f2f3f3;
 $primary-color: #16b0df;
 $primary-color-highlight: #1ac7fc;
 $primary-dark-color: #042f1f;
 
-// TODO: Cleanup colors
+$gold-light: #f0dc9c;
+$gold: #c9a14e;
+$gold-dark: #6e5222;
+$gold-gradient: linear-gradient(135deg, $gold-dark, $gold-light 30%, $gold 55%, $gold-light 80%, $gold-dark);
+
 $white: #ffffff;
-$logo_shadow: #646464;
 $color_2: #a8a8a8;
-$color_4: #797979;
 $color_5: #a3a3a3;
-$color_6: #727272;
 $color_7: #bababa;
-$color_8: #a7a9ac;
 $color_9: #4e5151;
 $font-family_1: Arial, Helvetica, sans-serif;
 $font-family_2: "Philosopher-Bold";

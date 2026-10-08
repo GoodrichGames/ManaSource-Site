@@ -1,0 +1,244 @@
+@use "../../../styles/scss/colors.scss" as *;
+@use "../../../styles/scss/breakpoints.scss" as *;
+@use "../../../styles/scss/ornaments.scss" as *;
+
+$loop: 7s;
+
+.turnRound {
+  padding: 1.5rem 0 1rem;
+  text-align: center;
+}
+
+h4.headline {
+  margin: 0 0 8px;
+  color: $gold-light;
+  font-family: "El Messiri", sans-serif;
+  font-size: clamp(24px, 3vw, 35px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(240, 220, 156, 0.3);
+}
+
+.turnRound p.copy {
+  max-width: 640px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 17px;
+  line-height: 1.6;
+
+  strong {
+    color: #fff;
+    font-weight: 500;
+  }
+}
+
+.table {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 2.5vw, 28px);
+  min-height: clamp(170px, 24vw, 270px);
+}
+
+.seat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.card {
+  position: relative;
+  width: clamp(76px, 14vw, 170px);
+  aspect-ratio: 3000 / 4200;
+  perspective: 900px;
+  opacity: 0;
+  animation: drop $loop cubic-bezier(0.2, 0.7, 0.2, 1) infinite paused;
+}
+
+.inner {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: flip $loop cubic-bezier(0.3, 0.7, 0.2, 1) infinite paused;
+}
+
+.back,
+.face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+}
+
+.back {
+  transform: rotateY(0deg);
+}
+
+.face {
+  transform: rotateY(180deg);
+}
+
+.art {
+  object-fit: cover;
+}
+
+.pulse {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  width: 70%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(closest-side, rgba(26, 199, 252, 0.35), transparent);
+  opacity: 0;
+  pointer-events: none;
+  animation: flash $loop ease-out infinite paused;
+}
+
+.beats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 38px;
+  margin: 26px 0 0;
+  font-family: "El Messiri", sans-serif;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  span {
+    padding: 4px 0;
+    color: rgba(240, 220, 156, 0.45);
+    border-bottom: 1px solid transparent;
+  }
+
+  span:nth-child(1) {
+    animation: beat-play $loop linear infinite paused;
+  }
+
+  span:nth-child(2) {
+    animation: beat-reveal $loop linear infinite paused;
+  }
+
+  span:nth-child(3) {
+    animation: beat-resolve $loop linear infinite paused;
+  }
+}
+
+.running {
+  .card,
+  .inner,
+  .pulse,
+  .beats span {
+    animation-play-state: running;
+  }
+}
+
+h4.modesTitle {
+  margin: 64px 0 12px;
+  color: $gold-light;
+  font-family: "El Messiri", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.modes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.turnRound p.mode {
+  min-width: 190px;
+  margin: 0;
+  padding: 10px 18px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 15px;
+  line-height: 1.4;
+  @include gold-frame;
+
+  strong {
+    display: block;
+    color: $gold-light;
+    font-family: "El Messiri", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .table {
+    min-height: 0;
+  }
+
+  .beats {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .running .card {
+    animation: none;
+    opacity: 1;
+  }
+
+  .inner,
+  .running .inner {
+    animation: none;
+    transform: rotateY(180deg);
+  }
+
+  .pulse,
+  .beats span:nth-child(n) {
+    animation: none;
+  }
+}
+
+@keyframes drop {
+  0% { transform: translateY(-70px) rotate(-6deg); opacity: 0; }
+  10% { transform: none; opacity: 1; }
+  86% { transform: none; opacity: 1; }
+  96%, 100% { transform: translateY(30px); opacity: 0; }
+}
+
+@keyframes flip {
+  0%, 38% { transform: rotateY(0deg); }
+  48% { transform: translateY(-8px) rotateY(180deg); }
+  52%, 100% { transform: rotateY(180deg); }
+}
+
+@keyframes flash {
+  0%, 62% { opacity: 0; }
+  68% { opacity: 1; }
+  88%, 100% { opacity: 0; }
+}
+
+@keyframes beat-play {
+  0%, 3% { color: rgba(240, 220, 156, 0.45); border-color: transparent; }
+  5%, 36% { color: $gold-light; border-color: $gold; }
+  38%, 100% { color: rgba(240, 220, 156, 0.45); border-color: transparent; }
+}
+
+@keyframes beat-reveal {
+  0%, 38% { color: rgba(240, 220, 156, 0.45); border-color: transparent; }
+  40%, 60% { color: $gold-light; border-color: $gold; }
+  62%, 100% { color: rgba(240, 220, 156, 0.45); border-color: transparent; }
+}
+
+@keyframes beat-resolve {
+  0%, 60% { color: rgba(240, 220, 156, 0.45); border-color: transparent; }
+  62%, 88% { color: $gold-light; border-color: $gold; }
+  90%, 100% { color: rgba(240, 220, 156, 0.45); border-color: transparent; }
+}

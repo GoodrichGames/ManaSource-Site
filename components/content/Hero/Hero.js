@@ -1,8 +1,11 @@
+import { useEffect, useRef, useState } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import ExportedImage from "next-image-export-optimizer";
 import styles from '../../Templates/BaseTemplate.module.scss';
 import infoboxStyles from '../InfoBox/InfoBox.module.scss';
 import InfoBox from '../InfoBox/InfoBox';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
+import EC from '../LandingAnimation/EngineConstants';
 import logo from '../../../public/images/ManaSourceLogoV2.png';
 import cavePic from '../../../public/images/cave.png';
 import agesPic from '../../../public/icons/ages.png';
@@ -28,9 +31,47 @@ const StatIcon = ({ src, alt }) => (
 
 // `overlayClasses` lets a page add page-specific styling to the stat overlay.
 // `children` is rendered inside the overlay, below the intro copy.
-const Hero = ({ overlayClasses = "", children }) => (
+const GEM_CLICKS_TO_SURGE = 5;
+const GEM_CLICK_WINDOW_MS = 1500;
+const SURGE_GLOW_MS = 2400;
+
+const Hero = ({ overlayClasses = "", children }) => {
+  const [isIgnited, setIsIgnited] = useState(false);
+  const [isSurging, setIsSurging] = useState(false);
+  const gemClicks = useRef({ count: 0, last: 0 });
+
+  const onGemClick = () => {
+    const now = performance.now();
+    const clicks = gemClicks.current;
+    clicks.count = now - clicks.last <= GEM_CLICK_WINDOW_MS ? clicks.count + 1 : 1;
+    clicks.last = now;
+    if (clicks.count < GEM_CLICKS_TO_SURGE) return;
+    clicks.count = 0;
+    window.dispatchEvent(new Event(EC.wellSurgeEvent));
+    setIsSurging(true);
+    setTimeout(() => setIsSurging(false), SURGE_GLOW_MS);
+  };
+
+  useEffect(() => {
+    const onIgnite = () => setIsIgnited(true);
+    window.addEventListener(EC.wellIgnitedEvent, onIgnite);
+    return () => window.removeEventListener(EC.wellIgnitedEvent, onIgnite);
+  }, []);
+
+  const heroRef = useRef(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollY, scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const logoY = useTransform(scrollY, value => value * 0.4);
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const caveDim = useTransform(scrollYProgress, [0, 0.5, 0.9], [0, 0.45, 1]);
+  const caveZoom = useTransform(scrollYProgress, [0, 1], [1, 1 + EC.diveZoom]);
+
+  return (
   <>
-    <div className={styles.logo + " " + styles.tCenter + " " + styles.overlayText}>
+    <motion.div
+      className={styles.logo + " " + styles.tCenter + " " + styles.overlayText + (isIgnited ? " " + styles.logoIgnite : "") + (isSurging ? " " + styles.logoSurge : "")}
+      style={reduceMotion ? undefined : { y: logoY, opacity: logoOpacity }}>
+      <span className={styles.logoWrap}>
       <ExportedImage src={logo}
         alt='Mana Source logo'
         height={250}
@@ -44,11 +85,15 @@ const Hero = ({ overlayClasses = "", children }) => (
           height: "auto",
           objectFit: "contain"
         }} />
+      <span className={styles.logoGem} onClick={onGemClick} aria-hidden="true" />
+      </span>
       <h1 className="hidden">
         Mana Source
       </h1>
-    </div>
-    <div className={styles.heroImage}>
+    </motion.div>
+    <div className={styles.heroImage} ref={heroRef}>
+      <div className={styles.heroZoomFrame}>
+      <motion.div style={reduceMotion ? undefined : { scale: caveZoom, transformOrigin: `${EC.wellRelX * 100}% ${EC.wellRelY * 100}%` }}>
       <ExportedImage
         src={cavePic}
         alt='mana well in cave'
@@ -59,11 +104,16 @@ const Hero = ({ overlayClasses = "", children }) => (
           height: "100vh",
           width: "100%",
           objectFit: "cover",
+          objectPosition: `${EC.wellRelX * 100}% ${EC.wellRelY * 100}%`,
           display: "block",
         }} />
+      </motion.div>
+      </div>
+      <motion.div className={styles.heroDim} style={reduceMotion ? undefined : { opacity: caveDim }} aria-hidden="true" />
+      <div className={styles.heroFade} aria-hidden="true" />
       <ScrollArrow href="#main" classes={styles.offset} preload={true} />
       <div className={styles.dH0}>
-        <InfoBox classes={infoboxStyles.offset + " " + infoboxStyles.overlay + " " + overlayClasses}>
+        <InfoBox variant="plain" classes={infoboxStyles.offset + " " + infoboxStyles.overlay + " " + infoboxStyles.afterOpening + " " + overlayClasses}>
           <div className={statClasses}>
             <StatIcon src={agesPic} alt='ages' /><br />
             <div className={styles.heroStatText}>
@@ -104,6 +154,7 @@ const Hero = ({ overlayClasses = "", children }) => (
       </div>
     </div>
   </>
-);
+  );
+};
 
 export default Hero;

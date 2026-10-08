@@ -57,8 +57,11 @@
         text-decoration: none;
         text-transform: uppercase;
         width: 162px;
+        transition: color 200ms ease, filter 200ms ease, text-shadow 200ms ease;
         &:hover {
           color: $white;
+          filter: brightness(1.2);
+          text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
         }
       }
       .menu1 {
@@ -95,6 +98,7 @@
     li.selected {
       a {
         color: $white;
+        text-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
       }
       .menu1 {
         background-position: -11px -113px;

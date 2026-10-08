@@ -10,7 +10,7 @@ const Article = () => {
           <div>
             What a year!  12 story-focused scenarios completed.  That&apos;s about 75,000 words in addition to the scenario, skill, equipment, and enemy design.  I feel very positive about where development is at.  Doubling the amount of detail in each scenario and pivoting to crowdfunding to ensure a memorable experience was worth it.
             <br /><br />
-            With a manufacturing quote in-hand, I feel more confident in stating publicly the base game with 20 scenarios, replayable PvE and PvP modes, and 240 player skills is targeted for a $60-70 price range for the Kickstarter.  Let&apos;s hope the materials, shipping, etc stay consistently priced over the next year to make that happen.
+            With a manufacturing quote in-hand, I feel more confident in stating publicly the base game with 25 scenarios, replayable PvE and PvP modes, and 240 player skills is targeted for a $70 price point for the Kickstarter.  Let&apos;s hope the materials, shipping, etc stay consistently priced over the next year to make that happen.
             <br /><br />
             In addition, I&apos;m pleased to announce the wonderful Nele Diel will produce the majority of art for Mana Source.  Very excited to share more of that with you soon.
             <br /><br />

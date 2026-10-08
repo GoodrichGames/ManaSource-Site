@@ -46,6 +46,12 @@
   margin-bottom: 0.5rem;
 }
 
+@media screen and (max-width: ($breakpoint-tablet - 2px)) {
+  .imageContainer.short {
+    height: 150px;
+  }
+}
+
 @media screen and (min-width: ($breakpoint-tablet - 1px)) {
   .imageContainer {
     width: 200px;

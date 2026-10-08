@@ -17,7 +17,16 @@ import GameSchema from '../components/content/GameSchema/GameSchema';
 import Hero from '../components/content/Hero/Hero';
 import ScrollArrow from '../components/content/ScrollArrow/ScrollArrow';
 import SocialLinks from '../components/content/SocialLinks/SocialLinks';
+import BrandName from '../components/content/BrandName/BrandName';
 import AboutPanels from '../components/content/AboutPanels/AboutPanels';
+import Descent from '../components/content/Descent/Descent';
+import SectionArt from '../components/content/SectionArt/SectionArt';
+import SectionHeading from '../components/content/SectionHeading/SectionHeading';
+import ClassHand from '../components/content/ClassHand/ClassHand';
+import TurnRound from '../components/content/TurnRound/TurnRound';
+import LearnToPlay from '../components/content/LearnToPlay/LearnToPlay';
+import cavePic from '../public/images/cave.png';
+import { useRef } from 'react';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 import InfoBox from './../components/content/InfoBox/InfoBox';
@@ -27,55 +36,33 @@ import dynamic from 'next/dynamic'
 const LandingAnimation = dynamic(() => import('../components/content/LandingAnimation/LandingAnimation'), { ssr: false })
 
 export default function Home() {
+  const ruinsWindowRef = useRef(null);
+
   return (
-    <BaseLayout title={meta.name} description={meta.description} classes={[]} >
+    <BaseLayout title={meta.name} description={meta.description} classes={styles.layered} >
       <GameSchema />
       <LandingAnimation />
+      <Descent />
       <Hero overlayClasses={styles.heroOverlay} />
       <div id="main"></div>
       <ContentSection>
-        <ContentItem classes={styles.tCenter + " " + styles.ruinsBg}>
-          <InfoBox classes={styles.tCenter}>
-            <span className="spacer3" aria-hidden="true"></span>
-            <h2>A discovery at an ancient vault may be the last hope of a people driven underground...</h2>
-            <span className="spacer1" aria-hidden="true"></span>
-          </InfoBox>
-          <span className="spacer1" aria-hidden="true"></span>
-          <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} controls={true} />
+        <ContentItem classes={styles.tCenter + " " + styles.artSection + " " + styles.ruinsSection}>
+          <SectionArt classes={styles.ruinsArt} anchorRef={ruinsWindowRef}>
+            <div className={styles.torchFlame}></div>
+          </SectionArt>
+          <h2 className={styles.ruinsHook}>A discovery at an ancient vault may be the last hope of a people driven underground...</h2>
+          <div className={styles.trailer}>
+            <YoutubeEmbed videoId="h9tHSCE1T84" width="900" height="508" isAutoplay={false} controls={true} coverImage={cavePic} />
+          </div>
           {/* <YoutubeEmbed videoId="h9tHSCE1T84" width="1920" height="1080" isAutoplay={true} frameborder={false} controls={false} mute={true} showinfo={false} /> */}
-          <span className="spacer1" aria-hidden="true"></span>
-          <InfoBox classes={styles.tCenter} delay={2}>
-            <h2 className={styles.tCenter + " " + styles.medWPadding}>
-              <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is an adventure board game with a story-driven campaign, dual-class character building, and simultaneous turns coming to Kickstarter in early 2027.</div>
-              <div>You&apos;ll need to work together if you&apos;re going to survive.</div>
-            </h2>
-            <ScrollArrow href="#signup" classes={styles.sectionArrow} />
-            <span className="spacer3" aria-hidden="true"></span>
-          </InfoBox>
-          <div id="signup"></div>
-          <div className={styles.signupSpacing} aria-hidden="true"></div>
-          <InfoBox classes={styles.tCenter}>
-            <div className={styles.medWPadding}>
-              <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
-                <h4>Don&apos;t wait for your turn to play!</h4>
-                <strong>Simultaneous turns</strong> keep everyone focused on the action.<br />
-                <br />
-                Players must <strong>coordinate</strong> their abilities to overcome challenges and defeat deadly adversaries.
-              </div>
-              <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
-                <h4>Spend less time learning, more time playing!</h4>
-                <h4>You can <Link href='/resources'>learn the basics</Link> in 15 minutes.</h4>
-                <p><strong>Choose</strong> 2 of 6 classes.</p><br />
-                <p><strong>Construct</strong> a hand of 10 cards</p><br />
-                <p><strong>Gain an edge</strong> over the competition!</p><br />
-              </div>
-              <div className={styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " "}>
-                <h4>3 Gamemodes</h4>
-                <p><strong>Adventure</strong> through 20 story-rich scenarios,</p><br />
-                <p><strong>Skirmish</strong> in a series of encounters, and</p><br />
-                <p><strong>Clash</strong> competitively with 240 skills.</p><br />
-              </div>
-            </div>
+          <h2 className={styles.ruinsPitch}>
+            <span className={styles.ruinsPitchLine}><BrandName large /> is an adventure board game with a story-driven campaign, dual-class character building, and simultaneous turns coming to Kickstarter in early 2027.</span>
+            <span className={styles.ruinsCall}>You&apos;ll need to work together if you&apos;re going to survive.</span>
+          </h2>
+          <ScrollArrow href="#signup" classes={styles.sectionArrow} />
+          <div id="signup" className={styles.anchorTarget}></div>
+          <div ref={ruinsWindowRef} className={styles.ruinsWindow} aria-hidden="true"></div>
+          <InfoBox variant="banner" classes={styles.tCenter}>
             <div className={styles.signupFeatures}>
               <div className={styles.thirdW + " " + styles.inline + " " + styles.maxW500 + " " + styles.signupFeature}>
                 <EmailSignup ctaText="Start your adventure!" />
@@ -98,24 +85,33 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <TurnRound />
+            <LearnToPlay />
+            <h4 className={styles.groupTitle}>Classes</h4>
+            <ClassHand />
+            <div className={styles.maxW500 + " " + styles.center}>
+              <EmailSignup ctaText="Start your adventure!" />
+            </div>
             <div className={styles.tCenter + " " + styles.maxW960 + " " + styles.center}>
               <ScrollArrow href="#learnmore" classes={styles.sectionArrow} preload={true} />
             </div>
           </InfoBox>
         </ContentItem>
       </ContentSection>
-      <div id="learnmore"></div>
+      <div id="learnmore" className={styles.anchorTarget}></div>
       <ContentSection>
-        <h3 className={styles.tCenter}>About Mana Source</h3>
+        <SectionHeading>About Mana Source</SectionHeading>
         <AboutPanels />
         <span className="spacer1" aria-hidden="true"></span>
         <ScrollArrow href="#about" classes={styles.sectionArrow} />
         <span className="spacer2" aria-hidden="true"></span>
       </ContentSection >
-      <div id="about"></div>
+      <div id="about" className={styles.anchorTarget}></div>
       <ContentSection>
-        <h3 className={styles.tCenter}>Meet the Team</h3>
-        <ContentItem classes={styles.timbatiaBg + " " + styles.fullW}>
+        <SectionHeading>Meet the Team</SectionHeading>
+        <ContentItem classes={styles.artSection + " " + styles.fullW}>
+          <SectionArt classes={styles.moonlightArt} parallax={360} zoom={0.2} />
+          <span className="spacer1" aria-hidden="true"></span>
           <InfoBox classes={styles.maxW960 + " " + styles.tCenter + " " + styles.center + " " + styles.flex}>
             <ExportedImage
               src={paulPic}
@@ -183,7 +179,7 @@ export default function Home() {
               <p><strong>Sandi Goodrich</strong></p>
               <p className={styles.mb1}><i>Creature Concepts</i></p>
               <p className={styles.mb1}>
-                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and <span className={styles.fontArkhip}>Mana Source</span>.
+                Sandi Goodrich is the wife of Paul Goodrich and resident knower of all trivia.  In her spare time she enjoys crocheting, cooking delicious meals, exploring Hyrule, and playing games with Paul.  Her favorite games include Cubitos, Super Motherload, Argent the Consortium, Aeon&apos;s End, and <BrandName />.
               </p>
             </div>
             <ExportedImage
@@ -242,12 +238,12 @@ export default function Home() {
           <br /><br />
         </ContentItem>
       </ContentSection >
-      <div id="news"></div>
+      <div id="news" className={styles.anchorTarget}></div>
       <ContentSection>
         <ContentItem classes={styles.tCenter}>
           <span className="spacer2" aria-hidden="true"></span>
           <h2 className={styles.tCenter + " " + styles.medWPadding}>
-            <div className={styles.mB10}><span className={styles.fontArkhip}>Mana Source</span> is coming to Kickstarter in early 2027.</div>
+            <div className={styles.mB10}><BrandName /> is coming to Kickstarter in early 2027.</div>
           </h2>
           <div className={styles.maxW500 + " " + styles.center}>
             <EmailSignup ctaText="Start your adventure!" />
@@ -255,13 +251,15 @@ export default function Home() {
             <span className="spacer2" aria-hidden="true"></span>
           </div>
         </ContentItem>
-        <h3 className={styles.tCenter}>Latest Articles</h3>
-        <ContentItem classes={styles.tCenter + " " + styles.golemBg + " " + styles.fullW}>
+        <SectionHeading>Latest Articles</SectionHeading>
+        <ContentItem classes={styles.tCenter + " " + styles.artSection + " " + styles.fullW}>
+          <SectionArt classes={styles.golemArt} parallax={0} zoom={0} />
+          <span className="spacer2" aria-hidden="true"></span>
           <InfoBox classes={styles.mLauto + " " + styles.maxW960}>
-            <ArticleList category="all" max="5" />
-            <Link href="/news"><h4>View All</h4></Link>
-            <span className="spacer1" aria-hidden="true"></span>
+            <ArticleList category="all" max="5" shortImages={true} />
+            <Link href="/news"><h4 className={styles.viewAll}>View All</h4></Link>
           </InfoBox>
+          <span className="spacer4" aria-hidden="true"></span>
         </ContentItem>
       </ContentSection>
     </BaseLayout >

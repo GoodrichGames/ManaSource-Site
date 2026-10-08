@@ -1,0 +1,70 @@
+@use "./colors.scss" as *;
+
+@mixin mana-link-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 230px;
+  height: 50px;
+  overflow: hidden;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  color: $white;
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+  border: 1px solid transparent;
+  border-image: $gold-gradient 1;
+  background:
+    linear-gradient(180deg, rgba(4, 10, 12, 0.9) 0%, rgba(4, 10, 12, 0.9) 34%, rgba(4, 10, 12, 0.55) 70%, rgba(4, 10, 12, 0.2) 100%) 0 0 / 100% 300% no-repeat,
+    url(../../public/images/mana-water.jpg) center / cover;
+  box-shadow: inset 0 1px 0 rgba(26, 199, 252, 0.35), 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: background-position 0.45s ease, box-shadow 0.45s ease, transform 0.2s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg, transparent 40%, rgba(255, 246, 214, 0.35) 50%, transparent 60%);
+    background-size: 300% 100%;
+    background-position: 100% 0;
+    pointer-events: none;
+    animation: mana-link-glint 4.5s ease-in-out infinite;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: $white;
+    background-position: 0 100%, center;
+    box-shadow: inset 0 1px 0 rgba(26, 199, 252, 0.5), 0 0 18px rgba(26, 199, 252, 0.3), 0 4px 14px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      display: none;
+    }
+  }
+
+  @keyframes mana-link-glint {
+    0%, 70% { background-position: 100% 0; }
+    90%, 100% { background-position: 0% 0; }
+  }
+}
+
+@mixin gold-frame {
+  background: linear-gradient(180deg, rgba(10, 16, 20, 0.7), rgba(4, 8, 10, 0.8));
+  -webkit-backdrop-filter: blur(6px) saturate(1.1);
+  backdrop-filter: blur(6px) saturate(1.1);
+  border: 1px solid transparent;
+  border-image: $gold-gradient 1;
+  box-shadow: inset 0 1px 0 rgba(26, 199, 252, 0.35), 0 8px 30px rgba(0, 0, 0, 0.5);
+}

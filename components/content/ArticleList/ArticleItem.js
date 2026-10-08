@@ -18,10 +18,10 @@ const toIsoDate = (displayDate) => {
   return `${match[3]}-${month}-${match[2].padStart(2, '0')}`;
 };
 
-const ArticleItem = ({ article }) => {
+const ArticleItem = ({ article, shortImage = false }) => {
   return (
     <a href={article.link} className={styles.articleLink}>
-        <div className={styles.imageContainer}>
+        <div className={styles.imageContainer + (shortImage ? " " + styles.short : "")}>
           <ExportedImage
             src={article.image}
             alt={article.title}

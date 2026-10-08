@@ -5,7 +5,9 @@ import { SIGNUP_EVENT, trackEvent } from '../../../utils/analytics';
 import styles from './EmailSignup.module.scss';
 import SignupForm from './SignupForm';
 
-const signupUrl = 'https://github.us10.list-manage.com/subscribe/post?u=a2c1595175259c6cf93c9b708&amp;id=70002bf500';
+const BURST_ANGLES = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
+
+const signupUrl ='https://github.us10.list-manage.com/subscribe/post?u=a2c1595175259c6cf93c9b708&amp;id=70002bf500';
 
 // Reports a completed subscription to analytics exactly once, even though Mailchimp's
 // success status survives re-renders.
@@ -38,8 +40,15 @@ const EmailSignup = (props) => {
             status={status}
             onValidated={formData => subscribe(formData)}
           />}
-          {status === 'success' && <div className={styles.subscribedMsg}>
-            Thank you!  We&apos;ll be in touch soon!  Keep an eye out for our Kickstarter page!
+          {status === 'success' && <div className={styles.subscribed}>
+            <div className={styles.burst} aria-hidden="true">
+              {BURST_ANGLES.map((angle, index) => (
+                <span key={angle} style={{ '--angle': `${angle}deg`, '--distance': index % 2 ? '70px' : '105px' }} />
+              ))}
+            </div>
+            <div className={styles.subscribedMsg} role="status">
+              Thank you!  We&apos;ll be in touch soon!  Keep an eye out for our Kickstarter page!
+            </div>
           </div>}
         </div>
       )}>

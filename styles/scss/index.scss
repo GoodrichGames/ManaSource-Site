@@ -14,7 +14,10 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, Helvetica Neue, sans-serif;
-  background: url(../../public/images/nextImageExportOptimizer/bg-body-opt-1920.WEBP) repeat;
+  background:
+    linear-gradient(rgba(2, 4, 5, 0.6), rgba(2, 4, 5, 0.6)),
+    #050809 url(../../public/images/cave-rock-bg.jpg) repeat;
+  background-size: auto, 1024px;
   color: #ffffff;
   line-height: 1;
   min-width: 320px;

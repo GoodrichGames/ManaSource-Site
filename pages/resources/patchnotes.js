@@ -20,7 +20,7 @@ export default function Patchnotes() {
         <span className="spacer2" aria-hidden="true"></span>
       </ContentSection>
       <ContentSection>
-        <ContentItem classes={styles.tCenter + " " + styles.assassinBg + " " + styles.fullW}>
+        <ContentItem classes={styles.tCenter + " " + styles.fullW}>
           <InfoBox classes={styles.fullW}>
 
             <p>Come back when the game launches to view the official patchnotes. You can enable notifications for important updates below.</p>

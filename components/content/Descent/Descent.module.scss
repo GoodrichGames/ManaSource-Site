@@ -1,0 +1,31 @@
+.darkness,
+.lightTint,
+.particles {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.darkness {
+  background: rgb(var(--depth-rgb, 0 0 0));
+  opacity: var(--depth-dark, 0);
+  -webkit-mask-image:
+    radial-gradient(circle at var(--light-x, -9999px) var(--light-y, -9999px), transparent 0, transparent var(--light-inner, 180px), #000 var(--light-outer, 460px)),
+    radial-gradient(circle at var(--wisp-x, -9999px) var(--wisp-y, -9999px), transparent 0, #000 90px),
+    radial-gradient(ellipse var(--pool-rx, 1px) var(--pool-ry, 1px) at var(--pool-x, -9999px) var(--pool-y, -9999px), transparent 0, rgba(0, 0, 0, 0.35) 55%, #000 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(circle at var(--light-x, -9999px) var(--light-y, -9999px), transparent 0, transparent var(--light-inner, 180px), #000 var(--light-outer, 460px)),
+    radial-gradient(circle at var(--wisp-x, -9999px) var(--wisp-y, -9999px), transparent 0, #000 90px),
+    radial-gradient(ellipse var(--pool-rx, 1px) var(--pool-ry, 1px) at var(--pool-x, -9999px) var(--pool-y, -9999px), transparent 0, rgba(0, 0, 0, 0.35) 55%, #000 100%);
+  mask-composite: intersect;
+}
+
+.lightTint {
+  background: radial-gradient(circle at var(--light-x, -9999px) var(--light-y, -9999px), rgba(255, 214, 150, 0.14), transparent var(--light-outer, 460px));
+  mix-blend-mode: screen;
+  opacity: var(--depth-dark, 0);
+}

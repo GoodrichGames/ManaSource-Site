@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     question: "How many cards make up a deck?",
-    answer: "There is no concept of a deck in the base version of Mana Source. Players construct a hand of 9 cards to play with, without duplicates.",
+    answer: "There is no concept of a deck in the base version of Mana Source. Players construct a hand of 10 cards to play with, without duplicates.",
   },
 ];
 

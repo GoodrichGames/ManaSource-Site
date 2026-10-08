@@ -1,0 +1,42 @@
+.brandName {
+  position: relative;
+  display: inline-block;
+  vertical-align: -0.3em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.image {
+  display: block;
+  height: 1.25em;
+  width: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Arkhip";
+  font-size: 0.8em;
+}
+
+.loaded .text {
+  color: transparent;
+  text-shadow: none;
+}
+
+.large {
+  vertical-align: -0.55em;
+
+  .image {
+    height: 2.1em;
+  }
+
+  .text {
+    font-size: 1.3em;
+  }
+}

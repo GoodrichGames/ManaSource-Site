@@ -7,6 +7,7 @@ const SignupForm = ({ ctaText, status, onValidated }) => {
   const [email, setEmail] = useState('');
   const [showEmailError, setShowEmailError] = useState(false);
   const emailErrorId = useId();
+  const emailInputId = useId();
 
   const onChangeEmail = (event) => {
     setEmail(event.target.value);
@@ -32,9 +33,12 @@ const SignupForm = ({ ctaText, status, onValidated }) => {
     <form className={styles.emailSignup} onSubmit={onSubmitHandler} noValidate aria-busy={status === 'sending'}>
       <h2>Sign up for updates</h2>
       <div className={styles.emailFieldGroup}>
-        <label>
+        <label htmlFor={emailInputId}>
           Email Address <span className={styles.asterisk}>*</span>
+        </label>
+        <div className={styles.inputRow}>
           <input
+            id={emailInputId}
             type="email"
             name="EMAIL"
             className={styles.email}
@@ -45,7 +49,14 @@ const SignupForm = ({ ctaText, status, onValidated }) => {
             aria-invalid={showEmailError}
             required
           />
-        </label>
+          <button
+            type="submit"
+            name="subscribe"
+            className={styles.button}
+            disabled={status === 'sending'}>
+            {status === 'sending' ? 'Submitting…' : ctaText}
+          </button>
+        </div>
       </div>
       {showEmailError && <div id={emailErrorId} className={styles.errorBlock} role="alert">
         Enter a valid email address and try again.
@@ -55,17 +66,6 @@ const SignupForm = ({ ctaText, status, onValidated }) => {
       </div>}
       <div className={styles.notName} aria-hidden="true">
         <input type="text" name="b_a2c1595175259c6cf93c9b708_70002bf500" tabIndex="-1" defaultValue="" />
-      </div>
-      <div className={styles.optionalParent}>
-        <div className={styles.foot}>
-          <input
-            type="submit"
-            value={status === 'sending' ? 'Submitting…' : ctaText}
-            name="subscribe"
-            className={styles.button}
-            disabled={status === 'sending'}
-          />
-        </div>
       </div>
     </form>
   );

@@ -1,0 +1,367 @@
+@use "../../../styles/scss/colors.scss" as *;
+@use "../../../styles/scss/breakpoints.scss" as *;
+@use "../../../styles/scss/ornaments.scss" as *;
+
+$edge-time: 2.4s;
+
+.learnToPlay {
+  padding: 1.5rem 0 1rem;
+  text-align: center;
+}
+
+h4.headline {
+  margin: 0 0 0.5rem;
+  color: $gold-light;
+  font-family: "El Messiri", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-shadow: 0 0 14px rgba(240, 220, 156, 0.3);
+}
+
+.basics {
+  margin: 16px 0 36px;
+
+  .cta {
+    width: 280px;
+    height: 56px;
+    font-size: 20px;
+  }
+}
+
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 22px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px 14px 18px;
+  @include gold-frame;
+}
+
+.stepNumber {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #173a44, #071418 70%);
+  border: 1px solid $gold;
+  box-shadow: 0 0 10px rgba(26, 199, 252, 0.35);
+  color: $gold-light;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.visual {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.chooseVisual {
+  container-type: inline-size;
+  aspect-ratio: 100 / 64;
+}
+
+.dealVisual,
+.edgeVisual {
+  flex: 1 1 auto;
+  min-height: 160px;
+  container-type: size;
+  overflow-x: clip;
+}
+
+.art {
+  object-fit: cover;
+}
+
+.caption {
+  margin: 0;
+  font-size: 1.1rem;
+
+  strong {
+    color: $gold-light;
+    font-family: "El Messiri", sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+}
+
+.classCard {
+  position: absolute;
+  left: calc(50% + var(--i) * 14cqw - 10cqw);
+  bottom: 4cqw;
+  width: 20cqw;
+  aspect-ratio: 2200 / 3800;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  transform-origin: 50% 120%;
+  transform: rotate(calc(var(--i) * 5deg));
+  filter: brightness(0.5) saturate(0.8);
+  transition: transform 450ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 450ms ease, box-shadow 450ms ease;
+
+  &.picked {
+    z-index: 2;
+    transform: rotate(calc(var(--i) * 2deg)) translateY(-11cqw) scale(1.15);
+    filter: none;
+    box-shadow: 0 0 0 1px $gold-light, 0 0 18px rgba(240, 220, 156, 0.55), 0 10px 22px rgba(0, 0, 0, 0.7);
+  }
+}
+
+.pairName {
+  display: block;
+  min-height: 1.4em;
+  margin: -4px 0 6px;
+  color: $gold-light;
+  font-family: "El Messiri", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(240, 220, 156, 0.45);
+  animation: pair-name 450ms ease-out both;
+}
+
+.dealVisual {
+  --w: calc(58cqh * 1.08);
+  --bottom: 11.75cqh;
+  --deck-show: 0.65;
+  --left: calc((100cqw - (2 + var(--deck-show)) * var(--w)) / 2 - (1 - var(--deck-show)) * var(--w));
+}
+
+.deck {
+  position: absolute;
+  left: var(--left);
+  bottom: var(--bottom);
+  width: var(--w);
+  aspect-ratio: 3000 / 4200;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0 #0b1216, 4px 4px 0 #0b1216, 6px 6px 0 #0b1216, 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+.handCard {
+  position: absolute;
+  left: var(--left);
+  bottom: var(--bottom);
+  width: var(--w);
+  aspect-ratio: 3000 / 4200;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transform-origin: 50% 100%;
+  transition: left 380ms cubic-bezier(0.2, 0.7, 0.2, 1), transform 380ms cubic-bezier(0.2, 0.7, 0.2, 1), opacity 150ms ease;
+
+  &.dealt {
+    left: calc(var(--left) + 1.55 * var(--w) + var(--i) * 0.1 * var(--w));
+    opacity: 1;
+    transform: rotate(calc(var(--i) * 1deg));
+  }
+}
+
+.full .handCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 246, 214, 0.5) 50%, transparent 65%);
+  background-size: 300% 100%;
+  mix-blend-mode: screen;
+  animation: hand-sheen 900ms ease-out both;
+  animation-delay: calc((var(--i) + 4.5) * 50ms);
+}
+
+.count {
+  position: absolute;
+  left: calc(var(--left) + 2.05 * var(--w));
+  bottom: 0;
+  translate: -50% 0;
+  z-index: 3;
+  padding: 0 8px;
+  line-height: 1.3;
+  background: rgba(4, 10, 12, 0.8);
+  border: 1px solid transparent;
+  border-image: $gold-gradient 1;
+  color: $gold-light;
+  font-family: "El Messiri", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  animation: count-tick 260ms ease-out;
+
+  .full & {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(240, 220, 156, 0.9);
+    animation: count-full 500ms cubic-bezier(0.2, 0.7, 0.2, 1.4);
+  }
+}
+
+.edgeVisual {
+  --w: 58cqh;
+}
+
+.edgeCard {
+  position: absolute;
+  left: calc(50% + var(--i) * 0.72 * var(--w) - 0.5 * var(--w));
+  bottom: 4cqh;
+  width: var(--w);
+  aspect-ratio: 3000 / 4200;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+  transform-origin: 50% 130%;
+  transform: rotate(calc(var(--i) * 7deg));
+  filter: brightness(0.6);
+}
+
+.edgePlayed {
+  z-index: 2;
+  filter: none;
+  transform: none;
+
+  .go & {
+    animation: edge-rise $edge-time cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+}
+
+.sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 246, 214, 0.55) 50%, transparent 65%);
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  mix-blend-mode: screen;
+
+  .go & {
+    animation: edge-sheen $edge-time ease-in-out both;
+  }
+}
+
+.burst {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: var(--w);
+  height: var(--w);
+  margin: calc(-0.5 * var(--w)) 0 0 calc(-0.5 * var(--w));
+  border-radius: 50%;
+  border: 2px solid rgba(240, 220, 156, 0.8);
+  box-shadow: 0 0 16px rgba(240, 220, 156, 0.5), inset 0 0 12px rgba(26, 199, 252, 0.4);
+  opacity: 0;
+
+  .go & {
+    animation: edge-burst $edge-time ease-out both;
+  }
+}
+
+.cta {
+  @include mana-link-button;
+
+  &::after {
+    animation-play-state: paused;
+  }
+
+  .running &::after {
+    animation-play-state: running;
+  }
+}
+
+@media (max-width: $breakpoint-desktop) {
+  .steps {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    row-gap: 34px;
+  }
+
+  .dealVisual,
+  .edgeVisual {
+    flex: none;
+    aspect-ratio: 100 / 58;
+  }
+
+  .dealVisual {
+    --deck-show: 0.3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .classCard,
+  .handCard {
+    transition: none;
+  }
+
+  .edgePlayed,
+  .go .edgePlayed {
+    animation: none;
+    transform: translateY(calc(-0.1 * var(--w))) scale(1.08);
+    box-shadow: 0 0 0 1px $gold-light, 0 0 18px rgba(240, 220, 156, 0.55);
+  }
+
+  .sheen,
+  .burst,
+  .full .handCard::after,
+  .cta::after {
+    display: none;
+  }
+
+  .pairName,
+  .count,
+  .full .count {
+    animation: none;
+  }
+}
+
+
+@keyframes pair-name {
+  from { opacity: 0; transform: translateY(6px); letter-spacing: 0.3em; }
+  to { opacity: 1; transform: none; letter-spacing: 0.1em; }
+}
+
+@keyframes count-tick {
+  from { transform: scale(1.25); }
+  to { transform: none; }
+}
+
+@keyframes count-full {
+  from { transform: scale(1.7); }
+  to { transform: none; }
+}
+
+@keyframes hand-sheen {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+
+@keyframes edge-rise {
+  0%, 8% { transform: none; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7); }
+  24%, 80% {
+    transform: translateY(calc(-0.1 * var(--w))) scale(1.08);
+    box-shadow: 0 0 0 1px $gold-light, 0 0 22px rgba(240, 220, 156, 0.6), 0 12px 24px rgba(0, 0, 0, 0.7);
+  }
+  97%, 100% { transform: none; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7); }
+}
+
+@keyframes edge-sheen {
+  0%, 24% { background-position: 100% 0; }
+  50%, 100% { background-position: 0% 0; }
+}
+
+@keyframes edge-burst {
+  0%, 18% { transform: scale(0.4); opacity: 0; }
+  24% { opacity: 1; }
+  55%, 100% { transform: scale(2.2); opacity: 0; }
+}
+

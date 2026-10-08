@@ -1,0 +1,74 @@
+.wipe {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 200vh;
+  z-index: 9000;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  transform: translateY(100vh);
+  visibility: hidden;
+}
+
+.cover {
+  visibility: visible;
+  animation: wipe-cover 220ms cubic-bezier(0.5, 0, 0.7, 1) forwards;
+}
+
+.reveal {
+  visibility: visible;
+  animation: wipe-reveal 320ms cubic-bezier(0.2, 0, 0.3, 1) forwards;
+}
+
+@keyframes wipe-cover {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-50vh);
+  }
+}
+
+@keyframes wipe-reveal {
+  from {
+    transform: translateY(-50vh);
+  }
+  to {
+    transform: translateY(-200vh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wipe {
+    height: 100vh;
+    background: #000;
+    transform: none;
+  }
+
+  .cover {
+    animation: wipe-fade-in 200ms ease forwards;
+  }
+
+  .reveal {
+    animation: wipe-fade-out 200ms ease forwards;
+  }
+}
+
+@keyframes wipe-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes wipe-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

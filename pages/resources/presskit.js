@@ -8,7 +8,7 @@ import ContentItem from '../../components/content/ContentSection/ContentItem';
 
 export default function PressKit() {
   return (
-    <BaseTemplate title="Press Kit" description="Mana Source Press Kit and Media Resources">
+    <BaseTemplate title="Press Kit" description="Mana Source Press Kit and Media Resources" classes={styles.plainRock}>
       <ContentSection>
         <span className="spacer5" aria-hidden="true"></span>
         <ContentItem>
@@ -21,11 +21,11 @@ export default function PressKit() {
         <ContentItem>
           <InfoBox>
             <p>
-              <strong>Mana Source</strong> is an adventure board game featuring simultaneous turn gameplay, compelling narrative, and strategic depth. Players choose from 6 unique classes to embark on 20+ story-rich scenarios, compete in skirmish encounters, or challenge each other in player-versus-player modes.
+              <strong>Mana Source</strong> is an adventure board game featuring simultaneous turn gameplay, compelling narrative, and strategic depth. Players choose from 6 unique classes to embark on 25 story-rich scenarios, battle against bosses in skirmish encounters, or challenge each other in player-versus-player modes.
             </p><br />
             <p>
               <strong>Key Features:</strong><br />
-              Simultaneous turn-based gameplay • Learn the basics in 15 minutes • 3 distinct gamemodes: Adventure, Skirmish, and Clash • 6 playable classes with 240+ unique skills • Over 140,000 words of hand-crafted narrative across 25 scenarios • 100% human-created art (zero AI-generated art, cards, and story)
+              Simultaneous turn-based gameplay • Learn the basics in 15 minutes • 3 distinct gamemodes: Adventure, Skirmish, and Clash • 6 playable classes with 240 unique skills • Over 140,000 words of hand-crafted narrative across 25 scenarios • 100% human-created art (zero AI-generated art, cards, and story)
             </p>
           </InfoBox>
         </ContentItem>

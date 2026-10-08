@@ -12,7 +12,7 @@ const extractYear = (dateString) => {
   return 'Unknown';
 }
 
-const ArticleList = ({ category, max, expandByYear = false }) => {
+const ArticleList = ({ category, max, expandByYear = false, shortImages = false }) => {
   const listId = useId();
   const filteredArticles = articles.filter(post => post.categories.includes(category)).slice(0, max);
 
@@ -36,7 +36,7 @@ const ArticleList = ({ category, max, expandByYear = false }) => {
       <div>
         {filteredArticles.map(article => (
           <div key={article.title} className={styles.article}>
-            <ArticleListItem article={article} />
+            <ArticleListItem article={article} shortImage={shortImages} />
           </div>
         ))}
       </div>

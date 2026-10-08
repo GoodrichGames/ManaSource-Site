@@ -1,27 +1,29 @@
+import { useState } from 'react';
 import styles from './InfoBox.module.scss';
 import { motion } from "framer-motion"
 
-const variant = {
-  visible: { opacity: 1, transform: "translateY(0px)" },
-  hidden: { opacity: 0, transform: "translateY(20px)" },
-};
+const InfoBox = ({ children, classes = "", delay = 0.5, variant = "framed" }) => {
+  const [isUnfolded, setIsUnfolded] = useState(false);
+  const isOffset = classes.includes('offset');
 
-const offsetVariant = {
-  visible: { opacity: 1, transform: "translateY(calc(-100% - 20px))" },
-  hidden: { opacity: 0, transform: "translateY(0px)" },
-};
-
-const InfoBox = ({ children, classes, delay }) => {
   return (
     <motion.div
-      className={styles.infoBox + " " + classes}
-      variants={classes?.includes('offset') ? '' : variant}
-      initial="hidden"
-      whileInView="visible"
-      transition={{ delay: delay ? delay : .5, duration: 1 }}
-      viewport={{ once: true }}
+      className={[
+        styles.infoBox,
+        styles[variant],
+        isOffset ? "" : (isUnfolded ? styles.unfolded : styles.folded),
+        classes,
+      ].join(" ")}
+      style={isOffset ? undefined : { "--unfold-delay": `${delay}s` }}
+      onViewportEnter={() => setIsUnfolded(true)}
+      viewport={{ once: true, amount: 0.15 }}
     >
-        {children}
+      {variant === "framed" && !isOffset && (
+        <svg className={styles.trace} aria-hidden="true" focusable="false">
+          <rect width="100%" height="100%" pathLength="1" />
+        </svg>
+      )}
+      {children}
     </motion.div>
   )
 }

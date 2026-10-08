@@ -1,3 +1,5 @@
+const pageMeta = require('./pagemeta');
+
 const baseUrl = 'https://www.manasourcegame.com';
 
 const organizationSchema = {
@@ -22,7 +24,7 @@ const videoSchema = {
   '@type': 'VideoObject',
   '@id': `${baseUrl}/#teaser-trailer`,
   name: 'Mana Source Teaser Trailer',
-  description: 'A teaser trailer for Mana Source, a tactical adventure board game from Goodrich Games.',
+  description: 'A teaser trailer for Mana Source, an adventure board game from Goodrich Games.',
   thumbnailUrl: 'https://img.youtube.com/vi/h9tHSCE1T84/maxresdefault.jpg',
   uploadDate: '2022-11-29T00:00:00Z',
   embedUrl: 'https://www.youtube.com/embed/h9tHSCE1T84',
@@ -39,7 +41,7 @@ const gameSchema = {
       '@id': `${baseUrl}/#game`,
       name: 'Mana Source',
       url: `${baseUrl}/`,
-      description: 'A discovery at an ancient vault may be the last hope of a people driven underground... Mana Source is a tactical adventure board game for 1-4 players. You\'ll need to work together to solve unique challenges, overcome deadly adversaries, and coordinate your abilities if you\'re going to survive.',
+      description: pageMeta.description,
       image: `${baseUrl}/share-1200x630.jpg`,
       genre: ['Adventure', 'Fantasy', 'Strategy'],
       category: 'Board game',
@@ -62,24 +64,24 @@ const gameSchema = {
       hasPart: [
         {
           '@type': 'Game',
-          name: 'Mana Source Campaign',
-          description: 'Cooperative adventure campaign mode with scenarios lasting 120-180 minutes.',
+          name: 'Mana Source Adventure',
+          description: 'Cooperative story campaign across 25 scenarios, with sessions lasting 60-180 minutes.',
           gameMode: 'Cooperative',
           timeRequired: 'PT180M',
         },
         {
           '@type': 'Game',
           name: 'Mana Source Skirmish',
-          description: 'Competitive skirmish mode with typical sessions lasting 90 minutes.',
-          gameMode: 'Competitive',
-          timeRequired: 'PT90M',
+          description: 'Replayable cooperative mode where players team up against the game in a series of encounters, with sessions lasting 60-180 minutes.',
+          gameMode: 'Cooperative',
+          timeRequired: 'PT180M',
         },
         {
           '@type': 'Game',
           name: 'Mana Source Clash',
-          description: 'Competitive player-versus-player mode with typical sessions lasting 20 minutes.',
+          description: 'Competitive player-versus-player mode with sessions lasting 20-30 minutes.',
           gameMode: 'Competitive',
-          timeRequired: 'PT20M',
+          timeRequired: 'PT30M',
         },
       ],
       subjectOf: {
