@@ -4,7 +4,7 @@ import Head from 'next/head'
 import meta from '../../../metadata/pagemeta'
 
 const Meta = ({ name, description, image = meta.shareImage, isArticle }) => {
-  const baseUri = 'https://www.manasourcegame.com'
+  const baseUri = 'https://manasourcegame.com'
   const router = useRouter()
   const link = baseUri + router.pathname
   const socialImage = image?.startsWith('http') ? image : baseUri + image

@@ -238,7 +238,7 @@ export default function About() {
               <dt>Founded</dt><dd>2024</dd>
               <dt>Founder</dt><dd>Paul Goodrich</dd>
               <dt>Headquarters</dt><dd>North Carolina, United States</dd>
-              <dt>Website</dt><dd><a href={baseUrl}>www.manasourcegame.com</a></dd>
+              <dt>Website</dt><dd><a href={baseUrl}>manasourcegame.com</a></dd>
               <dt>Core Offering</dt><dd>Mana Source, an adventure board game for 1–4 players</dd>
               <dt>Pricing</dt><dd>To be announced before the Kickstarter launch</dd>
               <dt>Services</dt><dd>Adventure, Skirmish, and Clash game modes</dd>

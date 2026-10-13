@@ -1,6 +1,6 @@
 const pageMeta = require('./pagemeta');
 
-const baseUrl = 'https://www.manasourcegame.com';
+const baseUrl = 'https://manasourcegame.com';
 
 const organizationSchema = {
   '@type': 'Organization',
