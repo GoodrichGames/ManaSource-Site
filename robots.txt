@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.manasourcegame.com
+Host: https://manasourcegame.com
 
 # Sitemaps
-Sitemap: https://www.manasourcegame.com/sitemap.xml
+Sitemap: https://manasourcegame.com/sitemap.xml
