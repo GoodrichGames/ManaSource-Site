@@ -2,12 +2,12 @@ import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
-import andresPic from '../../public/images/articles/20SmallRes.jpg';
-import rulebookToC from '../../public/images/articles/RulebookTOC.png';
-import rulebookOnePic from '../../public/images/articles/Rulebookpreview.jpg';
-import rulebookTwoPic from '../../public/images/articles/Rulebookpreview2.png';
-import campaignPreviewOnePic from '../../public/images/articles/CampaignBookPreview.png';
-import playerBoxPic from '../../public/images/articles/PlayerBoxPic.jpg';
+import andresPic from '../../public/images/articles/20SmallRes.webp';
+import rulebookToC from '../../public/images/articles/RulebookTOC.webp';
+import rulebookOnePic from '../../public/images/articles/Rulebookpreview.webp';
+import rulebookTwoPic from '../../public/images/articles/Rulebookpreview2.webp';
+import campaignPreviewOnePic from '../../public/images/articles/CampaignBookPreview.webp';
+import playerBoxPic from '../../public/images/articles/PlayerBoxPic.webp';
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 

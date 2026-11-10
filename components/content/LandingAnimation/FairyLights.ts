@@ -1,4 +1,4 @@
-import Phaser from "phaser";
+import Phaser from "./PhaserBuild";
 
 const STEP_SECONDS = 0.5;
 const PX_PER_SECOND = 20;

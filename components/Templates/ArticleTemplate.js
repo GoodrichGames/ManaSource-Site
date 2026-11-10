@@ -12,11 +12,12 @@ const ArticleTemplate = ({ children, useImage, title, date, description }) => {
   const articleDate = date || postData?.date
   const articleDescription = description || postData?.description
   const articleImage = useImage && postData?.image
+  const shareImage = postData?.shareImage || articleImage
   const articleLink = postData?.link || router.pathname
   const articleSchema = getArticleSchema({
     title: articleTitle,
     description: articleDescription,
-    image: articleImage,
+    image: shareImage,
     link: articleLink,
     date: articleDate,
     categories: postData?.categories,
@@ -32,6 +33,7 @@ const ArticleTemplate = ({ children, useImage, title, date, description }) => {
     date={articleDate}
     description={articleDescription}
     image={articleImage}
+    shareImage={shareImage}
     isArticle={true}
     classes={navStyles.article}
   >

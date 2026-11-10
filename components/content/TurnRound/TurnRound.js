@@ -2,11 +2,11 @@ import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import ExportedImage from "next-image-export-optimizer";
 import styles from './TurnRound.module.scss';
-import cardBackPic from '../../../public/images/cards/card-back.jpg';
-import bladestormPic from '../../../public/images/cards/action-bladestorm.jpg';
-import leafstormPic from '../../../public/images/cards/action-leafstorm.jpg';
-import deadlyInterjectionPic from '../../../public/images/cards/action-deadly-interjection.jpg';
-import holyFirePic from '../../../public/images/cards/action-holy-fire.jpg';
+import cardBackPic from '../../../public/images/cards/card-back.webp';
+import bladestormPic from '../../../public/images/cards/action-bladestorm.webp';
+import leafstormPic from '../../../public/images/cards/action-leafstorm.webp';
+import deadlyInterjectionPic from '../../../public/images/cards/action-deadly-interjection.webp';
+import holyFirePic from '../../../public/images/cards/action-holy-fire.webp';
 
 const PLAYS = [
   { image: bladestormPic, alt: 'Bladestorm action card' },

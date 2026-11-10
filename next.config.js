@@ -12,6 +12,25 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   transpilePackages: ["next-image-export-optimizer"],
+  turbopack: {
+    rules: {
+      "*.js": {
+        condition: { path: /node_modules[\\/]phaser[\\/]src[\\/]/ },
+        loaders: [{
+          loader: "./scripts/phaser-feature-flags-loader.js",
+          options: {
+            WEBGL_RENDERER: true,
+            CANVAS_RENDERER: true,
+            FEATURE_SOUND: false,
+            WEBGL_DEBUG: false,
+            EXPERIMENTAL: false,
+            PLUGIN_CAMERA3D: false,
+            PLUGIN_FBINSTANT: false,
+          },
+        }],
+      },
+    },
+  },
   env: {
     nextImageExportOptimizer_imageFolderPath: "public/images",
     nextImageExportOptimizer_exportFolderPath: "out",

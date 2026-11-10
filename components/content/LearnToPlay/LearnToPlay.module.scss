@@ -237,36 +237,6 @@ h4.headline {
   }
 }
 
-.sheen {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(115deg, transparent 35%, rgba(255, 246, 214, 0.55) 50%, transparent 65%);
-  background-size: 300% 100%;
-  background-position: 100% 0;
-  mix-blend-mode: screen;
-
-  .go & {
-    animation: edge-sheen $edge-time ease-in-out both;
-  }
-}
-
-.burst {
-  position: absolute;
-  left: 50%;
-  top: 42%;
-  width: var(--w);
-  height: var(--w);
-  margin: calc(-0.5 * var(--w)) 0 0 calc(-0.5 * var(--w));
-  border-radius: 50%;
-  border: 2px solid rgba(240, 220, 156, 0.8);
-  box-shadow: 0 0 16px rgba(240, 220, 156, 0.5), inset 0 0 12px rgba(26, 199, 252, 0.4);
-  opacity: 0;
-
-  .go & {
-    animation: edge-burst $edge-time ease-out both;
-  }
-}
-
 .cta {
   @include mana-link-button;
 
@@ -310,8 +280,6 @@ h4.headline {
     box-shadow: 0 0 0 1px $gold-light, 0 0 18px rgba(240, 220, 156, 0.55);
   }
 
-  .sheen,
-  .burst,
   .full .handCard::after,
   .cta::after {
     display: none;
@@ -354,14 +322,4 @@ h4.headline {
   97%, 100% { transform: none; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7); }
 }
 
-@keyframes edge-sheen {
-  0%, 24% { background-position: 100% 0; }
-  50%, 100% { background-position: 0% 0; }
-}
-
-@keyframes edge-burst {
-  0%, 18% { transform: scale(0.4); opacity: 0; }
-  24% { opacity: 1; }
-  55%, 100% { transform: scale(2.2); opacity: 0; }
-}
 

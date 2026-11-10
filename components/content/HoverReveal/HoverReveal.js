@@ -13,11 +13,14 @@ export default function HoverReveal({ title = '', description = null, className 
     }
   }
 
+  const handlePointerEnter = (e) => { if (e.pointerType === 'mouse') setIsActive(true); };
+  const handlePointerLeave = (e) => { if (e.pointerType === 'mouse') setIsActive(false); };
+
   return (
     <div
-      className={`${styles.container} ${isActive ? 'active' : ''} ${className}`}
-      onMouseEnter={() => setIsActive(true)}
-      onMouseLeave={() => setIsActive(false)}
+      className={`${styles.container} ${isActive ? styles.active : ''} ${className}`}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
       onClick={toggleActive}
       onKeyDown={handleKey}
       role="button"

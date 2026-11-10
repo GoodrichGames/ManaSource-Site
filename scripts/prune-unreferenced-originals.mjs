@@ -8,7 +8,8 @@
  * static assets, so this also decides whether the site can deploy there at all.
  *
  * A file is removed only when BOTH are true:
- *   1. A generated variant of it exists in the sibling `nextImageExportOptimizer` folder.
+ *   1. A generated variant of it exists in the sibling `nextImageExportOptimizer` folder, or it is
+ *      a PNG/JPG with a WEBP copy of the same name beside it.
  *   2. No text file in the export mentions its path.
  *
  * Condition 1 is what keeps this from deleting an asset that is served as-is, such as a favicon,
@@ -29,8 +30,8 @@ import path from 'node:path';
 const VARIANT_FOLDER = 'nextImageExportOptimizer';
 const SCANNED_TEXT_EXTENSIONS = new Set(['.html', '.js', '.mjs', '.css', '.json', '.xml', '.txt']);
 const PRUNABLE_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.avif', '.tiff']);
-// The folders whose originals are candidates. Everything outside them is served as-is.
 const CANDIDATE_ROOTS = ['images'];
+const SUPERSEDED_EXTENSIONS = new Set(['.png', '.jpg', '.jpeg']);
 
 const readFlag = (name, fallback) => {
   const index = process.argv.indexOf(`--${name}`);
@@ -69,14 +70,22 @@ const haystack = allFiles
   .map((file) => fs.readFileSync(file, 'utf8'))
   .join('\n');
 
+const isInCandidateRoot = (file) => CANDIDATE_ROOTS.includes(path.relative(outDir, file).split(path.sep)[0]);
+
+const hasWebpCopy = (file) => {
+  if (!SUPERSEDED_EXTENSIONS.has(path.extname(file).toLowerCase())) return false;
+  const stem = path.basename(file, path.extname(file));
+  return fs.existsSync(path.join(path.dirname(file), `${stem}.webp`));
+};
+
 const candidates = allFiles.filter((file) => {
   if (isVariantPath(file)) return false;
   if (!PRUNABLE_EXTENSIONS.has(path.extname(file).toLowerCase())) return false;
-  const [root] = path.relative(outDir, file).split(path.sep);
-  return CANDIDATE_ROOTS.includes(root);
+  return isInCandidateRoot(file) || hasWebpCopy(file);
 });
 
 const hasVariant = (file) => {
+  if (!isInCandidateRoot(file)) return false;
   const variantDir = path.join(path.dirname(file), VARIANT_FOLDER);
   if (!fs.existsSync(variantDir)) return false;
   const stem = path.basename(file, path.extname(file));
@@ -90,16 +99,18 @@ const isReferenced = (file) => {
 
 const decisions = candidates.map((file) => {
   const size = fs.statSync(file).size;
-  if (!hasVariant(file)) return { file, size, action: 'keep', reason: 'no generated variant' };
+  if (!hasVariant(file) && !hasWebpCopy(file)) {
+    return { file, size, action: 'keep', reason: 'no generated variant or WEBP copy' };
+  }
   if (isReferenced(file)) return { file, size, action: 'keep', reason: 'referenced in the export' };
-  return { file, size, action: 'prune', reason: 'variant exists and nothing references it' };
+  return { file, size, action: 'prune', reason: 'replaced and nothing references it' };
 });
 
 const pruned = decisions.filter((d) => d.action === 'prune').sort((a, b) => b.size - a.size);
 const kept = decisions.filter((d) => d.action === 'keep');
 
 console.log(`${shouldWrite ? 'Pruning' : 'Dry run'} — ${outDir}`);
-console.log(`${candidates.length} candidate originals under ${CANDIDATE_ROOTS.join(', ')}/\n`);
+console.log(`${candidates.length} candidate originals\n`);
 
 for (const decision of pruned) {
   console.log(`  remove  ${formatMiB(decision.size).padStart(10)}  ${sitePath(decision.file)}`);

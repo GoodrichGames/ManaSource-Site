@@ -17,7 +17,7 @@ const designerSchema = {
   worksFor: {
     '@id': organizationSchema['@id'],
   },
-  image: `${baseUrl}/images/PaulProfile.jpg`,
+  image: `${baseUrl}/images/PaulProfile.webp`,
 };
 
 const videoSchema = {

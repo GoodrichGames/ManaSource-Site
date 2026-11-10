@@ -47,21 +47,34 @@
   transition: background 280ms ease;
 }
 
-.container:hover .title,
 .container.active .title {
   opacity: 0;
   transform: translateY(-6px);
 }
 
-.container:hover .description,
 .container.active .description {
   opacity: 1;
   transform: translateY(0);
 }
 
-.container:hover .overlay,
 .container.active .overlay {
   background: rgba(0,0,0,0.55);
+}
+
+@media (hover: hover) {
+  .container:hover .title {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  .container:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .container:hover .overlay {
+    background: rgba(0,0,0,0.55);
+  }
 }
 
 @media (max-width: $breakpoint-tablet) {

@@ -2,7 +2,7 @@ import ExportedImage from "next-image-export-optimizer";
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import prefix from '../../utils/prefix';
-import timbatiaPic from '../../public/images/timbatia-small.png'
+import timbatiaPic from '../../public/images/timbatia-small.webp'
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 
 const Article = () => {

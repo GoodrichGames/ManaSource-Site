@@ -1,9 +1,9 @@
 import ExportedImage from "next-image-export-optimizer";
 import Link from 'next/link';
 import { useRef } from 'react';
-import ggLogo from '../public/images/GG-Logo-dark-bg.png';
-import noAIPic from '../public/icons/NoAI.png';
-import cavePic from '../public/images/cave.png';
+import ggLogo from '../public/images/GG-Logo-dark-bg.webp';
+import noAIPic from '../public/icons/NoAI.webp';
+import cavePic from '../public/images/cave.webp';
 import styles from '../components/Templates/BaseTemplate.module.scss';
 import EmailSignup from '../components/content/EmailSignup/EmailSignup';
 import YoutubeEmbed from "../components/content/YoutubeEmbed/YoutubeEmbed";
@@ -43,7 +43,7 @@ export default function Landing() {
       <div id="main"></div>
       <ContentSection>
         <ContentItem classes={styles.tCenter + " " + styles.artSection + " " + styles.ruinsSection}>
-          <SectionArt classes={styles.ruinsArt} anchorRef={ruinsWindowRef}>
+          <SectionArt classes={styles.ruinsArt} anchorRef={ruinsWindowRef} isEager>
             <div className={styles.torchFlame}></div>
           </SectionArt>
           <h2 className={styles.ruinsHook}>A discovery at an ancient vault may be the last hope of a people driven underground...</h2>

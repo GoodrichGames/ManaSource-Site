@@ -6,13 +6,13 @@ import styles from '../components/Templates/BaseTemplate.module.scss';
 import ArticleList from '../components/content/ArticleList/ArticleList';
 import ContentItem from '../components/content/ContentSection/ContentItem';
 import meta from '../metadata/pagemeta';
-import paulPic from '../public/images/PaulProfile.jpg';
-import nelePic from '../public/images/NeleProfile.jpg';
-import sandiPic from '../public/images/SandiProfile.jpg';
-import amandaPic from '../public/images/AmandaProfile.jpg';
-import angeloPic from '../public/images/AngeloProfile.jpg';
-import oliviaPic from '../public/images/OliviaProfile.jpg';
-import noAIPic from '../public/icons/NoAI.png';
+import paulPic from '../public/images/PaulProfile.webp';
+import nelePic from '../public/images/NeleProfile.webp';
+import sandiPic from '../public/images/SandiProfile.webp';
+import amandaPic from '../public/images/AmandaProfile.webp';
+import angeloPic from '../public/images/AngeloProfile.webp';
+import oliviaPic from '../public/images/OliviaProfile.webp';
+import noAIPic from '../public/icons/NoAI.webp';
 import GameSchema from '../components/content/GameSchema/GameSchema';
 import Hero from '../components/content/Hero/Hero';
 import ScrollArrow from '../components/content/ScrollArrow/ScrollArrow';
@@ -25,7 +25,7 @@ import SectionHeading from '../components/content/SectionHeading/SectionHeading'
 import ClassHand from '../components/content/ClassHand/ClassHand';
 import TurnRound from '../components/content/TurnRound/TurnRound';
 import LearnToPlay from '../components/content/LearnToPlay/LearnToPlay';
-import cavePic from '../public/images/cave.png';
+import cavePic from '../public/images/cave.webp';
 import { useRef } from 'react';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
@@ -39,7 +39,7 @@ export default function Home() {
   const ruinsWindowRef = useRef(null);
 
   return (
-    <BaseLayout title={meta.name} description={meta.description} classes={styles.layered} >
+    <BaseLayout title="Mana Source — Fantasy Adventure Board Game for 1–4 Players" description={meta.description} classes={styles.layered} >
       <GameSchema />
       <LandingAnimation />
       <Descent />
@@ -47,7 +47,7 @@ export default function Home() {
       <div id="main"></div>
       <ContentSection>
         <ContentItem classes={styles.tCenter + " " + styles.artSection + " " + styles.ruinsSection}>
-          <SectionArt classes={styles.ruinsArt} anchorRef={ruinsWindowRef}>
+          <SectionArt classes={styles.ruinsArt} anchorRef={ruinsWindowRef} isEager>
             <div className={styles.torchFlame}></div>
           </SectionArt>
           <h2 className={styles.ruinsHook}>A discovery at an ancient vault may be the last hope of a people driven underground...</h2>

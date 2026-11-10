@@ -1,6 +1,6 @@
 const metaDetails = {
   name: 'Mana Source Game',
-  description: "A discovery at an ancient vault may be the last hope of a people driven underground... Mana Source is an adventure board game for 1-4 players. You'll need to work together to solve unique challenges, overcome deadly adversaries, and coordinate your abilities if you're going to survive.",
+  description: "Mana Source is an adventure board game with a story-driven campaign, dual-class character building, and simultaneous turns coming to Kickstarter in early 2027.",
   shareImage: '/share-1200x630.jpg',
   
   pages: [{

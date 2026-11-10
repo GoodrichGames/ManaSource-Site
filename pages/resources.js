@@ -8,7 +8,7 @@ import prefix from '../utils/prefix';
 import BaseTemplate from './../components/Templates/BaseTemplate';
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
-import cavePic from '../public/images/cave.png';
+import cavePic from '../public/images/cave.webp';
 
 export default function Resources() {
   return (

@@ -1,14 +1,14 @@
 import ExportedImage from "next-image-export-optimizer";
 import Link from 'next/link';
-import ggLogo from '../../public/images/GG-Logo-dark-bg.png';
-import pageBackground from '../../public/images/bg-page.png';
+import ggLogo from '../../public/images/GG-Logo-dark-bg.webp';
+import pageBackground from '../../public/images/bg-page.webp';
 import Head from '../Structural/Meta/Meta';
 import Navigation from '../Structural/Navigation/Navigation';
 import PageHeader from '../content/PageHeader/PageHeader';
 import ConsentSettingsButton from '../Structural/Consent/ConsentSettingsButton';
 import styles from './BaseTemplate.module.scss';
 
-const BaseTemplate = ({ children, title, date, description, image, isArticle, classes }) => {
+const BaseTemplate = ({ children, title, date, description, image, shareImage = image, isArticle, classes }) => {
   const wrapperClassName = `${styles.backgroundWrap}${classes ? ` ${classes}` : ''}`;
 
   return (
@@ -23,7 +23,7 @@ const BaseTemplate = ({ children, title, date, description, image, isArticle, cl
         priority
         sizes="100vw"
       />
-      <Head name={title} description={description} image={image} isArticle={isArticle} />
+      <Head name={title} description={description} image={shareImage} isArticle={isArticle} />
       <Navigation />
 
       <main className={styles.main}>

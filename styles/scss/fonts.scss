@@ -2,7 +2,7 @@
   font-family: "Arkhip";
   src:
     local(""),
-    url(../fonts/Arkhip_font.otf) format("otf"),
+    url(../fonts/Arkhip_font.woff2) format("woff2"),
     url(../fonts/Arkhip_font.ttf) format("truetype");
   font-display: swap;
 }
@@ -10,7 +10,9 @@
 @font-face {
   font-family: "El Messiri";
   font-weight: 400 700;
-  src: url(../fonts/ElMessiri-Variable.ttf) format("truetype");
+  src:
+    url(../fonts/ElMessiri-Variable.woff2) format("woff2"),
+    url(../fonts/ElMessiri-Variable.ttf) format("truetype");
   font-display: swap;
 }
 
@@ -18,6 +20,7 @@
   font-family: "Philosopher-Bold";
   src:
     local(""),
+    url(../fonts/Philosopher-Bold.woff2) format("woff2"),
     url(../fonts/Philosopher-Bold.woff) format("woff"),
     url(../fonts/Philosopher-Bold.ttf) format("truetype");
   font-display: swap;
@@ -27,6 +30,7 @@
   font-family: "Philosopher";
   src:
     local(""),
+    url(../fonts/Philosopher-Regular.woff2) format("woff2"),
     url(../fonts/Philosopher-Regular.woff) format("woff"),
     url(../fonts/Philosopher-Regular.ttf) format("truetype");
   font-display: swap;

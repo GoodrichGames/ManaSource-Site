@@ -2,7 +2,7 @@ const posts = [
   {
     title: 'Plans for 2026',
     description: 'A development update covering Mana Source progress, remaining production work, and plans for a late-2026 Kickstarter.',
-    image: '/images/articles/snake.jpg',
+    image: '/images/articles/snake.webp',
     link: '/articles/plansfor2026',
     categories: ['all','devnotes','announcements'],
     date: 'February 24th, 2026',
@@ -11,7 +11,7 @@ const posts = [
   {
     title: 'Mid-Year 2025 Update',
     description: 'A mid-year update covering manufacturing tariffs, rulebook progress, campaign previews, new art, and development goals.',
-    image: '/images/articles/20SmallRes.jpg',
+    image: '/images/articles/20SmallRes.webp',
     link: '/articles/q22025update',
     categories: ['all','devnotes','announcements'],
     date: 'May 22nd, 2025',
@@ -20,7 +20,7 @@ const posts = [
   {
     title: 'EOY 2024 Update',
     description: 'A year-end update explaining the revised Kickstarter timeline, expanded development scope, and new artwork.',
-    image: '/images/articles/TidestrikerCaptain.jpg',
+    image: '/images/articles/TidestrikerCaptain.webp',
     link: '/articles/eoy2024update',
     categories: ['all','devnotes','announcements'],
     date: 'January 1st, 2025',
@@ -29,7 +29,7 @@ const posts = [
   {
     title: 'Q2 2024 Update',
     description: 'A summer development update covering the public beta plan, campaign progress, playtesting, and the Kickstarter schedule.',
-    image: '/images/articles/SaveTheHummingbears.png',
+    image: '/images/articles/SaveTheHummingbears.webp',
     link: '/articles/q22024update',
     categories: ['all','devnotes','announcements'],
     date: 'August 3rd, 2024'
@@ -37,7 +37,7 @@ const posts = [
   {
     title: 'Q1 2024 Update',
     description: 'A spring update announcing the redesigned Mana Source website and the project commitment to human-created art and writing.',
-    image: '/images/articles/Wildwood-Behemoth.jpg',
+    image: '/images/articles/Wildwood-Behemoth.webp',
     link: '/articles/q12024update',
     categories: ['all','devnotes','announcements'],
     date: 'May 7th, 2024'
@@ -45,7 +45,7 @@ const posts = [
   {
     title: 'EOY 2023 Update',
     description: 'A year-end review of Mana Source development progress and plans following the 2023 playtesting and design work.',
-    image: '/images/articles/purpleflowers.jpg',
+    image: '/images/articles/purpleflowers.webp',
     link: '/articles/eoy2023update',
     categories: ['all','devnotes','announcements'],
     date: 'Dec 29, 2023'
@@ -53,7 +53,7 @@ const posts = [
   {
     title: 'July / August 2023 Update',
     description: 'A summer update covering in-person playtesting, campaign development, and lessons from tabletop game design.',
-    image: '/images/articles/road-1072823_1920.jpg',
+    image: '/images/articles/road-1072823_1920.webp',
     link: '/articles/aug2023update',
     categories: ['all','devnotes','announcements'],
     date: 'Sept 12, 2023'
@@ -61,7 +61,7 @@ const posts = [
   {
     title: 'May / June 2023 Update',
     description: 'A development update featuring new card and round-reference previews alongside campaign and community news.',
-    image: '/images/articles/sunset-3325080_1920.jpg',
+    image: '/images/articles/sunset-3325080_1920.webp',
     link: '/articles/june2023update',
     categories: ['all','devnotes','announcements'],
     date: 'June 27, 2023'
@@ -85,7 +85,7 @@ const posts = [
   {
     title: 'January 2023 Update',
     description: 'Start of 2023 Newsletter',
-    image: '/images/timbatia-small.png',
+    image: '/images/timbatia-small.webp',
     imageVAlign: 'vAlignTop',
     link: '/articles/jan2023update',
     categories: ['all','devnotes','announcements'],
@@ -94,7 +94,8 @@ const posts = [
   {
     title: 'New Teaser Trailer!',
     description: 'Mana Source - Teaser Trailer',
-    image: '/images/cave.png',
+    image: '/images/cave.webp',
+    shareImage: '/share-1200x630.jpg',
     link: '/articles/firstpromo',
     categories: ['all','devnotes','announcements'],
     date: 'Nov 29, 2022'
@@ -102,7 +103,8 @@ const posts = [
   {
     title: 'Introduction',
     description: 'What is Mana Source?',
-    image: '/images/cave.png',
+    image: '/images/cave.webp',
+    shareImage: '/share-1200x630.jpg',
     link: '/articles/introduction',
     categories: ['all','devnotes','announcements'],
     date: 'May 22, 2022'
@@ -110,7 +112,7 @@ const posts = [
   {
     title: 'Release Notes 5-24-22',
     description: 'Patches the Llama delivers release notes',
-    image: '/images/articles/llama-time.jpg',
+    image: '/images/articles/llama-time.webp',
     imageVAlign: 'vAlignTop',
     link: '/articles/releasenotes-5-24-22',
     categories: [],

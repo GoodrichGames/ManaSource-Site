@@ -2,8 +2,8 @@ import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
-import noAIPic from '../../public/icons/NoAI.png';
-import wildwoodPic from '../../public/images/articles/Wildwood-Behemoth.jpg';
+import noAIPic from '../../public/icons/NoAI.webp';
+import wildwoodPic from '../../public/images/articles/Wildwood-Behemoth.webp';
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 

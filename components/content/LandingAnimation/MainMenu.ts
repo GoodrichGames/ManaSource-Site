@@ -1,8 +1,13 @@
-import Phaser from "phaser";
+import Phaser from "./PhaserBuild";
 import { createBurstFairyLight, createWellFairyLight, Point, Wisp } from "./FairyLights";
 import { default as EC } from "./EngineConstants";
+import cavePic from "../../../public/images/cave.webp";
 
 export const CAVE_READY_EVENT = "cave-ready";
+export const CAVE_ART_KEY = "caveArt";
+
+const BACKGROUND_KEY = "menuBackground";
+const NORMAL_MAP_KEY = "menuNormalMap";
 
 const TEXTURE_WIDTHS = [1080, 1200, 1920, 2048, 3840];
 
@@ -39,6 +44,7 @@ export default class MainMenu extends Phaser.Scene {
   private gemLight!: Phaser.GameObjects.Light;
   private pointerLight!: Phaser.GameObjects.Light;
   private bg!: Phaser.GameObjects.Image;
+  private heroArt: HTMLImageElement | null = null;
   private wisps: Wisp[] = [];
 
   private readonly CAVE_REL_X = 0.30;
@@ -119,18 +125,43 @@ export default class MainMenu extends Phaser.Scene {
 
   preload() {
     const width = this.textureWidth();
+    const normalMap = `/images/nextImageExportOptimizer/cavebg-normal-map-opt-${width}.WEBP`;
+    const heroArt = this.registry.get(CAVE_ART_KEY) as HTMLImageElement | undefined;
+
+    if (heroArt && heroArt.naturalWidth >= Math.min(width, cavePic.width)) {
+      this.heroArt = heroArt;
+      this.load.image(NORMAL_MAP_KEY, normalMap);
+      return;
+    }
+
     this.load.image({
-      key: "menuBackground",
+      key: BACKGROUND_KEY,
       url: `/images/nextImageExportOptimizer/cave-opt-${width}.WEBP`,
-      normalMap: `/images/nextImageExportOptimizer/cavebg-normal-map-opt-${width}.WEBP`,
+      normalMap,
     });
   }
 
+  private addBackgroundFromHero(art: HTMLImageElement) {
+    const width = Math.min(this.textureWidth(), art.naturalWidth);
+    const height = Math.round(width * art.naturalHeight / art.naturalWidth);
+    const texture = this.textures.createCanvas(BACKGROUND_KEY, width, height)!;
+    const context = texture.getContext();
+    context.imageSmoothingQuality = "high";
+    context.drawImage(art, 0, 0, width, height);
+    texture.refresh();
+    texture.setDataSource(this.textures.get(NORMAL_MAP_KEY).getSourceImage() as HTMLImageElement);
+    this.textures.remove(NORMAL_MAP_KEY);
+  }
+
   create() {
-    this.sound.pauseOnBlur = false;
+    if (this.heroArt) {
+      this.addBackgroundFromHero(this.heroArt);
+      this.heroArt = null;
+      this.registry.remove(CAVE_ART_KEY);
+    }
 
     // Background
-    this.bg = this.add.image(0, 0, "menuBackground")
+    this.bg = this.add.image(0, 0, BACKGROUND_KEY)
       .setOrigin(0.5)
       .setScrollFactor(0)
       .setPipeline("Light2D");

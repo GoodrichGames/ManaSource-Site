@@ -281,16 +281,44 @@ $art-parallax-room: 140px;
   }
 }
 
-.redSkyArt .artImage {
-  background-image: url(../../public/images/nextImageExportOptimizer/RedSky-opt-3840.WEBP);
+.redSkyArt {
+  --art-aspect: 1.649;
+
+  .artImage {
+    background-image: url(../../public/images/nextImageExportOptimizer/RedSky-opt-1920.WEBP);
+  }
+
+  &.artHiRes .artImage {
+    background-image: url(../../public/images/nextImageExportOptimizer/RedSky-opt-3840.WEBP);
+  }
 }
 
-.highlandsArt .artImage {
-  background-image: url(../../public/images/nextImageExportOptimizer/TwistedHighlands-opt-3840.WEBP);
+.highlandsArt {
+  --art-aspect: 1.334;
+
+  .artImage {
+    background-image: url(../../public/images/nextImageExportOptimizer/TwistedHighlands-opt-1920.WEBP);
+  }
+
+  &.artHiRes .artImage {
+    background-image: url(../../public/images/nextImageExportOptimizer/TwistedHighlands-opt-3840.WEBP);
+  }
 }
 
-.cultistsArt .artImage {
-  background-image: url(../../public/images/nextImageExportOptimizer/Cultists-opt-3840.WEBP);
+.cultistsArt {
+  --art-aspect: 1.5;
+
+  .artImage {
+    background-image: url(../../public/images/nextImageExportOptimizer/Cultists-opt-1920.WEBP);
+  }
+
+  &.artHiRes .artImage {
+    background-image: url(../../public/images/nextImageExportOptimizer/Cultists-opt-3840.WEBP);
+  }
+}
+
+.artFrame:not(.artReady) .artImage {
+  background-image: none !important;
 }
 
 .heroFade {
@@ -700,7 +728,7 @@ $art-parallax-room: 140px;
       content: "";
       position: absolute;
       inset: 0 -12%;
-      background: url(../../public/images/mana-pool.jpg) center / cover no-repeat;
+      background: url(../../public/images/mana-pool.webp) center / cover no-repeat;
       filter: brightness(0.95) saturate(1.05);
       animation: pool-slosh 7s ease-in-out infinite alternate;
     }
@@ -726,7 +754,7 @@ $art-parallax-room: 140px;
     position: absolute;
     inset: -30px -40px -14px;
     border-radius: 50%;
-    background: url(../../public/images/cave-rock-lip.jpg) center / 300px;
+    background: url(../../public/images/cave-rock-lip-lit.webp) center / auto 100% no-repeat;
     filter: brightness(1.9) contrast(1.2) saturate(0.85);
     -webkit-mask-image:
       radial-gradient(ellipse 50% 50% at 50% 58%, transparent 70%, #000 80%, rgba(0, 0, 0, 0.7) 91%, transparent 100%),

@@ -3,6 +3,9 @@ import styles from './Descent.module.scss';
 import infoboxStyles from '../InfoBox/InfoBox.module.scss';
 import templateStyles from '../../Templates/BaseTemplate.module.scss';
 import EC from '../LandingAnimation/EngineConstants';
+import createRockLight from './RockLight';
+import rockImage from '../../../public/images/cave-rock-bg.webp';
+import rockNormalMap from '../../../public/images/cave-rock-bg-normal-map.webp';
 
 const MIN_DARK = 0.35;
 const MAX_DARK = 0.82;
@@ -55,9 +58,22 @@ function makeMote(width, height) {
 export default function Descent() {
   const layersRef = useRef(null);
   const canvasRef = useRef(null);
+  const rockCanvasRef = useRef(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let rockLight = null;
+    let isUnmounted = false;
+    createRockLight(rockCanvasRef.current, { rockSrc: rockImage.src, normalSrc: rockNormalMap.src })
+      .then((created) => {
+        if (!created) return;
+        if (isUnmounted) { created.destroy(); return; }
+        rockLight = created;
+        rockLight.resize(width, height, dpr);
+        document.body.style.background = 'transparent';
+      })
+      .catch(() => {});
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -83,6 +99,7 @@ export default function Descent() {
       const count = width < 768 ? MOTE_COUNT_PHONE : MOTE_COUNT_DESKTOP;
       motes = Array.from({ length: count }, () => makeMote(width, height));
       refreshElements();
+      rockLight?.resize(width, height, dpr);
     };
     resize();
 
@@ -100,6 +117,13 @@ export default function Descent() {
       x: width * EC.wellRelX, y: height * EC.wellRelY, vx: 0, vy: 0,
       momentumX: 0, momentumY: 0, alpha: 0.3, targetAlpha: 0.3, sinceStep: 0,
     };
+    const written = {};
+    const setVar = (name, value) => {
+      if (written[name] === value) return;
+      written[name] = value;
+      layers.style.setProperty(name, value);
+    };
+
     let lastScrollY = window.scrollY;
     let lastTime = performance.now();
     let frame;
@@ -111,6 +135,9 @@ export default function Descent() {
       const scrollY = window.scrollY;
       const scrollDelta = scrollY - lastScrollY;
       lastScrollY = scrollY;
+      const scrollHeight = document.documentElement.scrollHeight;
+      const poolRect = pool?.getBoundingClientRect();
+      const panelRects = panels.map(panel => panel.getBoundingClientRect());
 
       const lightTarget = pointer ?? { x: width * (0.5 + 0.15 * Math.sin(t * 0.3)), y: height * (0.45 + 0.05 * Math.sin(t * 0.21)) };
       const follow = 1 - Math.exp(-dt / LIGHT_EASE_SECONDS);
@@ -151,28 +178,31 @@ export default function Descent() {
       wisp.y = clamp(wisp.y, 0, height);
       wisp.alpha += (wisp.targetAlpha - wisp.alpha) * (1 - Math.exp(-dt / WISP_ALPHA_EASE_SECONDS));
 
-      const depth = clamp((scrollY + height / 2) / document.documentElement.scrollHeight, 0, 1);
+      const depth = clamp((scrollY + height / 2) / scrollHeight, 0, 1);
       const fadeIn = clamp((scrollY / height - DARK_FADE_START) / (DARK_FADE_END - DARK_FADE_START), 0, 1);
-      layers.style.setProperty('--depth-dark', (fadeIn * lerp(MIN_DARK, MAX_DARK, depth)).toFixed(3));
-      layers.style.setProperty('--depth-rgb', depthColour(depth));
-      layers.style.setProperty('--light-x', `${light.x.toFixed(1)}px`);
-      layers.style.setProperty('--light-y', `${light.y.toFixed(1)}px`);
-      layers.style.setProperty('--wisp-x', `${wisp.x.toFixed(1)}px`);
-      layers.style.setProperty('--wisp-y', `${wisp.y.toFixed(1)}px`);
-      if (pool) {
-        const poolRect = pool.getBoundingClientRect();
-        layers.style.setProperty('--pool-x', `${(poolRect.left + poolRect.width / 2).toFixed(1)}px`);
-        layers.style.setProperty('--pool-y', `${(poolRect.top + poolRect.height / 2).toFixed(1)}px`);
-        layers.style.setProperty('--pool-rx', `${(poolRect.width * POOL_LIGHT_SPREAD).toFixed(1)}px`);
-        layers.style.setProperty('--pool-ry', `${(poolRect.height * POOL_LIGHT_SPREAD * 1.6).toFixed(1)}px`);
+      const dark = fadeIn * lerp(MIN_DARK, MAX_DARK, depth);
+      layers.classList.toggle(styles.clear, dark === 0);
+      setVar('--depth-dark', dark.toFixed(3));
+      setVar('--depth-rgb', depthColour(depth));
+      setVar('--light-x', `${Math.round(light.x)}px`);
+      setVar('--light-y', `${Math.round(light.y)}px`);
+      setVar('--wisp-x', `${Math.round(wisp.x)}px`);
+      setVar('--wisp-y', `${Math.round(wisp.y)}px`);
+      if (poolRect) {
+        setVar('--pool-x', `${(poolRect.left + poolRect.width / 2).toFixed(1)}px`);
+        setVar('--pool-y', `${(poolRect.top + poolRect.height / 2).toFixed(1)}px`);
+        setVar('--pool-rx', `${(poolRect.width * POOL_LIGHT_SPREAD).toFixed(1)}px`);
+        setVar('--pool-ry', `${(poolRect.height * POOL_LIGHT_SPREAD * 1.6).toFixed(1)}px`);
       }
 
-      panels.forEach(panel => {
-        const rect = panel.getBoundingClientRect();
+      panels.forEach((panel, i) => {
+        const rect = panelRects[i];
         const isLit = wisp.x > rect.left - WISP_LIGHT_MARGIN && wisp.x < rect.right + WISP_LIGHT_MARGIN
           && wisp.y > rect.top - WISP_LIGHT_MARGIN && wisp.y < rect.bottom + WISP_LIGHT_MARGIN;
         panel.classList.toggle(infoboxStyles.wispLit, isLit);
       });
+
+      rockLight?.draw(light, window.scrollX, scrollY);
 
       ctx.clearRect(0, 0, width, height);
 
@@ -219,6 +249,9 @@ export default function Descent() {
     frame = requestAnimationFrame(tick);
 
     return () => {
+      isUnmounted = true;
+      rockLight?.destroy();
+      document.body.style.background = '';
       cancelAnimationFrame(frame);
       clearInterval(refreshTimer);
       window.removeEventListener('pointermove', onMove);
@@ -231,6 +264,7 @@ export default function Descent() {
 
   return (
     <div ref={layersRef} aria-hidden="true">
+      <canvas ref={rockCanvasRef} className={styles.rock} />
       <div className={styles.darkness} />
       <div className={styles.lightTint} />
       <canvas ref={canvasRef} className={styles.particles} />

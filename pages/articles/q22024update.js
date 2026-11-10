@@ -2,7 +2,7 @@ import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
-import hummingbearsPic from '../../public/images/articles/SaveTheHummingbears.png';
+import hummingbearsPic from '../../public/images/articles/SaveTheHummingbears.webp';
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 

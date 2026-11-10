@@ -3,39 +3,39 @@ import Link from 'next/link';
 import { useInView, useReducedMotion } from 'framer-motion';
 import ExportedImage from "next-image-export-optimizer";
 import styles from './LearnToPlay.module.scss';
-import knightClassPic from '../../../public/images/cards/class-knight.jpg';
-import wardenClassPic from '../../../public/images/cards/class-warden.jpg';
-import illusionistClassPic from '../../../public/images/cards/class-illusionist.jpg';
-import reagentClassPic from '../../../public/images/cards/class-reagent.jpg';
-import doctorClassPic from '../../../public/images/cards/class-doctor.jpg';
-import solarshaperClassPic from '../../../public/images/cards/class-solarshaper.jpg';
-import cardBackPic from '../../../public/images/cards/card-back.jpg';
-import bladestormPic from '../../../public/images/cards/action-bladestorm.jpg';
-import parryPic from '../../../public/images/cards/action-parry.jpg';
-import destructiveSmashPic from '../../../public/images/cards/action-destructive-smash.jpg';
-import tacticalStrikePic from '../../../public/images/cards/action-tactical-strike.jpg';
-import leafstormPic from '../../../public/images/cards/action-leafstorm.jpg';
-import hummingbearPic from '../../../public/images/cards/action-hummingbear.jpg';
-import explosiveFirelotusPic from '../../../public/images/cards/action-explosive-firelotus.jpg';
-import nickedShotPic from '../../../public/images/cards/action-nicked-shot.jpg';
-import bodyDoublePic from '../../../public/images/cards/action-body-double.jpg';
-import deadlyInterjectionPic from '../../../public/images/cards/action-deadly-interjection.jpg';
-import wearDownPic from '../../../public/images/cards/action-wear-down.jpg';
-import rattleSensesPic from '../../../public/images/cards/action-rattle-senses.jpg';
-import chainLightningPic from '../../../public/images/cards/action-chain-lightning.jpg';
-import meteorPic from '../../../public/images/cards/action-meteor.jpg';
-import earthquakePic from '../../../public/images/cards/action-earthquake.jpg';
-import searingBlastPic from '../../../public/images/cards/action-searing-blast.jpg';
-import contagionPic from '../../../public/images/cards/action-contagion.jpg';
-import manaJackalopePic from '../../../public/images/cards/action-mana-jackalope.jpg';
-import anesthesiaPic from '../../../public/images/cards/action-anesthesia.jpg';
-import sapLifePic from '../../../public/images/cards/action-sap-life.jpg';
-import wallOfLightPic from '../../../public/images/cards/action-wall-of-light.jpg';
-import stellarStrikesPic from '../../../public/images/cards/action-stellar-strikes.jpg';
-import holyFirePic from '../../../public/images/cards/action-holy-fire.jpg';
-import magnifyBlessingPic from '../../../public/images/cards/action-magnify-blessing.jpg';
-import basicAttackPic from '../../../public/images/cards/action-basic-attack.jpg';
-import gatherManaPic from '../../../public/images/cards/action-gather-mana.jpg';
+import knightClassPic from '../../../public/images/cards/class-knight.webp';
+import wardenClassPic from '../../../public/images/cards/class-warden.webp';
+import illusionistClassPic from '../../../public/images/cards/class-illusionist.webp';
+import reagentClassPic from '../../../public/images/cards/class-reagent.webp';
+import doctorClassPic from '../../../public/images/cards/class-doctor.webp';
+import solarshaperClassPic from '../../../public/images/cards/class-solarshaper.webp';
+import cardBackPic from '../../../public/images/cards/card-back.webp';
+import bladestormPic from '../../../public/images/cards/action-bladestorm.webp';
+import parryPic from '../../../public/images/cards/action-parry.webp';
+import destructiveSmashPic from '../../../public/images/cards/action-destructive-smash.webp';
+import tacticalStrikePic from '../../../public/images/cards/action-tactical-strike.webp';
+import leafstormPic from '../../../public/images/cards/action-leafstorm.webp';
+import hummingbearPic from '../../../public/images/cards/action-hummingbear.webp';
+import explosiveFirelotusPic from '../../../public/images/cards/action-explosive-firelotus.webp';
+import nickedShotPic from '../../../public/images/cards/action-nicked-shot.webp';
+import bodyDoublePic from '../../../public/images/cards/action-body-double.webp';
+import deadlyInterjectionPic from '../../../public/images/cards/action-deadly-interjection.webp';
+import wearDownPic from '../../../public/images/cards/action-wear-down.webp';
+import rattleSensesPic from '../../../public/images/cards/action-rattle-senses.webp';
+import chainLightningPic from '../../../public/images/cards/action-chain-lightning.webp';
+import meteorPic from '../../../public/images/cards/action-meteor.webp';
+import earthquakePic from '../../../public/images/cards/action-earthquake.webp';
+import searingBlastPic from '../../../public/images/cards/action-searing-blast.webp';
+import contagionPic from '../../../public/images/cards/action-contagion.webp';
+import manaJackalopePic from '../../../public/images/cards/action-mana-jackalope.webp';
+import anesthesiaPic from '../../../public/images/cards/action-anesthesia.webp';
+import sapLifePic from '../../../public/images/cards/action-sap-life.webp';
+import wallOfLightPic from '../../../public/images/cards/action-wall-of-light.webp';
+import stellarStrikesPic from '../../../public/images/cards/action-stellar-strikes.webp';
+import holyFirePic from '../../../public/images/cards/action-holy-fire.webp';
+import magnifyBlessingPic from '../../../public/images/cards/action-magnify-blessing.webp';
+import basicAttackPic from '../../../public/images/cards/action-basic-attack.webp';
+import gatherManaPic from '../../../public/images/cards/action-gather-mana.webp';
 
 const CLASSES = [
   { name: 'Knight', image: knightClassPic, actions: [bladestormPic, parryPic, destructiveSmashPic, tacticalStrikePic] },
@@ -143,11 +143,9 @@ const LearnToPlay = () => {
           <div
             className={styles.visual + " " + styles.edgeVisual + (shownCount === HAND_SIZE ? " " + styles.go : "")}
             aria-hidden="true">
-            <span className={styles.burst} />
             {edgeHand.map((image, i) => (
               <div key={i} className={styles.edgeCard + (i === 1 ? " " + styles.edgePlayed : "")} style={{ "--i": i - 1 }}>
                 <ExportedImage src={image} alt="" fill sizes={SMALL_CARD} className={styles.art} />
-                {i === 1 && <span className={styles.sheen} />}
               </div>
             ))}
           </div>

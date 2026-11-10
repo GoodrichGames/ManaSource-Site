@@ -8,11 +8,13 @@ import styles from './ConsentProvider.module.scss';
 
 const STORAGE_KEY = 'mana-source-privacy-consent-v1';
 const REGION_LOOKUP_TIMEOUT_MS = 3000;
+const ASK_DELAY_MS = 5000;
 const ALLOWED_CHOICES = new Set(['accepted', 'rejected']);
 const ConsentContext = createContext({
   isResolved: false,
   optionalContentAllowed: false,
   openPrivacyChoices: () => {},
+  optionalContentInView: () => {},
 });
 
 const readStoredChoice = () => {
@@ -46,6 +48,8 @@ const ConsentProvider = ({ children }) => {
   const [choice, setChoice] = useState(null);
   const [isResolved, setIsResolved] = useState(false);
   const [isBannerOpen, setIsBannerOpen] = useState(false);
+  const [isAskPending, setIsAskPending] = useState(false);
+  const [isOpenedByVisitor, setIsOpenedByVisitor] = useState(false);
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -78,7 +82,7 @@ const ConsentProvider = ({ children }) => {
 
       if (!isActive) return;
 
-      if (consentRequired) setIsBannerOpen(true);
+      if (consentRequired) setIsAskPending(true);
       else setChoice('accepted');
 
       setIsResolved(true);
@@ -93,16 +97,36 @@ const ConsentProvider = ({ children }) => {
     };
   }, []);
 
+  const ask = () => {
+    setIsAskPending(false);
+    setIsBannerOpen(true);
+  };
+
   useEffect(() => {
-    if (isBannerOpen) dialogRef.current?.focus();
-  }, [isBannerOpen]);
+    if (!isAskPending) return;
+    const timer = window.setTimeout(ask, ASK_DELAY_MS);
+    window.addEventListener('scroll', ask, { once: true, passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('scroll', ask);
+    };
+  }, [isAskPending]);
+
+  useEffect(() => {
+    if (isBannerOpen && isOpenedByVisitor) dialogRef.current?.focus();
+  }, [isBannerOpen, isOpenedByVisitor]);
 
   const optionalContentAllowed = choice === 'accepted';
+
+  const closeBanner = () => {
+    setIsBannerOpen(false);
+    setIsOpenedByVisitor(false);
+  };
 
   const acceptOptionalServices = () => {
     storeChoice('accepted');
     setChoice('accepted');
-    setIsBannerOpen(false);
+    closeBanner();
   };
 
   const rejectOptionalServices = () => {
@@ -110,7 +134,7 @@ const ConsentProvider = ({ children }) => {
 
     storeChoice('rejected');
     setChoice('rejected');
-    setIsBannerOpen(false);
+    closeBanner();
     clearAnalyticsCookies();
     clearMetaPixelCookies();
 
@@ -118,29 +142,18 @@ const ConsentProvider = ({ children }) => {
     if (optionalScriptWasLoaded) window.location.reload();
   };
 
-  const keepFocusInDialog = (event) => {
-    if (event.key !== 'Tab') return;
-
-    const focusableElements = dialogRef.current?.querySelectorAll('a[href], button:not([disabled])');
-    if (!focusableElements?.length) return;
-
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-
-    if (event.shiftKey && document.activeElement === firstElement) {
-      event.preventDefault();
-      lastElement.focus();
-    } else if (!event.shiftKey && document.activeElement === lastElement) {
-      event.preventDefault();
-      firstElement.focus();
-    }
-  };
-
   const contextValue = useMemo(() => ({
     isResolved,
     optionalContentAllowed,
-    openPrivacyChoices: () => setIsBannerOpen(true),
-  }), [isResolved, optionalContentAllowed]);
+    openPrivacyChoices: () => {
+      setIsAskPending(false);
+      setIsOpenedByVisitor(true);
+      setIsBannerOpen(true);
+    },
+    optionalContentInView: () => {
+      if (isAskPending) ask();
+    },
+  }), [isResolved, optionalContentAllowed, isAskPending]);
 
   return (
     <ConsentContext.Provider value={contextValue}>
@@ -148,13 +161,11 @@ const ConsentProvider = ({ children }) => {
       {optionalContentAllowed && <GoogleAnalytics gaId="G-Q13V1EJW9Q" />}
       {optionalContentAllowed && <MetaPixel />}
       {isBannerOpen && (
-        <div className={styles.backdrop}>
+        <div className={styles.dock}>
           <section
             aria-labelledby="privacy-choice-title"
             aria-describedby="privacy-choice-description"
-            aria-modal="true"
             className={styles.banner}
-            onKeyDown={keepFocusInDialog}
             ref={dialogRef}
             role="dialog"
             tabIndex={-1}
@@ -168,7 +179,7 @@ const ConsentProvider = ({ children }) => {
               . These optional services may store cookies and receive information about your visit.
               You can accept them or continue without them.
             </p>
-            <p><Link href="/privacy" onClick={() => setIsBannerOpen(false)}>Read the Privacy Policy</Link></p>
+            <p><Link href="/privacy" onClick={closeBanner}>Read the Privacy Policy</Link></p>
             <div className={styles.actions}>
               <button className={styles.rejectButton} onClick={rejectOptionalServices} type="button">
                 Reject optional services

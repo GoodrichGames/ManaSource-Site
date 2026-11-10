@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ExportedImage from "next-image-export-optimizer";
-import wordmarkPic from '../../../public/images/ManaSourceWordmark.png';
+import wordmarkPic from '../../../public/images/ManaSourceWordmark.webp';
 import styles from './BrandName.module.scss';
 
 const BrandName = ({ large = false }) => {

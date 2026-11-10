@@ -6,11 +6,11 @@ import infoboxStyles from '../InfoBox/InfoBox.module.scss';
 import InfoBox from '../InfoBox/InfoBox';
 import ScrollArrow from '../ScrollArrow/ScrollArrow';
 import EC from '../LandingAnimation/EngineConstants';
-import logo from '../../../public/images/ManaSourceLogoV2.png';
-import cavePic from '../../../public/images/cave.png';
-import agesPic from '../../../public/icons/ages.png';
-import playersPic from '../../../public/icons/players.png';
-import timePic from '../../../public/icons/hourglass.png';
+import logo from '../../../public/images/ManaSourceLogoV2.webp';
+import cavePic from '../../../public/images/cave.webp';
+import agesPic from '../../../public/icons/ages.webp';
+import playersPic from '../../../public/icons/players.webp';
+import timePic from '../../../public/icons/hourglass.webp';
 
 const statClasses = styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50 + " " + styles.heroStat;
 
@@ -100,6 +100,7 @@ const Hero = ({ overlayClasses = "", children }) => {
         height="990"
         preload={true}
         placeholder="blur"
+        data-cave-art
         style={{
           height: "100vh",
           width: "100%",

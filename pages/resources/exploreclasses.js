@@ -5,7 +5,7 @@ import styles from './../../components/Templates/BaseTemplate.module.scss'
 import InfoBox from './../../components/content/InfoBox/InfoBox';
 
 export default function ExploreClasses() {
-  return <BaseTemplate title="Resources" description="Game Resources">
+  return <BaseTemplate title="Mana Source Classes: Reagents, Wardens, Illusionists, Knights and Doctors" description="Select one of 5 classes that meets your playstyle. Learn about the primary bonus, talent, and history of the Reagents, Wardens, Illusionists, Knights, and Doctors.">
     <ContentSection>
       <span className="spacer5" aria-hidden="true"></span>
       <ContentItem>

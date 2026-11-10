@@ -9,6 +9,20 @@
   pointer-events: none;
 }
 
+.clear .darkness,
+.clear .lightTint {
+  visibility: hidden;
+}
+
+.rock {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
 .darkness {
   background: rgb(var(--depth-rgb, 0 0 0));
   opacity: var(--depth-dark, 0);

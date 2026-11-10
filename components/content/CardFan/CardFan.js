@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import ExportedImage from "next-image-export-optimizer";
 import styles from './CardFan.module.scss';
 import baseStyles from '../../Templates/BaseTemplate.module.scss';
-import arrowPic from '../../../public/icons/Arrow.png';
+import arrowPic from '../../../public/icons/Arrow.webp';
 import useTilt from '../Tilt/useTilt';
 
 const FAN_DEGREES = 6;

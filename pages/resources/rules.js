@@ -37,7 +37,11 @@ const faqs = [
 
       <strong>Warden</strong><br>
       <em>Talents: Influence flora, pheromones, and by extension animal behavior.</em><br><br>
-      Wardens prefer wooded communities...
+      Wardens prefer wooded communities...<br><br>
+
+      <strong>Solarshaper</strong><br>
+      <em>Talents: Light, Purification.</em><br><br>
+      Primary Solarshapers are considered extinct and are only available as a secondary class...
     `,
   },
   {

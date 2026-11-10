@@ -3,8 +3,8 @@ import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import prefix from '../../utils/prefix';
 import ExportedImage from "next-image-export-optimizer";
-import focusedShotPic from '../../public/images/cards/W-Focused-Shot.png'
-import roundRefPic from '../../public/images/cards/Round-reference-card.png'
+import focusedShotPic from '../../public/images/cards/W-Focused-Shot.webp'
+import roundRefPic from '../../public/images/cards/Round-reference-card.webp'
 
 const Article = () => {
     return (

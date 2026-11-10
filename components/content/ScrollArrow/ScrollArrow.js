@@ -1,6 +1,6 @@
 import ExportedImage from "next-image-export-optimizer";
 import styles from '../../Templates/BaseTemplate.module.scss';
-import arrowPic from '../../../public/icons/Arrow.png';
+import arrowPic from '../../../public/icons/Arrow.webp';
 
 const ScrollArrow = ({ href, classes = "", preload = false }) => (
   <a className={styles.scrollArrow + " " + classes + " " + styles.glow} href={href}>

@@ -2,7 +2,7 @@ import styles from './PageHeader.module.scss';
 import ExportedImage from "next-image-export-optimizer";
 
 const PageHeader = ({ title, description, image }) => {
-  const usedImage = image || "/images/Moonlight.jpg";
+  const usedImage = image || "/images/Moonlight.webp";
   return (
     <header className={styles.imageHeader}>
       <ExportedImage

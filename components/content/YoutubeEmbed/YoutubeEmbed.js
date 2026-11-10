@@ -5,26 +5,20 @@ import { useConsent } from '../../Structural/Consent/ConsentProvider';
 import consentStyles from '../../Structural/Consent/ConsentProvider.module.scss';
 import styles from './YoutubeEmbed.module.scss';
 
-const PRELOAD_MARGIN = '800px 0px';
-
 const YoutubeEmbed = ({videoId, height, width, isAutoplay, frameborder, controls, mute, showinfo, coverImage, coverLabel = "Play video"}) => {
-  const { isResolved, optionalContentAllowed, openPrivacyChoices } = useConsent();
-  const frameRef = useRef(null);
-  const playerRef = useRef(null);
+  const { isResolved, optionalContentAllowed, openPrivacyChoices, optionalContentInView } = useConsent();
   const wantsPlay = useRef(false);
-  const [isNear, setIsNear] = useState(false);
+  const viewRef = useRef(null);
   const [isCovered, setIsCovered] = useState(Boolean(coverImage));
 
   useEffect(() => {
-    if (!coverImage) return;
+    if (optionalContentAllowed || !viewRef.current) return;
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      setIsNear(true);
-      observer.disconnect();
-    }, { rootMargin: PRELOAD_MARGIN });
-    observer.observe(frameRef.current);
+      if (entry.isIntersecting) optionalContentInView();
+    });
+    observer.observe(viewRef.current);
     return () => observer.disconnect();
-  }, [coverImage]);
+  }, [optionalContentAllowed, optionalContentInView, isCovered]);
 
   const opts = {
     height: height,
@@ -47,7 +41,6 @@ const YoutubeEmbed = ({videoId, height, width, isAutoplay, frameborder, controls
   };
 
   const determineAutoplay = (event) => {
-    playerRef.current = event.target;
     if (wantsPlay.current) {
       event.target.playVideo();
     } else if (!isAutoplay) {
@@ -56,7 +49,7 @@ const YoutubeEmbed = ({videoId, height, width, isAutoplay, frameborder, controls
   }
 
   const placeholder = (
-    <div className={consentStyles.videoPlaceholder} style={{ width: width ? `${width}px` : '100%' }}>
+    <div ref={viewRef} className={consentStyles.videoPlaceholder} style={{ width: width ? `${width}px` : '100%' }}>
       <p>{isResolved ? 'This YouTube video is blocked by your privacy choice.' : 'Checking your privacy choices…'}</p>
       {isResolved && (
         <button onClick={openPrivacyChoices} type="button">Change privacy choices</button>
@@ -73,16 +66,14 @@ const YoutubeEmbed = ({videoId, height, width, isAutoplay, frameborder, controls
 
   const play = () => {
     wantsPlay.current = true;
-    setIsNear(true);
     setIsCovered(false);
-    playerRef.current?.playVideo();
   };
 
   if (!isCovered && !optionalContentAllowed) return placeholder;
 
   return (
-    <div ref={frameRef} className={styles.frame} style={{ maxWidth: width ? `${width}px` : undefined }}>
-      {isNear && optionalContentAllowed && (
+    <div ref={viewRef} className={styles.frame} style={{ maxWidth: width ? `${width}px` : undefined }}>
+      {!isCovered && (
         <YouTube videoId={videoId} opts={opts} onReady={determineAutoplay} className={styles.player} iframeClassName={styles.player} />
       )}
       {isCovered && (

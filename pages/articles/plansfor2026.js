@@ -2,8 +2,8 @@ import ArticleTemplate from './../../components/Templates/ArticleTemplate';
 import EmailSignup from './../../components/content/EmailSignup/EmailSignup';
 import ArticleBlock from './../../components/content/ArticleBlock/ArticleBlock';
 import ExportedImage from "next-image-export-optimizer";
-import babyPic from '../../public/images/articles/baby.jpg';
-import snakePic from '../../public/images/articles/snake.jpg';
+import babyPic from '../../public/images/articles/baby.webp';
+import snakePic from '../../public/images/articles/snake.webp';
 import styles from '../../components/Templates/BaseTemplate.module.scss';
 
 
