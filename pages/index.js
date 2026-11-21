@@ -31,9 +31,7 @@ import ContentSection from './../components/content/ContentSection/ContentSectio
 import EmailSignup from './../components/content/EmailSignup/EmailSignup';
 import InfoBox from './../components/content/InfoBox/InfoBox';
 import YoutubeEmbed from './../components/content/YoutubeEmbed/YoutubeEmbed';
-import dynamic from 'next/dynamic'
-
-const LandingAnimation = dynamic(() => import('../components/content/LandingAnimation/LandingAnimation'), { ssr: false })
+import LandingAnimation from '../components/content/LandingAnimation/DeferredLandingAnimation';
 
 export default function Home() {
   const ruinsWindowRef = useRef(null);
@@ -73,8 +71,8 @@ export default function Home() {
                   alt='No AI art'
                   height={0}
                   width={0}
-                  sizes="128px"
-                  unoptimized={true}
+                  sizes="7rem"
+                  placeholder="empty"
                   style={{
                     width: "7rem",
                     height: "auto",

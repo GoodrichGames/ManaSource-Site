@@ -10,7 +10,6 @@ export default function LandingAnimation() {
 
   useEffect(() => {
     if (!containerRef.current) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     let isUnmounted = false;
     let visibilityObserver = null;
@@ -60,6 +59,8 @@ export default function LandingAnimation() {
         scene: [MainMenu],
         parent: containerRef.current,
         transparent: true,
+        disablePreFX: true,
+        disablePostFX: true,
         plugins: {
           global: []
         },

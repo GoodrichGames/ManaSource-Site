@@ -23,9 +23,7 @@ import NoNavTemplate from './../components/Templates/NoNavTemplate';
 import ContentItem from './../components/content/ContentSection/ContentItem';
 import ContentSection from './../components/content/ContentSection/ContentSection';
 import InfoBox from './../components/content/InfoBox/InfoBox';
-import dynamic from 'next/dynamic'
-
-const LandingAnimation = dynamic(() => import('../components/content/LandingAnimation/LandingAnimation'), { ssr: false })
+import LandingAnimation from '../components/content/LandingAnimation/DeferredLandingAnimation';
 
 export default function Landing() {
   const ruinsWindowRef = useRef(null);
@@ -68,8 +66,8 @@ export default function Landing() {
                   alt='No AI art'
                   height={0}
                   width={0}
-                  sizes="128px"
-                  unoptimized={true}
+                  sizes="7rem"
+                  placeholder="empty"
                   style={{
                     width: "7rem",
                     height: "auto",

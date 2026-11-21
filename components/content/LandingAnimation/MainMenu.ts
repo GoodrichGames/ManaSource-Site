@@ -142,14 +142,19 @@ export default class MainMenu extends Phaser.Scene {
   }
 
   private addBackgroundFromHero(art: HTMLImageElement) {
+    const normalMap = this.textures.get(NORMAL_MAP_KEY).getSourceImage() as HTMLImageElement;
     const width = Math.min(this.textureWidth(), art.naturalWidth);
-    const height = Math.round(width * art.naturalHeight / art.naturalWidth);
-    const texture = this.textures.createCanvas(BACKGROUND_KEY, width, height)!;
-    const context = texture.getContext();
-    context.imageSmoothingQuality = "high";
-    context.drawImage(art, 0, 0, width, height);
-    texture.refresh();
-    texture.setDataSource(this.textures.get(NORMAL_MAP_KEY).getSourceImage() as HTMLImageElement);
+    if (width === art.naturalWidth) {
+      this.textures.addImage(BACKGROUND_KEY, art, normalMap);
+    } else {
+      const height = Math.round(width * art.naturalHeight / art.naturalWidth);
+      const texture = this.textures.createCanvas(BACKGROUND_KEY, width, height)!;
+      const context = texture.getContext();
+      context.imageSmoothingQuality = "high";
+      context.drawImage(art, 0, 0, width, height);
+      texture.refresh();
+      texture.setDataSource(normalMap);
+    }
     this.textures.remove(NORMAL_MAP_KEY);
   }
 

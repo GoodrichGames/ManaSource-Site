@@ -12,6 +12,15 @@ import agesPic from '../../../public/icons/ages.webp';
 import playersPic from '../../../public/icons/players.webp';
 import timePic from '../../../public/icons/hourglass.webp';
 
+const caveCoverSizes = () => {
+  const ratio = `${Math.round(EC.caveAspect * 1000)}/1000`;
+  const densities = [[2.5, '2.5dppx'], [1.5, '1.5dppx']];
+  const tall = densities.map(([density, query]) => `(max-aspect-ratio: ${ratio}) and (min-resolution: ${query}) ${Math.round(EC.caveAspect * 100 / density)}vh`);
+  const wide = densities.map(([density, query]) => `(min-resolution: ${query}) ${Math.round(100 / density)}vw`);
+  return [...tall, `(max-aspect-ratio: ${ratio}) ${Math.round(EC.caveAspect * 100)}vh`, ...wide, '100vw'].join(', ');
+};
+const CAVE_SIZES = caveCoverSizes();
+
 const statClasses = styles.tCenter + " " + styles.thirdW + " " + styles.inline + " " + styles.vAlignTop + " " + styles.lMH50 + " " + styles.heroStat;
 
 const StatIcon = ({ src, alt }) => (
@@ -20,8 +29,8 @@ const StatIcon = ({ src, alt }) => (
     alt={alt}
     height="50"
     preload={true}
-    unoptimized={true}
-    sizes="128px"
+    sizes="50px"
+    placeholder="empty"
     style={{
       maxWidth: "100%",
       height: "auto",
@@ -76,6 +85,7 @@ const Hero = ({ overlayClasses = "", children }) => {
         alt='Mana Source logo'
         height={250}
         width={0}
+        sizes="(max-width: 791px) calc(100vw - 40px), 751px"
         preload={true}
         loading="eager"
         fetchPriority="high"
@@ -98,6 +108,7 @@ const Hero = ({ overlayClasses = "", children }) => {
         src={cavePic}
         alt='mana well in cave'
         height="990"
+        sizes={CAVE_SIZES}
         preload={true}
         placeholder="blur"
         data-cave-art

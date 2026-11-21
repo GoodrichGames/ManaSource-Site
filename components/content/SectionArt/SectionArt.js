@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import styles from '../../Templates/BaseTemplate.module.scss';
+import { whenIdleAfterLoad } from '../../../utils/afterLoad';
 
 const ART_ZOOM = 0.1;
 const PARALLAX_PX = 140;
 
 const NEAR_MARGIN = '150% 0px';
-const IDLE_TIMEOUT_MS = 2000;
 
 const STANDARD_ART_WIDTH = 1920;
 
@@ -23,7 +23,6 @@ const SectionArt = ({ classes = "", anchorRef, parallax = PARALLAX_PX, zoom = AR
 
   useEffect(() => {
     if (isEager) return;
-    let cancelIdle = () => {};
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) markReady();
     }, { rootMargin: NEAR_MARGIN });
@@ -31,23 +30,12 @@ const SectionArt = ({ classes = "", anchorRef, parallax = PARALLAX_PX, zoom = AR
       observer.disconnect();
       setIsArtReady(true);
     }
-    const afterLoad = () => {
-      if (window.requestIdleCallback) {
-        const handle = window.requestIdleCallback(markReady, { timeout: IDLE_TIMEOUT_MS });
-        cancelIdle = () => window.cancelIdleCallback(handle);
-      } else {
-        const handle = setTimeout(markReady);
-        cancelIdle = () => clearTimeout(handle);
-      }
-    };
 
     observer.observe(frameRef.current);
-    if (document.readyState === 'complete') afterLoad();
-    else window.addEventListener('load', afterLoad, { once: true });
+    const cancelIdle = whenIdleAfterLoad(markReady);
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('load', afterLoad);
       cancelIdle();
     };
   }, [isEager]);

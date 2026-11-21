@@ -4,6 +4,8 @@ import infoboxStyles from '../InfoBox/InfoBox.module.scss';
 import templateStyles from '../../Templates/BaseTemplate.module.scss';
 import EC from '../LandingAnimation/EngineConstants';
 import createRockLight from './RockLight';
+import { prefersStaticScene } from '../../../utils/graphics';
+import { whenIdleAfterLoad } from '../../../utils/afterLoad';
 import rockImage from '../../../public/images/cave-rock-bg.webp';
 import rockNormalMap from '../../../public/images/cave-rock-bg-normal-map.webp';
 
@@ -61,19 +63,21 @@ export default function Descent() {
   const rockCanvasRef = useRef(null);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (prefersStaticScene()) return;
 
     let rockLight = null;
     let isUnmounted = false;
-    createRockLight(rockCanvasRef.current, { rockSrc: rockImage.src, normalSrc: rockNormalMap.src })
-      .then((created) => {
-        if (!created) return;
-        if (isUnmounted) { created.destroy(); return; }
-        rockLight = created;
-        rockLight.resize(width, height, dpr);
-        document.body.style.background = 'transparent';
-      })
-      .catch(() => {});
+    const cancelRockLight = whenIdleAfterLoad(() => {
+      createRockLight(rockCanvasRef.current, { rockSrc: rockImage.src, normalSrc: rockNormalMap.src })
+        .then((created) => {
+          if (!created) return;
+          if (isUnmounted) { created.destroy(); return; }
+          rockLight = created;
+          rockLight.resize(width, height, dpr);
+          document.body.style.background = 'transparent';
+        })
+        .catch(() => {});
+    });
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -83,10 +87,21 @@ export default function Descent() {
 
     const layers = layersRef.current;
     let panels = [];
-    let pool = null;
+    let panelBoxes = [];
+    let poolBox = null;
+    let scrollHeight = 1;
     const refreshElements = () => {
+      const toPage = (rect) => ({
+        left: rect.left + window.scrollX,
+        right: rect.right + window.scrollX,
+        top: rect.top + window.scrollY,
+        bottom: rect.bottom + window.scrollY,
+      });
       panels = [...document.querySelectorAll('.' + infoboxStyles.infoBox)];
-      pool = document.querySelector('.' + templateStyles.footerPool);
+      panelBoxes = panels.map(panel => toPage(panel.getBoundingClientRect()));
+      const pool = document.querySelector('.' + templateStyles.footerPool);
+      poolBox = pool ? toPage(pool.getBoundingClientRect()) : null;
+      scrollHeight = document.documentElement.scrollHeight;
     };
 
     let motes = [];
@@ -132,12 +147,10 @@ export default function Descent() {
       const dt = Math.min(now - lastTime, 100) / 1000;
       lastTime = now;
       const t = now / 1000;
+      const scrollX = window.scrollX;
       const scrollY = window.scrollY;
       const scrollDelta = scrollY - lastScrollY;
       lastScrollY = scrollY;
-      const scrollHeight = document.documentElement.scrollHeight;
-      const poolRect = pool?.getBoundingClientRect();
-      const panelRects = panels.map(panel => panel.getBoundingClientRect());
 
       const lightTarget = pointer ?? { x: width * (0.5 + 0.15 * Math.sin(t * 0.3)), y: height * (0.45 + 0.05 * Math.sin(t * 0.21)) };
       const follow = 1 - Math.exp(-dt / LIGHT_EASE_SECONDS);
@@ -188,21 +201,23 @@ export default function Descent() {
       setVar('--light-y', `${Math.round(light.y)}px`);
       setVar('--wisp-x', `${Math.round(wisp.x)}px`);
       setVar('--wisp-y', `${Math.round(wisp.y)}px`);
-      if (poolRect) {
-        setVar('--pool-x', `${(poolRect.left + poolRect.width / 2).toFixed(1)}px`);
-        setVar('--pool-y', `${(poolRect.top + poolRect.height / 2).toFixed(1)}px`);
-        setVar('--pool-rx', `${(poolRect.width * POOL_LIGHT_SPREAD).toFixed(1)}px`);
-        setVar('--pool-ry', `${(poolRect.height * POOL_LIGHT_SPREAD * 1.6).toFixed(1)}px`);
+      if (poolBox) {
+        setVar('--pool-x', `${((poolBox.left + poolBox.right) / 2 - scrollX).toFixed(1)}px`);
+        setVar('--pool-y', `${((poolBox.top + poolBox.bottom) / 2 - scrollY).toFixed(1)}px`);
+        setVar('--pool-rx', `${((poolBox.right - poolBox.left) * POOL_LIGHT_SPREAD).toFixed(1)}px`);
+        setVar('--pool-ry', `${((poolBox.bottom - poolBox.top) * POOL_LIGHT_SPREAD * 1.6).toFixed(1)}px`);
       }
 
+      const wispPageX = wisp.x + scrollX;
+      const wispPageY = wisp.y + scrollY;
       panels.forEach((panel, i) => {
-        const rect = panelRects[i];
-        const isLit = wisp.x > rect.left - WISP_LIGHT_MARGIN && wisp.x < rect.right + WISP_LIGHT_MARGIN
-          && wisp.y > rect.top - WISP_LIGHT_MARGIN && wisp.y < rect.bottom + WISP_LIGHT_MARGIN;
+        const box = panelBoxes[i];
+        const isLit = wispPageX > box.left - WISP_LIGHT_MARGIN && wispPageX < box.right + WISP_LIGHT_MARGIN
+          && wispPageY > box.top - WISP_LIGHT_MARGIN && wispPageY < box.bottom + WISP_LIGHT_MARGIN;
         panel.classList.toggle(infoboxStyles.wispLit, isLit);
       });
 
-      rockLight?.draw(light, window.scrollX, scrollY);
+      rockLight?.draw(light, scrollX, scrollY);
 
       ctx.clearRect(0, 0, width, height);
 
@@ -250,6 +265,7 @@ export default function Descent() {
 
     return () => {
       isUnmounted = true;
+      cancelRockLight();
       rockLight?.destroy();
       document.body.style.background = '';
       cancelAnimationFrame(frame);

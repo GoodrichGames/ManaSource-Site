@@ -15,7 +15,7 @@ const BrandName = ({ large = false }) => {
         aria-hidden="true"
         height={0}
         width={0}
-        sizes={large ? "480px" : "240px"}
+        sizes={large ? "(min-width: 1834px) 300px, (min-width: 1500px) 16.3vw, 245px" : "240px"}
         placeholder="empty"
         draggable={false}
         onLoad={() => setIsLoaded(true)}
